@@ -3,21 +3,22 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviourSingleton<SpawnManager>
 {
     public GameObject prefabEnemy;
     [SerializeField] private InventoryHandler _inventory;
-    public EnemyData datatest;
-    private void Start()
-    {
-        Spawn(datatest);
-    }
+    public EnemyClass EnemyClass;
+    // private void Start()
+    // {
+    //     Spawn(EnemyClass);
+    // }
 
      
     [ContextMenu("Spawn")]
-    public void Spawn(EnemyData data)
+    public void Spawn(EnemyClass enemyclass)
     {
-        var enemyStruct = _inventory.EnemyStructs.FirstOrDefault(struc => struc.Data == data);
+        Debug.Log("Spawn");
+        var enemyStruct = _inventory.EnemyStructs.FirstOrDefault(struc => struc.Data == enemyclass.Data);
         Debug.Log(enemyStruct.Data);
 
         for (int i = 0; i < enemyStruct.NumberSpawn; i++)

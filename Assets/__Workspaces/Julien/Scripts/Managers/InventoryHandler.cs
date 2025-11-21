@@ -1,25 +1,30 @@
 using System;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class InventoryHandler : MonoBehaviour
+public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 {
     public int Money;
     
-    public List<EnemyStruct> EnemyStructs;
-
+    public List<EnemyClass> EnemyStructs;
     public EnemyData dataTest;
+
+    [SerializeField] private GameObject PanelInventoryEnemy;
+    [SerializeField] private GameObject prefabButton;
     private void Start()
     {
-        AddEnnemy(dataTest);
+        AddEnnemyToInventory(dataTest);
     }
 
-    public void AddEnnemy(EnemyData data)
+    public void AddEnnemyToInventory(EnemyData data)
     {
-        EnemyStruct newStruct = new EnemyStruct();
-        newStruct.Data = data;
-        newStruct.SetUpData();
-        EnemyStructs.Add(newStruct);
+        EnemyClass newClass = new EnemyClass();
+        newClass.Data = data;
+        newClass.SetUpData();
+        EnemyStructs.Add(newClass);
+        Instantiate(prefabButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
     }
     
     public void UpdateInventory()
