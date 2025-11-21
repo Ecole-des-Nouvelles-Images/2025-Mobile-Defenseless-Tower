@@ -30,8 +30,8 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
 
         foreach (Vector3Int vector3Int in vector3Ints)
         {
-            int x = vector3Int.x;
-            int z = vector3Int.z;
+            int x = Mathf.Clamp(vector3Int.x, 0, Width - 1);
+            int z = Mathf.Clamp(vector3Int.z, 0, Height - 1);
             _cellsMatrix[x, z] = new Cell();
         }
         
