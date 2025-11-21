@@ -20,5 +20,5 @@ public class EnemyData : ScriptableObject
 
     [Header("Visual")] 
     
-    public GameObject VisualPrefab;
+    public GameObject Prefab;
 }

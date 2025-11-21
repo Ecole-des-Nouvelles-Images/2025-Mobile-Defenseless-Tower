@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 8177087142619090736}
   - component: {fileID: 1917850147550564850}
   m_Layer: 0
-  m_Name: Troupe
+  m_Name: Petit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

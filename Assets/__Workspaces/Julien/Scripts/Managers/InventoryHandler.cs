@@ -9,22 +9,30 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     public int Money;
     
     public List<EnemyClass> EnemyStructs;
-    public EnemyData dataTest;
+    public EnemyClass dataTest;
 
     [SerializeField] private GameObject PanelInventoryEnemy;
     [SerializeField] private GameObject prefabButton;
     private void Start()
     {
-        AddEnnemyToInventory(dataTest);
+        dataTest.SetUpData();
+        //AddEnnemyToInventory(dataTest);
+
+        foreach (EnemyClass c in EnemyStructs)
+        {
+            AddEnnemyToInventory(c);
+            c.SetUpData();
+        }
     }
 
-    public void AddEnnemyToInventory(EnemyData data)
+    public void AddEnnemyToInventory(EnemyClass classData)
     {
         EnemyClass newClass = new EnemyClass();
-        newClass.Data = data;
+        newClass = classData;
         newClass.SetUpData();
         EnemyStructs.Add(newClass);
-        Instantiate(prefabButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
+        GameObject instanciate = Instantiate(prefabButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
+        instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = classData;
     }
     
     public void UpdateInventory()
