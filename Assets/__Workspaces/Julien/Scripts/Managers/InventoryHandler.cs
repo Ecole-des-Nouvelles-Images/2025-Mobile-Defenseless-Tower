@@ -1,26 +1,22 @@
-using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 {
     public int Money;
-    
+
     public List<EnemyClass> EnemyClass;
     public EnemyClass dataTest;
 
     [SerializeField] private GameObject PanelInventoryEnemy;
     [SerializeField] private GameObject prefabButton;
+
     private void Start()
     {
-        //AddEnnemyToInventory(dataTest);
-
-        Debug.Log(EnemyClass.Count);
-        foreach (EnemyClass c in EnemyClass)
+        List<EnemyClass> copy = new List<EnemyClass>(EnemyClass);
+        foreach (EnemyClass c in copy)
         {
-            Debug.Log(c.Data.name);
             c.SetUpData();
             AddEnnemyToInventory(c);
         }
@@ -28,16 +24,21 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 
     public void AddEnnemyToInventory(EnemyClass classData)
     {
-        EnemyClass newClass = new EnemyClass();
-        newClass = classData;
+        EnemyClass newClass = classData.Clone();
         newClass.SetUpData();
         EnemyClass.Add(newClass);
+
         GameObject instanciate = Instantiate(prefabButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
-        instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = classData;
+        instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = newClass;
     }
-    
+
+    [ContextMenu("Add")]
+    // Pour plus tard quand le joueur choisira un sort ou une troupe
+    public void AddClass()
+    {
+        AddEnnemyToInventory(dataTest);
+    }
     public void UpdateInventory()
     {
-        
     }
 }
