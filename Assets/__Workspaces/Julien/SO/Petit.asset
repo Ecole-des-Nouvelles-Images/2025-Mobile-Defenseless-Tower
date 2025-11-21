@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fd8f989268b1541b37e58136430594, type: 3}
   m_Name: Petit
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  Speed: 5
+  Name: Petit
+  Sprite: {fileID: 0}
+  price: 10
+  Speed: 1
   Health: 10
   NumberToSpawn: 5
+  OffsetX: {x: -0.5, y: 0.5}
+  OffsetZ: {x: -0.5, y: 0.5}
+  OffsetUp: 0.1
+  VisualPrefab: {fileID: 0}
