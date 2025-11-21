@@ -13,9 +13,8 @@ public class EnemyClass
     
     public int NumberSpawn;
     
-    public void SetUpData(EnemyData data)
+    public void SetUpData()
     {
-        Data = data;
         Name = Data.Name;
         Sprite = Data.Sprite;
         price = Data.price;

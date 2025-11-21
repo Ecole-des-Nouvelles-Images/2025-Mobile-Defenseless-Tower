@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviourSingleton<SpawnManager>
         if (testMoney < 0) return;
         
         Debug.Log("Spawn");
-        var enemyStruct = _inventory.EnemyStructs.FirstOrDefault(struc => struc.Data == enemyclass.Data);
+        var enemyStruct = _inventory.EnemyClass.FirstOrDefault(struc => struc.Data == enemyclass.Data);
         Debug.Log(enemyStruct.Data);
 
         for (int i = 0; i < enemyStruct.NumberSpawn; i++)
