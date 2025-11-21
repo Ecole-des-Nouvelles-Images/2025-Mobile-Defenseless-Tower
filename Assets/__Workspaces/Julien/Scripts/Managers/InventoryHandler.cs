@@ -20,8 +20,8 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 
         foreach (EnemyClass c in EnemyStructs)
         {
-            AddEnnemyToInventory(c);
             c.SetUpData();
+            AddEnnemyToInventory(c);
         }
     }
 

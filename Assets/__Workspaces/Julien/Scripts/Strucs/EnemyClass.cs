@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
@@ -12,8 +13,9 @@ public class EnemyClass
     
     public int NumberSpawn;
     
-    public void SetUpData()
+    public void SetUpData(EnemyData data)
     {
+        Data = data;
         Name = Data.Name;
         Sprite = Data.Sprite;
         price = Data.price;
