@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Defense
   m_EditorClassIdentifier: Assembly-CSharp::DefenseBaseData
   CoolDown: 1
-  Damage: 3
+  Damage: 7
   Range: 3
   Visuel: {fileID: 0}
   ProjectilPrefab: {fileID: 2095069144231104046, guid: 2504c417662e81547ba76a47d09b4d2f, type: 3}

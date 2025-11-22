@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 using UnityEngine.Splines;
 using Random = UnityEngine.Random;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamagable
 {
     private GameObject _parentEmpty;
     
@@ -59,5 +59,14 @@ public class Enemy : MonoBehaviour
         float randX = Random.Range(enemyBaseData.OffsetX.x, enemyBaseData.OffsetX.y);
         float randZ = Random.Range(enemyBaseData.OffsetZ.x, enemyBaseData.OffsetZ.y);
         transform.position = new Vector3(transform.position.x + randX, transform.position.y + enemyBaseData.OffsetUp, transform.position.z + randZ);
+    }
+
+    public void TakeDamage(float damaga)
+    {
+        _health -= damaga;
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

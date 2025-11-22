@@ -5,9 +5,11 @@ public class BulletCanon : MonoBehaviour
 {
     public GameObject Target;
     public float Speed;
+    public float Damage;
 
-    public void SetUp(GameObject target)
+    public void SetUp(GameObject target, float damage)
     {
+        Damage = damage;
         Target = target;
     }
     
@@ -21,6 +23,7 @@ public class BulletCanon : MonoBehaviour
         if (other.gameObject == Target)
         {
             Debug.Log(other.gameObject + " was hited ");
+            other.gameObject.GetComponent<IDamagable>().TakeDamage(Damage);
             Destroy(gameObject);
         }
     }

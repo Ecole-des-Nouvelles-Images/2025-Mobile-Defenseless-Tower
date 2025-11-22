@@ -30,6 +30,7 @@ public abstract class TourBase : MonoBehaviour
     
     private void Update()
     {
+        targetsInRange.RemoveAll( x => !x);
         CoolDown += Time.deltaTime;
         LookFirstEnemy();
         if (CoolDown >= MaxCoolDown)

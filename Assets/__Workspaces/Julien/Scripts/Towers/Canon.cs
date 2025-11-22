@@ -10,7 +10,7 @@ public class Canon : TourBase
     
     public override void LookFirstEnemy()
     {
-        if (targetsInRange != null)
+        if (targetsInRange[0] != null)
         {
             PivotRotation.transform.LookAt(targetsInRange[0].transform);
         }
@@ -19,6 +19,6 @@ public class Canon : TourBase
     public override void Fire()
     {
         GameObject bulletCanon = Instantiate(BaseData.ProjectilPrefab, SpawnerBullet.transform.position, quaternion.identity);
-        bulletCanon.GetComponent<BulletCanon>().SetUp(targetsInRange[0]);
+        bulletCanon.GetComponent<BulletCanon>().SetUp(targetsInRange[0], Damage);
     }
 }

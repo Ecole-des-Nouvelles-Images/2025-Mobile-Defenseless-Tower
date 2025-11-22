@@ -90,7 +90,7 @@ MonoBehaviour:
   BaseData: {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
   MaxCoolDown: 0
   CoolDown: 0
-  Damage: 0
+  Damage: 7
   Range: 0
   targetsInRange: []
   CurrentTarget: {fileID: 0}
