@@ -1,13 +1,13 @@
-using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Profiling;
 using UnityEngine.Splines;
 using Random = UnityEngine.Random;
 
 public class SplineManager : MonoBehaviour
 {
+    [SerializeField] private bool OnlyInspector;
+    
     public SplineContainer SplineContainer;
 
     public int KnotCount;
@@ -27,11 +27,14 @@ public class SplineManager : MonoBehaviour
     private void OnEnable()
     {
         SplineContainer = GetComponent<SplineContainer>();
+        EventBus.OnGameStart += GenerateSpline; 
     }
 
     [ContextMenu("GenerateSpline")]
     private void GenerateSpline()
     {
+        if (OnlyInspector) return;
+        
         _vector3Ints.Clear();
         SplineContainer.Spline.Clear(); // je clear la spline
 

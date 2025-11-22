@@ -2,9 +2,14 @@ using System;
 
 public static class EventBus
 {
+    // GameLoop
+    
     public static Action OnGameStart;
     public static Action OnGameEnd;
     public static Action OnGamePaused;
+    public static Action OnSelection;
+    public static Action OnNextLevel;
+    public static Action OnLevelFinished;
     
     // Player
     

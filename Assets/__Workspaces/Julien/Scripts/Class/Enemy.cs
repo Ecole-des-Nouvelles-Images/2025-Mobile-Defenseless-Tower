@@ -1,7 +1,5 @@
-using System;
-using System.ComponentModel;
-using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Splines;
 using Random = UnityEngine.Random;
 
@@ -9,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     private GameObject _parentEmpty;
     
-    public EnemyData EnemyData;
+    [FormerlySerializedAs("EnemyData")] public EnemyBaseData enemyBaseData;
 
     private float _speed;
     private float _maxHealth;
@@ -31,10 +29,10 @@ public class Enemy : MonoBehaviour
 
     public void SetUp()
     {
-        _speed = EnemyData.Speed;
-        _maxHealth = EnemyData.Health;
+        _speed = enemyBaseData.Speed;
+        _maxHealth = enemyBaseData.Health;
         _health = _maxHealth;
-        _numberToSpawn = EnemyData.NumberToSpawn;
+        _numberToSpawn = enemyBaseData.NumberToSpawn;
         
         _splineAnimate.AnimationMethod = SplineAnimate.Method.Speed;
         _splineAnimate.MaxSpeed = _speed;
@@ -58,8 +56,8 @@ public class Enemy : MonoBehaviour
 
     public void RandOffset()
     {
-        float randX = Random.Range(EnemyData.OffsetX.x, EnemyData.OffsetX.y);
-        float randZ = Random.Range(EnemyData.OffsetZ.x, EnemyData.OffsetZ.y);
-        transform.position = new Vector3(transform.position.x + randX, transform.position.y + EnemyData.OffsetUp, transform.position.z + randZ);
+        float randX = Random.Range(enemyBaseData.OffsetX.x, enemyBaseData.OffsetX.y);
+        float randZ = Random.Range(enemyBaseData.OffsetZ.x, enemyBaseData.OffsetZ.y);
+        transform.position = new Vector3(transform.position.x + randX, transform.position.y + enemyBaseData.OffsetUp, transform.position.z + randZ);
     }
 }
