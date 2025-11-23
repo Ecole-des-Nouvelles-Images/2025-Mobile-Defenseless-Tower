@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spline
   - Enemy
+  - Castle
   layers:
   - Default
   - TransparentFX

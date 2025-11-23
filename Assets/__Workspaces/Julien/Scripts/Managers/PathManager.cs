@@ -27,7 +27,6 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
 
     public void SetDataPath(List<Vector3Int> vector3Ints)
     {
-        Debug.Log("SetDataPath");
         _cellsMatrix =  new Cell[Width, Height];
         int height = _cellsMatrix.GetLength(0); 
         int width = _cellsMatrix.GetLength(1);
@@ -75,12 +74,14 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
         GameObject castleB = Instantiate(_castlePrefab, transform.position, quaternion.identity, transform);
         _cellGameObjects.Add(castleA);
         _cellGameObjects.Add(castleB);
+
+        castleB.AddComponent<Castle>();
         
         Spline spline = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>().Splines[0];
 
         BezierKnot firstKnot = spline[0];
         BezierKnot lastKnot = spline[spline.Count - 1];
-
+        
         castleA.transform.position = firstKnot.Position;
         castleA.transform.position = new Vector3(firstKnot.Position.x, 0, firstKnot.Position.z - 1);
         

@@ -1,16 +1,25 @@
+using System;
 using UnityEngine;
 
 public class Castle : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int Health = 10;
+    
+    private void OnEnable()
     {
-        
+        gameObject.tag = "Castle";
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+            Health--;
+            if (Health <= 0)
+            {
+                EventBus.OnLevelFinished?.Invoke();
+            }
+        }
     }
 }

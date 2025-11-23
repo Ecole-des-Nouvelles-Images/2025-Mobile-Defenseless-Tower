@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 {
+    public int StartMoney;
     public int Money;
 
     public List<EnemyClass> EnemyClass;
@@ -11,6 +13,16 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 
     [SerializeField] private GameObject PanelInventoryEnemy;
     [SerializeField] private GameObject prefabButton;
+
+    private void OnEnable()
+    {
+        EventBus.OnNextLevel += UpdateInventoryData;
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.OnNextLevel -= UpdateInventoryData;
+    }
 
     private void Start()
     {
@@ -38,7 +50,10 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     {
         AddEnnemyToInventory(dataTest);
     }
-    public void UpdateInventory()
+    public void UpdateInventoryData()
     {
+        Debug.Log("SetInventory money");
+        Money = StartMoney;
+        EventBus.OnInventoryAreUpdated?.Invoke();
     }
 }

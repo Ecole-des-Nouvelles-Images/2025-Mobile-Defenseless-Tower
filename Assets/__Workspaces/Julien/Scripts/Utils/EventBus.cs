@@ -9,6 +9,7 @@ public static class EventBus
     public static Action OnGamePaused;
     public static Action OnSelection;
     public static Action OnNextLevel;
+    public static Action OnLevelStart;
     public static Action OnLevelFinished;
     
     // Player
@@ -16,6 +17,7 @@ public static class EventBus
     public static Action OnPlayerSelectCard;
     public static Action OnplayerPlaceTroup;
     public static Action OnPlayerPlaceSpell;
+    public static Action OnInventoryAreUpdated;
     
     // IA
     public static Action OnTerrainGenerate;

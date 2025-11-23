@@ -30,7 +30,7 @@ public class SplineManager : MonoBehaviour
     }
 
     [ContextMenu("GenerateSpline")]
-    private void GenerateSpline()
+    public void GenerateSpline()
     {
         _vector3Ints.Clear();
         SplineContainer.Spline.Clear(); // je clear la spline
@@ -39,7 +39,6 @@ public class SplineManager : MonoBehaviour
         
         for (float i = 0; i <= TerrainSize; i += space)
         {
-            Debug.Log(i);
             
             Vector3 posA = new Vector3(); // position du point A
             Vector3 posB = new Vector3(); // Position du point B
