@@ -81,11 +81,11 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
         BezierKnot firstKnot = spline[0];
         BezierKnot lastKnot = spline[spline.Count - 1];
 
-        castleA.transform.position = lastKnot.Position;
-        castleA.transform.position = new Vector3(lastKnot.Position.x - 1, 0, lastKnot.Position.z);
+        castleA.transform.position = firstKnot.Position;
+        castleA.transform.position = new Vector3(firstKnot.Position.x, 0, firstKnot.Position.z - 1);
         
         castleB.transform.position = lastKnot.Position;
-        castleB.transform.position = new Vector3(lastKnot.Position.x + 1, 0, lastKnot.Position.z);
+        castleB.transform.position = new Vector3(lastKnot.Position.x, 0, lastKnot.Position.z + 1);
     }
 
     public void ResetVisual()
