@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Splines;
 
 // Assurez-vous d'avoir une classe Cell définie ailleurs si ce n'est pas déjà fait
 // public class Cell {} 
@@ -14,8 +16,10 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
     [SerializeField] private GameObject _ground;
 
     [SerializeField] private Cell[,] _cellsMatrix;
+    [SerializeField] private GameObject _castlePrefab;
+    
     [SerializeField] private List<GameObject> _cellGameObjects = new List<GameObject>();
-
+    
     private void Start()
     {
         Cell cell = new Cell();
@@ -61,6 +65,27 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
                 }
             }
         }
+        
+        PlaceCastle();
+    }
+
+    public void PlaceCastle()
+    {
+        GameObject castleA = Instantiate(_castlePrefab, transform.position, quaternion.identity, transform);
+        GameObject castleB = Instantiate(_castlePrefab, transform.position, quaternion.identity, transform);
+        _cellGameObjects.Add(castleA);
+        _cellGameObjects.Add(castleB);
+        
+        Spline spline = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>().Splines[0];
+
+        BezierKnot firstKnot = spline[0];
+        BezierKnot lastKnot = spline[spline.Count - 1];
+
+        castleA.transform.position = lastKnot.Position;
+        castleA.transform.position = new Vector3(lastKnot.Position.x - 1, 0, lastKnot.Position.z);
+        
+        castleB.transform.position = lastKnot.Position;
+        castleB.transform.position = new Vector3(lastKnot.Position.x + 1, 0, lastKnot.Position.z);
     }
 
     public void ResetVisual()
