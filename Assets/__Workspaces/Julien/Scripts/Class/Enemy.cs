@@ -69,4 +69,9 @@ public class Enemy : MonoBehaviour, IDamagable
             Destroy(gameObject);
         }
     }
+
+    public void UpdateHealthBar()
+    {
+        
+    }
 }
