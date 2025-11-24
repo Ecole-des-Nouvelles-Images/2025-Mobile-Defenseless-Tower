@@ -8,8 +8,11 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     public int StartMoney;
     public int Money;
 
-    public List<EnemyClass> EnemyClass;
-
+    public SpellClass EquipedSpell;
+    
+    public List<EnemyClass> EnemyClass = new List<EnemyClass>();
+    public List<SpellClass> SpellClasses = new List<SpellClass>();
+    
     [SerializeField] private GameObject PanelInventoryEnemy;
     [SerializeField] private GameObject prefabButton;
 

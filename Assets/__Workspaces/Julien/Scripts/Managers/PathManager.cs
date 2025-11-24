@@ -1,11 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
-
-// Assurez-vous d'avoir une classe Cell définie ailleurs si ce n'est pas déjà fait
-// public class Cell {} 
 
 public class PathManager : MonoBehaviourSingleton<PathManager>
 {

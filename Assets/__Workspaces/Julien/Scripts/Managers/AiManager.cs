@@ -11,14 +11,14 @@ public class AiManager : MonoBehaviour
 
     public List<GameObject> Towers;
 
-    private void OnEnable()
+    private void Awake()
     {
-        EventBus.OnTerrainGenerate += PlaceTowers;
+        //EventBus.OnTerrainGenerate += PlaceTowers;
     }
 
     private void OnDisable()
     {
-        EventBus.OnTerrainGenerate -= PlaceTowers;
+        //EventBus.OnTerrainGenerate -= PlaceTowers;
     }
 
     private void Start()
@@ -30,7 +30,7 @@ public class AiManager : MonoBehaviour
     public void PlaceTowers()
     {
         int safety = 0;          // compteur de sécurité
-        int maxSafety = 500;     // valeur max avant arrêt forcé
+        int maxSafety = 2000;     // valeur max avant arrêt forcé
 
         while (Money > 0)
         {
@@ -68,6 +68,10 @@ public class AiManager : MonoBehaviour
                 cell.IsTower = true;
             }
         }
+        else
+        {
+            ChoiceRandomPos();
+        }
     }
     
     public GameObject ChoiceRandDefense()
@@ -96,6 +100,8 @@ public class AiManager : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
+            Vector3 pos = transform.GetChild(i).transform.position;
+            PathManager.Instance.CellsMatrix[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z)].IsTower = false;
             Destroy(transform.GetChild(i).gameObject);
         }
     }
