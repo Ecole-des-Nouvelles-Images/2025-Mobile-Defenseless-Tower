@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Splines;
 
 // Assurez-vous d'avoir une classe Cell définie ailleurs si ce n'est pas déjà fait
 // public class Cell {} 
@@ -14,8 +16,10 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
     [SerializeField] private GameObject _ground;
 
     [SerializeField] private Cell[,] _cellsMatrix;
+    [SerializeField] private GameObject _castlePrefab;
+    
     [SerializeField] private List<GameObject> _cellGameObjects = new List<GameObject>();
-
+    
     private void Start()
     {
         Cell cell = new Cell();
@@ -23,15 +27,14 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
 
     public void SetDataPath(List<Vector3Int> vector3Ints)
     {
-        Debug.Log("SetDataPath");
         _cellsMatrix =  new Cell[Width, Height];
         int height = _cellsMatrix.GetLength(0); 
         int width = _cellsMatrix.GetLength(1);
 
         foreach (Vector3Int vector3Int in vector3Ints)
         {
-            int x = vector3Int.x;
-            int z = vector3Int.z;
+            int x = Mathf.Clamp(vector3Int.x, 0, Width - 1);
+            int z = Mathf.Clamp(vector3Int.z, 0, Height - 1);
             _cellsMatrix[x, z] = new Cell();
         }
         
@@ -61,6 +64,29 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
                 }
             }
         }
+        
+        PlaceCastle();
+    }
+
+    public void PlaceCastle()
+    {
+        GameObject castleA = Instantiate(_castlePrefab, transform.position, quaternion.identity, transform);
+        GameObject castleB = Instantiate(_castlePrefab, transform.position, quaternion.identity, transform);
+        _cellGameObjects.Add(castleA);
+        _cellGameObjects.Add(castleB);
+
+        castleB.AddComponent<Castle>();
+        
+        Spline spline = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>().Splines[0];
+
+        BezierKnot firstKnot = spline[0];
+        BezierKnot lastKnot = spline[spline.Count - 1];
+        
+        castleA.transform.position = firstKnot.Position;
+        castleA.transform.position = new Vector3(firstKnot.Position.x, 0, firstKnot.Position.z - 1);
+        
+        castleB.transform.position = lastKnot.Position;
+        castleB.transform.position = new Vector3(lastKnot.Position.x, 0, lastKnot.Position.z + 1);
     }
 
     public void ResetVisual()

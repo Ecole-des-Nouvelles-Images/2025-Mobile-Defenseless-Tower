@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "Scriptable Objects/Enemy")]
-public class EnemyData : ScriptableObject
+public class EnemyBaseData : ScriptableObject
 {
     public string Name;
     public Sprite Sprite;
@@ -20,5 +20,5 @@ public class EnemyData : ScriptableObject
 
     [Header("Visual")] 
     
-    public GameObject VisualPrefab;
+    public GameObject Prefab;
 }

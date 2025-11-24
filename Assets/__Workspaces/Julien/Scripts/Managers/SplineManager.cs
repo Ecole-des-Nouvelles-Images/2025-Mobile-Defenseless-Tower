@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Profiling;
 using UnityEngine.Splines;
 using Random = UnityEngine.Random;
 
@@ -18,6 +16,7 @@ public class SplineManager : MonoBehaviour
 
     public Vector2Int RandomPos;
     public Vector2Int MaxWidth;
+    public Vector2Int MaxHeight;
 
     private List<Vector3Int> _vector3Ints = new List<Vector3Int>();
     
@@ -27,10 +26,11 @@ public class SplineManager : MonoBehaviour
     private void OnEnable()
     {
         SplineContainer = GetComponent<SplineContainer>();
+        EventBus.OnGameStart += GenerateSpline; 
     }
 
     [ContextMenu("GenerateSpline")]
-    private void GenerateSpline()
+    public void GenerateSpline()
     {
         _vector3Ints.Clear();
         SplineContainer.Spline.Clear(); // je clear la spline
@@ -39,12 +39,13 @@ public class SplineManager : MonoBehaviour
         
         for (float i = 0; i <= TerrainSize; i += space)
         {
+            
             Vector3 posA = new Vector3(); // position du point A
             Vector3 posB = new Vector3(); // Position du point B
             
             if (i == 0) // Si le knot est le premier, alors on joue l'interieur du code
             {
-                posA = new Vector3(StartPosX, 0, i); // La position X du point A serra = à un random, et il n'y aurra pas de point B vu que c'est le premier
+                posA = new Vector3(StartPosX, 0, MaxHeight.x); // La position X du point A serra = à un random, et il n'y aurra pas de point B vu que c'est le premier
             }
             else // sinon
             {
@@ -57,11 +58,9 @@ public class SplineManager : MonoBehaviour
                 if (posB.x > MaxWidth.y) posB.x = MaxWidth.y;
                 if (posA.x < MaxWidth.x) posA.x = MaxWidth.x;
                 if (posA.x > MaxWidth.y) posA.x = MaxWidth.y;
-                
-                if (i == TerrainSize - 1 || i == TerrainSize)
-                {
-                    posB.x = EndPosX;
-                }
+
+                if (posB.z > MaxHeight.y) posB.z = MaxHeight.y;
+                if (posA.z > MaxHeight.y) posA.z = MaxHeight.y;
             }
 
             
@@ -83,9 +82,29 @@ public class SplineManager : MonoBehaviour
                 _lastKnotPosition = posB; // lastKnotPosition serra égal au dernier porsé
             }
         }
+        PlacePenultimateKnot();
+        PlaceLastKnot();
         ParcourSpline();
     }
 
+    private void PlacePenultimateKnot()
+    {
+        Spline spline = SplineContainer.Splines[0];
+        BezierKnot knot = spline[spline.Count - 1];
+        knot.Position.x = EndPosX;
+        spline.SetKnot(spline.Count - 1, knot);
+    }
+
+    private void PlaceLastKnot()
+    {
+        Spline spline = SplineContainer.Splines[0];
+        BezierKnot knot = spline[spline.Count - 1];
+        
+        BezierKnot copyKnot = knot;
+        copyKnot.Position.z = knot.Position.z + 1;
+        spline.Add(copyKnot);
+    }
+    
     private void ParcourSpline()
     {
         // Parcours spline
@@ -103,10 +122,10 @@ public class SplineManager : MonoBehaviour
             }
         }
         
-        foreach (Vector3Int v in _vector3Ints)
-        {
-            Debug.Log(v);
-        }
+        // foreach (Vector3Int v in _vector3Ints)
+        // {
+        //     Debug.Log(v);
+        // }
         
         PathManager.Instance.SetDataPath(_vector3Ints);
     }

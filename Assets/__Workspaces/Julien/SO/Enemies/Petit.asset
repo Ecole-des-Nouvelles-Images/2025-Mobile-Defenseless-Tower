@@ -15,10 +15,10 @@ MonoBehaviour:
   Name: Petit
   Sprite: {fileID: 0}
   price: 10
-  Speed: 1
+  Speed: 5
   Health: 10
   NumberToSpawn: 5
   OffsetX: {x: -0.5, y: 0.5}
   OffsetZ: {x: -0.5, y: 0.5}
-  OffsetUp: 0.1
-  VisualPrefab: {fileID: 0}
+  OffsetUp: 0
+  Prefab: {fileID: 6006436640752362767, guid: aef00fca65789f843a5756129a3798eb, type: 3}

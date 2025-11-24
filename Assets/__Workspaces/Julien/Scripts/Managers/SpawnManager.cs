@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviourSingleton<SpawnManager>
 {
-    public GameObject prefabEnemy;
     [SerializeField] private InventoryHandler _inventory;
     public EnemyClass EnemyClass;
     // private void Start()
@@ -17,15 +16,20 @@ public class SpawnManager : MonoBehaviourSingleton<SpawnManager>
     [ContextMenu("Spawn")]
     public void Spawn(EnemyClass enemyclass)
     {
+        int testMoney = InventoryHandler.Instance.Money - enemyclass.baseData.price;
+        if (testMoney < 0) return;
+        
         Debug.Log("Spawn");
-        var enemyStruct = _inventory.EnemyStructs.FirstOrDefault(struc => struc.Data == enemyclass.Data);
-        Debug.Log(enemyStruct.Data);
+        var enemyStruct = _inventory.EnemyClass.FirstOrDefault(struc => struc.baseData == enemyclass.baseData);
+        Debug.Log(enemyStruct.baseData);
 
         for (int i = 0; i < enemyStruct.NumberSpawn; i++)
         {
-            GameObject instantite = Instantiate(prefabEnemy);
-            Debug.Log(i);
+            GameObject instantite = Instantiate(enemyclass.baseData.Prefab);
         }
+
+        InventoryHandler.Instance.Money -= enemyclass.baseData.price;
+        EventBus.OnplayerPlaceTroup?.Invoke();
     }
     
 

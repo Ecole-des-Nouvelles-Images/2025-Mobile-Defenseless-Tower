@@ -1,16 +1,27 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private SplineManager _splineManager;
+    private void OnEnable()
     {
-        
+        EventBus.OnLevelFinished += LoadNewLevel;
+    }
+    
+    private void OnDisable()
+    {
+        EventBus.OnLevelFinished -= LoadNewLevel;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        EventBus.OnGameStart?.Invoke();
+    }
+
+    public void LoadNewLevel()
+    {
+        _splineManager.GenerateSpline();
+        EventBus.OnNextLevel?.Invoke();
     }
 }

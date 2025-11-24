@@ -2,33 +2,58 @@ using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 {
+    public int StartMoney;
     public int Money;
-    
-    public List<EnemyClass> EnemyStructs;
-    public EnemyData dataTest;
+
+    public List<EnemyClass> EnemyClass;
+    public EnemyClass dataTest;
 
     [SerializeField] private GameObject PanelInventoryEnemy;
     [SerializeField] private GameObject prefabButton;
+
+    private void OnEnable()
+    {
+        EventBus.OnNextLevel += UpdateInventoryData;
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.OnNextLevel -= UpdateInventoryData;
+    }
+
     private void Start()
+    {
+        List<EnemyClass> copy = new List<EnemyClass>(EnemyClass);
+        foreach (EnemyClass c in copy)
+        {
+            c.SetUpData();
+            AddEnnemyToInventory(c);
+        }
+    }
+
+    public void AddEnnemyToInventory(EnemyClass classData)
+    {
+        EnemyClass newClass = classData.Clone();
+        newClass.SetUpData();
+        EnemyClass.Add(newClass);
+
+        GameObject instanciate = Instantiate(prefabButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
+        instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = newClass;
+    }
+
+    [ContextMenu("Add")]
+    // Pour plus tard quand le joueur choisira un sort ou une troupe
+    public void AddClass()
     {
         AddEnnemyToInventory(dataTest);
     }
-
-    public void AddEnnemyToInventory(EnemyData data)
+    public void UpdateInventoryData()
     {
-        EnemyClass newClass = new EnemyClass();
-        newClass.Data = data;
-        newClass.SetUpData();
-        EnemyStructs.Add(newClass);
-        Instantiate(prefabButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
-    }
-    
-    public void UpdateInventory()
-    {
-        
+        Debug.Log("SetInventory money");
+        Money = StartMoney;
+        EventBus.OnInventoryAreUpdated?.Invoke();
     }
 }
