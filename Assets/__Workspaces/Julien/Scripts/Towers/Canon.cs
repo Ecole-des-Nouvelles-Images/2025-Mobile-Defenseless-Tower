@@ -2,7 +2,7 @@ using System;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class Canon : TourBase
+public class Canon : TowerBase
 {
     [Header("Only for canon")] 
     public GameObject PivotRotation;

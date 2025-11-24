@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc9097cf2fd57845946208b53030976, type: 3}
   m_Name: Defense
   m_EditorClassIdentifier: Assembly-CSharp::DefenseBaseData
+  Price: 1
   CoolDown: 1
   Damage: 7
   Range: 3

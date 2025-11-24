@@ -12,30 +12,31 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
     public int Height;
     public int Width; 
     
+    public Cell[,] CellsMatrix;
+    
     [SerializeField] private GameObject _wayGround;
     [SerializeField] private GameObject _ground;
-
-    [SerializeField] private Cell[,] _cellsMatrix;
+    
     [SerializeField] private GameObject _castlePrefab;
     
     [SerializeField] private List<GameObject> _cellGameObjects = new List<GameObject>();
-    
-    private void Start()
-    {
-        Cell cell = new Cell();
-    }
 
     public void SetDataPath(List<Vector3Int> vector3Ints)
     {
-        _cellsMatrix =  new Cell[Width, Height];
-        int height = _cellsMatrix.GetLength(0); 
-        int width = _cellsMatrix.GetLength(1);
-
+        CellsMatrix =  new Cell[Width, Height];
+        for (int i = 0; i < Width; i++)
+        {
+            for (int j = 0; j < Height; j++)
+            {
+                CellsMatrix[i, j] = new Cell();
+            }
+        }
+        
         foreach (Vector3Int vector3Int in vector3Ints)
         {
             int x = Mathf.Clamp(vector3Int.x, 0, Width - 1);
             int z = Mathf.Clamp(vector3Int.z, 0, Height - 1);
-            _cellsMatrix[x, z] = new Cell();
+            CellsMatrix[x, z].IsAPath = true;
         }
         
         SetVisual();
@@ -45,14 +46,14 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
     {
         ResetVisual();
         Debug.Log("SetVisual");
-        int height = _cellsMatrix.GetLength(0); 
-        int width = _cellsMatrix.GetLength(1); 
+        int height = CellsMatrix.GetLength(0); 
+        int width = CellsMatrix.GetLength(1); 
 
         for (int x = 0; x < height; x++)
         {
             for (int j = 0; j < width; j++)
             {
-                if (_cellsMatrix[x, j] == null)
+                if (!CellsMatrix[x, j].IsAPath)
                 {
                     GameObject instance = Instantiate(_ground, new Vector3(x, 0, j), Quaternion.identity,transform);
                     _cellGameObjects.Add(instance);
@@ -87,6 +88,9 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
         
         castleB.transform.position = lastKnot.Position;
         castleB.transform.position = new Vector3(lastKnot.Position.x, 0, lastKnot.Position.z + 1);
+        
+        EventBus.OnTerrainGenerate?.Invoke();
+        Debug.Log("Terrain generate complete REGLER LE PROBLEME DU INVOKE QUI NE SE FAIT PAS");
     }
 
     public void ResetVisual()

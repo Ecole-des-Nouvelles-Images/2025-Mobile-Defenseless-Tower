@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public abstract class TourBase : MonoBehaviour
+public abstract class TowerBase : MonoBehaviour
 {
     public DefenseBaseData BaseData;
 

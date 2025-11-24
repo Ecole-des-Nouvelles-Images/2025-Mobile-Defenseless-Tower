@@ -20718,7 +20718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278f021f7e6a8674880cc8206ca50b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
-  MaxMoney: 20
+  MaxMoney: 50
   Money: 0
   Towers:
   - {fileID: 2486535061774727468, guid: 3839c01607def5047aa7e5b44800d65c, type: 3}
