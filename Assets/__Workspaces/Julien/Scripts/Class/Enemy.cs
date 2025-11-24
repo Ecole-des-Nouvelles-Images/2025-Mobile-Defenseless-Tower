@@ -13,8 +13,8 @@ public class Enemy : MonoBehaviour, IDamagable
     private float _maxHealth;
     private float _health;
 
-    public int _numberToSpawn;
-
+    private float _speedBonus;
+    private float _maxHealthBonus;
     [SerializeField] private SplineAnimate _splineAnimate;
     
     private void Start()
@@ -27,12 +27,18 @@ public class Enemy : MonoBehaviour, IDamagable
         RandOffset();
     }
 
+    public void SetBonus(EnemyClass enemyClass)
+    {
+        _speedBonus = enemyClass.BonusSpeed;
+        _maxHealthBonus = enemyClass.BonusHealth;
+    }
+    
     public void SetUp()
     {
         _speed = enemyBaseData.Speed;
         _maxHealth = enemyBaseData.Health;
+        Debug.Log(_speed + " / " + _maxHealth);
         _health = _maxHealth;
-        _numberToSpawn = enemyBaseData.NumberToSpawn;
         
         _splineAnimate.AnimationMethod = SplineAnimate.Method.Speed;
         _splineAnimate.MaxSpeed = _speed;

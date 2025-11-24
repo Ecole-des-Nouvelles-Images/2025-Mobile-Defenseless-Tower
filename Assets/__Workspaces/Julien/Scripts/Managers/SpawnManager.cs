@@ -21,11 +21,11 @@ public class SpawnManager : MonoBehaviourSingleton<SpawnManager>
         
         Debug.Log("Spawn");
         var enemyStruct = _inventory.EnemyClass.FirstOrDefault(struc => struc.baseData == enemyclass.baseData);
-        Debug.Log(enemyStruct.baseData);
-
+        
         for (int i = 0; i < enemyStruct.NumberSpawn; i++)
         {
             GameObject instantite = Instantiate(enemyclass.baseData.Prefab);
+            instantite.GetComponent<Enemy>().SetBonus(enemyclass);
         }
 
         InventoryHandler.Instance.Money -= enemyclass.baseData.price;

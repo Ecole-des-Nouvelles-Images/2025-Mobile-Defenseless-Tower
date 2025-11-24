@@ -12,23 +12,15 @@ public class EnemyClass
     public int price;
     public int NumberSpawn;
 
+    [Header("StatBonus")] 
+    public float BonusSpeed;
+    public float BonusHealth;
+
     public void SetUpData()
     {
         Name = baseData.Name;
         Sprite = baseData.Sprite;
         price = baseData.price;
         NumberSpawn = baseData.NumberToSpawn;
-    }
-
-    public EnemyClass Clone()
-    {
-        return new EnemyClass
-        {
-            baseData = this.baseData,
-            Name = this.Name,
-            Sprite = this.Sprite,
-            price = this.price,
-            NumberSpawn = this.NumberSpawn
-        };
     }
 }

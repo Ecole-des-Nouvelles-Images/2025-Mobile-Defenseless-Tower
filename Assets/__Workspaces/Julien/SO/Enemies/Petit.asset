@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Petit
   Sprite: {fileID: 0}
   price: 10
-  Speed: 5
+  Speed: 1
   Health: 10
   NumberToSpawn: 5
   OffsetX: {x: -0.5, y: 0.5}

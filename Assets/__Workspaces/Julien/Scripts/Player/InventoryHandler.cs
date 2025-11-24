@@ -9,10 +9,11 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     public int Money;
 
     public List<EnemyClass> EnemyClass;
-    public EnemyClass dataTest;
 
     [SerializeField] private GameObject PanelInventoryEnemy;
     [SerializeField] private GameObject prefabButton;
+
+    public Upgrade UpgradeTest;
 
     private void OnEnable()
     {
@@ -26,34 +27,52 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 
     private void Start()
     {
-        List<EnemyClass> copy = new List<EnemyClass>(EnemyClass);
-        foreach (EnemyClass c in copy)
+        foreach (EnemyClass c in EnemyClass)
         {
             c.SetUpData();
-            AddEnnemyToInventory(c);
+        }
+        
+        foreach (EnemyClass c in EnemyClass)
+        {
+            SetVisualEnemy(c);
         }
     }
 
-    public void AddEnnemyToInventory(EnemyClass classData)
+    
+    // Enemy
+    public void AddEnemy(EnemyClass classToAdd)
     {
-        EnemyClass newClass = classData.Clone();
-        newClass.SetUpData();
-        EnemyClass.Add(newClass);
-
+        EnemyClass.Add(classToAdd);
+        SetVisualEnemy(classToAdd);
+    }
+    public void SetVisualEnemy(EnemyClass classToAdd)
+    {
         GameObject instanciate = Instantiate(prefabButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
-        instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = newClass;
+        instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = classToAdd;
     }
-
-    [ContextMenu("Add")]
-    // Pour plus tard quand le joueur choisira un sort ou une troupe
-    public void AddClass()
+    
+    // Sort
+    public void AddSpell()
     {
-        AddEnnemyToInventory(dataTest);
+        
     }
+    public void SetVisualSpell()
+    {
+        
+    }
+    
+    
     public void UpdateInventoryData()
     {
         Debug.Log("SetInventory money");
         Money = StartMoney;
         EventBus.OnInventoryAreUpdated?.Invoke();
     }
+    [ContextMenu("Upgrade")]
+    public void Upgrade()
+    {
+        UpgradeTest.Apply(this);
+    }
+
+    
 }

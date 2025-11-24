@@ -15,6 +15,7 @@ public class BulletCanon : MonoBehaviour
     
     private void Update()
     {
+        if (Target == null) Destroy(gameObject);
         transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, Speed * Time.deltaTime);
     }
 
