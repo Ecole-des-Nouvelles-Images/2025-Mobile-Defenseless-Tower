@@ -9,12 +9,12 @@ public class Enemy : MonoBehaviour, IDamagable
     
     [FormerlySerializedAs("EnemyData")] public EnemyBaseData enemyBaseData;
 
+    public EnemyClass EnemyClass;
+    
     private float _speed;
     private float _maxHealth;
     private float _health;
 
-    private float _speedBonus;
-    private float _maxHealthBonus;
     [SerializeField] private SplineAnimate _splineAnimate;
     
     private void Start()
@@ -26,18 +26,11 @@ public class Enemy : MonoBehaviour, IDamagable
         SetUp();
         RandOffset();
     }
-
-    public void SetBonus(EnemyClass enemyClass)
-    {
-        _speedBonus = enemyClass.BonusSpeed;
-        _maxHealthBonus = enemyClass.BonusHealth;
-    }
     
     public void SetUp()
     {
-        _speed = enemyBaseData.Speed;
-        _maxHealth = enemyBaseData.Health;
-        Debug.Log(_speed + " / " + _maxHealth);
+        _speed = EnemyClass.Speed;
+        _maxHealth = EnemyClass.MaxHealth;
         _health = _maxHealth;
         
         _splineAnimate.AnimationMethod = SplineAnimate.Method.Speed;

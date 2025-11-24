@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57297217eae0c5d4193e27a1342d3502, type: 3}
-  m_Name: AddSpawnNumber
-  m_EditorClassIdentifier: Assembly-CSharp::UpgradeEnemy
+  m_Script: {fileID: 11500000, guid: 213ba5ba909c5f54ab47f40159101d81, type: 3}
+  m_Name: UpgradeHealthPetit
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeEnemyMaxHealth
   TargetData: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
-  NumberToSpawnToAdd: 5
+  HealthToAdd: 10

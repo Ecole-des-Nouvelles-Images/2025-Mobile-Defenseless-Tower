@@ -1,8 +1,8 @@
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Enemy", menuName = "Scriptable Objects/Upgrade/Enemy")]
-public class UpgradeEnemy : Upgrade
+[CreateAssetMenu(fileName = "UpgradeSpawn", menuName = "Scriptable Objects/Upgrade/Enemy/NumberSpawn")]
+public class UpgradeEnemySpawnNumber : Upgrade
 {
     public EnemyBaseData TargetData;
     public int NumberToSpawnToAdd;
