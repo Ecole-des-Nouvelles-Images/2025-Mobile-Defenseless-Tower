@@ -10,7 +10,7 @@ public class Canon : TourBase
     
     public override void LookFirstEnemy()
     {
-        if (targetsInRange[0] != null)
+        if (targetsInRange != null && targetsInRange.Count > 0)
         {
             PivotRotation.transform.LookAt(targetsInRange[0].transform);
         }

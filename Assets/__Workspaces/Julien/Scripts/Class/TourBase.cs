@@ -13,7 +13,6 @@ public abstract class TourBase : MonoBehaviour
     public float Range;
     
     public List<GameObject> targetsInRange = new List<GameObject>();
-    public GameObject CurrentTarget;
 
     private void Start()
     {
@@ -33,7 +32,7 @@ public abstract class TourBase : MonoBehaviour
         targetsInRange.RemoveAll( x => !x);
         CoolDown += Time.deltaTime;
         LookFirstEnemy();
-        if (CoolDown >= MaxCoolDown)
+        if (CoolDown >= MaxCoolDown && targetsInRange.Count > 0)
         {
             CoolDown = 0;
             Fire();
@@ -45,7 +44,6 @@ public abstract class TourBase : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             targetsInRange.Add(other.gameObject);
-            CurrentTarget = targetsInRange[0];
         }
     }
 
@@ -54,7 +52,6 @@ public abstract class TourBase : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             targetsInRange.Remove(other.gameObject);
-            CurrentTarget = targetsInRange[0];
         }
     }
 
