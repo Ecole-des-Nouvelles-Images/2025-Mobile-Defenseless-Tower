@@ -14,18 +14,22 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     public List<SpellClass> SpellClasses = new List<SpellClass>();
     
     [SerializeField] private GameObject PanelInventoryEnemy;
-    [SerializeField] private GameObject prefabButton;
+    [SerializeField] private GameObject PanelInventorySpell;
+    [SerializeField] private GameObject prefabEnemyButton;
+    [SerializeField] private GameObject prefabSpellButton;
 
     public Upgrade UpgradeTest;
 
     private void OnEnable()
     {
         EventBus.OnNextLevel += UpdateInventoryData;
+        EventBus.OnPlayerClicked += DropSpell;
     }
 
     private void OnDestroy()
     {
         EventBus.OnNextLevel -= UpdateInventoryData;
+        EventBus.OnPlayerClicked -= DropSpell;
     }
 
     private void Start()
@@ -39,6 +43,16 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
         {
             SetVisualEnemy(c);
         }
+        
+        foreach (SpellClass c in SpellClasses)
+        {
+            c.SetData();
+        }
+        
+        foreach (SpellClass c in SpellClasses)
+        {
+            SetVisuelSpell(c);
+        }
     }
 
     
@@ -48,20 +62,33 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
         EnemyClass.Add(classToAdd);
         SetVisualEnemy(classToAdd);
     }
-    public void SetVisualEnemy(EnemyClass classToAdd)
+    public void SetVisualEnemy(EnemyClass enemyClass)
     {
-        GameObject instanciate = Instantiate(prefabButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
-        instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = classToAdd;
+        GameObject instanciate = Instantiate(prefabEnemyButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
+        instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = enemyClass;
     }
     
     // Sort
-    public void AddSpell()
+    public void EquipeSpell(SpellClass spellClass)
     {
-        
+        EquipedSpell = spellClass;
     }
-    public void SetVisualSpell()
+    public void DropSpell()
     {
-        
+        if (EquipedSpell.SpellData == true)
+        {
+            Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
+        }
+    }
+    public void UnEquipSpell()
+    {
+        EquipedSpell = null;
+        Debug.Log("Unequipped spell");
+    }
+    public void SetVisuelSpell(SpellClass spellClass)
+    {
+        GameObject instanciate = Instantiate(prefabSpellButton, transform.position, quaternion.identity, PanelInventorySpell.transform);
+        instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
     }
     
     

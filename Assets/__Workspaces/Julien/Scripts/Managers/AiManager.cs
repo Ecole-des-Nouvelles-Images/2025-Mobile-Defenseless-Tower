@@ -4,8 +4,10 @@ using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class AiManager : MonoBehaviour
+public class AiManager : MonoBehaviourSingleton<AiManager>
 {
+    public int MoneyToAddParLevel;
+    
     public int MaxMoney;
     public int Money;
 
@@ -13,22 +15,22 @@ public class AiManager : MonoBehaviour
 
     private void Awake()
     {
-        //EventBus.OnTerrainGenerate += PlaceTowers;
+        Debug.Log("Place tower awake");
+        Money = MaxMoney;
+        EventBus.OnTerrainGenerate += PlaceTowers;
+        EventBus.OnLevelFinished += OnNextLevel;
     }
-
+    
     private void OnDisable()
     {
-        //EventBus.OnTerrainGenerate -= PlaceTowers;
-    }
-
-    private void Start()
-    {
-        Money = MaxMoney;
+        EventBus.OnTerrainGenerate -= PlaceTowers;
+        EventBus.OnLevelFinished -= OnNextLevel;
     }
     
     [ContextMenu("PlaceTowers")]
     public void PlaceTowers()
     {
+        Debug.Log("Place tower");
         int safety = 0;          // compteur de sécurité
         int maxSafety = 2000;     // valeur max avant arrêt forcé
 
@@ -104,5 +106,14 @@ public class AiManager : MonoBehaviour
             PathManager.Instance.CellsMatrix[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z)].IsTower = false;
             Destroy(transform.GetChild(i).gameObject);
         }
+    }
+
+    public void OnNextLevel()
+    {
+        MaxMoney += MoneyToAddParLevel;
+        Money = MaxMoney;
+        
+        RemoveAllTowers();
+        PlaceTowers();
     }
 }

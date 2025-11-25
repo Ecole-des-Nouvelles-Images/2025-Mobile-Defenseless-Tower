@@ -11,6 +11,11 @@ public class EnemyButtonSpawn : MonoBehaviour
     private void Start()
     {
         _image = GetComponent<Image>();
+        SetUp();
+    }
+
+    public void SetUp()
+    {
         _priceText.text = EnemyClass.price.ToString();
         _image.sprite = EnemyClass.baseData.Sprite;
     }

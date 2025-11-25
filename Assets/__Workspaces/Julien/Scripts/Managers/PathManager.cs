@@ -86,7 +86,6 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
         castleB.transform.position = new Vector3(lastKnot.Position.x, 0, lastKnot.Position.z + 1);
         
         EventBus.OnTerrainGenerate?.Invoke();
-        Debug.Log("Terrain generate complete REGLER LE PROBLEME DU INVOKE QUI NE SE FAIT PAS");
     }
 
     public void ResetVisual()

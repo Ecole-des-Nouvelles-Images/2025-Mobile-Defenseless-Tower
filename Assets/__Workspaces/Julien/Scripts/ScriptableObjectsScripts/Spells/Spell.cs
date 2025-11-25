@@ -4,6 +4,7 @@ using UnityEngine;
 public class Spell : ScriptableObject
 {
     public Sprite Sprite;
+    public int Price;
     
     public GameObject Prefab;
 }

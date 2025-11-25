@@ -18,6 +18,7 @@ public static class EventBus
     public static Action OnplayerPlaceTroup;
     public static Action OnPlayerPlaceSpell;
     public static Action OnInventoryAreUpdated;
+    public static Action OnPlayerClicked;
     
     // IA
     public static Action OnTerrainGenerate;
