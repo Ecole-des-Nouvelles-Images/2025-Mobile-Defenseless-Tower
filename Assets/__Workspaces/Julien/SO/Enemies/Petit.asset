@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Petit
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   Name: Petit
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   price: 10
-  Speed: 5
+  Speed: 1
   Health: 10
   NumberToSpawn: 5
   OffsetX: {x: -0.5, y: 0.5}

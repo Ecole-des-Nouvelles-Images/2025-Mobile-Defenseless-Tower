@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fd8f989268b1541b37e58136430594, type: 3}
   m_Name: Grand
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  Name: Petit
-  Sprite: {fileID: 0}
+  Name: Grand
+  Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   price: 25
   Speed: 0.5
   Health: 50

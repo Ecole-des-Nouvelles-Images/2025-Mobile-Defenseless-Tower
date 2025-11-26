@@ -7,6 +7,7 @@ TagManager:
   - Spline
   - Enemy
   - Castle
+  - ColliderClick
   layers:
   - Default
   - TransparentFX

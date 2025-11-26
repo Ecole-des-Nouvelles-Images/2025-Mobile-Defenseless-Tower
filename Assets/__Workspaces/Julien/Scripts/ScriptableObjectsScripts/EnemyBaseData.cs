@@ -18,7 +18,7 @@ public class EnemyBaseData : ScriptableObject
     public Vector2 OffsetZ;
     public float OffsetUp;
 
-    [Header("Visual")] 
+    [Header("Prefab")] 
     
     public GameObject Prefab;
 }

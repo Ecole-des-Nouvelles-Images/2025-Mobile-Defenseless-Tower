@@ -16,19 +16,19 @@ public class SpawnManager : MonoBehaviourSingleton<SpawnManager>
     [ContextMenu("Spawn")]
     public void Spawn(EnemyClass enemyclass)
     {
-        int testMoney = InventoryHandler.Instance.Money - enemyclass.baseData.price;
+        float testMoney = InventoryHandler.Instance.Money - enemyclass.baseData.price;
         if (testMoney < 0) return;
         
         Debug.Log("Spawn");
-        var enemyStruct = _inventory.EnemyClass.FirstOrDefault(struc => struc.baseData == enemyclass.baseData);
-        Debug.Log(enemyStruct.baseData);
-
-        for (int i = 0; i < enemyStruct.NumberSpawn; i++)
+        var newClass = _inventory.EnemyClass.FirstOrDefault(struc => struc.baseData == enemyclass.baseData);
+        
+        for (int i = 0; i < newClass.NumberSpawn; i++)
         {
-            GameObject instantite = Instantiate(enemyclass.baseData.Prefab);
+            GameObject instantite = Instantiate(newClass.baseData.Prefab);
+            instantite.GetComponent<Enemy>().EnemyClass = newClass;
         }
 
-        InventoryHandler.Instance.Money -= enemyclass.baseData.price;
+        InventoryHandler.Instance.Money -= newClass.price;
         EventBus.OnplayerPlaceTroup?.Invoke();
     }
     

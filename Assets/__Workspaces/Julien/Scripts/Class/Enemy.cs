@@ -1,21 +1,39 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Splines;
+using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour, IDamagable
 {
     private GameObject _parentEmpty;
     
-    [FormerlySerializedAs("EnemyData")] public EnemyBaseData enemyBaseData;
+    public EnemyBaseData enemyBaseData;
 
+    public EnemyClass EnemyClass;
+    
     private float _speed;
     private float _maxHealth;
     private float _health;
-
-    public int _numberToSpawn;
-
+  
+    [SerializeField] private Image _healthBar;
     [SerializeField] private SplineAnimate _splineAnimate;
+    
+    public float Health
+    {
+        get => _health;
+        set
+        {
+            _healthBar.fillAmount = value / _maxHealth;
+            _health = value;
+            
+            if (_health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
     
     private void Start()
     {
@@ -26,13 +44,12 @@ public class Enemy : MonoBehaviour, IDamagable
         SetUp();
         RandOffset();
     }
-
+    
     public void SetUp()
     {
-        _speed = enemyBaseData.Speed;
-        _maxHealth = enemyBaseData.Health;
+        _speed = EnemyClass.Speed;
+        _maxHealth = EnemyClass.MaxHealth;
         _health = _maxHealth;
-        _numberToSpawn = enemyBaseData.NumberToSpawn;
         
         _splineAnimate.AnimationMethod = SplineAnimate.Method.Speed;
         _splineAnimate.MaxSpeed = _speed;
@@ -63,15 +80,6 @@ public class Enemy : MonoBehaviour, IDamagable
 
     public void TakeDamage(float damaga)
     {
-        _health -= damaga;
-        if (_health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public void UpdateHealthBar()
-    {
-        
+        Health -= damaga;
     }
 }
