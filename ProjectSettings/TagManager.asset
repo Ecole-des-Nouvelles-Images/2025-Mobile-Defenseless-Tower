@@ -7,12 +7,11 @@ TagManager:
   - Spline
   - Enemy
   - Castle
-  - ColliderClick
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ColliderClick
   - Water
   - UI
   - 
@@ -44,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 330798189
     locked: 0
   m_RenderingLayers:
   - Default

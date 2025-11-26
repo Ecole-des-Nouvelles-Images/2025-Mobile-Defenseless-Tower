@@ -50,6 +50,11 @@ MonoBehaviour:
   SpellClass:
     SpellData: {fileID: 0}
     Price: 0
+    Time: 0
+    AreaSize: 0
+  MaxTimeBeforHealth: 0
+  TimeBeforHeal: 0
+  HealthParTick: 0
 --- !u!33 &357445262960144982
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -123,7 +128,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

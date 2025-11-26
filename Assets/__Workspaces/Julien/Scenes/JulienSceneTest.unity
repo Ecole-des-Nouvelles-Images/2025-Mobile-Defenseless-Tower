@@ -529,6 +529,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClickManager
   _camera: {fileID: 153224419}
   _playerInput: {fileID: 358535025}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 8
   LastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &358535025
 MonoBehaviour:
@@ -847,9 +850,9 @@ GameObject:
   - component: {fileID: 561730938}
   - component: {fileID: 561730937}
   - component: {fileID: 561730936}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ColliderClick
-  m_TagString: ColliderClick
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

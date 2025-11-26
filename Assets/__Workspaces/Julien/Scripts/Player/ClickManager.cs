@@ -6,6 +6,7 @@ public class ClickManager : MonoBehaviourSingleton<ClickManager>
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private LayerMask _layerMask;
     
     public Vector3 LastPosition;
     private InputAction tab;
@@ -32,23 +33,6 @@ public class ClickManager : MonoBehaviourSingleton<ClickManager>
         OnClicked(Input.mousePosition);
     }
     
-    private void OnClickedDemo(Vector2 clickPos)
-    {
-        Debug.Log("Click");
-        Ray ray = _camera.ScreenPointToRay(clickPos);
-        
-        RaycastHit hit;
-        Debug.DrawRay(ray.origin, ray.direction * 20f, Color.red, 5f);
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.collider.tag == "ColliderClick")
-            {
-                Debug.Log("Touche une ray");
-                LastPosition = hit.point;
-                EventBus.OnPlayerClicked?.Invoke();
-            }
-        }
-    }
     private void OnClicked(Vector2 clickPos)
     {
         Debug.Log("Click");
@@ -56,11 +40,12 @@ public class ClickManager : MonoBehaviourSingleton<ClickManager>
         
         RaycastHit hit;
         Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 5f);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit,Mathf.Infinity, _layerMask )) 
         {
             Debug.Log("Touche une ray");
             LastPosition = hit.point;
             EventBus.OnPlayerClicked?.Invoke();
+            
         }
     }
 }
