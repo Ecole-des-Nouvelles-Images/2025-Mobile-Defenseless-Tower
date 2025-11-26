@@ -576,7 +576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &413439521
 Transform:
   m_ObjectHideFlags: 0
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
   MoneyToAddParLevel: 2
-  MaxMoney: 150
+  MaxMoney: 10
   Money: 0
   Towers:
   - {fileID: 2486535061774727468, guid: 3839c01607def5047aa7e5b44800d65c, type: 3}
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 561730936}
   m_Layer: 0
   m_Name: ColliderClick
-  m_TagString: Untagged
+  m_TagString: ColliderClick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -24,12 +24,12 @@ public class ClickManager : MonoBehaviourSingleton<ClickManager>
 
     private void GetPCClick(InputAction.CallbackContext obj)
     {
-        OnClickedDemo(Mouse.current.position.ReadValue());
+        OnClicked(Mouse.current.position.ReadValue());
     }
 
     private void GetFirstTouch(InputAction.CallbackContext obj) 
     {
-        OnClickedDemo(Input.mousePosition);
+        OnClicked(Input.mousePosition);
     }
     
     private void OnClickedDemo(Vector2 clickPos)
@@ -41,12 +41,15 @@ public class ClickManager : MonoBehaviourSingleton<ClickManager>
         Debug.DrawRay(ray.origin, ray.direction * 20f, Color.red, 5f);
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("Touche une ray");
-            LastPosition = hit.point;
-            EventBus.OnPlayerClicked?.Invoke();
+            if (hit.collider.tag == "ColliderClick")
+            {
+                Debug.Log("Touche une ray");
+                LastPosition = hit.point;
+                EventBus.OnPlayerClicked?.Invoke();
+            }
         }
     }
-    private void OnClicked(InputAction.CallbackContext obj)
+    private void OnClicked(Vector2 clickPos)
     {
         Debug.Log("Click");
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
