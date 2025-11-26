@@ -38,7 +38,7 @@ public class ClickManager : MonoBehaviourSingleton<ClickManager>
         Ray ray = _camera.ScreenPointToRay(clickPos);
         
         RaycastHit hit;
-        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 5f);
+        Debug.DrawRay(ray.origin, ray.direction * 20f, Color.red, 5f);
         if (Physics.Raycast(ray, out hit))
         {
             Debug.Log("Touche une ray");

@@ -20,7 +20,6 @@ public class HudPlayerMoney : MonoBehaviour
 
     public void UpdateMoney()
     {
-        Debug.Log("UpdateMoney");
         _textMoney.text = InventoryHandler.Instance.Money.ToString();
     }
 }

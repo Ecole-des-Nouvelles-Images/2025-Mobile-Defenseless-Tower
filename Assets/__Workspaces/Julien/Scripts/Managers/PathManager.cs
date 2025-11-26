@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
+using UnityEngine.Tilemaps;
 
 public class PathManager : MonoBehaviourSingleton<PathManager>
 {
@@ -10,6 +11,8 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
     
     public Cell[,] CellsMatrix;
     
+    [SerializeField] private Tilemap _tilemap;
+    
     [SerializeField] private GameObject _wayGround;
     [SerializeField] private GameObject _ground;
     
@@ -17,6 +20,9 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
     
     [SerializeField] private List<GameObject> _cellGameObjects = new List<GameObject>();
 
+    [Header("Visuel tile")]
+    [SerializeField] private RuleTile _tileGrass;    
+    [SerializeField] private RuleTile _tileRoad; 
     public void SetDataPath(List<Vector3Int> vector3Ints)
     {
         CellsMatrix =  new Cell[Width, Height];
@@ -32,9 +38,9 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
         {
             int x = Mathf.Clamp(vector3Int.x, 0, Width - 1);
             int z = Mathf.Clamp(vector3Int.z, 0, Height - 1);
-            CellsMatrix[x, z].IsAPath = true;
+            CellsMatrix[vector3Int.x, vector3Int.z].IsAPath = true;
         }
-        
+        Debug.Log(CellsMatrix);
         SetVisual();
     }
 
@@ -50,13 +56,18 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
             {
                 if (!CellsMatrix[x, j].IsAPath)
                 {
-                    GameObject instance = Instantiate(_ground, new Vector3(x, 0, j), Quaternion.identity,transform);
-                    _cellGameObjects.Add(instance);
+                    //GameObject instance = Instantiate(_ground, new Vector3(x, 0, j), Quaternion.identity,transform);
+                    //_cellGameObjects.Add(instance);
+                    Vector3Int vector3Int = new Vector3Int(x, j, 0);
+                    _tilemap.SetTile(vector3Int, _tileGrass);
                 }
                 else
                 {
-                    GameObject instance = Instantiate(_wayGround, new Vector3(x, 0, j), Quaternion.identity, transform);
-                    _cellGameObjects.Add(instance);
+                    // GameObject instance = Instantiate(_wayGround, new Vector3(x, 0, j), Quaternion.identity, transform);
+                    // _cellGameObjects.Add(instance);
+                    Vector3Int vector3Int = new Vector3Int(x, j, 0);
+                    _tilemap.SetTile(vector3Int, _tileRoad);
+                    Debug.Log(vector3Int + " est une route ");
                 }
             }
         }

@@ -15,7 +15,6 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
         {
             _money = value;
             EventBus.OnPlayerUseMoney?.Invoke();
-            Debug.Log("Money change");
         }
     }
 
@@ -114,7 +113,6 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     
     public void UpdateInventoryData()
     {
-        Debug.Log("SetInventory money");
         Money = StartMoney;
         EventBus.OnInventoryAreUpdated?.Invoke();
     }
