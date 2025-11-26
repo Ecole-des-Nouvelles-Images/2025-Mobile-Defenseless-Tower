@@ -1,12 +1,10 @@
 using System;
 using UnityEngine;
 
-public class HealthSpell : MonoBehaviour
+public class HealthSpell : Spell
 {
-    public  SpellClass SpellClass;
-
-    private void Start()
+    public override void DoSpell()
     {
-        Destroy(gameObject, 2f);
+        throw new NotImplementedException();
     }
 }

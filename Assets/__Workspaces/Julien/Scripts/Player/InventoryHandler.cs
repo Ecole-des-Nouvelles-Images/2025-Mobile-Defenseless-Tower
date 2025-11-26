@@ -96,6 +96,7 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
             
             Money -= EquipedSpell.Price;
             GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
+            spell.GetComponent<Spell>().SpellClass = EquipedSpell;
             Debug.Log(spell.name);
         }
     }
