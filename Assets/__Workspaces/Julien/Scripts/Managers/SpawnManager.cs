@@ -16,7 +16,7 @@ public class SpawnManager : MonoBehaviourSingleton<SpawnManager>
     [ContextMenu("Spawn")]
     public void Spawn(EnemyClass enemyclass)
     {
-        int testMoney = InventoryHandler.Instance.Money - enemyclass.baseData.price;
+        float testMoney = InventoryHandler.Instance.Money - enemyclass.baseData.price;
         if (testMoney < 0) return;
         
         Debug.Log("Spawn");

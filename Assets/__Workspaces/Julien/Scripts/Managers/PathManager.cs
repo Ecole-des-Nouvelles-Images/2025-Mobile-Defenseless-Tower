@@ -41,7 +41,6 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
     public void SetVisual()
     {
         ResetVisual();
-        Debug.Log("SetVisual");
         int height = CellsMatrix.GetLength(0); 
         int width = CellsMatrix.GetLength(1); 
 

@@ -9,13 +9,13 @@ public class HudPlayerMoney : MonoBehaviour
     private void OnEnable()
     {
         _textMoney.text = InventoryHandler.Instance.Money.ToString();
+        EventBus.OnPlayerUseMoney += UpdateMoney;
         EventBus.OnInventoryAreUpdated += UpdateMoney;
-        EventBus.OnplayerPlaceTroup += UpdateMoney;
     }
     private void OnDisable()
     {
+        EventBus.OnPlayerUseMoney -= UpdateMoney;
         EventBus.OnInventoryAreUpdated -= UpdateMoney;
-        EventBus.OnplayerPlaceTroup -= UpdateMoney;
     }
 
     public void UpdateMoney()

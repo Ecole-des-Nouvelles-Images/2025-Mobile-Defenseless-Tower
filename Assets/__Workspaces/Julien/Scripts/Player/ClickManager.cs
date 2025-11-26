@@ -1,39 +1,62 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ClickManager : MonoBehaviourSingleton<ClickManager>
 {
     [SerializeField] private Camera _camera;
-    public GameObject ObjectToInstantiate;
-
-    public Vector3 LastPosition;
+    [SerializeField] private PlayerInput _playerInput;
     
-    private void Update()
+    public Vector3 LastPosition;
+    private InputAction tab;
+
+    private void OnEnable()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            OnClick();
-        }
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            OnClick();
-        }
+        _playerInput.actions["PcClick"].started += GetPCClick;
+        _playerInput.actions["FirstTouch"].started += GetFirstTouch;
+    }
+    
+    private void OnDisable()
+    {
+        _playerInput.actions["PcClick"].started -= GetPCClick;
+        _playerInput.actions["FirstTouch"].started -= GetFirstTouch;
     }
 
-    private void OnClick()
+    private void GetPCClick(InputAction.CallbackContext obj)
     {
-        
-        Debug.Log("Click");
-        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        OnClickedDemo(Mouse.current.position.ReadValue());
+    }
 
+    private void GetFirstTouch(InputAction.CallbackContext obj) 
+    {
+        OnClickedDemo(Input.mousePosition);
+    }
+    
+    private void OnClickedDemo(Vector2 clickPos)
+    {
+        Debug.Log("Click");
+        Ray ray = _camera.ScreenPointToRay(clickPos);
+        
         RaycastHit hit;
         Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 5f);
         if (Physics.Raycast(ray, out hit))
         {
             Debug.Log("Touche une ray");
             LastPosition = hit.point;
-            Debug.Log(hit.collider.name);
+            EventBus.OnPlayerClicked?.Invoke();
+        }
+    }
+    private void OnClicked(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Click");
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        
+        RaycastHit hit;
+        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 5f);
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log("Touche une ray");
+            LastPosition = hit.point;
             EventBus.OnPlayerClicked?.Invoke();
         }
     }

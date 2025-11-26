@@ -6,7 +6,18 @@ using UnityEngine;
 public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 {
     public int StartMoney;
-    public int Money;
+    [SerializeField] private float _money;
+
+    public float Money
+    {
+        get => _money;
+        set
+        {
+            _money = value;
+            EventBus.OnPlayerUseMoney?.Invoke();
+            Debug.Log("Money change");
+        }
+    }
 
     public SpellClass EquipedSpell;
     
@@ -34,6 +45,7 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
 
     private void Start()
     {
+        UpdateInventoryData();
         foreach (EnemyClass c in EnemyClass)
         {
             c.SetUpData();
@@ -68,6 +80,8 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
         instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = enemyClass;
     }
     
+    
+    
     // Sort
     public void EquipeSpell(SpellClass spellClass)
     {
@@ -77,7 +91,12 @@ public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     {
         if (EquipedSpell.SpellData == true)
         {
-            Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
+            float testPrice = Money - EquipedSpell.Price;
+            if (testPrice < 0) return;
+            
+            Money -= EquipedSpell.Price;
+            GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
+            Debug.Log(spell.name);
         }
     }
     public void UnEquipSpell()

@@ -1,0 +1,66 @@
+{
+    "version": 1,
+    "name": "Player",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "50182c03-e224-4acb-99cd-5ef83efc4bbb",
+            "actions": [
+                {
+                    "name": "PcClick",
+                    "type": "Button",
+                    "id": "1e17992a-ce66-4cd1-9d08-7659dc56af13",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FirstTouch",
+                    "type": "Value",
+                    "id": "b2176e37-a080-4846-9eca-1217a81d43a3",
+                    "expectedControlType": "Touch",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "63ad47d7-fbb7-4064-84ad-b5d5bb6edb94",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PcClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3b697c2-8f1a-42b8-8b10-7a079c5f669b",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstTouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f562f1d9-41c9-4e7d-a3f3-81c126612dbd",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstTouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
