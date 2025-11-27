@@ -40,7 +40,6 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
             int z = Mathf.Clamp(vector3Int.z, 0, Height - 1);
             CellsMatrix[vector3Int.x, vector3Int.z].IsAPath = true;
         }
-        Debug.Log(CellsMatrix);
         SetVisual();
     }
 
@@ -67,7 +66,6 @@ public class PathManager : MonoBehaviourSingleton<PathManager>
                     // _cellGameObjects.Add(instance);
                     Vector3Int vector3Int = new Vector3Int(x, j, 0);
                     _tilemap.SetTile(vector3Int, _tileRoad);
-                    Debug.Log(vector3Int + " est une route ");
                 }
             }
         }

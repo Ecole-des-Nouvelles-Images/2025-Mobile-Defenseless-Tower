@@ -18,13 +18,13 @@ public class AiManager : MonoBehaviourSingleton<AiManager>
         Debug.Log("Place tower awake");
         Money = MaxMoney;
         EventBus.OnTerrainGenerate += PlaceTowers;
-        EventBus.OnLevelFinished += OnNextLevel;
+        EventBus.OnNextLevel += OnNextLevel;
     }
     
     private void OnDisable()
     {
         EventBus.OnTerrainGenerate -= PlaceTowers;
-        EventBus.OnLevelFinished -= OnNextLevel;
+        EventBus.OnNextLevel -= OnNextLevel;
     }
     
     [ContextMenu("PlaceTowers")]

@@ -20,6 +20,7 @@ public static class EventBus
     public static Action OnInventoryAreUpdated;
     public static Action OnPlayerClicked;
     public static Action OnPlayerUseMoney;
+    public static Action OnPlayerTakedCard;
     
     // IA
     public static Action OnTerrainGenerate;
