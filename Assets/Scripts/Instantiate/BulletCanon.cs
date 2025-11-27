@@ -17,7 +17,10 @@ namespace Instantiate
     
         private void Update()
         {
-            if (Target == null) Destroy(gameObject);
+            if (Target == null)
+            {
+                Destroy(gameObject);
+            }
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, Speed * Time.deltaTime);
         }
 

@@ -1,4 +1,5 @@
 using Interface;
+using ScriptableObjectsScripts;
 using UnityEngine;
 using UnityEngine.Splines;
 using Image = UnityEngine.UI.Image;

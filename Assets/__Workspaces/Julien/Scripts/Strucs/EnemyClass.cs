@@ -1,4 +1,5 @@
 using System;
+using ScriptableObjectsScripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 

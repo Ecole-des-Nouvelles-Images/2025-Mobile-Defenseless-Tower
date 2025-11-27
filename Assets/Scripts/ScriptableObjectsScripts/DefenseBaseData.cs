@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Defense", menuName = "Scriptable Objects/Defense")]
-public abstract class DefenseBaseData : ScriptableObject
+public class DefenseBaseData : ScriptableObject
 {
     public int Price;
     
