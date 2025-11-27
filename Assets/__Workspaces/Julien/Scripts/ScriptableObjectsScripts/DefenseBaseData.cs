@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Defense", menuName = "Scriptable Objects/Defense")]
 public class DefenseBaseData : ScriptableObject
 {
+    public int Price;
+    
     public float CoolDown;
     public float Damage;
     public float Range;

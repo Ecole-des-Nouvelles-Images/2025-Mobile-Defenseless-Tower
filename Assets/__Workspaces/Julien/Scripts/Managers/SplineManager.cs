@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public class SplineManager : MonoBehaviour
@@ -17,7 +18,7 @@ public class SplineManager : MonoBehaviour
     public Vector2Int RandomPos;
     public Vector2Int MaxWidth;
     public Vector2Int MaxHeight;
-
+    
     private List<Vector3Int> _vector3Ints = new List<Vector3Int>();
     
     // position du dernier point posé, utiliser pour générer loe départ du prochain point
@@ -128,5 +129,6 @@ public class SplineManager : MonoBehaviour
         // }
         
         PathManager.Instance.SetDataPath(_vector3Ints);
+        Debug.Log(_vector3Ints);
     }
 }
