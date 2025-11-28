@@ -11,6 +11,7 @@ public abstract class Spell : MonoBehaviour
         Destroy(gameObject, SpellClass.Time);
         transform.localScale = new Vector3(SpellClass.AreaSize, SpellClass.AreaSize, SpellClass.AreaSize);
     }
-    
+
+    public abstract void SetUp();
     public abstract void DoSpell();
 }

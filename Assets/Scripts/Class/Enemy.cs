@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace Class
 {
-    public class Enemy : MonoBehaviour, IDamagable
+    public class Enemy : MonoBehaviour, IDamagable, IHealable
     {
         private GameObject _parentEmpty;
     
@@ -84,6 +84,12 @@ namespace Class
         public void TakeDamage(float damaga)
         {
             Health -= damaga;
+        }
+
+        public void GetHealth(float health)
+        {
+            _health = Mathf.Clamp(_health + health, 0, _maxHealth);
+            _healthBar.fillAmount = _health / _maxHealth;
         }
     }
 }
