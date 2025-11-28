@@ -400,10 +400,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cr\xE9dits"
+  m_text: "CR\xC9DITS"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: df412a6ac26f1744bacc03a049433312, type: 2}
-  m_sharedMaterial: {fileID: -4593682629031405804, guid: df412a6ac26f1744bacc03a049433312, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
+  m_sharedMaterial: {fileID: -3840995769953482548, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -540,8 +540,8 @@ MonoBehaviour:
     remerciments vari\xE9s\nMerci les potes\nMerci l'\xE9cole\nMerci l'\xE9quipe\nMerci
     \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: df412a6ac26f1744bacc03a049433312, type: 2}
-  m_sharedMaterial: {fileID: -4593682629031405804, guid: df412a6ac26f1744bacc03a049433312, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
+  m_sharedMaterial: {fileID: -3840995769953482548, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

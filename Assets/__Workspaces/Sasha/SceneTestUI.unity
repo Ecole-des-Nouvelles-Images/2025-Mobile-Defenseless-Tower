@@ -3521,19 +3521,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 585385042563471654, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 588831798133753252, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1869656970034917940, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2236677627266564501, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
+    - target: {fileID: 2448813899077374521, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
@@ -3616,6 +3604,18 @@ PrefabInstance:
     - target: {fileID: 3346484559766529126, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6948747439457001423, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920610923440067172, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957969634029508138, guid: 9958c9a3025502446a12060bd8116c16, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3750,6 +3750,10 @@ PrefabInstance:
     - target: {fileID: 2408065516730243695, guid: 69f855f1b7aae0b4bafed1cfde321bbe, type: 3}
       propertyPath: m_Name
       value: PanelCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 2408065516730243695, guid: 69f855f1b7aae0b4bafed1cfde321bbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5398787733489563758, guid: 69f855f1b7aae0b4bafed1cfde321bbe, type: 3}
       propertyPath: m_Pivot.x
