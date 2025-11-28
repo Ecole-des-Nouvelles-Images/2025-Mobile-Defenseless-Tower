@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/__Workspaces/Julien/Scenes/MainMenu.unity
+    path: Assets/__Workspaces/Julien/Scenes/JulienMainMenu.unity
     guid: b6377c1b49e302d459cef570d6016c27
   - enabled: 1
     path: Assets/__Workspaces/Julien/Scenes/JulienSceneTest.unity
