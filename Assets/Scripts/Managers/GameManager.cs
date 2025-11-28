@@ -10,6 +10,7 @@ namespace Managers
 
         [Header("Card")] 
         public int NumberCard;
+        
     
         private void OnEnable()
         {

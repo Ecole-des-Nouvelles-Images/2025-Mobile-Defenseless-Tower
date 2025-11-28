@@ -8,7 +8,11 @@ namespace Utils
     
         public static Action OnGameStart;
         public static Action OnGameEnd;
+        
         public static Action OnGamePaused;
+        public static Action OnGameResume;
+        public static Action OnChronoAreFinished;
+        
         public static Action OnSelection;
         public static Action OnNextLevel;
         public static Action OnLevelStart;
