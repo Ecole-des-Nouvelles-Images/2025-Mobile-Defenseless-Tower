@@ -16,4 +16,5 @@ MonoBehaviour:
   Price: 50
   Time: 5000
   AreaSize: 4
+  Efficiency: 1
   Prefab: {fileID: 7817341195606274728, guid: 0fa652019dfde6642b172e43ffd2ecc6, type: 3}

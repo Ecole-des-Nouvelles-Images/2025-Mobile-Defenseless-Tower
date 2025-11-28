@@ -1839,6 +1839,7 @@ MonoBehaviour:
     Price: 0
     Time: 0
     AreaSize: 0
+    Efficiency: 0
   EnemyClass:
   - baseData: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
     Name: 
@@ -1857,10 +1858,12 @@ MonoBehaviour:
     Price: 0
     Time: 0
     AreaSize: 0
+    Efficiency: 0
   - SpellData: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
     Price: 0
     Time: 0
     AreaSize: 0
+    Efficiency: 0
   PanelInventoryEnemy: {fileID: 1421760301}
   PanelInventorySpell: {fileID: 1261444762}
   prefabEnemyButton: {fileID: 3501484325557489509, guid: 37aa8dbc733c6d04abf68daccdb28951, type: 3}
@@ -7093,6 +7096,10 @@ PrefabInstance:
     - target: {fileID: 61562381425441735, guid: a825c908592303a4da878073a5ae7261, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766340872494648013, guid: a825c908592303a4da878073a5ae7261, type: 3}
+      propertyPath: MaxChrono
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7303603721259598702, guid: a825c908592303a4da878073a5ae7261, type: 3}
       propertyPath: m_Name

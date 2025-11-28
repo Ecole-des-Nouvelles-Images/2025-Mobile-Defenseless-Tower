@@ -17,7 +17,6 @@ namespace Managers
 
         private void Awake()
         {
-            Debug.Log("Place tower awake");
             Money = MaxMoney;
             EventBus.OnTerrainGenerate += PlaceTowers;
             EventBus.OnNextLevel += OnNextLevel;

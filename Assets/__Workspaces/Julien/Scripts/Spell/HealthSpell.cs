@@ -7,7 +7,6 @@ public class HealthSpell : Spell
 {
     public float MaxTimeBeforHealth;
     public float TimeBeforHeal;
-    public float HealthParTick;
 
     [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
     private void Update()
@@ -45,7 +44,7 @@ public class HealthSpell : Spell
     {
         foreach (Enemy enemy in _enemies)
         {
-            enemy.GetComponent<IHealable>().GetHealth(HealthParTick);
+            enemy.GetComponent<IHealable>().GetHealth(SpellClass.Efficiency);
         }
     }
 }
