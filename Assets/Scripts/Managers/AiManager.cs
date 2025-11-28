@@ -47,6 +47,8 @@ namespace Managers
                     break;
                 }
             }
+            
+            EventBus.OnIaPlaceTower?.Invoke();
         }
     
         [ContextMenu("RandPos")]
