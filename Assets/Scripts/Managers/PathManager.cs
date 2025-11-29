@@ -43,8 +43,6 @@ namespace Managers
                 int x = Mathf.Clamp(vector3Int.x, 0, Width - 1);
                 int z = Mathf.Clamp(vector3Int.z, 0, Height - 1);
                 CellsMatrix[vector3Int.x, vector3Int.z].IsAPath = true;
-
-                Debug.Log(x + " / " + z + " Est " + CellsMatrix[vector3Int.x, vector3Int.z].IsAPath);
             }
             SetVisual();
         }

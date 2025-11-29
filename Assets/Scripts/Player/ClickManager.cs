@@ -6,6 +6,8 @@ namespace Player
 {
     public class ClickManager : MonoBehaviourSingleton<ClickManager>
     {
+        private bool _inpause;
+        
         [SerializeField] private Camera _camera;
         [SerializeField] private PlayerInput _playerInput;
         [SerializeField] private LayerMask _layerMask;
@@ -17,12 +19,18 @@ namespace Player
         {
             _playerInput.actions["PcClick"].started += GetPCClick;
             _playerInput.actions["FirstTouch"].started += GetFirstTouch;
+            
+            EventBus.OnGamePaused += OnPause;
+            EventBus.OnGameResume += OnResume;
         }
     
         private void OnDisable()
         {
             _playerInput.actions["PcClick"].started -= GetPCClick;
             _playerInput.actions["FirstTouch"].started -= GetFirstTouch;
+            
+            EventBus.OnGamePaused -= OnPause;
+            EventBus.OnGameResume -= OnResume;
         }
 
         private void GetPCClick(InputAction.CallbackContext obj)
@@ -37,6 +45,7 @@ namespace Player
     
         private void OnClicked(Vector2 clickPos)
         {
+            if (_inpause) return;
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         
             RaycastHit hit;
@@ -47,6 +56,16 @@ namespace Player
                 EventBus.OnPlayerClicked?.Invoke();
             
             }
+        }
+        
+        private void OnPause()
+        {
+            _inpause = true;
+        }
+
+        private void OnResume()
+        {
+            _inpause = false;
         }
     }
 }

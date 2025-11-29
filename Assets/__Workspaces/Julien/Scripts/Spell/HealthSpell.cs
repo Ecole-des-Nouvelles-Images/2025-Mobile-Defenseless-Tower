@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Class;
+using Interface;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthSpell : Spell
@@ -11,12 +13,16 @@ public class HealthSpell : Spell
     [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
     private void Update()
     {
+        if (InPause) return;
+        TimeSpell -= Time.deltaTime;
         TimeBeforHeal += Time.deltaTime;
         if (TimeBeforHeal > MaxTimeBeforHealth)
         {
             TimeBeforHeal = 0;
             DoSpell();
         }
+
+        if (TimeSpell <= 0) Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

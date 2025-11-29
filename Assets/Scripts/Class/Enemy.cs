@@ -1,7 +1,9 @@
+using System;
 using Interface;
 using ScriptableObjectsScripts;
 using UnityEngine;
 using UnityEngine.Splines;
+using Utils;
 using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
@@ -15,7 +17,7 @@ namespace Class
 
         public EnemyClass EnemyClass;
     
-        private float _speed;
+        [SerializeField] private float _speed;
         private float _maxHealth;
         private float _health;
   
@@ -37,7 +39,18 @@ namespace Class
             }
         }
 
-    
+        private void OnEnable()
+        {
+            EventBus.OnGamePaused += OnPause;
+            EventBus.OnGameResume += OnResume;
+        }
+
+        private void OnDisable()
+        {
+            EventBus.OnGamePaused -= OnPause;
+            EventBus.OnGameResume -= OnResume;
+        }
+
         private void Start()
         {
             SpawnInEmpty();
@@ -71,7 +84,6 @@ namespace Class
             transform.SetParent(emptyParent.transform, worldPositionStays: true);
 
             _splineAnimate = emptyParent.AddComponent<SplineAnimate>();
-       
         }
 
         public void RandOffset()
@@ -90,6 +102,18 @@ namespace Class
         {
             _health = Mathf.Clamp(_health + health, 0, _maxHealth);
             _healthBar.fillAmount = _health / _maxHealth;
+        }
+
+        private void OnPause()
+        {
+            _splineAnimate.Pause();
+            print("Speed 0");
+        }
+
+        private void OnResume()
+        {
+            _splineAnimate.Play();
+            print("Speed = le speed de la class");
         }
     }
 }

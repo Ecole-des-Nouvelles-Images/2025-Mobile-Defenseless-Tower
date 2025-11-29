@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Menu.OpenPanel
   PanelToOpen: {fileID: 0}
   PanelToClose: {fileID: 909393368396711424}
-  _button: {fileID: 0}
+  _button: {fileID: 5847401840855368761}
 --- !u!114 &898110492749898043
 MonoBehaviour:
   m_ObjectHideFlags: 0

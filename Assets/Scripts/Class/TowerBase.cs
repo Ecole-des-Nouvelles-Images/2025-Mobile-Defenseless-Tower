@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 namespace Class
 {
     public abstract class TowerBase : MonoBehaviour
     {
+        private bool InPause;
+        
         public DefenseBaseData BaseData;
 
         public float MaxCoolDown;
@@ -14,6 +17,18 @@ namespace Class
     
         public List<GameObject> targetsInRange = new List<GameObject>();
 
+        private void OnEnable()
+        {
+            EventBus.OnGamePaused += OnPause;
+            EventBus.OnGameResume += OnResume;
+        }
+
+        private void OnDisable()
+        {
+            EventBus.OnGamePaused -= OnPause;
+            EventBus.OnGameResume -= OnResume;
+        }
+        
         private void Start()
         {
             SetUp();
@@ -29,6 +44,8 @@ namespace Class
     
         private void Update()
         {
+            if (InPause) return;
+            Debug.Log("Va tirer");
             targetsInRange.RemoveAll( x => !x);
             CoolDown += Time.deltaTime;
             LookFirstEnemy();
@@ -57,5 +74,15 @@ namespace Class
 
         public abstract void LookFirstEnemy();
         public abstract void Fire();
+        
+        private void OnPause()
+        {
+            InPause = true;
+        }
+
+        private void OnResume()
+        {
+            InPause = false;
+        }
     }
 }

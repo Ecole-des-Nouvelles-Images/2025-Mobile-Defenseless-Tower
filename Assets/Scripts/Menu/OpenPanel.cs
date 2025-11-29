@@ -21,8 +21,8 @@ namespace Menu
 
         public void Onclick()
         {
-            PanelToOpen.SetActive(true);
-            PanelToClose.SetActive(false);
+            if (PanelToOpen) PanelToOpen.SetActive(true);
+            if (PanelToClose) PanelToClose.SetActive(false);
         }
     }
 }

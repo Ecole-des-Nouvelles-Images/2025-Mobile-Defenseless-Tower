@@ -81,7 +81,7 @@ namespace Managers
             
                 if (i == 0) // Si le knot est le premier, alors on joue l'interieur du code
                 {
-                    int randStart = Random.Range(_startPosX.x, _startPosX.y);
+                    int randStart = Random.Range(_startPosX.x, _startPosX.y + 1);
                     posA = new Vector3(randStart, 0, _maxHeight.x); // La position X du point A serra = à un random, et il n'y aurra pas de point B vu que c'est le premier
                 }
                 else // sinon
@@ -128,7 +128,7 @@ namespace Managers
         {
             Spline spline = SplineContainer.Splines[0];
             BezierKnot knot = spline[spline.Count - 1];
-            int randStart = Random.Range(_endPosX.x,_endPosX.y);
+            int randStart = Random.Range(_endPosX.x,_endPosX.y + 1);
             knot.Position.x = randStart;
             spline.SetKnot(spline.Count - 1, knot);
         }

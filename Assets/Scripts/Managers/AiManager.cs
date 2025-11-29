@@ -71,7 +71,6 @@ namespace Managers
                     Instantiate(tower, new Vector3(x, 0, z), Quaternion.identity, transform);
                     cell.IsTower = true;
                 }
-                Debug.Log("Place la tour à " + x + " / " + z);
             }
             else
             {
