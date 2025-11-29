@@ -37,14 +37,12 @@ namespace Player
     
         private void OnClicked(Vector2 clickPos)
         {
-            Debug.Log("Click");
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         
             RaycastHit hit;
             Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 5f);
             if (Physics.Raycast(ray, out hit,Mathf.Infinity, _layerMask )) 
             {
-                Debug.Log("Touche une ray");
                 LastPosition = hit.point;
                 EventBus.OnPlayerClicked?.Invoke();
             

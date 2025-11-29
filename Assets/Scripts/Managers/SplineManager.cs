@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Splines;
 using Utils;
 using Random = UnityEngine.Random;
@@ -11,15 +13,17 @@ namespace Managers
     {
         public SplineContainer SplineContainer;
 
-        public int KnotCount;
-        public int TerrainSize;
+        public SoDifficultySpline Difficulty;
+        
+        [SerializeField] private int _knotCount;
+        [SerializeField] private int _terrainSize;
 
-        public int StartPosX;
-        public int EndPosX;
+        [SerializeField] private Vector2Int _startPosX;
+        [SerializeField] private Vector2Int _endPosX;
 
-        public Vector2Int RandomPos;
-        public Vector2Int MaxWidth;
-        public Vector2Int MaxHeight;
+        [SerializeField] private Vector2Int _randomPos;
+        [SerializeField] private Vector2Int _maxWidth;
+        [SerializeField] private Vector2Int _maxHeight;
     
         private List<Vector3Int> _vector3Ints = new List<Vector3Int>();
     
@@ -29,18 +33,47 @@ namespace Managers
         private void OnEnable()
         {
             SplineContainer = GetComponent<SplineContainer>();
-            EventBus.OnGameStart += GenerateSpline; 
+            
+            EventBus.OnGameStart += SetDifficulty;
+            EventBus.OnNextLevel += SetDifficulty;
+            
+            EventBus.OnGameStart += GenerateSpline;
+            EventBus.OnNextLevel += GenerateSpline;
         }
 
+        private void OnDisable()
+        {
+            EventBus.OnGameStart -= SetDifficulty;
+            EventBus.OnNextLevel -= SetDifficulty;
+            
+            EventBus.OnGameStart -= GenerateSpline;
+            EventBus.OnNextLevel -= GenerateSpline;
+        }
+
+        public void SetDifficulty()
+        {
+            Difficulty = DifficultyManager.Instance.CurrentDifficulty;
+            
+            _knotCount = Difficulty.KnotCount;
+            _terrainSize = Difficulty. TerrainSize;
+            
+            _startPosX = Difficulty.StartPosX; 
+            _endPosX = Difficulty.EndPosX;
+            
+            _randomPos = Difficulty.RandomPos;
+            _maxWidth = Difficulty.MaxWidth;
+            _maxHeight = Difficulty.MaxHeight;
+        }
+        
         [ContextMenu("GenerateSpline")]
         public void GenerateSpline()
         {
             _vector3Ints.Clear();
             SplineContainer.Spline.Clear(); // je clear la spline
 
-            float space = TerrainSize / (KnotCount - 1);
+            float space = _terrainSize / (_knotCount - 1);
         
-            for (float i = 0; i <= TerrainSize; i += space)
+            for (float i = 0; i <= _terrainSize; i += space)
             {
             
                 Vector3 posA = new Vector3(); // position du point A
@@ -48,22 +81,23 @@ namespace Managers
             
                 if (i == 0) // Si le knot est le premier, alors on joue l'interieur du code
                 {
-                    posA = new Vector3(StartPosX, 0, MaxHeight.x); // La position X du point A serra = à un random, et il n'y aurra pas de point B vu que c'est le premier
+                    int randStart = Random.Range(_startPosX.x, _startPosX.y);
+                    posA = new Vector3(randStart, 0, _maxHeight.x); // La position X du point A serra = à un random, et il n'y aurra pas de point B vu que c'est le premier
                 }
                 else // sinon
                 {
-                    int rand = Random.Range(RandomPos.x, RandomPos.y);
+                    int rand = Random.Range(_randomPos.x, _randomPos.y);
                 
                     posA = new Vector3(_lastKnotPosition.x, 0, i); // La position sur X est celle du dernier point, et i est = à la longueur
                     posB = new Vector3(_lastKnotPosition.x + rand, 0, i); // Le second point, le X est randomiser ( la valeur pourrait être tweeker en fonction de la difficulté )
 
-                    if (posB.x < MaxWidth.x) posB.x = MaxWidth.x; // verifier si il sort de la zone, si il sort alors on applique le max
-                    if (posB.x > MaxWidth.y) posB.x = MaxWidth.y;
-                    if (posA.x < MaxWidth.x) posA.x = MaxWidth.x;
-                    if (posA.x > MaxWidth.y) posA.x = MaxWidth.y;
+                    if (posB.x < _maxWidth.x) posB.x = _maxWidth.x; // verifier si il sort de la zone, si il sort alors on applique le max
+                    if (posB.x > _maxWidth.y) posB.x = _maxWidth.y;
+                    if (posA.x < _maxWidth.x) posA.x = _maxWidth.x;
+                    if (posA.x > _maxWidth.y) posA.x = _maxWidth.y;
 
-                    if (posB.z > MaxHeight.y) posB.z = MaxHeight.y;
-                    if (posA.z > MaxHeight.y) posA.z = MaxHeight.y;
+                    if (posB.z > _maxHeight.y) posB.z = _maxHeight.y;
+                    if (posA.z > _maxHeight.y) posA.z = _maxHeight.y;
                 }
 
             
@@ -94,7 +128,8 @@ namespace Managers
         {
             Spline spline = SplineContainer.Splines[0];
             BezierKnot knot = spline[spline.Count - 1];
-            knot.Position.x = EndPosX;
+            int randStart = Random.Range(_endPosX.x,_endPosX.y);
+            knot.Position.x = randStart;
             spline.SetKnot(spline.Count - 1, knot);
         }
 
@@ -127,7 +162,7 @@ namespace Managers
         
             // foreach (Vector3Int v in _vector3Ints)
             // {
-            //     Debug.Log(v);
+            //     print(v);
             // }
         
             PathManager.Instance.SetDataPath(_vector3Ints);

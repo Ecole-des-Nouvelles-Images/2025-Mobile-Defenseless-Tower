@@ -31,7 +31,6 @@ namespace Managers
         [ContextMenu("PlaceTowers")]
         public void PlaceTowers()
         {
-            Debug.Log("Place tower");
             int safety = 0;          // compteur de sécurité
             int maxSafety = 2000;     // valeur max avant arrêt forcé
 
@@ -72,6 +71,7 @@ namespace Managers
                     Instantiate(tower, new Vector3(x, 0, z), Quaternion.identity, transform);
                     cell.IsTower = true;
                 }
+                Debug.Log("Place la tour à " + x + " / " + z);
             }
             else
             {
@@ -82,7 +82,6 @@ namespace Managers
         public GameObject ChoiceRandDefense()
         {
             int rand = Random.Range(0, Towers.Count);
-            Debug.Log(Towers[rand].name);
             return Towers[rand];
         }
 
@@ -117,7 +116,6 @@ namespace Managers
             Money = MaxMoney;
         
             RemoveAllTowers();
-            PlaceTowers();
         }
     }
 }

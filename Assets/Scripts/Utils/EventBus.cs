@@ -17,6 +17,8 @@ namespace Utils
         public static Action OnNextLevel;
         public static Action OnLevelStart;
         public static Action OnLevelFinished;
+
+        public static Action OnDifficultyAreSelected;
     
         // Player
     

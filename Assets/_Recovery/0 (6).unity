@@ -470,7 +470,6 @@ GameObject:
   - component: {fileID: 358535022}
   - component: {fileID: 358535023}
   - component: {fileID: 358535024}
-  - component: {fileID: 358535026}
   - component: {fileID: 358535025}
   m_Layer: 0
   m_Name: GameManager
@@ -509,7 +508,7 @@ MonoBehaviour:
   _splineManager: {fileID: 2122799272}
   _cardPropositionPanel: {fileID: 805499048}
   NumberCard: 3
-  DifficultySplineTest: {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
+  DifficultySplineTest: {fileID: 0}
 --- !u!114 &358535024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,33 +557,6 @@ MonoBehaviour:
   m_DefaultActionMap: New action map
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &358535026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358535021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f48b4cd1ad9c5b4fb2c6a7808e52ae7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  CurrentLevel: 0
-  DifficulteDivise: 2
-  MaxDifficulty: 10
-  CurrentDifficulty: {fileID: 0}
-  DifficultySplines:
-  - {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
-  - {fileID: 11400000, guid: 20ff59e6ff7986d488099c1e52f3733c, type: 2}
-  - {fileID: 11400000, guid: f88280f7a04a4b34e8d26d2fe223ccd5, type: 2}
-  - {fileID: 11400000, guid: c8163ed516dcacf4195886925abd44bc, type: 2}
-  - {fileID: 11400000, guid: dc1c3e30544218447bdab98fd96b5c72, type: 2}
-  - {fileID: 11400000, guid: 39f1b4b605f6134459437feffe0d311a, type: 2}
-  - {fileID: 11400000, guid: fc34241895ac81e4bb5a813bc80b65a3, type: 2}
-  - {fileID: 11400000, guid: cc4ba1516c2ac1544bc7436d58838e79, type: 2}
-  - {fileID: 11400000, guid: ac2ee54f1c52562429b276ab04307e4e, type: 2}
-  - {fileID: 11400000, guid: 85428a872ba5ff1458ad561cd5afd34a, type: 2}
 --- !u!1 &413439520
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
   MoneyToAddParLevel: 2
-  MaxMoney: 10
+  MaxMoney: 3
   Money: 0
   Towers:
   - {fileID: 2486535061774727468, guid: 3839c01607def5047aa7e5b44800d65c, type: 3}
@@ -1863,12 +1835,6 @@ MonoBehaviour:
     Speed: 0
     MaxHealth: 0
   - baseData: {fileID: 11400000, guid: 7bc1f4e436a3a06438f4dcec631c771f, type: 2}
-    Name: 
-    price: 0
-    NumberSpawn: 0
-    Speed: 0
-    MaxHealth: 0
-  - baseData: {fileID: 11400000, guid: f37b3465102f7f04f827a1d7e2059563, type: 2}
     Name: 
     price: 0
     NumberSpawn: 0
