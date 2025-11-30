@@ -11,8 +11,10 @@ namespace ScriptableObjectsScripts.Upgrades
         public string Name;
         public Sprite Srite;
         [TextArea] public string Description;
-    
-    
-        public abstract void Apply(InventoryHandler inventary);
+        
+        public virtual void Apply(InventoryHandler inventary)
+        {
+            
+        }
     }
 }
