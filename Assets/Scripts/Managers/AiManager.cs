@@ -17,6 +17,7 @@ namespace Managers
         public List<DefenseBaseData> DefenseBaseDatas = new List<DefenseBaseData>();
 
         private int[,] _matrixInt;
+        private List<HeuristicResult> _heuristicResults = new List<HeuristicResult>();
         
         private void Awake()
         {
@@ -39,6 +40,7 @@ namespace Managers
         public void PlaceIaTower()
         {
             _matrixInt = AiUtils.ConvertMatrixCellToInt(PathManager.Instance.CellsMatrix);
+            _heuristicResults = AiUtils.SetHeuristicResult(_matrixInt, DefenseBaseDatas);
             
             Debug.Log(_matrixInt);
         }
