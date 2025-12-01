@@ -634,7 +634,6 @@ MonoBehaviour:
   Money: 0
   Towers:
   - {fileID: 2486535061774727468, guid: 3839c01607def5047aa7e5b44800d65c, type: 3}
-  - {fileID: 2486535061774727468, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
   DefenseBaseDatas: []
 --- !u!1 &445691466
 GameObject:
