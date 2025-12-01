@@ -45,7 +45,6 @@ namespace Class
         private void Update()
         {
             if (InPause) return;
-            Debug.Log("Va tirer");
             targetsInRange.RemoveAll( x => !x);
             CoolDown += Time.deltaTime;
             LookFirstEnemy();

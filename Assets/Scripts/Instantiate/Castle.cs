@@ -16,7 +16,7 @@ namespace Instantiate
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                Destroy(other.gameObject);
+                Destroy(other.gameObject.transform.parent.gameObject);
                 Health--;
                 if (Health <= 0)
                 {

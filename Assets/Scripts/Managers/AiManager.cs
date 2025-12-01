@@ -31,53 +31,24 @@ namespace Managers
         [ContextMenu("PlaceTowers")]
         public void PlaceTowers()
         {
-            int safety = 0;          // compteur de sécurité
-            int maxSafety = 2000;     // valeur max avant arrêt forcé
-
             while (Money > 0)
             {
-                ChoiceRandomPos();
-
-                safety++;
-                if (safety > maxSafety)
-                {
-                    Debug.LogWarning("PlaceTowers STOP → boucle trop longue, arrêt de sécurité !");
-                    break;
-                }
+                ChoiseBestPos();
             }
             
             EventBus.OnIaPlaceTower?.Invoke();
         }
     
-        [ContextMenu("RandPos")]
-        public void ChoiceRandomPos()
+
+        private void ChoiseBestPos()
         {
-            int x = Random.Range(0, PathManager.Instance.Width);
-            int z = Random.Range(0, PathManager.Instance.Height);
-
-            var cell = PathManager.Instance.CellsMatrix[x, z];
-
-            if (cell == null)
-            {
-                Debug.LogError("CellMatrix["+x+","+z+"] est NULL !");
-                return;
-            }
-
-            if (!cell.IsAPath && !cell.IsTower)
-            {
-                GameObject tower = ChoiceRandDefense();
-                if (CheckIfHeCanBuy(tower))
-                {
-                    Instantiate(tower, new Vector3(x, 0, z), Quaternion.identity, transform);
-                    cell.IsTower = true;
-                }
-            }
-            else
-            {
-                ChoiceRandomPos();
-            }
+            
         }
-    
+        
+        
+        
+        
+        
         public GameObject ChoiceRandDefense()
         {
             int rand = Random.Range(0, Towers.Count);
@@ -115,6 +86,36 @@ namespace Managers
             Money = MaxMoney;
         
             RemoveAllTowers();
+        }
+        
+        
+        [ContextMenu("RandPos")]
+        public void ChoiceRandomPos()
+        {
+            int x = Random.Range(0, PathManager.Instance.Width);
+            int z = Random.Range(0, PathManager.Instance.Height);
+
+            var cell = PathManager.Instance.CellsMatrix[x, z];
+
+            if (cell == null)
+            {
+                Debug.LogError("CellMatrix["+x+","+z+"] est NULL !");
+                return;
+            }
+
+            if (!cell.IsAPath && !cell.IsTower)
+            {
+                GameObject tower = ChoiceRandDefense();
+                if (CheckIfHeCanBuy(tower))
+                {
+                    Instantiate(tower, new Vector3(x, 0, z), Quaternion.identity, transform);
+                    cell.IsTower = true;
+                }
+            }
+            else
+            {
+                ChoiceRandomPos();
+            }
         }
     }
 }

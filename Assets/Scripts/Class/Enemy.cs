@@ -77,7 +77,7 @@ namespace Class
         public void SpawnInEmpty()
         {
             GameObject emptyParent = new GameObject("Enemy_" + gameObject.name + "_Parent");
-
+            emptyParent.tag = "Enemy";
             emptyParent.transform.position = transform.position;
             emptyParent.transform.rotation = transform.rotation;
 
