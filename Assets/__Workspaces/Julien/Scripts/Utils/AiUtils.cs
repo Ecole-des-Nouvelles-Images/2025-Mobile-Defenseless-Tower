@@ -120,15 +120,3 @@ public static class AiUtils
         return pos.x < 0 || pos.x >= height || pos.y < 0 || pos.y >= width;
     }
 }
-
-public struct HeuristicResult
-{
-    // La data de la tour 
-    public DefenseBaseData DefenseBaseData; 
-    
-    // La position de la tour
-    public Vector2Int position;
-    
-    // La valeur de L'heuristique
-    public int HeuristicValue;
-}

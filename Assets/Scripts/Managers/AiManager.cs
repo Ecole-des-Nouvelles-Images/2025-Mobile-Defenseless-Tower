@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Class;
 using UnityEngine;
 using Utils;
@@ -15,9 +16,10 @@ namespace Managers
 
         //public List<GameObject> Towers;
         public List<DefenseBaseData> DefenseBaseDatas = new List<DefenseBaseData>();
-
+        
+        [SerializeField] private List<DefenseBaseData> _defenseBaseDatasToSpawn = new List<DefenseBaseData>();
         private int[,] _matrixInt;
-        public List<HeuristicResult> _heuristicResults = new List<HeuristicResult>();
+        private List<HeuristicResult> _heuristicResults = new List<HeuristicResult>();
         
         private void Awake()
         {
@@ -26,43 +28,82 @@ namespace Managers
             // {
             //     DefenseBaseDatas.Add(tower.GetComponent<TowerBase>().BaseData);
             // }
-            //EventBus.OnTerrainGenerate += PlaceTowers;
+            EventBus.OnTerrainGenerate += PlaceIaTower;
             EventBus.OnNextLevel += OnNextLevel;
         }
     
         private void OnDisable()
         {
-            //EventBus.OnTerrainGenerate -= PlaceTowers;
+            EventBus.OnTerrainGenerate -= PlaceIaTower;
             EventBus.OnNextLevel -= OnNextLevel;
         }
-
-        [ContextMenu("PlaceTowers")]
+        
+        [ContextMenu("PlaceAITowers")]
         public void PlaceIaTower()
         {
+            
             _matrixInt = AiUtils.ConvertMatrixCellToInt(PathManager.Instance.CellsMatrix);
             _heuristicResults = AiUtils.SetHeuristicResult(_matrixInt, DefenseBaseDatas);
+            
+            _heuristicResults = _heuristicResults.OrderByDescending(heuristic => heuristic.HeuristicValue).ToList();
             for (int i = 0; i < _heuristicResults.Count; i++)
             {
                 if (_heuristicResults[i].HeuristicValue > 0)
                 {
-                    Debug.Log(_heuristicResults[i].DefenseBaseData.name);
-                    Instantiate(_heuristicResults[i].DefenseBaseData.Prefab.gameObject, new Vector3(_heuristicResults[i].position.x,0,_heuristicResults[i].position.y), Quaternion.identity);
+                    Debug.Log(_heuristicResults[i].DefenseBaseData.name + " HEURISTIC " + _heuristicResults[i].HeuristicValue);
+                }
+                else
+                {
+                    _heuristicResults.RemoveAt(i);
                 }
             }
-            
+            SetRandomDefenseToSpawn();
+            BuyTower();
             Debug.Log(_matrixInt);
         }
-        
-        private bool CheckIfHeCanBuy(GameObject tower)
+
+        public void SetRandomDefenseToSpawn()
         {
-            int tempMoney = Money - tower.GetComponent<TowerBase>().BaseData.Price;
+            for (int i = 0; i < _heuristicResults.Count; i++)
+            {
+                DefenseBaseData defenseBaseData = DefenseBaseDatas[Random.Range(0, DefenseBaseDatas.Count)];
+                bool outMoney = CheckIfHeCanBuy(defenseBaseData);
+                if (!outMoney) break;
+                _defenseBaseDatasToSpawn.Add(defenseBaseData);
+            }
+        }
+
+        public void BuyTower()
+        {
+            foreach (DefenseBaseData defense in _defenseBaseDatasToSpawn)
+            {
+                // je créer une list et je récup que les élément qui sont égal = defense 
+                List<HeuristicResult> heuristicResults = _heuristicResults.Where(result => result.DefenseBaseData == defense).ToList();
+                // je classe dans l'ordre décroissant par rapport à l'heuristiqueValue
+                heuristicResults = heuristicResults.OrderByDescending(result => result.HeuristicValue).ToList();
+                //Je récupere le premier
+                HeuristicResult finalResult = heuristicResults.First();
+
+                // ensuite je l'enleve de la list
+                _heuristicResults.Remove(finalResult);
+                Debug.Log(finalResult.DefenseBaseData.name + " HEURISTIC " + finalResult.HeuristicValue);
+               
+                Instantiate(finalResult.DefenseBaseData.Prefab, new Vector3(finalResult.position.x, 0, finalResult.position.y), Quaternion.identity, transform);
+            }
+            
+        }
+        
+        
+        private bool CheckIfHeCanBuy(DefenseBaseData data)
+        {
+            int tempMoney = Money - data.Price;
             if (tempMoney < 0)
             {
                 return false;
             }
             else
             {
-                Money -= tower.GetComponent<TowerBase>().BaseData.Price;
+                Money -= data.Price;
                 return true;
             }
         }
@@ -76,14 +117,16 @@ namespace Managers
                 PathManager.Instance.CellsMatrix[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z)].IsTower = false;
                 Destroy(transform.GetChild(i).gameObject);
             }
+            _defenseBaseDatasToSpawn.Clear();
+            _heuristicResults.Clear();
         }
 
         public void OnNextLevel()
         {
+            RemoveAllTowers();
             MaxMoney += MoneyToAddParLevel;
             Money = MaxMoney;
-        
-            RemoveAllTowers();
+            PlaceIaTower();
         }
     }
 }

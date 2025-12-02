@@ -14,24 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DefenseBaseData
   Price: 1
   CoolDown: 1
-  Damage: 7
-  Range: 3
+  Damage: 10
+  Range: 2
   Heurstics:
   - Coord: {x: 1, y: 1}
-    Heuristic: 10
+    Heuristic: 5
   - Coord: {x: 1, y: 0}
-    Heuristic: 10
+    Heuristic: 5
   - Coord: {x: 1, y: -1}
-    Heuristic: 10
+    Heuristic: 5
   - Coord: {x: 0, y: -1}
-    Heuristic: 10
+    Heuristic: 5
   - Coord: {x: -1, y: -1}
-    Heuristic: 10
+    Heuristic: 5
   - Coord: {x: -1, y: 0}
-    Heuristic: 10
+    Heuristic: 5
   - Coord: {x: -1, y: 1}
-    Heuristic: 10
+    Heuristic: 5
   - Coord: {x: 0, y: 1}
-    Heuristic: 10
+    Heuristic: 5
   Prefab: {fileID: 2486535061774727468, guid: 3839c01607def5047aa7e5b44800d65c, type: 3}
   ProjectilPrefab: {fileID: 2095069144231104046, guid: 2504c417662e81547ba76a47d09b4d2f, type: 3}
