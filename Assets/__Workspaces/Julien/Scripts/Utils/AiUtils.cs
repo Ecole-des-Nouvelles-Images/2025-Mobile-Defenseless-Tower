@@ -41,13 +41,14 @@ public static class AiUtils
         int height = matrix.GetLength(0);
         int width = matrix.GetLength(1);
         
+        //heuristicResults.Add(ChoiceBetterTower(new Vector2Int(7,3), matrix, defenseBaseDatas));
         for (int i = 0; i < height; i++)
         {
             for (int j = 0; j < width; j++)
             {
                 if (matrix[i,j] == 0)
                 {
-                    heuristicResults.Add(ChoiceBetterTower(new Vector2Int(i,j), matrix, defenseBaseDatas));
+                   heuristicResults.Add(ChoiceBetterTower(new Vector2Int(i,j), matrix, defenseBaseDatas));
                 }
             }
         }
@@ -58,42 +59,65 @@ public static class AiUtils
     // Renvoie le meilleur heuristicResult, en se basant sur la list de data.Si chaque défense vaut 0 alors l'heuristic serra null
     public static HeuristicResult ChoiceBetterTower(Vector2Int position, int[,] matrix, List<DefenseBaseData> defenseBaseDatas)
     {
-        HeuristicResult heuristicResult = new HeuristicResult();
         List<HeuristicResult> heuristicResults = new List<HeuristicResult>();
+        HeuristicResult bestResult = new HeuristicResult();
         
         foreach (DefenseBaseData data in defenseBaseDatas)
         {
             heuristicResults.Add(AdditionHeuristic(data, position, matrix));
         }
+
+        foreach (HeuristicResult heur in heuristicResults)
+        {
+            if (heur.HeuristicValue > bestResult.HeuristicValue)
+            {
+                bestResult = heur;
+            }
+        }
+
+        if (bestResult.HeuristicValue == 0)
+        {
+            bestResult.HeuristicValue = Int32.MinValue;
+            bestResult.DefenseBaseData = null;
+            bestResult.position =  position;
+            
+            //Debug.LogWarning(" la position " + bestResult.position + " est null et la value " + bestResult.HeuristicValue);
+        }
+
+        if (bestResult.HeuristicValue > 0)
+        {
+            //Debug.Log(" le best " + bestResult.HeuristicValue + " a la pose " + bestResult.position + " et la data " + bestResult.DefenseBaseData.name);
+        }
         
-        return heuristicResult;
+        return bestResult;
     }
     
     // addition la position à chaque CoordHeuristic.Heurisic et multiplier l'heuristic par le int[position] de la matix
     public static HeuristicResult AdditionHeuristic(DefenseBaseData dataDefense ,Vector2Int position, int[,] matrix)
     {
-        foreach (CoordHeurstic heuristic in dataDefense.Heurstics)
+        HeuristicResult heuristicResult = new HeuristicResult();
+        heuristicResult.DefenseBaseData = dataDefense;
+        heuristicResult.position = position;
+        
+        foreach (CoordHeurstic coord in dataDefense.Heurstics)
         {
-            Vector2Int heurCoord = new Vector2Int(position.x + heuristic.Coord.x, position.y + heuristic.Coord.y);
-            bool outOfRange = CheckIfOutOfRange(matrix, heurCoord);
+            Vector2Int pos = new Vector2Int(position.x + coord.Coord.x, position.y + coord.Coord.y);
+            bool outOfRange = CheckIfOutOfRange(matrix, pos);
             if (outOfRange) continue;
-            //heuristic.Heuristic++;
+
+            heuristicResult.HeuristicValue += matrix[pos.x, pos.y] * coord.Heuristic;
         }
+        return heuristicResult;
     }
 
     
     // Vérifier si la position envoyer est out of range de la matrix
-    public static bool CheckIfOutOfRange(int[,] matrix, Vector2Int positionToCheck)
+    public static bool CheckIfOutOfRange(int[,] matrix, Vector2Int pos)
     {
         int height = matrix.GetLength(0);
         int width = matrix.GetLength(1);
-        
-        if (positionToCheck.x > 0 && positionToCheck.x <= height && positionToCheck.y > 0 && positionToCheck.y <= width)
-        {
-            return false;
-        }
 
-        return true;
+        return pos.x < 0 || pos.x >= height || pos.y < 0 || pos.y >= width;
     }
 }
 

@@ -14,7 +14,7 @@ public class DefenseBaseData : ScriptableObject
     public List<CoordHeurstic> Heurstics = new List<CoordHeurstic>();
 
     [Header("Prefab")] 
-    public GameObject Visuel;
+    public GameObject Prefab;
     public GameObject ProjectilPrefab;
 }
 

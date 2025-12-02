@@ -13,19 +13,19 @@ namespace Managers
         public int MaxMoney;
         public int Money;
 
-        public List<GameObject> Towers;
+        //public List<GameObject> Towers;
         public List<DefenseBaseData> DefenseBaseDatas = new List<DefenseBaseData>();
 
         private int[,] _matrixInt;
-        private List<HeuristicResult> _heuristicResults = new List<HeuristicResult>();
+        public List<HeuristicResult> _heuristicResults = new List<HeuristicResult>();
         
         private void Awake()
         {
             Money = MaxMoney;
-            foreach (GameObject tower in Towers)
-            {
-                DefenseBaseDatas.Add(tower.GetComponent<TowerBase>().BaseData);
-            }
+            // foreach (GameObject tower in Towers)
+            // {
+            //     DefenseBaseDatas.Add(tower.GetComponent<TowerBase>().BaseData);
+            // }
             //EventBus.OnTerrainGenerate += PlaceTowers;
             EventBus.OnNextLevel += OnNextLevel;
         }
@@ -41,37 +41,18 @@ namespace Managers
         {
             _matrixInt = AiUtils.ConvertMatrixCellToInt(PathManager.Instance.CellsMatrix);
             _heuristicResults = AiUtils.SetHeuristicResult(_matrixInt, DefenseBaseDatas);
+            for (int i = 0; i < _heuristicResults.Count; i++)
+            {
+                if (_heuristicResults[i].HeuristicValue > 0)
+                {
+                    Debug.Log(_heuristicResults[i].DefenseBaseData.name);
+                    Instantiate(_heuristicResults[i].DefenseBaseData.Prefab.gameObject, new Vector3(_heuristicResults[i].position.x,0,_heuristicResults[i].position.y), Quaternion.identity);
+                }
+            }
             
             Debug.Log(_matrixInt);
         }
         
-        
-        // public void PlaceTowers()
-        // {
-        //     while (Money > 0)
-        //     {
-        //         ChoiseBestPos();
-        //     }
-        //     
-        //     EventBus.OnIaPlaceTower?.Invoke();
-        // }
-        
-        
-        private void ChoiseBestPos()
-        {
-            
-        }
-        
-        
-        
-        
-        
-        public GameObject ChoiceRandDefense()
-        {
-            int rand = Random.Range(0, Towers.Count);
-            return Towers[rand];
-        }
-
         private bool CheckIfHeCanBuy(GameObject tower)
         {
             int tempMoney = Money - tower.GetComponent<TowerBase>().BaseData.Price;

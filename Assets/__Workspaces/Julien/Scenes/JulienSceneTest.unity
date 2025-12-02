@@ -575,7 +575,7 @@ MonoBehaviour:
   MaxDifficulty: 10
   CurrentDifficulty: {fileID: 0}
   DifficultySplines:
-  - {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
+  - {fileID: 11400000, guid: fc34241895ac81e4bb5a813bc80b65a3, type: 2}
   - {fileID: 11400000, guid: 20ff59e6ff7986d488099c1e52f3733c, type: 2}
   - {fileID: 11400000, guid: f88280f7a04a4b34e8d26d2fe223ccd5, type: 2}
   - {fileID: 11400000, guid: c8163ed516dcacf4195886925abd44bc, type: 2}
@@ -632,10 +632,9 @@ MonoBehaviour:
   MoneyToAddParLevel: 2
   MaxMoney: 10
   Money: 0
-  Towers:
-  - {fileID: 2486535061774727468, guid: 3839c01607def5047aa7e5b44800d65c, type: 3}
-  - {fileID: 2486535061774727468, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-  DefenseBaseDatas: []
+  DefenseBaseDatas:
+  - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
+  - {fileID: 11400000, guid: b6120a3ffa329fd47a315998a7228693, type: 2}
 --- !u!1 &445691466
 GameObject:
   m_ObjectHideFlags: 0

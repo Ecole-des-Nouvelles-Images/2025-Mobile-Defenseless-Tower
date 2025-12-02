@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58138eb055f76b941b6632f0e12fabb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Canon
-  BaseData: {fileID: 11400000, guid: 216e977df7989e842a9d588a2360bf74, type: 2}
+  BaseData: {fileID: 11400000, guid: b6120a3ffa329fd47a315998a7228693, type: 2}
   MaxCoolDown: 0
   CoolDown: 0
   Damage: 7
