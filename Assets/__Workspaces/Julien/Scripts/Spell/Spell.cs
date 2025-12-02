@@ -1,4 +1,5 @@
 using System;
+using Class;
 using UnityEngine;
 
 public abstract class Spell : MonoBehaviour
