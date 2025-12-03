@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19fd8f989268b1541b37e58136430594, type: 3}
-  m_Name: Grand
+  m_Name: Petit
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  Name: Grand
-  Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  price: 25
-  Speed: 0.5
-  Health: 50
-  NumberToSpawn: 1
-  OffsetX: {x: -0.2, y: 0.2}
-  OffsetZ: {x: -0.2, y: 0.2}
+  Name: Petit
+  Sprite: {fileID: 21300000, guid: cb3ad3cbe10992e4cb7482eded82c924, type: 3}
+  price: 10
+  Speed: 1
+  Health: 10
+  NumberToSpawn: 5
+  OffsetX: {x: -0.5, y: 0.5}
+  OffsetZ: {x: -0.5, y: 0.5}
   OffsetUp: 0
-  Prefab: {fileID: 6006436640752362767, guid: 0194bbbf84fe2b740bf02802c9969d7e, type: 3}
+  Prefab: {fileID: 6006436640752362767, guid: aef00fca65789f843a5756129a3798eb, type: 3}
