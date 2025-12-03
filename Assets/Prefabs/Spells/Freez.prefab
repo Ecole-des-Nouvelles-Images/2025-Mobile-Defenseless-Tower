@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5858280476445024403}
   - component: {fileID: 1548871827314001869}
   - component: {fileID: 5371360376040377911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Freez
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,9 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc3231f74540be4abf87a971c7f2e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FreezSpell
+  InPause: 0
   SpellClass:
     SpellData: {fileID: 0}
     Price: 0
+    Time: 0
+    AreaSize: 0
+    Efficiency: 0
+  TimeSpell: 0
 --- !u!33 &5858280476445024403
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -123,7 +128,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
