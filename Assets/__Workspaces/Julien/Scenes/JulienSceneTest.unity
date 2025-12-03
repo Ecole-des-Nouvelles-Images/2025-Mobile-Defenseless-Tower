@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
   MoneyToAddParLevel: 2
-  MaxMoney: 200
+  MaxMoney: 10
   Money: 0
   DefenseBaseDatas:
   - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}

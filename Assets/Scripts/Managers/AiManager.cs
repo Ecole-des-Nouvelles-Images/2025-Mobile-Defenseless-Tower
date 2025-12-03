@@ -28,14 +28,12 @@ namespace Managers
             // {
             //     DefenseBaseDatas.Add(tower.GetComponent<TowerBase>().BaseData);
             // }
-            EventBus.OnTerrainGenerate += PlaceIaTower;
-            EventBus.OnNextLevel += OnNextLevel;
+            EventBus.OnTerrainGenerate += OnNextLevel;
         }
     
         private void OnDisable()
         {
-            EventBus.OnTerrainGenerate -= PlaceIaTower;
-            EventBus.OnNextLevel -= OnNextLevel;
+            EventBus.OnTerrainGenerate -= OnNextLevel;
         }
         
         [ContextMenu("PlaceAITowers")]
