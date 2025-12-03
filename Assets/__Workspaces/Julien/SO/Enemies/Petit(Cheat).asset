@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Petit(Cheat)
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   Name: Petit
-  Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Sprite: {fileID: 21300000, guid: f397227801559ae4e899867bf6b5a775, type: 3}
   price: 0
   Speed: 15
   Health: 100000
