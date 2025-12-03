@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fd8f989268b1541b37e58136430594, type: 3}
+  m_Name: Grand
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  Name: Grand
+  Sprite: {fileID: 21300000, guid: f397227801559ae4e899867bf6b5a775, type: 3}
+  price: 25
+  Speed: 0.5
+  Health: 50
+  NumberToSpawn: 1
+  OffsetX: {x: -0.2, y: 0.2}
+  OffsetZ: {x: -0.2, y: 0.2}
+  OffsetUp: 0
+  Prefab: {fileID: 6006436640752362767, guid: 0194bbbf84fe2b740bf02802c9969d7e, type: 3}
