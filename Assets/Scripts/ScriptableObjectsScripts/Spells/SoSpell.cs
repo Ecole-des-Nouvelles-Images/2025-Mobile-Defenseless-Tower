@@ -9,7 +9,8 @@ namespace ScriptableObjectsScripts.Spells
         public int Price;
         public float Time;
         public float AreaSize;
-    
+        public float Efficiency;
+        
         public GameObject Prefab;
     }
 }

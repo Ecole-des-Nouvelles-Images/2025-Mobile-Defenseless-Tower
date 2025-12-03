@@ -52,9 +52,10 @@ MonoBehaviour:
     Price: 0
     Time: 0
     AreaSize: 0
-  MaxTimeBeforHealth: 0
+  MaxTimeBeforHealth: 0.2
   TimeBeforHeal: 0
-  HealthParTick: 0
+  HealthParTick: 1
+  _enemies: []
 --- !u!33 &357445262960144982
 MeshFilter:
   m_ObjectHideFlags: 0

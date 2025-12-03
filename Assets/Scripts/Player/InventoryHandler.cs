@@ -12,7 +12,7 @@ namespace Player
     {
         public int StartMoney;
         [SerializeField] private float _money;
-
+        
         public float Money
         {
             get => _money;
@@ -114,8 +114,14 @@ namespace Player
             GameObject instanciate = Instantiate(prefabSpellButton, transform.position, quaternion.identity, PanelInventorySpell.transform);
             instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
         }
+
+
+        public void UpdateAllPrice()
+        {
+            
+        }
     
-    
+        [ContextMenu("Update")]
         public void UpdateInventoryData()
         {
             Money = StartMoney;

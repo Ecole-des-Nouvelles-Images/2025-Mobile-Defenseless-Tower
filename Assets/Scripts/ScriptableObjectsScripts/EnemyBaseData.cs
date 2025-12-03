@@ -1,24 +1,27 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName = "Enemy", menuName = "Scriptable Objects/Enemy")]
-public abstract class EnemyBaseData : ScriptableObject
+namespace ScriptableObjectsScripts
 {
-    public string Name;
-    public Sprite Sprite;
-    public int price;
+    [CreateAssetMenu(fileName = "EnemyBaseData", menuName = "Scriptable Objects/EnemyBaseData")]
+    public class EnemyBaseData : ScriptableObject
+    {
+        public string Name;
+        public Sprite Sprite;
+        public int price;
     
-    public float Speed;
-    public float Health;
+        public float Speed;
+        public float Health;
 
-    public int NumberToSpawn;
+        public int NumberToSpawn;
 
-    [Header("Offset position")] 
-    public Vector2 OffsetX;
-    public Vector2 OffsetZ;
-    public float OffsetUp;
+        [Header("Offset position")] 
+        public Vector2 OffsetX;
+        public Vector2 OffsetZ;
+        public float OffsetUp;
 
-    [Header("Prefab")] 
+        [Header("Prefab")] 
     
-    public GameObject Prefab;
+        public GameObject Prefab;
+    }
 }
+

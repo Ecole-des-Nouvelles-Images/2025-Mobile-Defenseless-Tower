@@ -22,7 +22,6 @@ namespace Managers
             float testMoney = InventoryHandler.Instance.Money - enemyclass.baseData.price;
             if (testMoney < 0) return;
         
-            Debug.Log("Spawn");
             var newClass = _inventory.EnemyClass.FirstOrDefault(struc => struc.baseData == enemyclass.baseData);
         
             for (int i = 0; i < newClass.NumberSpawn; i++)

@@ -1,16 +1,42 @@
 using System;
 using Class;
 using UnityEngine;
+using Utils;
 
 public abstract class Spell : MonoBehaviour
 {
-    public  SpellClass SpellClass;
+    public bool InPause;
+    public SpellClass SpellClass;
+    public float TimeSpell;
 
-    private void Start()
+    private void OnEnable()
     {
-        Destroy(gameObject, SpellClass.Time);
-        transform.localScale = new Vector3(SpellClass.AreaSize, SpellClass.AreaSize, SpellClass.AreaSize);
+        EventBus.OnGamePaused += OnPause;
+        EventBus.OnGameResume += OnResume;
+    }
+
+    private void OnDisable()
+    {
+        EventBus.OnGamePaused -= OnPause;
+        EventBus.OnGameResume -= OnResume;
     }
     
+    private void Start()
+    {
+        transform.localScale = new Vector3(SpellClass.AreaSize, SpellClass.AreaSize, SpellClass.AreaSize);
+        TimeSpell = SpellClass.Time;
+    }
+
+    private void OnPause()
+    {
+        InPause = true;
+    }
+
+    private void OnResume()
+    {
+        InPause = false;
+    }
+    
+    public abstract void SetUp();
     public abstract void DoSpell();
 }

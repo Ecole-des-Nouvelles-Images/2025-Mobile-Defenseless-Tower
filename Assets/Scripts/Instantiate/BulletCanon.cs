@@ -1,5 +1,6 @@
 using Interface;
 using UnityEngine;
+using Utils;
 
 namespace Instantiate
 {
@@ -9,6 +10,20 @@ namespace Instantiate
         public float Speed;
         public float Damage;
 
+        private float _speedSave;
+        
+        private void OnEnable()
+        {
+            EventBus.OnGamePaused += OnPause;
+            EventBus.OnGameResume += OnResume;
+        }
+
+        private void OnDisable()
+        {
+            EventBus.OnGamePaused -= OnPause;
+            EventBus.OnGameResume -= OnResume;
+        }
+        
         public void SetUp(GameObject target, float damage)
         {
             Damage = damage;
@@ -17,7 +32,10 @@ namespace Instantiate
     
         private void Update()
         {
-            if (Target == null) Destroy(gameObject);
+            if (Target == null)
+            {
+                Destroy(gameObject);
+            }
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, Speed * Time.deltaTime);
         }
 
@@ -29,6 +47,17 @@ namespace Instantiate
                 other.gameObject.GetComponent<IDamagable>().TakeDamage(Damage);
                 Destroy(gameObject);
             }
+        }
+        
+        private void OnPause()
+        {
+            _speedSave = Speed;
+            Speed = 0;
+        }
+
+        private void OnResume()
+        {
+            Speed = _speedSave;
         }
     }
 }

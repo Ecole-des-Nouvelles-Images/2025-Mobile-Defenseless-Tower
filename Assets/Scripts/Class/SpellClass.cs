@@ -10,12 +10,14 @@ namespace Class
         public float Price;
         public float Time;
         public float AreaSize;
+        public float Efficiency;
     
         public void SetData()
         {
             Price = SpellData.Price;
             Time = SpellData.Time;
             AreaSize = SpellData.AreaSize;
+            Efficiency = SpellData.Efficiency;
         }
 
         public void Clear()

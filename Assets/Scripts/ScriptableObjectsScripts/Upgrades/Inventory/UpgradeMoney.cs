@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace ScriptableObjectsScripts.Upgrades.Inventory
 {
-    [CreateAssetMenu(fileName = "Money", menuName = "Scriptable Objects/Upgrade/Money")]
-    public class UpgradeMoney : Upgrade
+    [CreateAssetMenu(fileName = "Money", menuName = "Scriptable Objects/Upgrade/Divert/MoneyMax")]
+    public class UpgradeMoney : UpgradeDivert
     {
         public int MoneyToAdd;
     

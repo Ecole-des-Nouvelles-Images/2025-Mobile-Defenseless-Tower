@@ -1,3 +1,4 @@
+using ScriptableObjectsScripts.Difficulty;
 using UnityEngine;
 using Utils;
 
@@ -10,6 +11,9 @@ namespace Managers
 
         [Header("Card")] 
         public int NumberCard;
+
+
+        public SoDifficultySpline DifficultySplineTest;
     
         private void OnEnable()
         {
@@ -30,7 +34,6 @@ namespace Managers
 
         public void LoadNewLevel()
         {
-            _splineManager.GenerateSpline();
             EventBus.OnNextLevel?.Invoke();
         }
 

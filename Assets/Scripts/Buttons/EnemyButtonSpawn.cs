@@ -27,5 +27,7 @@ namespace Buttons
         {
             SpawnManager.Instance.Spawn(EnemyClass);
         }
+        
+        // udate l'inventaire quand une upgrade est appliquén,
     }
 }

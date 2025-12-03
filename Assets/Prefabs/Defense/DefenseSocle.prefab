@@ -93,7 +93,6 @@ MonoBehaviour:
   Damage: 7
   Range: 0
   targetsInRange: []
-  CurrentTarget: {fileID: 0}
   PivotRotation: {fileID: 3821307332722715622}
   SpawnerBullet: {fileID: 579231570254524569}
 --- !u!23 &1236808704830012088
