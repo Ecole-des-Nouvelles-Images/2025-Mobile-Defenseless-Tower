@@ -16,7 +16,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: f397227801559ae4e899867bf6b5a775, type: 3}
   price: 25
   Speed: 0.5
-  Health: 50
+  Health: 300
   NumberToSpawn: 1
   OffsetX: {x: -0.2, y: 0.2}
   OffsetZ: {x: -0.2, y: 0.2}
