@@ -7,6 +7,7 @@ namespace Menu
     public class OnResumeButton : MonoBehaviour
     {
         private Button _button;
+        [SerializeField] private GameObject _panelToClose;
 
         private void Awake()
         {
@@ -25,6 +26,7 @@ namespace Menu
 
         public void OnClick()
         {
+            _panelToClose.SetActive(false);
             EventBus.OnGameResume?.Invoke();
             Debug.Log("OnGame resume");
         }
