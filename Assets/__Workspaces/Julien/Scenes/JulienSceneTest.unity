@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 153224418}
   - component: {fileID: 153224421}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
   MoneyToAddParLevel: 2
-  MaxMoney: 10
+  MaxMoney: 0
   Money: 0
   DefenseBaseDatas:
   - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
