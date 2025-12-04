@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GrosHealt
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeEnemy
   Name: Gros plus puissant
-  Srite: {fileID: 21300000, guid: cc81059cd3f104a49b9232af1b455f38, type: 3}
+  Srite: {fileID: 21300000, guid: 758ea03a04e99ef49aa174713ac940ea, type: 3}
   Description: Augmente de 50 HP le gros mais le prix monte de 10
   TargetData: {fileID: 11400000, guid: 7bc1f4e436a3a06438f4dcec631c771f, type: 2}
   PriceToAdd: 10
