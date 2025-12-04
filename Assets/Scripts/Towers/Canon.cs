@@ -18,8 +18,9 @@ namespace Towers
         public override void LookFirstEnemy()
         {
             if (targetsInRange != null && targetsInRange.Count > 0)
-            { 
-                PivotRotation.transform.LookAt(targetsInRange[0].transform);
+            {
+                Vector3 posTarget = targetsInRange[0].transform.position;
+                PivotRotation.transform.LookAt(new Vector3(posTarget.x, 0, posTarget.z));
             }
         }
 
