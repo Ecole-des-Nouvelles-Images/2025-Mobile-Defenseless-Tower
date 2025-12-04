@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ScriptableObjectsScripts
 {
-    [CreateAssetMenu(fileName = "Enemy", menuName = "Scriptable Objects/Enemy")]
+    [CreateAssetMenu(fileName = "EnemyBaseData", menuName = "Scriptable Objects/EnemyBaseData")]
     public class EnemyBaseData : ScriptableObject
     {
         public string Name;

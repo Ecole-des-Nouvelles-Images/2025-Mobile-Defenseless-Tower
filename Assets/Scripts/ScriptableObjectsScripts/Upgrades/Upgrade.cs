@@ -1,3 +1,4 @@
+using System;
 using Player;
 using UnityEngine;
 
@@ -9,9 +10,11 @@ namespace ScriptableObjectsScripts.Upgrades
         [Header("Visuel")] 
         public string Name;
         public Sprite Srite;
-        public string Description;
-    
-    
-        public abstract void Apply(InventoryHandler inventary);
+        [TextArea] public string Description;
+        
+        public virtual void Apply(InventoryHandler inventary)
+        {
+            
+        }
     }
 }

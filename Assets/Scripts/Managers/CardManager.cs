@@ -29,7 +29,6 @@ namespace Managers
         {
             _upgrades = UpgradeUtils.GetRandomUpgrade(GameManager.Instance.NumberCard);
         
-            Debug.Log(_upgrades.Count);
             for (int i = 0; i < gameObject.transform.childCount; i++)
             { 
                 gameObject.transform.GetChild(i).gameObject.SetActive(true);

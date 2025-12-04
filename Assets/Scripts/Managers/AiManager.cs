@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Class;
 using UnityEngine;
 using Utils;
@@ -13,90 +14,94 @@ namespace Managers
         public int MaxMoney;
         public int Money;
 
-        public List<GameObject> Towers;
-
+        //public List<GameObject> Towers;
+        public List<DefenseBaseData> DefenseBaseDatas = new List<DefenseBaseData>();
+        
+        [SerializeField] private List<DefenseBaseData> _defenseBaseDatasToSpawn = new List<DefenseBaseData>();
+        private int[,] _matrixInt;
+        private List<HeuristicResult> _heuristicResults = new List<HeuristicResult>();
+        
         private void Awake()
         {
-            Debug.Log("Place tower awake");
             Money = MaxMoney;
-            EventBus.OnTerrainGenerate += PlaceTowers;
-            EventBus.OnNextLevel += OnNextLevel;
+            // foreach (GameObject tower in Towers)
+            // {
+            //     DefenseBaseDatas.Add(tower.GetComponent<TowerBase>().BaseData);
+            // }
+            EventBus.OnTerrainGenerate += OnNextLevel;
         }
     
         private void OnDisable()
         {
-            EventBus.OnTerrainGenerate -= PlaceTowers;
-            EventBus.OnNextLevel -= OnNextLevel;
+            EventBus.OnTerrainGenerate -= OnNextLevel;
         }
-    
-        [ContextMenu("PlaceTowers")]
-        public void PlaceTowers()
+        
+        [ContextMenu("PlaceAITowers")]
+        public void PlaceIaTower()
         {
-            Debug.Log("Place tower");
-            int safety = 0;          // compteur de sécurité
-            int maxSafety = 2000;     // valeur max avant arrêt forcé
-
-            while (Money > 0)
+            
+            _matrixInt = AiUtils.ConvertMatrixCellToInt(PathManager.Instance.CellsMatrix);
+            _heuristicResults = AiUtils.SetHeuristicResult(_matrixInt, DefenseBaseDatas);
+            
+            _heuristicResults = _heuristicResults.OrderByDescending(heuristic => heuristic.HeuristicValue).ToList();
+            for (int i = 0; i < _heuristicResults.Count; i++)
             {
-                ChoiceRandomPos();
-
-                safety++;
-                if (safety > maxSafety)
+                if (_heuristicResults[i].HeuristicValue > 0)
                 {
-                    Debug.LogWarning("PlaceTowers STOP → boucle trop longue, arrêt de sécurité !");
-                    break;
+                    Debug.Log(_heuristicResults[i].DefenseBaseData.name + " HEURISTIC " + _heuristicResults[i].HeuristicValue);
                 }
+                else
+                {
+                    _heuristicResults.RemoveAt(i);
+                }
+            }
+            SetRandomDefenseToSpawn();
+            BuyTower();
+            Debug.Log(_matrixInt);
+        }
+
+        public void SetRandomDefenseToSpawn()
+        {
+            for (int i = 0; i < _heuristicResults.Count; i++)
+            {
+                DefenseBaseData defenseBaseData = DefenseBaseDatas[Random.Range(0, DefenseBaseDatas.Count)];
+                bool outMoney = CheckIfHeCanBuy(defenseBaseData);
+                if (!outMoney) break;
+                _defenseBaseDatasToSpawn.Add(defenseBaseData);
+            }
+        }
+
+        public void BuyTower()
+        {
+            foreach (DefenseBaseData defense in _defenseBaseDatasToSpawn)
+            {
+                // je créer une list et je récup que les élément qui sont égal = defense 
+                List<HeuristicResult> heuristicResults = _heuristicResults.Where(result => result.DefenseBaseData == defense).ToList();
+                // je classe dans l'ordre décroissant par rapport à l'heuristiqueValue
+                heuristicResults = heuristicResults.OrderByDescending(result => result.HeuristicValue).ToList();
+                //Je récupere le premier
+                HeuristicResult finalResult = heuristicResults.First();
+
+                // ensuite je l'enleve de la list
+                _heuristicResults.Remove(finalResult);
+                Debug.Log(finalResult.DefenseBaseData.name + " HEURISTIC " + finalResult.HeuristicValue);
+               
+                Instantiate(finalResult.DefenseBaseData.Prefab, new Vector3(finalResult.position.x, 0, finalResult.position.y), Quaternion.identity, transform);
             }
             
-            EventBus.OnIaPlaceTower?.Invoke();
         }
-    
-        [ContextMenu("RandPos")]
-        public void ChoiceRandomPos()
+        
+        
+        private bool CheckIfHeCanBuy(DefenseBaseData data)
         {
-            int x = Random.Range(0, PathManager.Instance.Width);
-            int z = Random.Range(0, PathManager.Instance.Height);
-
-            var cell = PathManager.Instance.CellsMatrix[x, z];
-
-            if (cell == null)
-            {
-                Debug.LogError("CellMatrix["+x+","+z+"] est NULL !");
-                return;
-            }
-
-            if (!cell.IsAPath && !cell.IsTower)
-            {
-                GameObject tower = ChoiceRandDefense();
-                if (CheckIfHeCanBuy(tower))
-                {
-                    Instantiate(tower, new Vector3(x, 0, z), Quaternion.identity, transform);
-                    cell.IsTower = true;
-                }
-            }
-            else
-            {
-                ChoiceRandomPos();
-            }
-        }
-    
-        public GameObject ChoiceRandDefense()
-        {
-            int rand = Random.Range(0, Towers.Count);
-            Debug.Log(Towers[rand].name);
-            return Towers[rand];
-        }
-
-        private bool CheckIfHeCanBuy(GameObject tower)
-        {
-            int tempMoney = Money - tower.GetComponent<TowerBase>().BaseData.Price;
+            int tempMoney = Money - data.Price;
             if (tempMoney < 0)
             {
                 return false;
             }
             else
             {
-                Money -= tower.GetComponent<TowerBase>().BaseData.Price;
+                Money -= data.Price;
                 return true;
             }
         }
@@ -110,15 +115,16 @@ namespace Managers
                 PathManager.Instance.CellsMatrix[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z)].IsTower = false;
                 Destroy(transform.GetChild(i).gameObject);
             }
+            _defenseBaseDatasToSpawn.Clear();
+            _heuristicResults.Clear();
         }
 
         public void OnNextLevel()
         {
+            RemoveAllTowers();
             MaxMoney += MoneyToAddParLevel;
             Money = MaxMoney;
-        
-            RemoveAllTowers();
-            PlaceTowers();
+            PlaceIaTower();
         }
     }
 }

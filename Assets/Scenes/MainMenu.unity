@@ -2250,7 +2250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b529cb1211cac5543aa3ec4157401879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OpenScene
-  SceneName: JulienSceneTest
+  SceneName: SceneGame
   _button: {fileID: 0}
 --- !u!1 &2045334742 stripped
 GameObject:
