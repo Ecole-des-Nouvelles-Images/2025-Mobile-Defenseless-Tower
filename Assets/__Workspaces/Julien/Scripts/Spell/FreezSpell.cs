@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Interface;
 using UnityEngine;
 
 public class FreezSpell : Spell

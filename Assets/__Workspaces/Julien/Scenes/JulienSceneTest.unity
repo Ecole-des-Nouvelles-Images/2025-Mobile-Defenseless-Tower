@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 78111134}
   - component: {fileID: 78111133}
+  - component: {fileID: 78111135}
   m_Layer: 0
   m_Name: TerrainManager
   m_TagString: Untagged
@@ -176,6 +177,21 @@ Transform:
   - {fileID: 1820295409}
   m_Father: {fileID: 1937995974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &78111135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78111132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817c4a8df3e17184c95885ee741ddc54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnProps
+  NumberPropos: 5
+  _ressourcePath: Props
+  _prefabsProps: []
 --- !u!1 &153224417
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +591,7 @@ MonoBehaviour:
   MaxDifficulty: 10
   CurrentDifficulty: {fileID: 0}
   DifficultySplines:
-  - {fileID: 11400000, guid: fc34241895ac81e4bb5a813bc80b65a3, type: 2}
+  - {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
   - {fileID: 11400000, guid: 20ff59e6ff7986d488099c1e52f3733c, type: 2}
   - {fileID: 11400000, guid: f88280f7a04a4b34e8d26d2fe223ccd5, type: 2}
   - {fileID: 11400000, guid: c8163ed516dcacf4195886925abd44bc, type: 2}
@@ -624,7 +640,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413439520}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 278f021f7e6a8674880cc8206ca50b00, type: 3}
   m_Name: 
