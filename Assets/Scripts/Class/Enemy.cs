@@ -23,6 +23,7 @@ namespace Class
   
         [SerializeField] private Image _healthBar;
         [SerializeField] private SplineAnimate _splineAnimate;
+        [SerializeField] private SplineContainer _splineContainer;
     
         public float Health
         {
@@ -39,6 +40,7 @@ namespace Class
             }
         }
 
+        
         private void OnEnable()
         {
             EventBus.OnGamePaused += OnPause;
@@ -56,11 +58,20 @@ namespace Class
             SpawnInEmpty();
         
             _splineAnimate.Container = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
+            _splineContainer = _splineAnimate.splineContainer;
             _splineAnimate.Play();
             SetUp();
             RandOffset();
         }
-    
+
+        private void Update()
+        {
+            float t = _splineAnimate.NormalizedTime;
+            
+            Vector3 tangent = _splineContainer.EvaluateTangent(t);
+            transform.rotation = Quaternion.LookRotation(tangent);
+        }
+
         public void SetUp()
         {
             _speed = EnemyClass.Speed;

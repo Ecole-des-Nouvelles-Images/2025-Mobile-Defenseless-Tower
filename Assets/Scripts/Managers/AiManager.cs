@@ -48,7 +48,7 @@ namespace Managers
             {
                 if (_heuristicResults[i].HeuristicValue > 0)
                 {
-                    Debug.Log(_heuristicResults[i].DefenseBaseData.name + " HEURISTIC " + _heuristicResults[i].HeuristicValue);
+                    //Debug.Log(_heuristicResults[i].DefenseBaseData.name + " HEURISTIC " + _heuristicResults[i].HeuristicValue);
                 }
                 else
                 {
@@ -84,7 +84,7 @@ namespace Managers
 
                 // ensuite je l'enleve de la list
                 _heuristicResults.Remove(finalResult);
-                Debug.Log(finalResult.DefenseBaseData.name + " HEURISTIC " + finalResult.HeuristicValue);
+                //Debug.Log(finalResult.DefenseBaseData.name + " HEURISTIC " + finalResult.HeuristicValue);
                
                 Instantiate(finalResult.DefenseBaseData.Prefab, new Vector3(finalResult.position.x, 0, finalResult.position.y), Quaternion.identity, transform);
             }

@@ -66,7 +66,6 @@ namespace Managers
             _maxHeight = Difficulty.MaxHeight;
         }
         
-        [ContextMenu("GenerateSpline")]
         public void GenerateSpline()
         {
             _vector3Ints.Clear();
