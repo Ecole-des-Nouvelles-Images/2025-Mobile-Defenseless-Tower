@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Buttons;
 using Class;
+using ScriptableObjectsScripts.Spells;
 using ScriptableObjectsScripts.Upgrades;
 using Unity.Mathematics;
 using UnityEngine;
@@ -11,7 +12,9 @@ namespace Player
     public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     {
         public int StartMoney;
+        public int StartElixir;
         [SerializeField] private float _money;
+        [SerializeField] private float _elixir;
         
         public float Money
         {
@@ -20,6 +23,16 @@ namespace Player
             {
                 _money = value;
                 EventBus.OnPlayerUseMoney?.Invoke();
+            }
+        }
+        
+        public float Elixir
+        {
+            get => _elixir;
+            set
+            {
+                _elixir = value;
+                EventBus.OnPlayerUseElixir?.Invoke();
             }
         }
 
@@ -95,10 +108,10 @@ namespace Player
         {
             if (EquipedSpell.SpellData == true)
             {
-                float testPrice = Money - EquipedSpell.Price;
+                float testPrice = Elixir - EquipedSpell.Price;
                 if (testPrice < 0) return;
-            
-                Money -= EquipedSpell.Price;
+                
+                Elixir -= EquipedSpell.Price;
                 GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
                 spell.GetComponent<Spell>().SpellClass = EquipedSpell;
             }
@@ -124,6 +137,7 @@ namespace Player
         public void UpdateInventoryData()
         {
             Money = StartMoney;
+            Elixir = StartElixir;
             EventBus.OnInventoryAreUpdated?.Invoke();
         }
         [ContextMenu("Upgrade")]

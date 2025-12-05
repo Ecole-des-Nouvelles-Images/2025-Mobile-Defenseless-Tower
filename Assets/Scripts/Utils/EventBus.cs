@@ -28,6 +28,7 @@ namespace Utils
         public static Action OnInventoryAreUpdated;
         public static Action OnPlayerClicked;
         public static Action OnPlayerUseMoney;
+        public static Action OnPlayerUseElixir;
         public static Action OnPlayerTakedCard;
     
         // IA

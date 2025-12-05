@@ -42,7 +42,6 @@ public class SpawnProps : MonoBehaviour
                 if (cells[i, j].IsAPath == false && cells[i, j].IsTower == false && cells[i, j].IsProps == false)
                 {
                     positions.Add(new Vector2Int(i, j));
-                    Debug.Log("Add" + i + " / " + j);
                 }
             }
         }
