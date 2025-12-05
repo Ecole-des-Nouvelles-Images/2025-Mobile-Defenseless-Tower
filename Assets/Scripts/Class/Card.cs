@@ -18,7 +18,19 @@ namespace Class
     
         [SerializeField] private TMP_Text _text;
         [SerializeField] private Image _image;
-
+        [SerializeField] private Image _typeImage;
+        
+        [Header("Rarity")]
+        [SerializeField] private Sprite _communCadre;
+        [SerializeField] private Sprite _moyenCadre;
+        [SerializeField] private Sprite _rareCadre;
+        
+        [Header("Type")]
+        
+        [SerializeField] private Sprite _enemyType;
+        [SerializeField] private Sprite _spellType;
+        [SerializeField] private Sprite _divertType;
+        
         private void Start()
         {
             SetUp(Upgrade);
@@ -35,6 +47,15 @@ namespace Class
             _text.text = _description;
         
             _inventory = GameObject.Find("InventoryHandler").GetComponent<InventoryHandler>();
+            Image image = gameObject.GetComponent<Image>();
+            
+            if (Upgrade.Rarity is Rarity.Commun) image.sprite = _communCadre;
+            if (Upgrade.Rarity is Rarity.Moyen) image.sprite = _moyenCadre;
+            if (Upgrade.Rarity is Rarity.Rare) image.sprite = _rareCadre;
+            
+            if(upgrade is UpgradeEnemy) _typeImage.sprite = _enemyType;
+            if(upgrade is UpgradeSpell) _typeImage.sprite = _spellType;
+            if(upgrade is UpgradeDivert) _typeImage.sprite = _divertType;
         }
     
         public void OnClick()
