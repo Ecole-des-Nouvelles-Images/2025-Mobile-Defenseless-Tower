@@ -80,7 +80,10 @@ namespace Managers
                 // je classe dans l'ordre décroissant par rapport à l'heuristiqueValue
                 heuristicResults = heuristicResults.OrderByDescending(result => result.HeuristicValue).ToList();
                 //Je récupere le premier
-                HeuristicResult finalResult = heuristicResults.First();
+                
+                // Faire un random de choix
+                int inteligeanceChoice = Random.Range(0, heuristicResults.Count);
+                HeuristicResult finalResult = heuristicResults[inteligeanceChoice];
 
                 // ensuite je l'enleve de la list
                 _heuristicResults.Remove(finalResult);
