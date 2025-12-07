@@ -8,7 +8,8 @@ namespace Managers
 {
     public class CardManager : MonoBehaviour
     {
-    
+        
+        
         [SerializeField] private GameObject _cardPrefab;
         [SerializeField] private Upgrade _upgradeTest;
         [SerializeField] private GameObject _cardPacker;

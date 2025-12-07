@@ -1,7 +1,9 @@
+using System;
 using Player;
 using ScriptableObjectsScripts.Upgrades;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Utils;
 using Image = UnityEngine.UI.Image;
 
@@ -30,7 +32,9 @@ namespace Class
         [SerializeField] private Sprite _enemyType;
         [SerializeField] private Sprite _spellType;
         [SerializeField] private Sprite _divertType;
-        
+
+       
+
         private void Start()
         {
             SetUp(Upgrade);
@@ -62,7 +66,8 @@ namespace Class
         {
             Upgrade.Apply(_inventory);
             EventBus.OnPlayerTakedCard?.Invoke();
-        
         }
+        
+        
     }
 }
