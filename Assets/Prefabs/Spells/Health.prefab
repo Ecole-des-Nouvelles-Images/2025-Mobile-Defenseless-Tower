@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 357445262960144982}
   - component: {fileID: 7881072117839922244}
   - component: {fileID: 5404090315319526537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,14 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528dbac78de699a4b9c82e94d235f33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSpell
+  InPause: 0
   SpellClass:
     SpellData: {fileID: 0}
     Price: 0
     Time: 0
     AreaSize: 0
+    Efficiency: 0
+  TimeSpell: 0
   MaxTimeBeforHealth: 0.2
   TimeBeforHeal: 0
-  HealthParTick: 1
   _enemies: []
 --- !u!33 &357445262960144982
 MeshFilter:

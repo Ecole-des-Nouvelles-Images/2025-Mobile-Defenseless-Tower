@@ -549,6 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7057855699322821419}
+  - component: {fileID: 7994536870546969696}
   - component: {fileID: 693183607444206802}
   - component: {fileID: 612552595430172783}
   - component: {fileID: 7840525622382046892}
@@ -579,6 +580,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7994536870546969696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917173906307662932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b529cb1211cac5543aa3ec4157401879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.OpenScene
+  SceneName: MainMenu
+  _button: {fileID: 0}
 --- !u!222 &693183607444206802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -660,7 +675,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 612552595430172783}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7994536870546969696}
+        m_TargetAssemblyTypeName: Menu.OpenScene, Assembly-CSharp
+        m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2469414586179339386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6562742509224425065}
+  - component: {fileID: 6578070829419618182}
   - component: {fileID: 6506006240892694024}
   - component: {fileID: 7596076709637620479}
   - component: {fileID: 1845439023438474838}
@@ -1240,6 +1268,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6578070829419618182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367653422348646501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f113cc7e05cd0b54080079e6a105e023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.OnResumeButton
+  _panelToClose: {fileID: 272979412356851377}
 --- !u!222 &6506006240892694024
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1321,7 +1362,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7596076709637620479}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6578070829419618182}
+        m_TargetAssemblyTypeName: Menu.OnResumeButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4404618574399489355
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,9 +4,9 @@ using Utils;
 
 namespace Class
 {
-    public abstract class TowerBase : MonoBehaviour
+    public abstract class TowerBase : MonoBehaviour, IFreezable
     {
-        private bool InPause;
+        [SerializeField] private bool _inPause;
         
         public DefenseBaseData BaseData;
 
@@ -44,7 +44,7 @@ namespace Class
     
         private void Update()
         {
-            if (InPause) return;
+            if (_inPause) return;
             targetsInRange.RemoveAll( x => !x);
             CoolDown += Time.deltaTime;
             LookFirstEnemy();
@@ -76,12 +76,22 @@ namespace Class
         
         private void OnPause()
         {
-            InPause = true;
+            _inPause = true;
         }
 
         private void OnResume()
         {
-            InPause = false;
+            _inPause = false;
+        }
+
+        public void Freeze()
+        {
+            _inPause = true;
+        }
+
+        public void Unfreeze()
+        {
+            _inPause = false;
         }
     }
 }
