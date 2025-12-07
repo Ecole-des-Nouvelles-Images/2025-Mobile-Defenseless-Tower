@@ -18,6 +18,7 @@ MonoBehaviour:
   Speed: 1
   Health: 10
   NumberToSpawn: 5
+  Damage: 1
   OffsetX: {x: -0.5, y: 0.5}
   OffsetZ: {x: -0.5, y: 0.5}
   OffsetUp: 0

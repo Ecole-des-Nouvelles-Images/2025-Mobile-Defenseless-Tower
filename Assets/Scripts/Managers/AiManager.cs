@@ -84,7 +84,6 @@ namespace Managers
 
                 // ensuite je l'enleve de la list
                 _heuristicResults.Remove(finalResult);
-                //Debug.Log(finalResult.DefenseBaseData.name + " HEURISTIC " + finalResult.HeuristicValue);
 
                 PathManager.Instance.CellsMatrix[Mathf.FloorToInt(finalResult.position.x), Mathf.FloorToInt(finalResult.position.y)].IsTower = true;
                 Instantiate(finalResult.DefenseBaseData.Prefab, new Vector3(finalResult.position.x, 0, finalResult.position.y), Quaternion.identity, transform);

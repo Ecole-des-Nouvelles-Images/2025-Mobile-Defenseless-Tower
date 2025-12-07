@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 public static class AiUtils
@@ -46,7 +47,7 @@ public static class AiUtils
         {
             for (int j = 0; j < width; j++)
             {
-                if (matrix[i,j] == 0)
+                if (matrix[i,j] == 0 && !PathManager.Instance.CellsMatrix[i,j].IsBlocked)
                 {
                    heuristicResults.Add(ChoiceBetterTower(new Vector2Int(i,j), matrix, defenseBaseDatas));
                 }

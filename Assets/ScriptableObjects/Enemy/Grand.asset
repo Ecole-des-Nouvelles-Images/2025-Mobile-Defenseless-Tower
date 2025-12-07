@@ -18,6 +18,7 @@ MonoBehaviour:
   Speed: 0.5
   Health: 300
   NumberToSpawn: 1
+  Damage: 3
   OffsetX: {x: -0.2, y: 0.2}
   OffsetZ: {x: -0.2, y: 0.2}
   OffsetUp: 0
