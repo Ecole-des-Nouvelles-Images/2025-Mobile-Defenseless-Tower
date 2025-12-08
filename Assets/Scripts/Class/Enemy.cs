@@ -74,7 +74,7 @@ namespace Class
 
         public void SetUp()
         {
-            _speed = EnemyClass.Speed;
+            _speed = EnemyClass.Speed / 10;
             _maxHealth = EnemyClass.MaxHealth;
             _health = _maxHealth;
         

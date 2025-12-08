@@ -548,8 +548,9 @@ MonoBehaviour:
   MaxMoney: 5
   Money: 0
   DefenseBaseDatas:
-  - {fileID: 11400000, guid: b6120a3ffa329fd47a315998a7228693, type: 2}
   - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
+  - {fileID: 11400000, guid: b6120a3ffa329fd47a315998a7228693, type: 2}
+  - {fileID: 11400000, guid: dd14dd7e550df5042a3b9b5a596a0671, type: 2}
   _defenseBaseDatasToSpawn: []
 --- !u!1 &472620152
 GameObject:
@@ -1128,8 +1129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f45ee4e0cbb6d4a9ae29ad695dcbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryHandler
-  StartMoney: 150
-  StartElixir: 50
+  StartMoney: 200
+  StartElixir: 200
   _money: 0
   _elixir: 0
   EquipedSpell:
@@ -5362,63 +5363,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820295408}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1882984543
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2486535061774727468, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_Name
-      value: Arbalette
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
 --- !u!1 &1905031571
 GameObject:
   m_ObjectHideFlags: 0
@@ -6320,10 +6264,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9089964006297405908, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9140177477399642507, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
       propertyPath: m_Name
       value: CardPropostition
@@ -6652,4 +6592,3 @@ SceneRoots:
   - {fileID: 561730939}
   - {fileID: 1643980870}
   - {fileID: 1191453934}
-  - {fileID: 1882984543}
