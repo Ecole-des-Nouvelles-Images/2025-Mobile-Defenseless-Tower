@@ -2612,7 +2612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 08332f96083e40b4a8f0541164dab43e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef259f068625cc64b84279af28c2eb20, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3459,7 +3459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1466973127
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3578,7 +3578,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e0a8ceea36ab7c408b9da287d488174, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d5c42407956ce64385e914397179dcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4859,6 +4859,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CARD GOLD
       objectReference: {fileID: 0}
+    - target: {fileID: 2316336522645353645, guid: 4e562ee2771afc14caef7d1cea5aaa9f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a2e0a5ac1fc1c64ca41de91ef991291, type: 3}
+    - target: {fileID: 5731387873050557965, guid: 4e562ee2771afc14caef7d1cea5aaa9f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a2e0a5ac1fc1c64ca41de91ef991291, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5086,10 +5094,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4658017502781715823, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3.767212
-      objectReference: {fileID: 0}
     - target: {fileID: 5303481806844628528, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -5121,7 +5125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2678630550377132594, guid: 588876b951e80fd409a0058b9ade498f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6327243942442085046, guid: 588876b951e80fd409a0058b9ade498f, type: 3}
       propertyPath: m_Pivot.x
