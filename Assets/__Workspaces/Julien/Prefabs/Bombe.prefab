@@ -50,7 +50,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   Damage: 0
   Speed: 0
-  RadiusExplosion: 2
+  RadiusExplosion: 1
   ParticleExplosion: {fileID: 0}
 --- !u!33 &863326475143822901
 MeshFilter:

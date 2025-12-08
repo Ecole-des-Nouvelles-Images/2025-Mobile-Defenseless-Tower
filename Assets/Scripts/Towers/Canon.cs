@@ -17,7 +17,8 @@ namespace Towers
             if (targetsInRange != null && targetsInRange.Count > 0)
             {
                 Vector3 posTarget = targetsInRange[0].transform.position;
-                PivotRotation.transform.LookAt(new Vector3(posTarget.x, 0, posTarget.z));
+                PivotRotation.transform.LookAt(new Vector3(posTarget.x, transform.position.y, posTarget.z));
+                
             }
         }
 
