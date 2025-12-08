@@ -545,11 +545,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
   MoneyToAddParLevel: 2
-  MaxMoney: 5
-  Money: 0
+  MaxMoney: 20
+  Money: 20
   DefenseBaseDatas:
-  - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
+  - {fileID: 11400000, guid: dd14dd7e550df5042a3b9b5a596a0671, type: 2}
   - {fileID: 11400000, guid: b6120a3ffa329fd47a315998a7228693, type: 2}
+  - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
   _defenseBaseDatasToSpawn: []
 --- !u!1 &472620152
 GameObject:

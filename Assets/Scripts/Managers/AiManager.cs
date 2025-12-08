@@ -79,7 +79,10 @@ namespace Managers
                 List<HeuristicResult> heuristicResults = _heuristicResults.Where(result => result.DefenseBaseData == defense).ToList();
                 // je classe dans l'ordre décroissant par rapport à l'heuristiqueValue
                 heuristicResults = heuristicResults.OrderByDescending(result => result.HeuristicValue).ToList();
-                //Je récupere le premier
+                
+                
+                
+                if (heuristicResults.Count == 0) continue;
                 
                 // Faire un random de choix
                 int inteligeanceChoice = Random.Range(0, heuristicResults.Count);

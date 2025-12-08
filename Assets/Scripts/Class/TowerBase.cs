@@ -37,6 +37,8 @@ namespace Class
 
         public void SetUp()
         {
+            Range = BaseData.Range + 1;
+            gameObject.GetComponent<SphereCollider>().radius = Range;
             MaxCoolDown = BaseData.CoolDown;
             Damage = BaseData.Damage;
             Range = BaseData.Range;
