@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acc9097cf2fd57845946208b53030976, type: 3}
-  m_Name: DefensePlusForte
+  m_Name: Arbalette
   m_EditorClassIdentifier: Assembly-CSharp::DefenseBaseData
   Price: 2
   CoolDown: 0.3
   Damage: 2
   Range: 3
+  BulletSpeed: 5
   Heurstics:
   - Coord: {x: -2, y: 2}
     Heuristic: 3

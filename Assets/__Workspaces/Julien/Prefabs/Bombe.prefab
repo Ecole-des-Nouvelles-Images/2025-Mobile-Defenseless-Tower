@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4101224104669880342}
-  - component: {fileID: 3710203307912987924}
+  - component: {fileID: 5849267514262964017}
   - component: {fileID: 863326475143822901}
   - component: {fileID: 1112034586085171963}
   - component: {fileID: 2526827146270103335}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bombe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3710203307912987924
+--- !u!114 &5849267514262964017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,12 +44,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2095069144231104046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08b2f308334351d4d93a74287ab689d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dda5a5b8de8a09479a5d73b80995ae4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletCanon
+  m_EditorClassIdentifier: Assembly-CSharp::BulletBombe
   Target: {fileID: 0}
   Damage: 0
   Speed: 0
+  RadiusExplosion: 2
+  ParticleExplosion: {fileID: 0}
 --- !u!33 &863326475143822901
 MeshFilter:
   m_ObjectHideFlags: 0

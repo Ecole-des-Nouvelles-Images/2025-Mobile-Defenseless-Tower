@@ -16,6 +16,7 @@ MonoBehaviour:
   CoolDown: 1
   Damage: 10
   Range: 2
+  BulletSpeed: 5
   Heurstics:
   - Coord: {x: 1, y: 1}
     Heuristic: 5

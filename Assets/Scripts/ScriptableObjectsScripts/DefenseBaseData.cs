@@ -10,7 +10,8 @@ public class DefenseBaseData : ScriptableObject
     public float CoolDown;
     public float Damage;
     public float Range;
-
+    public float BulletSpeed;
+    
     public List<CoordHeurstic> Heurstics = new List<CoordHeurstic>();
 
     [Header("Prefab")] 

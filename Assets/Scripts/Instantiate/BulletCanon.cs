@@ -4,12 +4,9 @@ using Utils;
 
 namespace Instantiate
 {
-    public class BulletCanon : MonoBehaviour
+    public class BulletCanon : Bullet
     {
-        public GameObject Target;
-        public float Speed;
-        public float Damage;
-
+        
         private float _speedSave;
         
         private void OnEnable()
@@ -24,8 +21,9 @@ namespace Instantiate
             EventBus.OnGameResume -= OnResume;
         }
         
-        public void SetUp(GameObject target, float damage)
+        public override void SetUp(GameObject target, float damage, float speed)
         {
+            Speed = speed;
             Damage = damage;
             Target = target;
         }

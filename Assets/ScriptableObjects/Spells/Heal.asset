@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63d793ce70fd2b4c989e2f4b884c9bd, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: Assembly-CSharp::Spell
-  Sprite: {fileID: 21300000, guid: ea5a059b68c0f1348a242e132af38165, type: 3}
+  Sprite: {fileID: 21300000, guid: dcfd12077702b6f41a967a4d106771b9, type: 3}
   Price: 15
   Time: 5
   AreaSize: 3

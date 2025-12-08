@@ -104,9 +104,9 @@ namespace Class
             transform.position = new Vector3(transform.position.x + randX, transform.position.y + enemyBaseData.OffsetUp, transform.position.z + randZ);
         }
 
-        public void TakeDamage(float damaga)
+        public void TakeDamage(float damage)
         {
-            Health -= damaga;
+            Health -= damage;
         }
 
         public void GetHealth(float health)

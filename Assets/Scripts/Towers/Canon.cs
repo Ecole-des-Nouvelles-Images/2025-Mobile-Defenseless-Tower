@@ -1,9 +1,6 @@
-using System;
 using Class;
-using Instantiate;
 using Unity.Mathematics;
 using UnityEngine;
-using Utils;
 
 namespace Towers
 {
@@ -27,7 +24,7 @@ namespace Towers
         public override void Fire()
         {
             GameObject bulletCanon = Instantiate(BaseData.ProjectilPrefab, SpawnerBullet.transform.position, quaternion.identity);
-            bulletCanon.GetComponent<BulletCanon>().SetUp(targetsInRange[0], Damage);
+            bulletCanon.GetComponent<Bullet>().SetUp(targetsInRange[0], Damage, BaseData.BulletSpeed);
         }
 
         
