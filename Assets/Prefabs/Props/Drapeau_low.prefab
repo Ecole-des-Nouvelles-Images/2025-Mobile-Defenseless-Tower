@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7918335002988649766, guid: 07fd1551cd0fb4c4286ad227e4cca896, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b676d636a050f3e4c80267fb6e452701, type: 2}
+      objectReference: {fileID: 2100000, guid: f48af0414ce5908418d0ad56ff0a95c2, type: 2}
     - target: {fileID: -7029948723529949830, guid: 07fd1551cd0fb4c4286ad227e4cca896, type: 3}
       propertyPath: m_Name
       value: Rouge
@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 882129737928793925, guid: 07fd1551cd0fb4c4286ad227e4cca896, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b676d636a050f3e4c80267fb6e452701, type: 2}
+      objectReference: {fileID: 2100000, guid: f48af0414ce5908418d0ad56ff0a95c2, type: 2}
     - target: {fileID: 919132149155446097, guid: 07fd1551cd0fb4c4286ad227e4cca896, type: 3}
       propertyPath: m_Name
       value: Drapeau_low
