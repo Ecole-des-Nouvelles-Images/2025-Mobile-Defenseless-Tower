@@ -72,7 +72,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 1
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5718524299132963680
@@ -324,6 +324,7 @@ MonoBehaviour:
     NumberSpawn: 0
     Speed: 0
     MaxHealth: 0
+    Damage: 0
   _speed: 0
   _healthBar: {fileID: 4971345374089142851}
   _splineAnimate: {fileID: 0}

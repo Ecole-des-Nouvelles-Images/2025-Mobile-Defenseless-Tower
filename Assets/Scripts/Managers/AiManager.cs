@@ -14,7 +14,6 @@ namespace Managers
         public int MaxMoney;
         public int Money;
 
-        //public List<GameObject> Towers;
         public List<DefenseBaseData> DefenseBaseDatas = new List<DefenseBaseData>();
         [SerializeField] private List<DefenseBaseData> _defenseCanUse = new List<DefenseBaseData>();
         
@@ -42,7 +41,7 @@ namespace Managers
         {
             
             _matrixInt = AiUtils.ConvertMatrixCellToInt(PathManager.Instance.CellsMatrix);
-            _heuristicResults = AiUtils.SetHeuristicResult(_matrixInt, DefenseBaseDatas);
+            _heuristicResults = AiUtils.SetHeuristicResult(_matrixInt, _defenseCanUse);
             
             _heuristicResults = _heuristicResults.OrderByDescending(heuristic => heuristic.HeuristicValue).ToList();
             for (int i = 0; i < _heuristicResults.Count; i++)
@@ -66,7 +65,7 @@ namespace Managers
             int moneyTest = Money;
             while (moneyTest > 0)
             {
-                DefenseBaseData defenseBaseData = DefenseBaseDatas[Random.Range(0, DefenseBaseDatas.Count)];
+                DefenseBaseData defenseBaseData = _defenseCanUse[Random.Range(0, _defenseCanUse.Count)];
                 _defenseBaseDatasToSpawn.Add(defenseBaseData);
                 moneyTest -= defenseBaseData.Price;
             }
@@ -112,6 +111,20 @@ namespace Managers
             }
         }
 
+        private void AddTower()
+        {
+            foreach (DefenseBaseData data in DefenseBaseDatas)
+            {
+                if (data.WaveHeCanSpawn == DifficultyManager.Instance.CurrentLevel)
+                {
+                    if (!_defenseCanUse.Contains(data))
+                    {
+                        _defenseCanUse.Add(data);
+                    }
+                }
+            }
+        } 
+        
         [ContextMenu("RemoveAllTowers")]
         public void RemoveAllTowers()
         {
@@ -130,6 +143,7 @@ namespace Managers
             RemoveAllTowers();
             MaxMoney += MoneyToAddParLevel;
             Money = MaxMoney;
+            AddTower();
             PlaceIaTower();
         }
     }

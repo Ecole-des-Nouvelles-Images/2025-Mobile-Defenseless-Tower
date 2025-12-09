@@ -11,6 +11,8 @@ public class DefenseBaseData : ScriptableObject
     public float Damage;
     public float Range;
     public float BulletSpeed;
+
+    public int WaveHeCanSpawn;
     
     public List<CoordHeurstic> Heurstics = new List<CoordHeurstic>();
 

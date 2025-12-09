@@ -17,6 +17,7 @@ MonoBehaviour:
   Damage: 2
   Range: 3
   BulletSpeed: 5
+  WaveHeCanSpawn: 2
   Heurstics:
   - Coord: {x: -2, y: 2}
     Heuristic: 3
