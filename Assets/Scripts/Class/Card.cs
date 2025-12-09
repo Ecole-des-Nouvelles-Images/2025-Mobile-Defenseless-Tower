@@ -1,9 +1,7 @@
-using System;
 using Player;
 using ScriptableObjectsScripts.Upgrades;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Utils;
 using Image = UnityEngine.UI.Image;
 
@@ -64,6 +62,7 @@ namespace Class
     
         public void OnClick()
         {
+            Debug.Log("UPGRADE");
             Upgrade.Apply(_inventory);
             EventBus.OnPlayerTakedCard?.Invoke();
         }

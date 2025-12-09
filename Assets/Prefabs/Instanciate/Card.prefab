@@ -66,9 +66,9 @@ MonoBehaviour:
   _text: {fileID: 1166908326502047264}
   _image: {fileID: 91767213286822104}
   _typeImage: {fileID: 1077520014195551709}
-  _communCadre: {fileID: 21300000, guid: 08332f96083e40b4a8f0541164dab43e, type: 3}
-  _moyenCadre: {fileID: 21300000, guid: 0e0a8ceea36ab7c408b9da287d488174, type: 3}
-  _rareCadre: {fileID: 21300000, guid: 83a14cc73b0988949bf00c13873f0b6a, type: 3}
+  _communCadre: {fileID: 21300000, guid: ef259f068625cc64b84279af28c2eb20, type: 3}
+  _moyenCadre: {fileID: 21300000, guid: 6d5c42407956ce64385e914397179dcf, type: 3}
+  _rareCadre: {fileID: 21300000, guid: 8a2e0a5ac1fc1c64ca41de91ef991291, type: 3}
   _enemyType: {fileID: 21300000, guid: 7c8eedc21581f3140b452841c1a5ed69, type: 3}
   _spellType: {fileID: 21300000, guid: ea5a059b68c0f1348a242e132af38165, type: 3}
   _divertType: {fileID: 21300000, guid: fae3b4fcc70683841b0438ef79dc8582, type: 3}

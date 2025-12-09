@@ -33,7 +33,9 @@ namespace Instantiate
             if (Target == null)
             {
                 Destroy(gameObject);
+                return;
             }
+            
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, Speed * Time.deltaTime);
         }
 

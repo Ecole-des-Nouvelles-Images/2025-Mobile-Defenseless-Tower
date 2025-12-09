@@ -15,9 +15,10 @@ MonoBehaviour:
   Name: Petit
   Sprite: {fileID: 21300000, guid: 7c8eedc21581f3140b452841c1a5ed69, type: 3}
   price: 0
-  Speed: 15
+  Speed: 150
   Health: 100000
   NumberToSpawn: 15
+  Damage: 0
   OffsetX: {x: -0.5, y: 0.5}
   OffsetZ: {x: -0.5, y: 0.5}
   OffsetUp: 0

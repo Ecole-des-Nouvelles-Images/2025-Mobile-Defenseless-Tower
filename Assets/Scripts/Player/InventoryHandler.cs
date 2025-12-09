@@ -40,7 +40,10 @@ namespace Player
     
         public List<EnemyClass> EnemyClass = new List<EnemyClass>();
         public List<SpellClass> SpellClasses = new List<SpellClass>();
-    
+
+        private List<EnemyButtonSpawn> _enemyButtonSpawns = new List<EnemyButtonSpawn>();
+        private List<SpellButton> _spellButtonSpawn = new List<SpellButton>();
+        
         [SerializeField] private GameObject PanelInventoryEnemy;
         [SerializeField] private GameObject PanelInventorySpell;
         [SerializeField] private GameObject prefabEnemyButton;
@@ -95,9 +98,8 @@ namespace Player
         {
             GameObject instanciate = Instantiate(prefabEnemyButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
             instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = enemyClass;
+            _enemyButtonSpawns.Add(instanciate.GetComponent<EnemyButtonSpawn>());
         }
-    
-    
     
         // Sort
         public void EquipeSpell(SpellClass spellClass)
@@ -125,6 +127,7 @@ namespace Player
         {
             GameObject instanciate = Instantiate(prefabSpellButton, transform.position, quaternion.identity, PanelInventorySpell.transform);
             instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
+            _spellButtonSpawn.Add(instanciate.GetComponent<SpellButton>());
         }
 
 
@@ -138,14 +141,29 @@ namespace Player
         {
             Money = StartMoney;
             Elixir = StartElixir;
+            SetAllVisual();
             EventBus.OnInventoryAreUpdated?.Invoke();
         }
+
+        public void SetAllVisual()
+        {
+            foreach (EnemyButtonSpawn buttonSpawn in _enemyButtonSpawns)
+            {
+                buttonSpawn.SetUp();
+            }
+
+            foreach (SpellButton spellButton in _spellButtonSpawn)
+            {
+                spellButton.SetUp();
+            }
+        }
+        
+        
         [ContextMenu("Upgrade")]
         public void Upgrade()
         {
             UpgradeTest.Apply(this);
         }
-
     
     }
 }

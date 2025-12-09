@@ -16,6 +16,7 @@ namespace Managers
 
         //public List<GameObject> Towers;
         public List<DefenseBaseData> DefenseBaseDatas = new List<DefenseBaseData>();
+        [SerializeField] private List<DefenseBaseData> _defenseCanUse = new List<DefenseBaseData>();
         
         [SerializeField] private List<DefenseBaseData> _defenseBaseDatasToSpawn = new List<DefenseBaseData>();
         private int[,] _matrixInt;
@@ -62,12 +63,12 @@ namespace Managers
 
         public void SetRandomDefenseToSpawn()
         {
-            for (int i = 0; i < _heuristicResults.Count; i++)
+            int moneyTest = Money;
+            while (moneyTest > 0)
             {
                 DefenseBaseData defenseBaseData = DefenseBaseDatas[Random.Range(0, DefenseBaseDatas.Count)];
-                bool outMoney = CheckIfHeCanBuy(defenseBaseData);
-                if (!outMoney) break;
                 _defenseBaseDatasToSpawn.Add(defenseBaseData);
+                moneyTest -= defenseBaseData.Price;
             }
         }
 
@@ -77,9 +78,9 @@ namespace Managers
             {
                 // je créer une list et je récup que les élément qui sont égal = defense 
                 List<HeuristicResult> heuristicResults = _heuristicResults.Where(result => result.DefenseBaseData == defense).ToList();
+                
                 // je classe dans l'ordre décroissant par rapport à l'heuristiqueValue
                 heuristicResults = heuristicResults.OrderByDescending(result => result.HeuristicValue).ToList();
-                
                 
                 
                 if (heuristicResults.Count == 0) continue;
@@ -93,21 +94,20 @@ namespace Managers
 
                 PathManager.Instance.CellsMatrix[Mathf.FloorToInt(finalResult.position.x), Mathf.FloorToInt(finalResult.position.y)].IsTower = true;
                 Instantiate(finalResult.DefenseBaseData.Prefab, new Vector3(finalResult.position.x, 0, finalResult.position.y), Quaternion.identity, transform);
+                Money -= finalResult.DefenseBaseData.Price;
             }
             EventBus.OnIaPlaceTower?.Invoke();
         }
         
         
-        private bool CheckIfHeCanBuy(DefenseBaseData data)
+        private bool CheckIfHeCanBuy(DefenseBaseData data, int tempMoney)
         {
-            int tempMoney = Money - data.Price;
-            if (tempMoney < 0)
+            if (tempMoney - data.Price < 0)
             {
                 return false;
             }
             else
             {
-                Money -= data.Price;
                 return true;
             }
         }
