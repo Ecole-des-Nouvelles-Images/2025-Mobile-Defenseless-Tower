@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   Name: Grand
   Sprite: {fileID: 21300000, guid: 07631362d2b1a8a4bbedd9f3613b6b79, type: 3}
-  price: 25
+  price: 35
   Speed: 7
   Health: 200
   NumberToSpawn: 1
