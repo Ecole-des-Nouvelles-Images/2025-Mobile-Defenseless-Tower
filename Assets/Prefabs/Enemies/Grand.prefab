@@ -326,6 +326,8 @@ MonoBehaviour:
     MaxHealth: 0
     Damage: 0
   _speed: 0
+  _materials:
+  - {fileID: 0}
   _healthBar: {fileID: 1075626081044319786}
   _splineAnimate: {fileID: 0}
   _splineContainer: {fileID: 0}
