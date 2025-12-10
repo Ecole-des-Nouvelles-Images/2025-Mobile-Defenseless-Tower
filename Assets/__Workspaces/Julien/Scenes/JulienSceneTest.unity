@@ -6519,7 +6519,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2790907346114690436, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
       propertyPath: MaxChrono
-      value: 10
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5653822891837706920, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
       propertyPath: m_Pivot.x
