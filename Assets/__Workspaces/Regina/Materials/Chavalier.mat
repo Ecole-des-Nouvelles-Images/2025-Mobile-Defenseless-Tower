@@ -28,9 +28,11 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _DissolveAmount: 0
+    - _DissolveAmount: 1
+    - _EdgeWidth: 0.95
     - _HealGlow: 0
     - _HitStrength: 0
+    - _Roughness: 0.256
     - _SpawnGlowStrength: 0
     m_Colors: []
   m_BuildTextureStacks: []
