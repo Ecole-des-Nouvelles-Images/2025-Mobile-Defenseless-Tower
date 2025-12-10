@@ -498,6 +498,22 @@ PrefabInstance:
       propertyPath: PanelToClose
       value: 
       objectReference: {fileID: 508864403}
+    - target: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 431501441}
+    - target: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6311954011959282777, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -534,6 +550,10 @@ PrefabInstance:
       propertyPath: _button
       value: 
       objectReference: {fileID: 1204353760}
+    - target: {fileID: 7451339410738065269, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
+      propertyPath: SceneName
+      value: Game
+      objectReference: {fileID: 0}
     - target: {fileID: 8635310064675311802, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
       propertyPath: _button
       value: 
@@ -551,6 +571,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
+--- !u!114 &431501441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7451339410738065269, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
+  m_PrefabInstance: {fileID: 431501440}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b529cb1211cac5543aa3ec4157401879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.OpenScene
 --- !u!1 &508864403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2416164152711634219, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc9097cf2fd57845946208b53030976, type: 3}
   m_Name: Catapulte
   m_EditorClassIdentifier: Assembly-CSharp::DefenseBaseData
-  Price: 5
+  Price: 3
   CoolDown: 5
-  Damage: 6
+  Damage: 14
   Range: 6
-  BulletSpeed: 3
-  WaveHeCanSpawn: 5
+  BulletSpeed: 5
+  WaveHeCanSpawn: 4
   Heurstics:
   - Coord: {x: 0, y: 4}
     Heuristic: 2

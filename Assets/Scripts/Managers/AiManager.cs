@@ -9,6 +9,10 @@ namespace Managers
 {
     public class AiManager : MonoBehaviourSingleton<AiManager>
     {
+        [Header("IA choice")]
+        public Vector2Int ChoiceAi;
+        
+        [Header(" Money ")]
         public int MoneyToAddParLevel;
     
         public int MaxMoney;
@@ -85,9 +89,10 @@ namespace Managers
                 if (heuristicResults.Count == 0) continue;
                 
                 // Faire un random de choix
-                int inteligeanceChoice = Random.Range(0, heuristicResults.Count);
+                int inteligeanceChoice = Random.Range(ChoiceAi.x, ChoiceAi.y);
                 HeuristicResult finalResult = heuristicResults[inteligeanceChoice];
-
+                
+                
                 // ensuite je l'enleve de la list
                 _heuristicResults.Remove(finalResult);
 

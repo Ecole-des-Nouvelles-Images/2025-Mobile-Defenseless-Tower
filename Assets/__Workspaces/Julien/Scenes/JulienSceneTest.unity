@@ -373,6 +373,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25198438df4dd944d82b04dd20b100cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyUtils
+--- !u!1 &340381441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2678630550377132594, guid: 588876b951e80fd409a0058b9ade498f, type: 3}
+  m_PrefabInstance: {fileID: 969538049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &358535021
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,13 +549,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278f021f7e6a8674880cc8206ca50b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
+  ChoiceAi: {x: 0, y: 5}
   MoneyToAddParLevel: 2
-  MaxMoney: 20
-  Money: 20
+  MaxMoney: 1
+  Money: 1
   DefenseBaseDatas:
   - {fileID: 11400000, guid: b6120a3ffa329fd47a315998a7228693, type: 2}
   - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
   - {fileID: 11400000, guid: dd14dd7e550df5042a3b9b5a596a0671, type: 2}
+  _defenseCanUse: []
   _defenseBaseDatasToSpawn: []
 --- !u!1 &472620152
 GameObject:
@@ -1357,6 +1364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1790925524}
+  - component: {fileID: 1790925525}
   - component: {fileID: 1790925523}
   - component: {fileID: 1790925522}
   - component: {fileID: 1790925521}
@@ -1454,6 +1462,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1790925525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790925520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47dfa197f02eae47bd139dd0527adec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOver
+  _endPanel: {fileID: 340381441}
 --- !u!1 &1798612652
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,6 +6517,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1790925524}
     m_Modifications:
+    - target: {fileID: 2790907346114690436, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
+      propertyPath: MaxChrono
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5653822891837706920, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
