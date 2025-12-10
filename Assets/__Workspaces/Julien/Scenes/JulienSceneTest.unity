@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryHandler
   StartMoney: 500000
-  StartElixir: 200
+  StartElixir: 5000
   _money: 0
   _elixir: 0
   EquipedSpell:
@@ -6519,7 +6519,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2790907346114690436, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
       propertyPath: MaxChrono
-      value: 60
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 5653822891837706920, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
       propertyPath: m_Pivot.x

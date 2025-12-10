@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Class;
 using UnityEngine;
 using Utils;
@@ -37,7 +39,7 @@ namespace ScriptableObjectsScripts.Spells
         {
             InPause = false;
         }
-    
+
         public abstract void SetUp();
         public abstract void DoSpell();
     }

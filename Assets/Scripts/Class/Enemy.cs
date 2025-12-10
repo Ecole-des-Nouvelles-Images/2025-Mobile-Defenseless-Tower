@@ -23,7 +23,7 @@ namespace Class
         private float _maxHealth;
         private float _health;
         
-        [SerializeField] private List<MeshRenderer> _materials;
+        [SerializeField] private Material _materials;
         [SerializeField] private Image _healthBar;
         [SerializeField] private SplineAnimate _splineAnimate;
         [SerializeField] private SplineContainer _splineContainer;
@@ -45,10 +45,7 @@ namespace Class
 
         private void Awake()
         {
-            for (int i = 0; i < gameObject.transform.childCount; i++)
-            {
-                if (gameObject.transform.GetChild(i).GetComponent<MeshRenderer>() == true) _materials.Add(transform.GetChild(i).gameObject.GetComponent<MeshRenderer>());
-            }
+            _materials = gameObject.GetComponentInChildren<Renderer>().material;
         }
 
         private void OnEnable()
@@ -119,14 +116,12 @@ namespace Class
             Health -= damage;
             // Change material
             float targetValue = 0.5f;
+            
             DOTween.To(
                 () => 0f,
                 value =>
                 {
-                    foreach (var material in _materials)
-                    {
-                        material.material.SetFloat("FlashStrength", value);
-                    }
+                    _materials.SetFloat("_HitStrength", value);
                 },
                 targetValue,
                 0.1f
@@ -137,6 +132,18 @@ namespace Class
         {
             _health = Mathf.Clamp(_health + health, 0, _maxHealth);
             _healthBar.fillAmount = _health / _maxHealth;
+            
+            float targetValue = 0.5f;
+            
+            DOTween.To(
+                () => 0f,
+                value =>
+                {
+                    _materials.SetFloat("_HealGlow", value);
+                },
+                targetValue,
+                1f
+            ).SetLoops(2, LoopType.Yoyo);
         }
 
         private void OnPause()
