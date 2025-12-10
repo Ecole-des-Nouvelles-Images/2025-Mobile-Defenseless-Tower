@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Buttons;
 using Class;
+using ScriptableObjectsScripts.Spells;
 using ScriptableObjectsScripts.Upgrades;
 using Unity.Mathematics;
 using UnityEngine;
@@ -11,7 +12,9 @@ namespace Player
     public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     {
         public int StartMoney;
+        public int StartElixir;
         [SerializeField] private float _money;
+        [SerializeField] private float _elixir;
         
         public float Money
         {
@@ -22,12 +25,25 @@ namespace Player
                 EventBus.OnPlayerUseMoney?.Invoke();
             }
         }
+        
+        public float Elixir
+        {
+            get => _elixir;
+            set
+            {
+                _elixir = value;
+                EventBus.OnPlayerUseElixir?.Invoke();
+            }
+        }
 
         public SpellClass EquipedSpell;
     
         public List<EnemyClass> EnemyClass = new List<EnemyClass>();
         public List<SpellClass> SpellClasses = new List<SpellClass>();
-    
+
+        private List<EnemyButtonSpawn> _enemyButtonSpawns = new List<EnemyButtonSpawn>();
+        private List<SpellButton> _spellButtonSpawn = new List<SpellButton>();
+        
         [SerializeField] private GameObject PanelInventoryEnemy;
         [SerializeField] private GameObject PanelInventorySpell;
         [SerializeField] private GameObject prefabEnemyButton;
@@ -82,9 +98,8 @@ namespace Player
         {
             GameObject instanciate = Instantiate(prefabEnemyButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
             instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = enemyClass;
+            _enemyButtonSpawns.Add(instanciate.GetComponent<EnemyButtonSpawn>());
         }
-    
-    
     
         // Sort
         public void EquipeSpell(SpellClass spellClass)
@@ -95,10 +110,10 @@ namespace Player
         {
             if (EquipedSpell.SpellData == true)
             {
-                float testPrice = Money - EquipedSpell.Price;
+                float testPrice = Elixir - EquipedSpell.Price;
                 if (testPrice < 0) return;
-            
-                Money -= EquipedSpell.Price;
+                
+                Elixir -= EquipedSpell.Price;
                 GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
                 spell.GetComponent<Spell>().SpellClass = EquipedSpell;
             }
@@ -112,6 +127,7 @@ namespace Player
         {
             GameObject instanciate = Instantiate(prefabSpellButton, transform.position, quaternion.identity, PanelInventorySpell.transform);
             instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
+            _spellButtonSpawn.Add(instanciate.GetComponent<SpellButton>());
         }
 
 
@@ -124,14 +140,30 @@ namespace Player
         public void UpdateInventoryData()
         {
             Money = StartMoney;
+            Elixir = StartElixir;
+            SetAllVisual();
             EventBus.OnInventoryAreUpdated?.Invoke();
         }
+
+        public void SetAllVisual()
+        {
+            foreach (EnemyButtonSpawn buttonSpawn in _enemyButtonSpawns)
+            {
+                buttonSpawn.SetUp();
+            }
+
+            foreach (SpellButton spellButton in _spellButtonSpawn)
+            {
+                spellButton.SetUp();
+            }
+        }
+        
+        
         [ContextMenu("Upgrade")]
         public void Upgrade()
         {
             UpgradeTest.Apply(this);
         }
-
     
     }
 }

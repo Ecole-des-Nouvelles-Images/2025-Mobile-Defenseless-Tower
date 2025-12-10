@@ -9,13 +9,17 @@ namespace Managers
 {
     public class AiManager : MonoBehaviourSingleton<AiManager>
     {
+        [Header("IA choice")]
+        public Vector2Int ChoiceAi;
+        
+        [Header(" Money ")]
         public int MoneyToAddParLevel;
     
         public int MaxMoney;
         public int Money;
 
-        //public List<GameObject> Towers;
         public List<DefenseBaseData> DefenseBaseDatas = new List<DefenseBaseData>();
+        [SerializeField] private List<DefenseBaseData> _defenseCanUse = new List<DefenseBaseData>();
         
         [SerializeField] private List<DefenseBaseData> _defenseBaseDatasToSpawn = new List<DefenseBaseData>();
         private int[,] _matrixInt;
@@ -41,7 +45,7 @@ namespace Managers
         {
             
             _matrixInt = AiUtils.ConvertMatrixCellToInt(PathManager.Instance.CellsMatrix);
-            _heuristicResults = AiUtils.SetHeuristicResult(_matrixInt, DefenseBaseDatas);
+            _heuristicResults = AiUtils.SetHeuristicResult(_matrixInt, _defenseCanUse);
             
             _heuristicResults = _heuristicResults.OrderByDescending(heuristic => heuristic.HeuristicValue).ToList();
             for (int i = 0; i < _heuristicResults.Count; i++)
@@ -62,12 +66,12 @@ namespace Managers
 
         public void SetRandomDefenseToSpawn()
         {
-            for (int i = 0; i < _heuristicResults.Count; i++)
+            int moneyTest = Money;
+            while (moneyTest > 0)
             {
-                DefenseBaseData defenseBaseData = DefenseBaseDatas[Random.Range(0, DefenseBaseDatas.Count)];
-                bool outMoney = CheckIfHeCanBuy(defenseBaseData);
-                if (!outMoney) break;
+                DefenseBaseData defenseBaseData = _defenseCanUse[Random.Range(0, _defenseCanUse.Count)];
                 _defenseBaseDatasToSpawn.Add(defenseBaseData);
+                moneyTest -= defenseBaseData.Price;
             }
         }
 
@@ -77,35 +81,55 @@ namespace Managers
             {
                 // je créer une list et je récup que les élément qui sont égal = defense 
                 List<HeuristicResult> heuristicResults = _heuristicResults.Where(result => result.DefenseBaseData == defense).ToList();
+                
                 // je classe dans l'ordre décroissant par rapport à l'heuristiqueValue
                 heuristicResults = heuristicResults.OrderByDescending(result => result.HeuristicValue).ToList();
-                //Je récupere le premier
-                HeuristicResult finalResult = heuristicResults.First();
-
+                
+                
+                if (heuristicResults.Count == 0) continue;
+                
+                // Faire un random de choix
+                int inteligeanceChoice = Random.Range(ChoiceAi.x, ChoiceAi.y);
+                HeuristicResult finalResult = heuristicResults[inteligeanceChoice];
+                
+                
                 // ensuite je l'enleve de la list
                 _heuristicResults.Remove(finalResult);
-                //Debug.Log(finalResult.DefenseBaseData.name + " HEURISTIC " + finalResult.HeuristicValue);
-               
+
+                PathManager.Instance.CellsMatrix[Mathf.FloorToInt(finalResult.position.x), Mathf.FloorToInt(finalResult.position.y)].IsTower = true;
                 Instantiate(finalResult.DefenseBaseData.Prefab, new Vector3(finalResult.position.x, 0, finalResult.position.y), Quaternion.identity, transform);
+                Money -= finalResult.DefenseBaseData.Price;
             }
-            
+            EventBus.OnIaPlaceTower?.Invoke();
         }
         
         
-        private bool CheckIfHeCanBuy(DefenseBaseData data)
+        private bool CheckIfHeCanBuy(DefenseBaseData data, int tempMoney)
         {
-            int tempMoney = Money - data.Price;
-            if (tempMoney < 0)
+            if (tempMoney - data.Price < 0)
             {
                 return false;
             }
             else
             {
-                Money -= data.Price;
                 return true;
             }
         }
 
+        private void AddTower()
+        {
+            foreach (DefenseBaseData data in DefenseBaseDatas)
+            {
+                if (data.WaveHeCanSpawn == DifficultyManager.Instance.CurrentLevel)
+                {
+                    if (!_defenseCanUse.Contains(data))
+                    {
+                        _defenseCanUse.Add(data);
+                    }
+                }
+            }
+        } 
+        
         [ContextMenu("RemoveAllTowers")]
         public void RemoveAllTowers()
         {
@@ -124,6 +148,7 @@ namespace Managers
             RemoveAllTowers();
             MaxMoney += MoneyToAddParLevel;
             Money = MaxMoney;
+            AddTower();
             PlaceIaTower();
         }
     }

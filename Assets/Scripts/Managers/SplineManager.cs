@@ -51,9 +51,13 @@ namespace Managers
             EventBus.OnNextLevel -= GenerateSpline;
         }
 
+        [ContextMenu("LoadDifficulty")]
         public void SetDifficulty()
         {
-            Difficulty = DifficultyManager.Instance.CurrentDifficulty;
+            if (DifficultyManager.Instance.CurrentDifficulty != null)
+            {
+                Difficulty = DifficultyManager.Instance.CurrentDifficulty;
+            }
             
             _knotCount = Difficulty.KnotCount;
             _terrainSize = Difficulty. TerrainSize;
@@ -66,6 +70,7 @@ namespace Managers
             _maxHeight = Difficulty.MaxHeight;
         }
         
+        [ContextMenu("GenerateSpline")]
         public void GenerateSpline()
         {
             _vector3Ints.Clear();

@@ -14,7 +14,7 @@ public class EnemyClass
 
     public float Speed;
     public float MaxHealth;
-
+    public int Damage;
     public void SetUpData()
     {
         Name = baseData.Name;
@@ -22,5 +22,6 @@ public class EnemyClass
         NumberSpawn = baseData.NumberToSpawn;
         Speed = baseData.Speed;
         MaxHealth = baseData.Health;
+        Damage = baseData.Damage;
     }
 }
