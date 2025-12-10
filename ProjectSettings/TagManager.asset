@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Castle
   - Tower
+  - Props
   layers:
   - Default
   - TransparentFX

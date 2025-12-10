@@ -1,9 +1,6 @@
-using System;
 using Class;
-using Instantiate;
 using Unity.Mathematics;
 using UnityEngine;
-using Utils;
 
 namespace Towers
 {
@@ -20,14 +17,15 @@ namespace Towers
             if (targetsInRange != null && targetsInRange.Count > 0)
             {
                 Vector3 posTarget = targetsInRange[0].transform.position;
-                PivotRotation.transform.LookAt(new Vector3(posTarget.x, 0, posTarget.z));
+                PivotRotation.transform.LookAt(new Vector3(posTarget.x, transform.position.y, posTarget.z));
+                
             }
         }
 
         public override void Fire()
         {
             GameObject bulletCanon = Instantiate(BaseData.ProjectilPrefab, SpawnerBullet.transform.position, quaternion.identity);
-            bulletCanon.GetComponent<BulletCanon>().SetUp(targetsInRange[0], Damage);
+            bulletCanon.GetComponent<Bullet>().SetUp(targetsInRange[0], Damage, BaseData.BulletSpeed);
         }
 
         

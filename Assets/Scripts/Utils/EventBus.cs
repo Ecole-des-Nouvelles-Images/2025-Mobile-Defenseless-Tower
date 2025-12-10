@@ -18,6 +18,9 @@ namespace Utils
         public static Action OnLevelStart;
         public static Action OnLevelFinished;
 
+        public static Action<int> OnCastleTakedDamage;
+        public static Action<int> OnCastleSpawn;
+        
         public static Action OnDifficultyAreSelected;
     
         // Player
@@ -28,6 +31,7 @@ namespace Utils
         public static Action OnInventoryAreUpdated;
         public static Action OnPlayerClicked;
         public static Action OnPlayerUseMoney;
+        public static Action OnPlayerUseElixir;
         public static Action OnPlayerTakedCard;
     
         // IA

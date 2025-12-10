@@ -3,6 +3,7 @@ using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
 namespace Buttons
 {
@@ -14,7 +15,24 @@ namespace Buttons
         [SerializeField] private TMP_Text _priceText;
         [SerializeField] private Image _image;
     
+        private void OnEnable()
+        {
+            EventBus.OnLevelFinished += DisableClick;
+            EventBus.OnPlayerTakedCard += EnableClick;
+        }
+
+        private void OnDisable()
+        {
+            EventBus.OnLevelFinished -= DisableClick;
+            EventBus.OnPlayerTakedCard -= EnableClick;
+        }
+        
         private void Start()
+        {
+            SetUp();
+        }
+
+        public void SetUp()
         {
             _image =  GetComponent<Image>();
             _image.sprite = SpellClass.SpellData.Sprite;
@@ -49,6 +67,15 @@ namespace Buttons
                 parent.transform.GetChild(i).GetComponent<SpellButton>().AreSelected = false;
                 parent.transform.GetChild(i).gameObject.GetComponent<Image>().color = Color.white;
             }
+        }
+        
+        private void EnableClick()
+        {
+            gameObject.GetComponent<Button>().interactable = true;
+        }
+        private void DisableClick()
+        {
+            gameObject.GetComponent<Button>().interactable = false;
         }
     }
 }

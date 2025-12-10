@@ -7,6 +7,7 @@ namespace Player
     public class ClickManager : MonoBehaviourSingleton<ClickManager>
     {
         private bool _inpause;
+        [SerializeField] private bool CanClick;
         
         [SerializeField] private Camera _camera;
         [SerializeField] private PlayerInput _playerInput;
@@ -22,6 +23,9 @@ namespace Player
             
             EventBus.OnGamePaused += OnPause;
             EventBus.OnGameResume += OnResume;
+
+            EventBus.OnLevelFinished += DisableClick;
+            EventBus.OnPlayerTakedCard += EnableClick;
         }
     
         private void OnDisable()
@@ -31,6 +35,9 @@ namespace Player
             
             EventBus.OnGamePaused -= OnPause;
             EventBus.OnGameResume -= OnResume;
+
+            EventBus.OnLevelFinished -= DisableClick;
+            EventBus.OnPlayerTakedCard -= EnableClick;
         }
 
         private void GetPCClick(InputAction.CallbackContext obj)
@@ -45,7 +52,7 @@ namespace Player
     
         private void OnClicked(Vector2 clickPos)
         {
-            if (_inpause) return;
+            if (_inpause || !CanClick) return;
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         
             RaycastHit hit;
@@ -56,6 +63,15 @@ namespace Player
                 EventBus.OnPlayerClicked?.Invoke();
             
             }
+        }
+        
+        private void EnableClick()
+        {
+            CanClick = true;
+        }
+        private void DisableClick()
+        {
+            CanClick = false;
         }
         
         private void OnPause()

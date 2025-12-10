@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using Interface;
 using ScriptableObjectsScripts;
 using UnityEngine;
@@ -20,7 +22,8 @@ namespace Class
         [SerializeField] private float _speed;
         private float _maxHealth;
         private float _health;
-  
+        
+        [SerializeField] private List<MeshRenderer> _materials;
         [SerializeField] private Image _healthBar;
         [SerializeField] private SplineAnimate _splineAnimate;
         [SerializeField] private SplineContainer _splineContainer;
@@ -40,7 +43,14 @@ namespace Class
             }
         }
 
-        
+        private void Awake()
+        {
+            for (int i = 0; i < gameObject.transform.childCount; i++)
+            {
+                if (gameObject.transform.GetChild(i).GetComponent<MeshRenderer>() == true) _materials.Add(transform.GetChild(i).gameObject.GetComponent<MeshRenderer>());
+            }
+        }
+
         private void OnEnable()
         {
             EventBus.OnGamePaused += OnPause;
@@ -74,7 +84,7 @@ namespace Class
 
         public void SetUp()
         {
-            _speed = EnemyClass.Speed;
+            _speed = EnemyClass.Speed / 10;
             _maxHealth = EnemyClass.MaxHealth;
             _health = _maxHealth;
         
@@ -104,9 +114,23 @@ namespace Class
             transform.position = new Vector3(transform.position.x + randX, transform.position.y + enemyBaseData.OffsetUp, transform.position.z + randZ);
         }
 
-        public void TakeDamage(float damaga)
+        public void TakeDamage(float damage)
         {
-            Health -= damaga;
+            Health -= damage;
+            // Change material
+            float targetValue = 0.5f;
+            DOTween.To(
+                () => 0f,
+                value =>
+                {
+                    foreach (var material in _materials)
+                    {
+                        material.material.SetFloat("FlashStrength", value);
+                    }
+                },
+                targetValue,
+                0.1f
+            ).SetLoops(2, LoopType.Yoyo);
         }
 
         public void GetHealth(float health)

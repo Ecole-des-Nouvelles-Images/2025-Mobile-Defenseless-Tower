@@ -13,7 +13,8 @@ namespace ScriptableObjectsScripts
         public float Health;
 
         public int NumberToSpawn;
-
+        public int Damage;
+        
         [Header("Offset position")] 
         public Vector2 OffsetX;
         public Vector2 OffsetZ;
