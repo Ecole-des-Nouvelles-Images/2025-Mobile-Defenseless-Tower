@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_HealingShade 1
-  m_Shader: {fileID: -6465566751694194690, guid: aa92041febedaf5448866d6fd3531be5, type: 3}
+  m_Name: Shader Graphs_SG_Flag
+  m_Shader: {fileID: -6465566751694194690, guid: f675668e66f85d847a5c2f8d585d50a3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -24,12 +24,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: d98dbc712d663234e8fd3b561d17b137, type: 3}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 570f35855e027e141931d2f0ac309b82, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture2D_1:
-        m_Texture: {fileID: 2800000, guid: 41016f4dadc2ce14bb8dc44cf39ea70a, type: 3}
+    - _WindMask:
+        m_Texture: {fileID: 2800000, guid: 07c2829cf7e55cf429dc986b0e82ff2c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -46,14 +46,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.228
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _WindPower: 0.05
+    - _WindSpeed: 3
+    - _shadowPower: 0.1
     m_Colors:
-    - _Color: {r: 0.341168, g: 3.773585, b: 0, a: 0.54509807}
+    - _Demo: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &7964092583208714285
+--- !u!114 &1171238310393836439
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
