@@ -61,8 +61,8 @@ namespace Player
             {
                 LastPosition = hit.point;
                 EventBus.OnPlayerClicked?.Invoke();
-            
             }
+            Debug.Log(hit.collider.name);
         }
         
         private void EnableClick()

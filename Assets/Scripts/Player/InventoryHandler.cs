@@ -127,6 +127,7 @@ namespace Player
         }
         public void SetVisuelSpell(SpellClass spellClass)
         {
+            if (spellClass == null) return;
             GameObject instanciate = Instantiate(prefabSpellButton, transform.position, quaternion.identity, PanelInventorySpell.transform);
             instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
             _spellButtonSpawn.Add(instanciate.GetComponent<SpellButton>());
