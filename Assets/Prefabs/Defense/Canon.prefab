@@ -181,6 +181,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Canon
   _inPause: 0
+  _renderer:
+  - {fileID: 5663059706975919710}
+  - {fileID: 6247007599274704213}
+  - {fileID: 7816159136518594090}
   BaseData: {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
   MaxCoolDown: 0
   CoolDown: 0

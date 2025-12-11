@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Interface;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utils;
 
 namespace Class
@@ -10,7 +11,7 @@ namespace Class
     {
         [SerializeField] private bool _inPause;
         
-        [SerializeField] private List<Material> _materials = new List<Material>();
+        [SerializeField] private List<Renderer> _renderer = new List<Renderer>();
         
         public DefenseBaseData BaseData;
 
@@ -94,9 +95,19 @@ namespace Class
         {
             _inPause = true;
            
-            foreach (Material material in _materials)
+            
+            
+            foreach (Renderer renderer in _renderer)
             {
-                material.SetFloat("_FreezeAmount", 0.5f);
+                DOTween.To(
+                    () => 0f,
+                    value =>
+                    {
+                        renderer.material.SetFloat("_FreezeAmount", value);
+                    },
+                    0.5f,
+                    1f
+                );
             }
         }
 
@@ -104,9 +115,18 @@ namespace Class
         {
             _inPause = false;
             
-            foreach (Material material in _materials)
+            foreach (Renderer renderer in _renderer)
             {
-                material.SetFloat("_FreezeAmount", 0f);
+                DOTween.To(
+                    () => 0.5f,
+                    value =>
+                    {
+                        renderer.material.SetFloat("_FreezeAmount", value);
+                    },
+                    0f,
+                    1f
+                );
+                
             }
         }
     }

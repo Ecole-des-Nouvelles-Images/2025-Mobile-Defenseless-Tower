@@ -117,6 +117,7 @@ namespace Player
                 GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
                 spell.GetComponent<Spell>().SpellClass = EquipedSpell;
             }
+            EventBus.OnPlayerPlaceSpell?.Invoke();
         }
         public void UnEquipSpell()
         {
