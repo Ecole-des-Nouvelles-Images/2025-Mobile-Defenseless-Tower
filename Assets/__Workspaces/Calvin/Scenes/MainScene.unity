@@ -773,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.071203
+      value: -9.522885
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1066,6 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8cfd15a9b7fc8439e38f105c6c2b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickManager
+  CanClick: 0
   _camera: {fileID: 153224419}
   _playerInput: {fileID: 358535025}
   _layerMask:
@@ -1281,10 +1282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278f021f7e6a8674880cc8206ca50b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
+  ChoiceAi: {x: 0, y: 0}
   MoneyToAddParLevel: 2
   MaxMoney: 10
   Money: 0
   DefenseBaseDatas: []
+  _defenseCanUse: []
   _defenseBaseDatasToSpawn: []
 --- !u!1001 &423047862
 PrefabInstance:
@@ -2144,7 +2147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.1425
+      value: -10.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3343,7 +3346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.087894
+      value: -10.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3728,7 +3731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.058318
+      value: -9.865479
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4281,7 +4284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.058318
+      value: -9.51
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4642,7 +4645,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryHandler
   StartMoney: 200000
+  StartElixir: 0
   _money: 0
+  _elixir: 0
   EquipedSpell:
     SpellData: {fileID: 0}
     Price: 0
@@ -4656,12 +4661,14 @@ MonoBehaviour:
     NumberSpawn: 0
     Speed: 0
     MaxHealth: 0
+    Damage: 0
   - baseData: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
     Name: 
     price: 0
     NumberSpawn: 0
     Speed: 0
     MaxHealth: 0
+    Damage: 0
   SpellClasses:
   - SpellData: {fileID: 11400000, guid: e8ca02e4ca1c0114e8c0fd4eecfe71f1, type: 2}
     Price: 0
@@ -4883,7 +4890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.058318
+      value: -8.78548
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11953,19 +11960,19 @@ Tilemap:
       e00: 0
       e01: 0
       e02: 0
-      e03: -5.525437e+31
+      e03: -2.2691869e+14
       e10: 0
       e11: 0
       e12: 0
-      e13: 4.2e-44
+      e13: 2.94e-43
       e20: 0
       e21: 0
       e22: 1e-45
-      e23: -2.1926394e+31
+      e23: 8.61856e-19
       e30: 0
       e31: 0
       e32: 0
-      e33: 4.5911e-41
+      e33: 4.5915e-41
   - m_RefCount: 1
     m_Data:
       e00: 0.000000059604645
@@ -12194,7 +12201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47
+      value: 6.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12338,7 +12345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.058318
+      value: -10.762609
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12618,7 +12625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.179744
+      value: -10.3972435
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12805,7 +12812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.180441
+      value: -10.482547
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13807,7 +13814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.192839
+      value: -8.92
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14030,7 +14037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.205709
+      value: -10.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14217,7 +14224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.192839
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 899e02d9a0c811c4cb2df5232c223671, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14406,6 +14413,7 @@ MonoBehaviour:
     NumberSpawn: 0
     Speed: 0
     MaxHealth: 0
+    Damage: 0
 --- !u!4 &2086125034
 Transform:
   m_ObjectHideFlags: 0
