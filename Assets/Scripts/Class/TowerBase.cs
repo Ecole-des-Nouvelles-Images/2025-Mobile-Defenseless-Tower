@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Interface;
 using UnityEngine;
 using Utils;
@@ -8,6 +9,8 @@ namespace Class
     public abstract class TowerBase : MonoBehaviour, IFreezable
     {
         [SerializeField] private bool _inPause;
+        
+        [SerializeField] private List<Material> _materials = new List<Material>();
         
         public DefenseBaseData BaseData;
 
@@ -90,11 +93,21 @@ namespace Class
         public void Freeze()
         {
             _inPause = true;
+           
+            foreach (Material material in _materials)
+            {
+                material.SetFloat("_FreezeAmount", 0.5f);
+            }
         }
 
         public void Unfreeze()
         {
             _inPause = false;
+            
+            foreach (Material material in _materials)
+            {
+                material.SetFloat("_FreezeAmount", 0f);
+            }
         }
     }
 }
