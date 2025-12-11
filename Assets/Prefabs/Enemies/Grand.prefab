@@ -506,7 +506,7 @@ PrefabInstance:
     - target: {fileID: -6106707738824026637, guid: 34dabf0ecd438304a91bed58d0e43978, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8f78f15f4897d5748b96d5af836a3677, type: 2}
+      objectReference: {fileID: 2100000, guid: 22d3eda06f1721941a25e95048ef73c0, type: 2}
     - target: {fileID: 919132149155446097, guid: 34dabf0ecd438304a91bed58d0e43978, type: 3}
       propertyPath: m_Name
       value: T_Pose_Golem
