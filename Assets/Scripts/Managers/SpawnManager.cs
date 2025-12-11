@@ -1,6 +1,7 @@
 using System.Linq;
 using Class;
 using Player;
+using Structs;
 using UnityEngine;
 using Utils;
 

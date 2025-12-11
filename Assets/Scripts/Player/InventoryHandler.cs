@@ -3,6 +3,7 @@ using Buttons;
 using Class;
 using ScriptableObjectsScripts.Spells;
 using ScriptableObjectsScripts.Upgrades;
+using Structs;
 using Unity.Mathematics;
 using UnityEngine;
 using Utils;

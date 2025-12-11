@@ -16,12 +16,14 @@ namespace ScriptableObjectsScripts.Spells
         {
             EventBus.OnGamePaused += OnPause;
             EventBus.OnGameResume += OnResume;
+            EventBus.OnLevelFinished += Destroy;
         }
 
         private void OnDisable()
         {
             EventBus.OnGamePaused -= OnPause;
             EventBus.OnGameResume -= OnResume;
+            EventBus.OnLevelFinished -= Destroy;
         }
     
         private void Start()
@@ -38,6 +40,11 @@ namespace ScriptableObjectsScripts.Spells
         private void OnResume()
         {
             InPause = false;
+        }
+
+        private void Destroy()
+        {
+            Destroy(gameObject);
         }
 
         public abstract void SetUp();

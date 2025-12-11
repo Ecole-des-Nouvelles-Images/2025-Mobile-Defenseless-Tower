@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Interface;
 using ScriptableObjectsScripts;
+using Structs;
 using UnityEngine;
 using UnityEngine.Splines;
 using Utils;
