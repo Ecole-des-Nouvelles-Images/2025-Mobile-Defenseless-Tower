@@ -14,7 +14,6 @@ namespace Managers
         public float MaxChrono;
         public float CurrentChrono;
 
-        [SerializeField] private bool _timeStartedOnTime;
         private void Awake()
         {
             if (GetComponent<TMP_Text>()) _text = GetComponent<TMP_Text>();
@@ -22,37 +21,37 @@ namespace Managers
 
         private void OnEnable()
         {
-            EventBus.OnplayerPlaceTroup += StartChrono;
             EventBus.OnGamePaused += StopChrono;
             EventBus.OnGameResume += ResumeChrono;
             EventBus.OnLevelFinished += StopChrono;
-            EventBus.OnIaPlaceTower += SetChrono;
+            EventBus.OnIaPlaceTower += StartChrono;
         }
 
         private void OnDisable()
         {
-            EventBus.OnplayerPlaceTroup -= StartChrono;
             EventBus.OnGamePaused -= StopChrono;
             EventBus.OnGameResume -= ResumeChrono;
             EventBus.OnLevelFinished -= StopChrono;
-            EventBus.OnIaPlaceTower -= SetChrono;
+            EventBus.OnIaPlaceTower -= StartChrono;
         }
 
         private void Update()
         {
             if (GameIsPlaying)
             {
+                if (!GameIsPlaying) return;
+                
                 CurrentChrono -= Time.deltaTime;
             
                 int minutes = Mathf.FloorToInt(CurrentChrono / 60);
                 int seconds = Mathf.FloorToInt(CurrentChrono % 60);
 
                 _text.text = $"{minutes:00}:{seconds:00}";
-            }
 
-            if (CurrentChrono <= 0 && _timeStartedOnTime)
-            {
-                ChronoIsFinished();
+                if (CurrentChrono < 0)
+                {
+                    ChronoIsFinished();
+                }
             }
         }
 
@@ -67,7 +66,6 @@ namespace Managers
         {
             CurrentChrono = MaxChrono;
             GameIsPlaying = true;
-            _timeStartedOnTime = true;
         }
 
         public void ResumeChrono()

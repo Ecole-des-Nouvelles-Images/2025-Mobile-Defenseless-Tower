@@ -2,6 +2,7 @@ using Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
 namespace Buttons
 {
@@ -11,6 +12,18 @@ namespace Buttons
         [SerializeField] private Image _image;
         public EnemyClass EnemyClass;
 
+        private void OnEnable()
+        {
+            EventBus.OnLevelFinished += DisableClick;
+            EventBus.OnPlayerTakedCard += EnableClick;
+        }
+
+        private void OnDisable()
+        {
+            EventBus.OnLevelFinished -= DisableClick;
+            EventBus.OnPlayerTakedCard -= EnableClick;
+        }
+        
         private void Start()
         {
             _image = GetComponent<Image>();
@@ -28,6 +41,13 @@ namespace Buttons
             SpawnManager.Instance.Spawn(EnemyClass);
         }
         
-        // udate l'inventaire quand une upgrade est appliquén,
+        private void EnableClick()
+        {
+            gameObject.GetComponent<Button>().interactable = true;
+        }
+        private void DisableClick()
+        {
+            gameObject.GetComponent<Button>().interactable = false;
+        }
     }
 }

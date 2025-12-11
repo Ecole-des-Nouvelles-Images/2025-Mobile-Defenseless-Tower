@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Interface;
 using UnityEngine;
 using Utils;
 
@@ -36,6 +37,8 @@ namespace Class
 
         public void SetUp()
         {
+            Range = BaseData.Range + 1;
+            gameObject.GetComponent<SphereCollider>().radius = Range;
             MaxCoolDown = BaseData.CoolDown;
             Damage = BaseData.Damage;
             Range = BaseData.Range;

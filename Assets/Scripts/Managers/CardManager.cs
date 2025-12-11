@@ -8,10 +8,12 @@ namespace Managers
 {
     public class CardManager : MonoBehaviour
     {
-    
+        
+        
         [SerializeField] private GameObject _cardPrefab;
         [SerializeField] private Upgrade _upgradeTest;
-    
+        [SerializeField] private GameObject _cardPacker;
+        
         private List<Upgrade> _upgrades = new List<Upgrade>();
     
         private void OnEnable()
@@ -29,10 +31,10 @@ namespace Managers
         {
             _upgrades = UpgradeUtils.GetRandomUpgrade(GameManager.Instance.NumberCard);
         
-            for (int i = 0; i < gameObject.transform.childCount; i++)
+            for (int i = 0; i < _cardPacker.gameObject.transform.childCount; i++)
             { 
-                gameObject.transform.GetChild(i).gameObject.SetActive(true);
-                transform.GetChild(i).gameObject.GetComponent<Card>().SetUp(_upgrades[i]);
+                _cardPacker.gameObject.transform.GetChild(i).gameObject.SetActive(true);
+                _cardPacker.transform.GetChild(i).gameObject.GetComponent<Card>().SetUp(_upgrades[i]);
             }
         }
 

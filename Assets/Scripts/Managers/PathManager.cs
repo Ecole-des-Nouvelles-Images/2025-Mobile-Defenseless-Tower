@@ -26,7 +26,21 @@ namespace Managers
 
         [Header("Visuel tile")]
         [SerializeField] private RuleTile _tileGrass;    
-        [SerializeField] private RuleTile _tileRoad; 
+        [SerializeField] private RuleTile _tileRoad;
+        
+        Vector2Int[] offsets = new Vector2Int[]
+        {
+            new Vector2Int( 1,  0),
+            new Vector2Int(-1,  0),
+            new Vector2Int( 0,  1),
+            new Vector2Int( 0, -1),
+            new Vector2Int( 1,  1),
+            new Vector2Int(-1, -1),
+            new Vector2Int( 1, -1),
+            new Vector2Int(-1,  1),
+            new Vector2Int(-2, 0),
+            new Vector2Int(2, 0),
+        };
         public void SetDataPath(List<Vector3Int> vector3Ints)
         {
             CellsMatrix =  new Cell[Width, Height];
@@ -95,9 +109,32 @@ namespace Managers
         
             castleB.transform.position = new Vector3(lastKnot.Position.x, lastKnot.Position.y, lastKnot.Position.z);
             castleB.transform.rotation = new quaternion(0,180,0,1);
+
+            Vector3 posA = castleA.transform.position;
+            Vector3 posB = castleB.transform.position;
+            
+            SetAroundCastle(posA);
+            SetAroundCastle(posB);
+            
             EventBus.OnTerrainGenerate?.Invoke();
         }
+        
+        void SetAroundCastle(Vector3 pos)
+        {
+            int width = CellsMatrix.GetLength(0);
+            int height = CellsMatrix.GetLength(1);
 
+            for (int i = 0; i < offsets.Length; i++)
+            {
+                Vector2Int newPos = new Vector2Int((int)pos.x + offsets[i].x, (int)pos.z + offsets[i].y);
+                if (newPos.x >= 0 && newPos.x < width && newPos.y >= 0 && newPos.y < height)
+                {
+                    CellsMatrix[newPos.x, newPos.y].IsBlocked = true;
+                }
+            }
+        }
+        
+        
         public void ResetVisual()
         {
             foreach (GameObject gm in _cellGameObjects)

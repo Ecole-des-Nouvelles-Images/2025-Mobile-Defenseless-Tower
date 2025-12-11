@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6008507769505301078}
+  - component: {fileID: 8514837002093870010}
   - component: {fileID: 8260664612383096668}
   - component: {fileID: 8255622901359389247}
   - component: {fileID: 1144467054318500103}
@@ -39,6 +40,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 2.304}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8514837002093870010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299253433418479698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b89c6734853d164fab1b8e8138f70a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvaLookCamera
+  _camera: {fileID: 0}
 --- !u!223 &8260664612383096668
 Canvas:
   m_ObjectHideFlags: 0
@@ -310,9 +324,13 @@ MonoBehaviour:
     NumberSpawn: 0
     Speed: 0
     MaxHealth: 0
+    Damage: 0
   _speed: 0
+  _materials:
+  - {fileID: 0}
   _healthBar: {fileID: 1075626081044319786}
   _splineAnimate: {fileID: 0}
+  _splineContainer: {fileID: 0}
 --- !u!136 &1917850147550564850
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -435,7 +453,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 1
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &1377737657676194215
@@ -489,7 +507,7 @@ PrefabInstance:
     - target: {fileID: -6106707738824026637, guid: 34dabf0ecd438304a91bed58d0e43978, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8f78f15f4897d5748b96d5af836a3677, type: 2}
+      objectReference: {fileID: 2100000, guid: 22d3eda06f1721941a25e95048ef73c0, type: 2}
     - target: {fileID: 919132149155446097, guid: 34dabf0ecd438304a91bed58d0e43978, type: 3}
       propertyPath: m_Name
       value: T_Pose_Golem
