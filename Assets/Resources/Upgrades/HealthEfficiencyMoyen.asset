@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HealthEfficiencyMoyen
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeSpell
   Name: 
-  Srite: {fileID: 21300000, guid: 0a24bccbcffbb1a43af7de33690c8dea, type: 3}
+  Srite: {fileID: 21300000, guid: 3d5ddc95e58c23442a3722d47a0f1aea, type: 3}
   Rarity: 1
   Description: "Aumente nettement l'\xE9fficacit\xE9 du soin"
   TargetSpell: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}

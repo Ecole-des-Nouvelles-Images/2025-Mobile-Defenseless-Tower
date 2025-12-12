@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GolemSpeedCommun
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeEnemy
   Name: 
-  Srite: {fileID: 21300000, guid: 47a87381bd28a6248a506355d47702f1, type: 3}
+  Srite: {fileID: 21300000, guid: 52f32c831e163d942bb708028414ef85, type: 3}
   Rarity: 2
   Description: Augmente un peu plus la vitesse du golem
   TargetData: {fileID: 11400000, guid: 7bc1f4e436a3a06438f4dcec631c771f, type: 2}
