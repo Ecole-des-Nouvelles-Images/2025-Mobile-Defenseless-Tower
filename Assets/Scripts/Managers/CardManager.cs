@@ -32,13 +32,19 @@ namespace Managers
         
         public void LoadCardProposition()
         {
-            List<Upgrade> upgrades = new List<Upgrade>();
-            upgrades = UpgradeUtils.ChoiceThreeRandomCardFromList(_upgrades);
-        
-            for (int i = 0; i < _cardPacker.gameObject.transform.childCount; i++)
+            for (int i = 0; i < 3; i++)
             { 
+                int rand = Random.Range(0, _upgrades.Count);
+                Upgrade upgrade = _upgrades[rand];
+                Debug.Log(upgrade.name);
+                
+                
                 _cardPacker.gameObject.transform.GetChild(i).gameObject.SetActive(true);
-                _cardPacker.transform.GetChild(i).gameObject.GetComponent<Card>().SetUp(upgrades[i]);
+                _cardPacker.transform.GetChild(i).gameObject.GetComponent<Card>().SetUp(upgrade);
+
+                _upgrades.Remove(upgrade);
+                
+                Debug.Log("00000");
             }
         }
         

@@ -16,20 +16,23 @@ namespace Utils
             {
                 int[] indexArray = new int[upgradeRessource.Count];
                 int randomIndex = Random.Range(0, indexArray.Length);
-                
+
                 Upgrade upgrade = upgradeRessource[randomIndex];
                 if (upgrades.Contains(upgrade))
                 {
                     number++;
                     continue;
                 }
+
                 upgrades.Add(upgrade);
-            
+
             }
+
             return upgrades;
         }
-        
-        public static List<Upgrade> GetRandomUpgradeWithRange(int communCardNumber, int moyenCardNumber, int rareCardNumber)
+
+        public static List<Upgrade> GetRandomUpgradeWithRange(int communCardNumber, int moyenCardNumber,
+            int rareCardNumber)
         {
             List<Upgrade> upgrades = new List<Upgrade>();
             List<Upgrade> upgradeRessource = Enumerable.ToList(Resources.LoadAll<Upgrade>("Upgrades"));
@@ -43,9 +46,12 @@ namespace Utils
                     upgrades.Add(upgrade);
                     Debug.Log(upgrade.Rarity);
                 }
-                else { i--; }
+                else
+                {
+                    i--;
+                }
             }
-            
+
             for (int i = 0; i < moyenCardNumber; i++)
             {
                 int randomIndex = Random.Range(0, upgradeRessource.Count);
@@ -55,9 +61,12 @@ namespace Utils
                     upgrades.Add(upgrade);
                     Debug.Log(upgrade.Rarity);
                 }
-                else { i--; }
+                else
+                {
+                    i--;
+                }
             }
-            
+
             for (int i = 0; i < rareCardNumber; i++)
             {
                 int randomIndex = Random.Range(0, upgradeRessource.Count);
@@ -67,32 +76,27 @@ namespace Utils
                     upgrades.Add(upgrade);
                     Debug.Log(upgrade.Rarity);
                 }
-                else { i--; }
-            }
-
-            return upgrades;
-        }
-        
-        public static List<Upgrade> ChoiceThreeRandomCardFromList(List<Upgrade> upgrades)
-        {
-            List<Upgrade> upgradesToGive = new List<Upgrade>();
-            for (int i = 0; i < 3; i++)
-            {
-                int randomIndex = Random.Range(0, upgrades.Count);
-                Upgrade upgrade = upgrades[randomIndex];
-                if (!upgradesToGive.Any(u => u.Rarity == Rarity.Rare))
-                {
-                    upgradesToGive.Add(upgrade);
-                }
                 else
                 {
                     i--;
                 }
             }
 
-            return upgradesToGive;
+            return upgrades;
         }
-    }
 
-   
+        public static List<Upgrade> ChoiceThreeRandomCardFromList(List<Upgrade> upgrades)
+        {
+            List<Upgrade> result = new List<Upgrade>();
+            int randomIndex = Random.Range(0, upgrades.Count);
+            for (int i = 0; i < 3; i++)
+            {
+                Upgrade upgrade = upgrades[randomIndex];
+               result.Add(upgrade);
+            }
+
+            return result;
+        }
+
+    }
 }
