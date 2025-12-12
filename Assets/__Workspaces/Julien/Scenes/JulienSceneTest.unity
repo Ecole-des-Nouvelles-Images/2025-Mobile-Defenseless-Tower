@@ -7289,6 +7289,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8878502061433165473, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
+      propertyPath: RareCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878502061433165473, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
+      propertyPath: MoyenCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878502061433165473, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
+      propertyPath: CommunCount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 9140177477399642507, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
       propertyPath: m_Name
       value: CardPropostition

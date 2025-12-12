@@ -8,14 +8,17 @@ namespace Managers
 {
     public class CardManager : MonoBehaviour
     {
-        
-        
         [SerializeField] private GameObject _cardPrefab;
         [SerializeField] private Upgrade _upgradeTest;
         [SerializeField] private GameObject _cardPacker;
         
-        private List<Upgrade> _upgrades = new List<Upgrade>();
-    
+        [SerializeField] private List<Upgrade> _upgrades = new List<Upgrade>();
+
+        [Header("Number card")] 
+        public int CommunCount;
+        public int MoyenCount;
+        public int RareCount;
+        
         private void OnEnable()
         {
             EventBus.OnPlayerTakedCard += HideCard;
@@ -26,18 +29,25 @@ namespace Managers
             EventBus.OnPlayerTakedCard -= HideCard;
         }
 
-        [ContextMenu("LoadProposition")]
+        
         public void LoadCardProposition()
         {
-            _upgrades = UpgradeUtils.GetRandomUpgrade(GameManager.Instance.NumberCard);
+            List<Upgrade> upgrades = new List<Upgrade>();
+            upgrades = UpgradeUtils.ChoiceThreeRandomCardFromList(_upgrades);
         
             for (int i = 0; i < _cardPacker.gameObject.transform.childCount; i++)
             { 
                 _cardPacker.gameObject.transform.GetChild(i).gameObject.SetActive(true);
-                _cardPacker.transform.GetChild(i).gameObject.GetComponent<Card>().SetUp(_upgrades[i]);
+                _cardPacker.transform.GetChild(i).gameObject.GetComponent<Card>().SetUp(upgrades[i]);
             }
         }
-
+        
+        [ContextMenu("LoadProposition")]
+        public void LoadListCard()
+        {
+            _upgrades = UpgradeUtils.GetRandomUpgradeWithRange(CommunCount, MoyenCount, RareCount);
+        }
+        
         public void HideCard()
         {
             gameObject.SetActive(false);

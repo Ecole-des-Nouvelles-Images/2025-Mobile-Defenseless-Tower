@@ -28,5 +28,71 @@ namespace Utils
             }
             return upgrades;
         }
+        
+        public static List<Upgrade> GetRandomUpgradeWithRange(int communCardNumber, int moyenCardNumber, int rareCardNumber)
+        {
+            List<Upgrade> upgrades = new List<Upgrade>();
+            List<Upgrade> upgradeRessource = Enumerable.ToList(Resources.LoadAll<Upgrade>("Upgrades"));
+
+            for (int i = 0; i < communCardNumber; i++)
+            {
+                int randomIndex = Random.Range(0, upgradeRessource.Count);
+                Upgrade upgrade = upgradeRessource[randomIndex];
+                if (upgrade.Rarity == Rarity.Commun)
+                {
+                    upgrades.Add(upgrade);
+                    Debug.Log(upgrade.Rarity);
+                }
+                else { i--; }
+            }
+            
+            for (int i = 0; i < moyenCardNumber; i++)
+            {
+                int randomIndex = Random.Range(0, upgradeRessource.Count);
+                Upgrade upgrade = upgradeRessource[randomIndex];
+                if (upgrade.Rarity == Rarity.Moyen)
+                {
+                    upgrades.Add(upgrade);
+                    Debug.Log(upgrade.Rarity);
+                }
+                else { i--; }
+            }
+            
+            for (int i = 0; i < rareCardNumber; i++)
+            {
+                int randomIndex = Random.Range(0, upgradeRessource.Count);
+                Upgrade upgrade = upgradeRessource[randomIndex];
+                if (upgrade.Rarity == Rarity.Rare)
+                {
+                    upgrades.Add(upgrade);
+                    Debug.Log(upgrade.Rarity);
+                }
+                else { i--; }
+            }
+
+            return upgrades;
+        }
+        
+        public static List<Upgrade> ChoiceThreeRandomCardFromList(List<Upgrade> upgrades)
+        {
+            List<Upgrade> upgradesToGive = new List<Upgrade>();
+            for (int i = 0; i < 3; i++)
+            {
+                int randomIndex = Random.Range(0, upgrades.Count);
+                Upgrade upgrade = upgrades[randomIndex];
+                if (!upgradesToGive.Any(u => u.Rarity == Rarity.Rare))
+                {
+                    upgradesToGive.Add(upgrade);
+                }
+                else
+                {
+                    i--;
+                }
+            }
+
+            return upgradesToGive;
+        }
     }
+
+   
 }
