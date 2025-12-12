@@ -326,6 +326,8 @@ MonoBehaviour:
     MaxHealth: 0
     Damage: 0
   _speed: 0
+  _materials:
+  - {fileID: 2875122667294333804}
   _healthBar: {fileID: 4971345374089142851}
   _splineAnimate: {fileID: 0}
   _splineContainer: {fileID: 0}
@@ -519,6 +521,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cc0811d3408dd544adb6639e26259ca, type: 3}
+--- !u!137 &2875122667294333804 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2171675169710456643, guid: 5cc0811d3408dd544adb6639e26259ca, type: 3}
+  m_PrefabInstance: {fileID: 4162781648693240879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4489968603115635652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5cc0811d3408dd544adb6639e26259ca, type: 3}

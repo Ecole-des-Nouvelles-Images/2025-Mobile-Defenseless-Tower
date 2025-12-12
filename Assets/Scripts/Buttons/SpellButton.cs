@@ -19,12 +19,14 @@ namespace Buttons
         {
             EventBus.OnLevelFinished += DisableClick;
             EventBus.OnPlayerTakedCard += EnableClick;
+            EventBus.OnPlayerPlaceSpell += UnselectedVisuel;
         }
 
         private void OnDisable()
         {
             EventBus.OnLevelFinished -= DisableClick;
             EventBus.OnPlayerTakedCard -= EnableClick;
+            EventBus.OnPlayerPlaceSpell -= UnselectedVisuel;
         }
         
         private void Start()
@@ -59,6 +61,7 @@ namespace Buttons
             AreSelected = true;
         }
         
+        [ContextMenu("Reset visual")]
         private void UnselectedVisuel()
         {
             GameObject parent = transform.parent.gameObject;
@@ -67,6 +70,7 @@ namespace Buttons
                 parent.transform.GetChild(i).GetComponent<SpellButton>().AreSelected = false;
                 parent.transform.GetChild(i).gameObject.GetComponent<Image>().color = Color.white;
             }
+            InventoryHandler.Instance.EquipedSpell = null;
         }
         
         private void EnableClick()

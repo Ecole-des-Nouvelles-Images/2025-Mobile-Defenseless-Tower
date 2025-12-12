@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Class;
+using DG.Tweening;
 using Interface;
 using UnityEngine;
 
@@ -12,6 +13,12 @@ namespace ScriptableObjectsScripts.Spells
         public float TimeBeforHeal;
 
         [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
+        
+        
+        [Header(" Spell animation ")]
+        
+        [SerializeField] private float _spinSpeed;
+        
         private void Update()
         {
             if (InPause) return;
@@ -22,7 +29,8 @@ namespace ScriptableObjectsScripts.Spells
                 TimeBeforHeal = 0;
                 DoSpell();
             }
-
+            
+            transform.DORotate(transform.up * _spinSpeed, TimeSpell, RotateMode.WorldAxisAdd);
             if (TimeSpell <= 0) Destroy(gameObject);
         }
 
