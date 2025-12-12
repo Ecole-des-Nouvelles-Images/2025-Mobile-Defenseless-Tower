@@ -109,15 +109,18 @@ namespace Player
         }
         public void DropSpell()
         {
-            if (EquipedSpell.SpellData == true)
+            if (EquipedSpell.SpellData == null)
             {
-                float testPrice = Elixir - EquipedSpell.Price;
-                if (testPrice < 0) return;
-                
-                Elixir -= EquipedSpell.Price;
-                GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
-                spell.GetComponent<Spell>().SpellClass = EquipedSpell;
+                Debug.Log("Pas de spell");
+                return;
             }
+            float testPrice = Elixir - EquipedSpell.Price;
+            if (testPrice < 0) return;
+                
+            Elixir -= EquipedSpell.Price;
+            GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
+            spell.GetComponent<Spell>().SpellClass = EquipedSpell;
+          
             EventBus.OnPlayerPlaceSpell?.Invoke();
         }
         public void UnEquipSpell()
