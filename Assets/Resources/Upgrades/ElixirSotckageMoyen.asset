@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ElixirSotckageMoyen
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjectsScripts.Upgrades.Inventory.UpgradeElixir
   Name: 
-  Srite: {fileID: 21300000, guid: 81b910a4b04700f4a92c9c3182f805ed, type: 3}
+  Srite: {fileID: 21300000, guid: 648a68b876315fa41a46fcac7e33de56, type: 3}
   Rarity: 1
   Description: "Donne 10 d'\xE9lixirs de plus"
   ElexirToAdd: 10

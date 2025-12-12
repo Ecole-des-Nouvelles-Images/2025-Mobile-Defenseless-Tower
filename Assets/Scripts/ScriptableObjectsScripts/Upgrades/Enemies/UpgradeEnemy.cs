@@ -2,6 +2,7 @@ using System.Linq;
 using Player;
 using ScriptableObjectsScripts;
 using ScriptableObjectsScripts.Upgrades;
+using Structs;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "UpgradeEnemy", menuName = "Scriptable Objects/Upgrade/Enemy")]

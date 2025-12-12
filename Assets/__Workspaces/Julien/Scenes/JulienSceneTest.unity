@@ -6597,14 +6597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   _inventory: {fileID: 1350175961}
-  EnemyClass:
-    baseData: {fileID: 0}
-    Name: 
-    price: 0
-    NumberSpawn: 0
-    Speed: 0
-    MaxHealth: 0
-    Damage: 0
+  _birdPrefab: {fileID: 3746916416039972255, guid: 272e6fc479d1fab4099a4fc87f63f892, type: 3}
+  VfxSpawner: {fileID: 8147798193871370835, guid: 1b6b1a98d6190ef4a9d48f722bfa23e1, type: 3}
 --- !u!4 &2086125034
 Transform:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Instantiate;
+using Structs;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
