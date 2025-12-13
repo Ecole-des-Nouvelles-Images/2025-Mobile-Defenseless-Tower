@@ -1,6 +1,7 @@
 using Managers;
 using Player;
 using UnityEngine;
+using Utils;
 using Random = UnityEngine.Random;
 
 public class Bird : MonoBehaviour, IClickable
@@ -12,9 +13,18 @@ public class Bird : MonoBehaviour, IClickable
     public bool LeftSide;
 
     public GameObject PrefabVFX;
-    private void Start()
+    private bool _isPause;
+    private float _timeBeforDie = 7f;
+    private void OnEnable()
     {
-        Destroy(gameObject, 7f);
+        EventBus.OnGamePaused += OnPause;
+        EventBus.OnGameResume += OnResume;
+    }
+
+    private void OnDisable()
+    {
+        EventBus.OnGamePaused -= OnPause;
+        EventBus.OnGameResume -= OnResume;
     }
 
     public void SetUp(bool leftSide)
@@ -42,6 +52,20 @@ public class Bird : MonoBehaviour, IClickable
 
     private void Update()
     {
+        if(_isPause) return;
         transform.Translate(Vector3.forward * (Time.deltaTime * Speed));
+        _timeBeforDie -= Time.deltaTime;
+        if (_timeBeforDie <= 0) Destroy(gameObject);
+    }
+    
+    
+    private void OnPause()
+    {
+        _isPause = true;
+    }
+
+    private void OnResume()
+    {
+        _isPause = false;
     }
 }

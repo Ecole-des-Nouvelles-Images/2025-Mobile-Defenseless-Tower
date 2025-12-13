@@ -74,7 +74,6 @@ namespace Utils
                 if (upgrade.Rarity == Rarity.Rare)
                 {
                     upgrades.Add(upgrade);
-                    Debug.Log(upgrade.Rarity);
                 }
                 else
                 {
@@ -87,12 +86,21 @@ namespace Utils
 
         public static List<Upgrade> ChoiceThreeRandomCardFromList(List<Upgrade> upgrades)
         {
+            if (upgrades == null || upgrades.Count < 3)
+            {
+                Debug.LogError("Pas assez d'upgrades dans la liste");
+                return new List<Upgrade>();
+            }
+
             List<Upgrade> result = new List<Upgrade>();
-            int randomIndex = Random.Range(0, upgrades.Count);
+
             for (int i = 0; i < 3; i++)
             {
-                Upgrade upgrade = upgrades[randomIndex];
-               result.Add(upgrade);
+                int randomIndex = Random.Range(0, upgrades.Count);
+                Upgrade chosenUpgrade = upgrades[randomIndex];
+
+                result.Add(chosenUpgrade);
+                upgrades.RemoveAt(randomIndex);
             }
 
             return result;

@@ -6,6 +6,7 @@ namespace Instantiate
 {
     public class Castle : MonoBehaviour
     {
+        private bool _isDead;
         public int Health = 10;
     
         private void OnEnable()
@@ -22,8 +23,10 @@ namespace Instantiate
                 int damage = other.gameObject.GetComponent<Enemy>().enemyBaseData.Damage;
                 int currentHealth = Health -= damage;
                 EventBus.OnCastleTakedDamage?.Invoke(currentHealth);
-                if (Health <= 0)
+                if (Health <= 0 && !_isDead)
                 {
+                    _isDead = true;
+                    Debug.Log("CHATEUA MORT");
                     EventBus.OnLevelFinished?.Invoke();
                 }
             }

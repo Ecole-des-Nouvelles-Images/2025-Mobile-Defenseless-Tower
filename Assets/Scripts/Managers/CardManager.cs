@@ -9,10 +9,12 @@ namespace Managers
     public class CardManager : MonoBehaviour
     {
         [SerializeField] private GameObject _cardPrefab;
-        [SerializeField] private Upgrade _upgradeTest;
+
+        
         [SerializeField] private GameObject _cardPacker;
         
         [SerializeField] private List<Upgrade> _upgrades = new List<Upgrade>();
+        [SerializeField] private List<Upgrade> _upgradeToGive = new List<Upgrade>();
 
         [Header("Number card")] 
         public int CommunCount;
@@ -32,19 +34,13 @@ namespace Managers
         
         public void LoadCardProposition()
         {
-            for (int i = 0; i < 3; i++)
-            { 
-                int rand = Random.Range(0, _upgrades.Count);
-                Upgrade upgrade = _upgrades[rand];
-                Debug.Log(upgrade.name);
-                
-                
-                _cardPacker.gameObject.transform.GetChild(i).gameObject.SetActive(true);
-                _cardPacker.transform.GetChild(i).gameObject.GetComponent<Card>().SetUp(upgrade);
+            if (_upgrades.Count <= 0) LoadListCard();
+            _upgradeToGive = UpgradeUtils.ChoiceThreeRandomCardFromList(_upgrades);
 
-                _upgrades.Remove(upgrade);
-                
-                Debug.Log("00000");
+            for (int i = 0; i < 3; i++)
+            {
+                _cardPacker.transform.GetChild(i).gameObject.SetActive(true);
+                _cardPacker.transform.GetChild(i).GetComponent<Card>().SetUp(_upgradeToGive[i]);
             }
         }
         

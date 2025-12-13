@@ -43,7 +43,6 @@ namespace Instantiate
         {
             if (other.gameObject == Target)
             {
-                Debug.Log(other.gameObject + " was hited ");
                 other.gameObject.GetComponent<IDamagable>().TakeDamage(Damage);
                 Destroy(gameObject);
             }
