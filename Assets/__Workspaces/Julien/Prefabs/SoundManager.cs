@@ -7,11 +7,23 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
 {
     public GameObject PrefabSound;
     
-    [Header("Enemie")]
+    [Header("Enemie--------------------------------------------")]
     [Header("Chevalier")]
     public List<AudioClip> ChevalierSpawn;
+    [Header("Golem")]
     public List<AudioClip> GolemSpawn;
-
+    
+    [Header("Spell--------------------------------------------")]
+    [Header("Freez")]
+    public List<AudioClip> FreezSpawn;
+    [Header("Health")]
+    public List<AudioClip> HealthSpawn;
+    
+    [Header("Tower--------------------------------------------")]
+    [Header("Shoot")]
+    public List<AudioClip> CanonShoot;
+    public List<AudioClip> ArbeletteShoot;
+    public List<AudioClip> CatapultShoot;
     public void PlayRandomSound(List<AudioClip> audioClip, GameObject target)
     {
         AudioClip audio = audioClip[Random.Range(0, audioClip.Count)];
