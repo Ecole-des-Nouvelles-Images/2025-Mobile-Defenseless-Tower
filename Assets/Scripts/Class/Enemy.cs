@@ -77,6 +77,7 @@ namespace Class
             _splineAnimate.Play();
             SetUp();
             RandOffset();
+            SetUpSound();
         }
 
         private void Update()

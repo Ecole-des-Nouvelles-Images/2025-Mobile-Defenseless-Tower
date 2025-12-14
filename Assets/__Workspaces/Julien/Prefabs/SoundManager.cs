@@ -15,14 +15,14 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
     public void PlayRandomSound(List<AudioClip> audioClip, GameObject target)
     {
         AudioClip audio = audioClip[Random.Range(0, audioClip.Count)];
-        GameObject prefabSound = Instantiate(PrefabSound,target.transform.position, Quaternion.identity, target.transform);
+        GameObject prefabSound = Instantiate(PrefabSound,target.transform.position, Quaternion.identity);
         prefabSound.GetComponent<AudioSource>().clip = audio;
         prefabSound.GetComponent<AudioSource>().Play();
     }
 
     public void PlaySound(AudioClip audioClip, GameObject target)
     {
-        GameObject prefabSound = Instantiate(PrefabSound,target.transform.position, Quaternion.identity, target.transform);
+        GameObject prefabSound = Instantiate(PrefabSound,target.transform.position, Quaternion.identity);
         prefabSound.GetComponent<AudioSource>().clip = audioClip;
         prefabSound.GetComponent<AudioSource>().Play();
     }
