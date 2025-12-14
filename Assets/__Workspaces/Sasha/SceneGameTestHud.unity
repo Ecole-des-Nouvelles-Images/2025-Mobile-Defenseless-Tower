@@ -6710,6 +6710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1790925524}
     m_Modifications:
+    - target: {fileID: 1116474338717792154, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5510912f2b73e62449f905abbd5bc804, type: 3}
     - target: {fileID: 2187735383695021964, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 11.488525
@@ -6798,6 +6802,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6992221788675041796, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5510912f2b73e62449f905abbd5bc804, type: 3}
     - target: {fileID: 7037051628692343700, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
       propertyPath: m_Name
       value: PanelHudBackGround

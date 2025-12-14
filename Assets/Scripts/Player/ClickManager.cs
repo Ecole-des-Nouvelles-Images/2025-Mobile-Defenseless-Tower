@@ -60,9 +60,15 @@ namespace Player
             if (Physics.Raycast(ray, out hit,Mathf.Infinity, _layerMask )) 
             {
                 LastPosition = hit.point;
+                GameObject hitedGm = hit.collider.gameObject;
+                IClickable iClickable = hitedGm.GetComponent<IClickable>();
+                if (iClickable != null)
+                {
+                    iClickable.OnClick();
+                }
                 EventBus.OnPlayerClicked?.Invoke();
-            
             }
+            
         }
         
         private void EnableClick()

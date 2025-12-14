@@ -702,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278f021f7e6a8674880cc8206ca50b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
+  ChoiceAi: {x: 0, y: 0}
   MoneyToAddParLevel: 2
   MaxMoney: 1
   Money: 0
@@ -1363,11 +1364,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6327243942442085046, guid: 588876b951e80fd409a0058b9ade498f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 153.97476
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6327243942442085046, guid: 588876b951e80fd409a0058b9ade498f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -32.336334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6327243942442085046, guid: 588876b951e80fd409a0058b9ade498f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6403,6 +6404,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1790925524}
     m_Modifications:
+    - target: {fileID: 2790907346114690436, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
+      propertyPath: MaxChrono
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 5653822891837706920, guid: 2b276907d7a549646a530fea1da0974e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

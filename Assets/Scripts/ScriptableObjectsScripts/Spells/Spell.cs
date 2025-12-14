@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Class;
 using UnityEngine;
 using Utils;
@@ -14,12 +16,14 @@ namespace ScriptableObjectsScripts.Spells
         {
             EventBus.OnGamePaused += OnPause;
             EventBus.OnGameResume += OnResume;
+            EventBus.OnLevelFinished += Destroy;
         }
 
         private void OnDisable()
         {
             EventBus.OnGamePaused -= OnPause;
             EventBus.OnGameResume -= OnResume;
+            EventBus.OnLevelFinished -= Destroy;
         }
     
         private void Start()
@@ -37,7 +41,12 @@ namespace ScriptableObjectsScripts.Spells
         {
             InPause = false;
         }
-    
+
+        private void Destroy()
+        {
+            Destroy(gameObject);
+        }
+
         public abstract void SetUp();
         public abstract void DoSpell();
     }

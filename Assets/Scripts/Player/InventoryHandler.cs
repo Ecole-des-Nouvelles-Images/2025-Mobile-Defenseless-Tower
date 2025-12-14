@@ -3,6 +3,7 @@ using Buttons;
 using Class;
 using ScriptableObjectsScripts.Spells;
 using ScriptableObjectsScripts.Upgrades;
+using Structs;
 using Unity.Mathematics;
 using UnityEngine;
 using Utils;
@@ -108,15 +109,19 @@ namespace Player
         }
         public void DropSpell()
         {
-            if (EquipedSpell.SpellData == true)
+            if (EquipedSpell.SpellData == null)
             {
-                float testPrice = Elixir - EquipedSpell.Price;
-                if (testPrice < 0) return;
-                
-                Elixir -= EquipedSpell.Price;
-                GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
-                spell.GetComponent<Spell>().SpellClass = EquipedSpell;
+                Debug.Log("Pas de spell");
+                return;
             }
+            float testPrice = Elixir - EquipedSpell.Price;
+            if (testPrice < 0) return;
+                
+            Elixir -= EquipedSpell.Price;
+            GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
+            spell.GetComponent<Spell>().SpellClass = EquipedSpell;
+          
+            EventBus.OnPlayerPlaceSpell?.Invoke();
         }
         public void UnEquipSpell()
         {
@@ -125,6 +130,7 @@ namespace Player
         }
         public void SetVisuelSpell(SpellClass spellClass)
         {
+            if (spellClass == null) return;
             GameObject instanciate = Instantiate(prefabSpellButton, transform.position, quaternion.identity, PanelInventorySpell.transform);
             instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
             _spellButtonSpawn.Add(instanciate.GetComponent<SpellButton>());

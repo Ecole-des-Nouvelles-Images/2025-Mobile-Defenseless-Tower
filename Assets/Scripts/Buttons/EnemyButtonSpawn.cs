@@ -1,4 +1,5 @@
 using Managers;
+using Structs;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
