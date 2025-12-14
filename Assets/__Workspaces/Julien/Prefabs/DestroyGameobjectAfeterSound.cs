@@ -12,8 +12,7 @@ public class DestroyGameobjectAfeterSound : MonoBehaviour
 
     private void Start()
     {
-        _time = _audioSource.time;
-        _audioSource.Play();
-        //Destroy(gameObject, _time);
+        _time = _audioSource.clip.length;
+        Destroy(gameObject, _time);
     }
 }
