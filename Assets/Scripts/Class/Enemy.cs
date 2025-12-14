@@ -12,7 +12,7 @@ using Random = UnityEngine.Random;
 
 namespace Class
 {
-    public class Enemy : MonoBehaviour, IDamagable, IHealable
+    public abstract class Enemy : MonoBehaviour, IDamagable, IHealable
     {
         private GameObject _parentEmpty;
     
@@ -28,7 +28,11 @@ namespace Class
         [SerializeField] private Image _healthBar;
         [SerializeField] private SplineAnimate _splineAnimate;
         [SerializeField] private SplineContainer _splineContainer;
-    
+
+        [Header("Sound")] 
+        public AudioClip SpawningSound;
+        public AudioClip DeathSound;
+        
         public float Health
         {
             get => _health;
@@ -39,6 +43,7 @@ namespace Class
             
                 if (_health <= 0)
                 {
+                    SoundManager.Instance.PlaySound(DeathSound, gameObject);
                     Destroy(gameObject);
                 }
             }
@@ -60,6 +65,8 @@ namespace Class
             EventBus.OnGamePaused -= OnPause;
             EventBus.OnGameResume -= OnResume;
         }
+        
+        public abstract void SetUpSound();
 
         private void Start()
         {
