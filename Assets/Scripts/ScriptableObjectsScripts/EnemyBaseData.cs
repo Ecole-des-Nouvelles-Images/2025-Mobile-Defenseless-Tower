@@ -29,6 +29,10 @@ namespace ScriptableObjectsScripts
         [Header("Sound")]
         public List<AudioClip> SpawnSounds;
         public List<AudioClip> DeadSounds;
+        
+        [Header("VFX")]
+        public GameObject VFXPrefab;
+        
     }
 }
 

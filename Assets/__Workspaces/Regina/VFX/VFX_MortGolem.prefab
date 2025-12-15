@@ -4855,7 +4855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2747589128968558648}
   m_Layer: 0
-  m_Name: VFX_Mort
+  m_Name: VFX_MortGolem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -27,3 +27,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af0b4f171a7d29842b60393f0a26c9fb, type: 3}
   DeadSounds:
   - {fileID: 8300000, guid: af0b4f171a7d29842b60393f0a26c9fb, type: 3}
+  VFXPrefab: {fileID: 7549511183509151425, guid: f9d6dc6a18759dd428c1425449a77e30, type: 3}

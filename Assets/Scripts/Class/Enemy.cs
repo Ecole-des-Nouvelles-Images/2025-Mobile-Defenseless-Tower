@@ -42,6 +42,7 @@ namespace Class
                 if (_health <= 0)
                 {
                     SoundManager.Instance.PlayRandomSound(enemyBaseData.DeadSounds, gameObject);
+                    SpawnManager.Instance.SpawnVfxInPosition(enemyBaseData.VFXPrefab, transform.position);
                     Destroy(gameObject);
                 }
             }
