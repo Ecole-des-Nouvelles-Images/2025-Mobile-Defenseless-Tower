@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Buttons;
 using Class;
+using Managers;
 using ScriptableObjectsScripts.Spells;
 using ScriptableObjectsScripts.Upgrades;
 using Structs;
@@ -120,7 +121,7 @@ namespace Player
             Elixir -= EquipedSpell.Price;
             GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
             spell.GetComponent<Spell>().SpellClass = EquipedSpell;
-          
+            SoundManager.Instance.PlayRandomSound(EquipedSpell.SpellData.SpawnSounds, gameObject);
             EventBus.OnPlayerPlaceSpell?.Invoke();
         }
         public void UnEquipSpell()
