@@ -11,8 +11,6 @@ namespace Towers
         public GameObject PivotRotation;
         public GameObject SpawnerBullet;
 
-       
-
         public override void LookFirstEnemy()
         {
             if (targetsInRange != null && targetsInRange.Count > 0)
@@ -28,7 +26,5 @@ namespace Towers
             GameObject bulletCanon = Instantiate(BaseData.ProjectilPrefab, SpawnerBullet.transform.position, quaternion.identity);
             bulletCanon.GetComponent<Bullet>().SetUp(targetsInRange[0], Damage, BaseData.BulletSpeed);
         }
-
-        
     }
 }

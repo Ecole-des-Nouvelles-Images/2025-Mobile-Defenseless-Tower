@@ -69,9 +69,9 @@ MonoBehaviour:
   _communCadre: {fileID: 21300000, guid: 81074644d30d77d44b5a01273d019846, type: 3}
   _moyenCadre: {fileID: 21300000, guid: 3dfe0c208d0c5074484b211cb2e3f4d4, type: 3}
   _rareCadre: {fileID: 21300000, guid: 7df29d1c1fedc584894378c9877e38e0, type: 3}
-  _enemyType: {fileID: 21300000, guid: 7c8eedc21581f3140b452841c1a5ed69, type: 3}
-  _spellType: {fileID: 21300000, guid: ea5a059b68c0f1348a242e132af38165, type: 3}
-  _divertType: {fileID: 21300000, guid: fae3b4fcc70683841b0438ef79dc8582, type: 3}
+  _enemyType: {fileID: 21300000, guid: 2a136e5e8f9f5004aba253671edc94a7, type: 3}
+  _spellType: {fileID: 21300000, guid: b7cbe6c29ebd5de4fbc4ab86babeb940, type: 3}
+  _divertType: {fileID: 21300000, guid: e3232daa56abd464fad019194a5f9d35, type: 3}
 --- !u!114 &8462447887394196579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.35
+  m_fontSize: 53.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -449,8 +449,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_AnchoredPosition: {x: 30, y: 30}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &5278919335110493018
 CanvasRenderer:
