@@ -57,6 +57,7 @@ MonoBehaviour:
     Efficiency: 0
   TimeSpell: 0
   _targets: []
+  _prefabFogVFX: {fileID: 4083328960577415360, guid: 6230fa64a5fefae48a01687af2cf8e2d, type: 3}
 --- !u!33 &5858280476445024403
 MeshFilter:
   m_ObjectHideFlags: 0

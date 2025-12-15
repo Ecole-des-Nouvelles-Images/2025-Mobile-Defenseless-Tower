@@ -63,6 +63,7 @@ namespace Managers
                 instantite.GetComponent<Enemy>().EnemyClass = newClass;
             }
 
+            SoundManager.Instance.PlayRandomSound(enemyclass.baseData.SpawnSounds, gameObject);
             InventoryHandler.Instance.Money -= newClass.price;
             EventBus.OnplayerPlaceTroup?.Invoke();
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Interface;
+using Managers;
 using UnityEngine;
 
 namespace ScriptableObjectsScripts.Spells
@@ -8,6 +9,7 @@ namespace ScriptableObjectsScripts.Spells
     public class FreezSpell : Spell
     {
         [SerializeField] private List<GameObject> _targets;
+        [SerializeField] private GameObject _prefabFogVFX;
     
         public override void SetUp()
         {
@@ -33,6 +35,7 @@ namespace ScriptableObjectsScripts.Spells
             {
                 other.GetComponent<IFreezable>().Freeze();
                 _targets.Add(other.gameObject);
+                SpawnManager.Instance.SpawnVfxInPosition(_prefabFogVFX, other.transform.position);
             }
         }
 

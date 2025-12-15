@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using Interface;
+using Managers;
 using ScriptableObjectsScripts;
 using Structs;
 using UnityEngine;
@@ -29,9 +30,6 @@ namespace Class
         [SerializeField] private SplineAnimate _splineAnimate;
         [SerializeField] private SplineContainer _splineContainer;
 
-        [Header("Sound")] 
-        public AudioClip SpawningSound;
-        public AudioClip DeathSound;
         
         public float Health
         {
@@ -43,7 +41,7 @@ namespace Class
             
                 if (_health <= 0)
                 {
-                    SoundManager.Instance.PlaySound(DeathSound, gameObject);
+                    SoundManager.Instance.PlayRandomSound(enemyBaseData.DeadSounds, gameObject);
                     Destroy(gameObject);
                 }
             }
