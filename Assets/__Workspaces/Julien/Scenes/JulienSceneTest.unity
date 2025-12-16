@@ -1925,6 +1925,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arbalette
       objectReference: {fileID: 0}
+    - target: {fileID: 4110633953271908345, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.955793
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110633953271908345, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.29404032
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110633953271908345, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110633953271908345, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 34.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5816873039397283692, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.3988094
