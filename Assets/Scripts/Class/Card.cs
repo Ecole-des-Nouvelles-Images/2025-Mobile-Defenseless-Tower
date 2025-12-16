@@ -29,7 +29,7 @@ namespace Class
         
         [SerializeField] private Sprite _enemyType;
         [SerializeField] private Sprite _spellType;
-        [SerializeField] private Sprite _divertType;
+        [SerializeField] private Sprite _diversType;
 
        
 
@@ -57,7 +57,7 @@ namespace Class
             
             if(upgrade is UpgradeEnemy) _typeImage.sprite = _enemyType;
             if(upgrade is UpgradeSpell) _typeImage.sprite = _spellType;
-            if(upgrade is UpgradeDivert) _typeImage.sprite = _divertType;
+            if(upgrade is UpgradeDivert) _typeImage.sprite = _diversType;
         }
     
         public void OnClick()

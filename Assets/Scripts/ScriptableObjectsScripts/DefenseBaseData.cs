@@ -19,6 +19,9 @@ public class DefenseBaseData : ScriptableObject
     [Header("Prefab")] 
     public GameObject Prefab;
     public GameObject ProjectilPrefab;
+    
+    [Header("Sound")]
+    public List<AudioClip> FireSounds;
 }
 
 [Serializable]

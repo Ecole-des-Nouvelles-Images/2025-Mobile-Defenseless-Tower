@@ -18,3 +18,5 @@ MonoBehaviour:
   AreaSize: 2
   Efficiency: 0
   Prefab: {fileID: 71184059631829469, guid: 20aa65777e03a1242bb8c7d0bb1470ac, type: 3}
+  SpawnSounds:
+  - {fileID: 8300000, guid: af0b4f171a7d29842b60393f0a26c9fb, type: 3}

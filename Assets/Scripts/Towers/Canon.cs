@@ -1,5 +1,7 @@
 using Class;
+using DG.Tweening;
 using Instantiate;
+using Managers;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -10,8 +12,7 @@ namespace Towers
         [Header("Only for canon")] 
         public GameObject PivotRotation;
         public GameObject SpawnerBullet;
-
-       
+        public GameObject CanonGm;
 
         public override void LookFirstEnemy()
         {
@@ -25,10 +26,10 @@ namespace Towers
 
         public override void Fire()
         {
+            base.Fire();
             GameObject bulletCanon = Instantiate(BaseData.ProjectilPrefab, SpawnerBullet.transform.position, quaternion.identity);
             bulletCanon.GetComponent<Bullet>().SetUp(targetsInRange[0], Damage, BaseData.BulletSpeed);
+            CanonGm.transform.DOLocalMoveZ(CanonGm.transform.localPosition.z - 0.1f, 0.1f).SetLoops(2, LoopType.Yoyo);
         }
-
-        
     }
 }

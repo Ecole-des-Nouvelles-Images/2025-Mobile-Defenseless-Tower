@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using Interface;
+using Managers;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Utils;
@@ -79,7 +80,11 @@ namespace Class
         }
 
         public abstract void LookFirstEnemy();
-        public abstract void Fire();
+
+        public virtual void Fire()
+        {
+            SoundManager.Instance.PlayRandomSound(BaseData.FireSounds, gameObject);
+        }
         
         private void OnPause()
         {
@@ -94,8 +99,6 @@ namespace Class
         public void Freeze()
         {
             _inPause = true;
-           
-            
             
             foreach (Renderer renderer in _renderer)
             {

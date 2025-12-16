@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using Interface;
+using Managers;
 using ScriptableObjectsScripts;
 using Structs;
 using UnityEngine;
@@ -12,7 +13,7 @@ using Random = UnityEngine.Random;
 
 namespace Class
 {
-    public class Enemy : MonoBehaviour, IDamagable, IHealable
+    public abstract class Enemy : MonoBehaviour, IDamagable, IHealable
     {
         private GameObject _parentEmpty;
     
@@ -28,7 +29,8 @@ namespace Class
         [SerializeField] private Image _healthBar;
         [SerializeField] private SplineAnimate _splineAnimate;
         [SerializeField] private SplineContainer _splineContainer;
-    
+
+        
         public float Health
         {
             get => _health;
@@ -39,6 +41,8 @@ namespace Class
             
                 if (_health <= 0)
                 {
+                    SoundManager.Instance.PlayRandomSound(enemyBaseData.DeadSounds, gameObject);
+                    SpawnManager.Instance.SpawnVfxInPosition(enemyBaseData.VFXPrefab, transform.position);
                     Destroy(gameObject);
                 }
             }
@@ -60,6 +64,8 @@ namespace Class
             EventBus.OnGamePaused -= OnPause;
             EventBus.OnGameResume -= OnResume;
         }
+        
+        public abstract void SetUpSound();
 
         private void Start()
         {
@@ -70,6 +76,7 @@ namespace Class
             _splineAnimate.Play();
             SetUp();
             RandOffset();
+            SetUpSound();
         }
 
         private void Update()

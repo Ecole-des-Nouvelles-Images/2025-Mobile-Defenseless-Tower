@@ -1,20 +1,54 @@
+using System;
+using System.Collections;
 using System.Linq;
 using Class;
 using Player;
 using Structs;
 using UnityEngine;
 using Utils;
+using Random = UnityEngine.Random;
 
 namespace Managers
 {
     public class SpawnManager : MonoBehaviourSingleton<SpawnManager>
     {
+        
         [SerializeField] private InventoryHandler _inventory;
         [SerializeField] private GameObject _birdPrefab;
         
         [Header("Prefab")]
         public GameObject VfxSpawner;
+
+        [Header("Spawning rate")] 
+        public Vector2 BirdRandSpawn;
+        [SerializeField] private float _birdSpawningTime;
         
+        private bool _isPause;
+
+        private void OnEnable()
+        {
+            EventBus.OnGamePaused += OnPause;
+            EventBus.OnGameResume += OnResume;
+        }
+
+        private void OnDisable()
+        {
+            EventBus.OnGamePaused -= OnPause;
+            EventBus.OnGameResume -= OnResume;
+        }
+
+        private void Start()
+        {
+            _birdSpawningTime = Random.Range(BirdRandSpawn.x, BirdRandSpawn.y);
+        }
+
+        private void Update()
+        {
+            if (_isPause) return;
+            _birdSpawningTime -= Time.deltaTime;
+            if (_birdSpawningTime <= 0) SpawnBird();
+        }
+
         [ContextMenu("Spawn")]
         public void Spawn(EnemyClass enemyclass)
         {
@@ -29,6 +63,7 @@ namespace Managers
                 instantite.GetComponent<Enemy>().EnemyClass = newClass;
             }
 
+            SoundManager.Instance.PlayRandomSound(enemyclass.baseData.SpawnSounds, gameObject);
             InventoryHandler.Instance.Money -= newClass.price;
             EventBus.OnplayerPlaceTroup?.Invoke();
         }
@@ -36,6 +71,7 @@ namespace Managers
         [ContextMenu("SpawnBird")]
         public void SpawnBird()
         {
+            _birdSpawningTime = Random.Range(BirdRandSpawn.x, BirdRandSpawn.y);
             bool leftSide = Random.value < 0.5f;
             float randXPos = Random.Range(6f,16f);
             float posZ;
@@ -49,6 +85,16 @@ namespace Managers
         {
             GameObject vfx = Instantiate(VfxSpawner,  position, Quaternion.identity);
             vfx.GetComponent<VfxSpawner>().SetUp(particleSystem);
+        }
+
+        private void OnPause()
+        {
+            _isPause = true;
+        }
+
+        private void OnResume()
+        {
+            _isPause = false;
         }
     }
 }

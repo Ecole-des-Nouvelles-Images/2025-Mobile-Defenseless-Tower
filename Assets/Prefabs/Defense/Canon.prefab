@@ -193,6 +193,7 @@ MonoBehaviour:
   targetsInRange: []
   PivotRotation: {fileID: 4687116080279812015}
   SpawnerBullet: {fileID: 2821173789386020003}
+  CanonGm: {fileID: 2116320928907951313}
 --- !u!23 &1236808704830012088
 MeshRenderer:
   m_ObjectHideFlags: 0

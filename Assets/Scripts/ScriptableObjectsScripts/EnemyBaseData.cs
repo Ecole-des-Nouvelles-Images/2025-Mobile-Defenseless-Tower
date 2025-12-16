@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjectsScripts
 {
@@ -23,6 +25,14 @@ namespace ScriptableObjectsScripts
         [Header("Prefab")] 
     
         public GameObject Prefab;
+        
+        [Header("Sound")]
+        public List<AudioClip> SpawnSounds;
+        public List<AudioClip> DeadSounds;
+        
+        [Header("VFX")]
+        public GameObject VFXPrefab;
+        
     }
 }
 
