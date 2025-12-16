@@ -155,6 +155,7 @@ MonoBehaviour:
   _wayGround: {fileID: 680235107536310843, guid: fd67a5e403576b744a136837ae6c250b, type: 3}
   _ground: {fileID: 6859068860890643362, guid: acc212231832f844a90c6ec027c60a79, type: 3}
   _castlePrefab: {fileID: 338979796964512309, guid: ce75c80aea728ab498ea9d57b719288d, type: 3}
+  _castleEnemiePrefab: {fileID: 338979796964512309, guid: f6052347d4d548948895ad48a1d9cfe2, type: 3}
   _cellGameObjects:
   - {fileID: 1256196827}
   - {fileID: 1045038970}
@@ -1327,6 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Instantiate.Castle
   Health: 10
+  _heatVfx: {fileID: 0}
 --- !u!65 &1045038973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6553,12 +6555,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905031571}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2095840057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1917511273
 GameObject:
@@ -6980,7 +6982,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1905031574}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2122799270
@@ -8180,7 +8183,6 @@ SceneRoots:
   - {fileID: 758881730}
   - {fileID: 2095840057}
   - {fileID: 1790925524}
-  - {fileID: 1905031574}
   - {fileID: 561730939}
   - {fileID: 1643980870}
   - {fileID: 1191453934}
