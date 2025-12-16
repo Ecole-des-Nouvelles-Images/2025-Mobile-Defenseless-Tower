@@ -1,3 +1,4 @@
+using System.Collections;
 using ScriptableObjectsScripts.Difficulty;
 using UnityEngine;
 using Utils;
@@ -39,6 +40,12 @@ namespace Managers
 
         public void LoadSelectionCard()
         {
+            StartCoroutine("LoadSelectionCardDelay");
+        }
+
+        public IEnumerator LoadSelectionCardDelay()
+        {
+            yield return new WaitForSeconds(3f);
             _cardPropositionPanel.SetActive(true);
             _cardPropositionPanel.GetComponent<CardManager>().LoadCardProposition();
         }
