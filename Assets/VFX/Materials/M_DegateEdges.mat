@@ -109,7 +109,7 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 1
+    - _Alpha: 0.5
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
