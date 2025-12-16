@@ -85,3 +85,5 @@ MonoBehaviour:
     Heuristic: 2
   Prefab: {fileID: 2486535061774727468, guid: 5ed8ecadcedfb87429b473f04affcdca, type: 3}
   ProjectilPrefab: {fileID: 2095069144231104046, guid: 6916a4d908e3d82468fd33ab41fb6c56, type: 3}
+  FireSounds:
+  - {fileID: 8300000, guid: af0b4f171a7d29842b60393f0a26c9fb, type: 3}

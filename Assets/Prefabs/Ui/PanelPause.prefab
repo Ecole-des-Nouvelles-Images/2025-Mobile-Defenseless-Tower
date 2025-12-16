@@ -921,13 +921,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 8957969634029508138}
   m_HandleRect: {fileID: 6948747439457001423}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -40
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8781493164329654868}
+        m_TargetAssemblyTypeName: VolumeManager, Assembly-CSharp
+        m_MethodName: ChangeSoundEffectVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3836844152615788768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,13 +1023,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 2448813899077374521}
   m_HandleRect: {fileID: 7920610923440067172}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -40
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8781493164329654868}
+        m_TargetAssemblyTypeName: VolumeManager, Assembly-CSharp
+        m_MethodName: ChangeMusicVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4012112120693587133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1570,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 15, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5406339788858854097
 CanvasRenderer:
@@ -1633,6 +1657,7 @@ GameObject:
   - component: {fileID: 4226967186400296097}
   - component: {fileID: 2552643655928354607}
   - component: {fileID: 2178534894962927779}
+  - component: {fileID: 8781493164329654868}
   m_Layer: 5
   m_Name: PanelPause
   m_TagString: Untagged
@@ -1706,6 +1731,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8781493164329654868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7313286212226731294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e6a2c4a2570074dbca5c1c42887893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
+  _musicVolume: {fileID: 2703837356649096304}
+  _sfxVolume: {fileID: 4929593603922186319}
+  _audioMixer: {fileID: 24100000, guid: c8e47d5fb9480cb4f8ef6cec188f13f2, type: 2}
 --- !u!1 &7483170519046769302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1856,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 15, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1708906476021050567
 CanvasRenderer:

@@ -326,8 +326,7 @@ MonoBehaviour:
     MaxHealth: 0
     Damage: 0
   _speed: 0
-  _materials:
-  - {fileID: 2875122667294333804}
+  _materials: {fileID: 0}
   _healthBar: {fileID: 4971345374089142851}
   _splineAnimate: {fileID: 0}
   _splineContainer: {fileID: 0}
@@ -511,7 +510,7 @@ PrefabInstance:
     - target: {fileID: 2171675169710456643, guid: 5cc0811d3408dd544adb6639e26259ca, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8491148f05d707a46858ed234f1628cd, type: 2}
+      objectReference: {fileID: 2100000, guid: 913ea235c24b1e249a9f78c2ffbbcba5, type: 2}
     - target: {fileID: 5866666021909216657, guid: 5cc0811d3408dd544adb6639e26259ca, type: 3}
       propertyPath: m_Controller
       value: 
@@ -521,11 +520,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cc0811d3408dd544adb6639e26259ca, type: 3}
---- !u!137 &2875122667294333804 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2171675169710456643, guid: 5cc0811d3408dd544adb6639e26259ca, type: 3}
-  m_PrefabInstance: {fileID: 4162781648693240879}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4489968603115635652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5cc0811d3408dd544adb6639e26259ca, type: 3}
