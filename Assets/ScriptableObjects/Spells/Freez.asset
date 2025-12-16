@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63d793ce70fd2b4c989e2f4b884c9bd, type: 3}
   m_Name: Freez
   m_EditorClassIdentifier: Assembly-CSharp::Spell
-  Sprite: {fileID: 21300000, guid: bcc5990f1e42f1745813897225962523, type: 3}
+  Sprite: {fileID: 21300000, guid: 01ecfabc28d648648971b9ad34bff068, type: 3}
   Price: 30
   Time: 4
   AreaSize: 2
