@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881449607744291708}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000000070314854, y: 1.0699842, z: -0.2805008}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.0699842, z: -0.2805008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5846888269693817019}
+  m_Father: {fileID: 5247089247933848624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8058206724393025859
 MeshFilter:
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 664819149660292757}
   - component: {fileID: -3756569611169460674}
   m_Layer: 0
-  m_Name: Catapulte 1
+  m_Name: Catapulte
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,7 +484,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5247089247933848624}
-  - {fileID: 7772352865694832676}
   - {fileID: 9003362402583695044}
   m_Father: {fileID: 5816873039397283692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -551,6 +550,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5738042447270877260}
+  - {fileID: 7772352865694832676}
   m_Father: {fileID: 5846888269693817019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2877440311560673175

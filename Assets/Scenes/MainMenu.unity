@@ -133,11 +133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 909393368396711424, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1261387430735963668, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2663759758109183326, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_Pivot.x
@@ -221,23 +221,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303481806844628528, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5340182846417849679, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 52a54de84c384b947ace9305bd52eed9, type: 3}
     - target: {fileID: 6003455326774474934, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: PanelToOpen
       value: 
       objectReference: {fileID: 508864403}
     - target: {fileID: 8730227099279574980, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8936682631165652449, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

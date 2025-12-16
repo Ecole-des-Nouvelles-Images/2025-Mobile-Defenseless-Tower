@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScriptableObjectsScripts.Spells
@@ -12,5 +13,7 @@ namespace ScriptableObjectsScripts.Spells
         public float Efficiency;
         
         public GameObject Prefab;
+        
+        public List<AudioClip> SpawnSounds;
     }
 }
