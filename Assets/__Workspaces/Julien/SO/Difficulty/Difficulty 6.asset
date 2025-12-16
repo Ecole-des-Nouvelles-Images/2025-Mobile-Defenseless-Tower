@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoDifficultySpline
   KnotCount: 7
   TerrainSize: 21
-  StartPosX: {x: 5, y: 10}
-  EndPosX: {x: 5, y: 10}
+  StartPosX: {x: 7, y: 11}
+  EndPosX: {x: 7, y: 11}
   RandomPos: {x: -7, y: 7}
   MaxWidth: {x: 3, y: 15}
   MaxHeight: {x: 1, y: 19}
