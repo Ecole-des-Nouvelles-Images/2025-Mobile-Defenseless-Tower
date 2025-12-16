@@ -282,6 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2663759758109183326}
   - component: {fileID: 9183781677890060527}
+  - component: {fileID: 6658352084504782210}
   - component: {fileID: 2671796399910135722}
   m_Layer: 5
   m_Name: PanelOptions
@@ -326,6 +327,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909393368396711424}
   m_CullTransparentMesh: 1
+--- !u!114 &6658352084504782210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909393368396711424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e6a2c4a2570074dbca5c1c42887893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
+  _musicVolume: {fileID: 323994321724502774}
+  _sfxVolume: {fileID: 2112396595857897068}
+  _audioMixer: {fileID: 24100000, guid: c8e47d5fb9480cb4f8ef6cec188f13f2, type: 2}
 --- !u!114 &2671796399910135722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,7 +1412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 14a81eb6f3695fd41a34059b35874419, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52a54de84c384b947ace9305bd52eed9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
