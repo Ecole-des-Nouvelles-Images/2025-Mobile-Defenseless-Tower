@@ -66,7 +66,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Nous tenons \xE0 remercier les intervenants de l'ENSI de nous avoir accompagner
-    durant ce projet.\nProject by :\nJulien DURAND (Dev), \nCalvin OVIDE (Lead Art/3D
+    durant ce projet.\nProject par :\nJulien DURAND (Dev), \nCalvin OVIDE (Lead Art/3D
     artist)\nR\xE9gina LUKOYANOVA (3D artist)\nSasha BILOR\xC9 (UI/2D artist)\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
@@ -155,7 +155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &371984942538700365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TITRE
+  m_text: "CR\xC9DITS"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
   m_sharedMaterial: {fileID: -3840995769953482548, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
