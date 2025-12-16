@@ -18,6 +18,6 @@ public class Flag : MonoBehaviour
 
     private void CaptureFlag()
     {
-        Debug.Log("Flag captured");
+        _animator.SetBool("Capture", true);
     }
 }
