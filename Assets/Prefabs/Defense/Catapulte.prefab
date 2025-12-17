@@ -149,7 +149,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Catapult
   _inPause: 0
-  _renderer: []
+  _renderer:
+  - {fileID: 1757254756676839946}
+  - {fileID: 8742088599424652753}
+  - {fileID: 1103106342214084159}
+  - {fileID: 5081340790147015425}
   BaseData: {fileID: 11400000, guid: dd14dd7e550df5042a3b9b5a596a0671, type: 2}
   MaxCoolDown: 0
   CoolDown: 0

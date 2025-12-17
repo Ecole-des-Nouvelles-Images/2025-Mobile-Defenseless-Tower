@@ -22,6 +22,7 @@ namespace Managers
         [SerializeField] private GameObject _ground;
     
         [SerializeField] private GameObject _castlePrefab;
+        [SerializeField] private GameObject _castleEnemiePrefab;
     
         [SerializeField] private List<GameObject> _cellGameObjects = new List<GameObject>();
 
@@ -95,12 +96,10 @@ namespace Managers
         public void PlaceCastle()
         {
             GameObject castleA = Instantiate(_castlePrefab, transform.position, quaternion.identity, transform);
-            GameObject castleB = Instantiate(_castlePrefab, transform.position, quaternion.identity, transform);
+            GameObject castleB = Instantiate(_castleEnemiePrefab, transform.position, quaternion.identity, transform);
             _cellGameObjects.Add(castleA);
             _cellGameObjects.Add(castleB);
 
-            castleB.AddComponent<Castle>();
-        
             Spline spline = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>().Splines[0];
 
             BezierKnot firstKnot = spline[0];
