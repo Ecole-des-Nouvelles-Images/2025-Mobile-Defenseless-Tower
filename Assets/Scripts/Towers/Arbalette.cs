@@ -18,7 +18,9 @@ namespace Towers
             if (targetsInRange != null && targetsInRange.Count > 0)
             {
                 Vector3 posTarget = targetsInRange[0].transform.position;
-                PivotRotation.transform.LookAt(new Vector3(posTarget.x, transform.position.y, posTarget.z));
+                Vector3 baseRotation = PivotRotation.transform.localRotation.eulerAngles;
+                PivotRotation.transform.LookAt(posTarget);
+                PivotRotation.transform.localRotation = Quaternion.Euler(new Vector3(baseRotation.x, PivotRotation.transform.eulerAngles.y, baseRotation.z));
             }
         }
 

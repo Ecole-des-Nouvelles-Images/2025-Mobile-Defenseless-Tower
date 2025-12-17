@@ -71,7 +71,7 @@ MonoBehaviour:
   _rareCadre: {fileID: 21300000, guid: 7df29d1c1fedc584894378c9877e38e0, type: 3}
   _enemyType: {fileID: 21300000, guid: 2a136e5e8f9f5004aba253671edc94a7, type: 3}
   _spellType: {fileID: 21300000, guid: b7cbe6c29ebd5de4fbc4ab86babeb940, type: 3}
-  _divertType: {fileID: 21300000, guid: e3232daa56abd464fad019194a5f9d35, type: 3}
+  _diversType: {fileID: 21300000, guid: e3232daa56abd464fad019194a5f9d35, type: 3}
 --- !u!114 &8462447887394196579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.4
+  m_fontSize: 64.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
