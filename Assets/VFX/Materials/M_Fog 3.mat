@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_DegateEdges
+  m_Name: M_Fog 3
   m_Shader: {fileID: -6465566751694194690, guid: aa92041febedaf5448866d6fd3531be5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -86,7 +86,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: e69cb08ce539f894aaaa31f8b5037498, type: 3}
+        m_Texture: {fileID: 2800000, guid: a8d4d346972eb074496ef56efd5628f0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D_1:
@@ -109,7 +109,7 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 0.5
+    - _Alpha: 0.256
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
