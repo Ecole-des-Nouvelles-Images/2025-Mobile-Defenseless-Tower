@@ -9,7 +9,7 @@ namespace Menu
 
         public void OnPause()
         {
-            Instantiate(PausePanel, GameObject.Find("Canvas").transform);
+            PausePanel.SetActive(true);
             EventBus.OnGamePaused?.Invoke();
             Debug.Log("OnGame Pause");
         }
