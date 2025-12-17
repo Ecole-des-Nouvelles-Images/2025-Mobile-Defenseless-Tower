@@ -9,6 +9,7 @@ public class VolumeManager : MonoBehaviour
     [SerializeField] private Slider _sfxVolume;
 
     [SerializeField] private AudioMixer _audioMixer;
+    
 
     private void OnEnable()
     {
