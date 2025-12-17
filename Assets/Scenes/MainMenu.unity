@@ -128,7 +128,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 1078663419}
     m_Modifications:
     - target: {fileID: 410103691731057589, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410103691731057589, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410103691731057589, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 909393368396711424, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
@@ -138,6 +146,10 @@ PrefabInstance:
     - target: {fileID: 909393368396711424, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441884936857185857, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1441884936857185857, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -223,6 +235,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3090390038900040112, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090390038900040112, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090390038900040112, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_MinValue
+      value: -40
+      objectReference: {fileID: 0}
     - target: {fileID: 3692687004744971850, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -248,13 +272,25 @@ PrefabInstance:
       value: -525
       objectReference: {fileID: 0}
     - target: {fileID: 5030559078038609851, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030559078038609851, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030559078038609851, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6003455326774474934, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: PanelToOpen
       value: 
       objectReference: {fileID: 508864403}
+    - target: {fileID: 6080496404008323663, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6080496404008323663, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -266,6 +302,18 @@ PrefabInstance:
     - target: {fileID: 6658352084504782210, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: _musicVolume
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675150450112710078, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675150450112710078, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675150450112710078, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
+      propertyPath: m_MinValue
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 8313599500197909060, guid: 87d8ddacac009cb47a3239f3750d642b, type: 3}
       propertyPath: m_AnchorMax.y
