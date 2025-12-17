@@ -15,7 +15,12 @@ MonoBehaviour:
   Name: 
   Srite: {fileID: 21300000, guid: b2271f5ba11705e48b982f925e0fca95, type: 3}
   Rarity: 2
-  Description: "Engage un chevalier pour 5 d'or en plus \xE0 chaque achat"
+  Description: 'Engage un nouveau chevalier.
+
+    + 1 chevalier par achat.
+
+    +
+    5 sur le prix du chevalier.'
   TargetData: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
   PriceToAdd: 5
   HealthToAdd: 0

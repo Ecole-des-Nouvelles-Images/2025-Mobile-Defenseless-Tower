@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: 
   Srite: {fileID: 21300000, guid: 9c91e288b5678a3409f6681725574a74, type: 3}
   Rarity: 2
-  Description: Le gel du nettement plus longtemps
+  Description: Le gel dure beaucoup plus longtemps.
   TargetSpell: {fileID: 11400000, guid: e8ca02e4ca1c0114e8c0fd4eecfe71f1, type: 2}
   CostToAdd: 0
   TimeToAdd: 1

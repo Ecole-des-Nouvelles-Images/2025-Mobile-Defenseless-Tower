@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: 
   Srite: {fileID: 21300000, guid: 648a68b876315fa41a46fcac7e33de56, type: 3}
   Rarity: 1
-  Description: "Donne 10 d'\xE9lixirs de plus"
-  ElexirToAdd: 10
+  Description: + 15 cristaux.
+  ElexirToAdd: 15
