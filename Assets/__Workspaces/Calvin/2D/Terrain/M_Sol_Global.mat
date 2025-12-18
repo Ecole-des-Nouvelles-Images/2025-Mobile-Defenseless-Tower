@@ -41,9 +41,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _NoiseScale: 159.9
+    - _NoiseScale: 83.8
+    - _NoiseScaleBig: -194.2
+    - _NoiseScaleSmall: 370.7
+    - _NoiseSpeed: 0
     m_Colors:
-    - _VariationColor: {r: 0.5260591, g: 0.6603774, b: 0.507743, a: 1}
+    - _VariationColor: {r: 0.8396226, g: 0.5980331, b: 0.5980331, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &698494593475927560
