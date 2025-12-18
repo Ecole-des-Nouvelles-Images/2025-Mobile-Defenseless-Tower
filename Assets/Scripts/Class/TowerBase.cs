@@ -24,13 +24,13 @@ namespace Class
     
         public List<GameObject> targetsInRange = new List<GameObject>();
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             EventBus.OnGamePaused += OnPause;
             EventBus.OnGameResume += OnResume;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             EventBus.OnGamePaused -= OnPause;
             EventBus.OnGameResume -= OnResume;

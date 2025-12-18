@@ -73,7 +73,7 @@ MonoBehaviour:
   _spellType: {fileID: 21300000, guid: b7cbe6c29ebd5de4fbc4ab86babeb940, type: 3}
   _diversType: {fileID: 21300000, guid: e3232daa56abd464fad019194a5f9d35, type: 3}
   AudioClip:
-  - {fileID: 8300000, guid: c7ef9e00454324a499eb48338bc3b507, type: 3}
+  - {fileID: 8300000, guid: 8115b31d5d529004ba8634d08ddfdad1, type: 3}
 --- !u!114 &8462447887394196579
 MonoBehaviour:
   m_ObjectHideFlags: 0

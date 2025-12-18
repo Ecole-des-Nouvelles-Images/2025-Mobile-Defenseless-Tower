@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Managers;
 using UnityEngine;
+using EventBus = Utils.EventBus;
 
 public class Trumpet : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Trumpet : MonoBehaviour
         if (Time <= 0 && !_playedSound)
         {
             _playedSound = true;
+            EventBus.OnConfettiPlayed?.Invoke();
             ParticleSystem.Play();
             SoundManager.Instance.PlayRandomSound(Confetti, gameObject);
         }

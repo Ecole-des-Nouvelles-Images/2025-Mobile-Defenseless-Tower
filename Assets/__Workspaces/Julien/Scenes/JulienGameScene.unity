@@ -951,6 +951,7 @@ MonoBehaviour:
   _splineManager: {fileID: 2122799272}
   _cardPropositionPanel: {fileID: 805499048}
   NumberCard: 3
+  TimeEndingRound: 4.5
   DifficultySplineTest: {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
 --- !u!114 &358535024
 MonoBehaviour:
@@ -3201,6 +3202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Instantiate.Castle
   Health: 10
   _hitVfx: {fileID: 0}
+  _trumpet: []
 --- !u!65 &1266089805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9868,14 +9870,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1790925524}
     m_Modifications:
-    - target: {fileID: 3995488193768651901, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
-      propertyPath: AudioClip.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3995488193768651901, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
-      propertyPath: 'AudioClip.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: c7ef9e00454324a499eb48338bc3b507, type: 3}
     - target: {fileID: 6615304708367921961, guid: 254b6bc98ccac754bae0538249f8bffe, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
