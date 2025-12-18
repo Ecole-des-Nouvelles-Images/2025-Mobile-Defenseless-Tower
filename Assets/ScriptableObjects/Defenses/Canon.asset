@@ -39,3 +39,4 @@ MonoBehaviour:
   ProjectilPrefab: {fileID: 2095069144231104046, guid: 2504c417662e81547ba76a47d09b4d2f, type: 3}
   FireSounds:
   - {fileID: 8300000, guid: af0b4f171a7d29842b60393f0a26c9fb, type: 3}
+  FireVisual: {fileID: 7935228629303894717, guid: cff2479499caf074f850c5f9fdca7c90, type: 3}

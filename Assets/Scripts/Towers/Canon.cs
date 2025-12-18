@@ -13,7 +13,7 @@ namespace Towers
         public GameObject PivotRotation;
         public GameObject SpawnerBullet;
         public GameObject CanonGm;
-
+        
         public override void LookFirstEnemy()
         {
             if (targetsInRange != null && targetsInRange.Count > 0)
@@ -30,6 +30,7 @@ namespace Towers
             GameObject bulletCanon = Instantiate(BaseData.ProjectilPrefab, SpawnerBullet.transform.position, quaternion.identity);
             bulletCanon.GetComponent<Bullet>().SetUp(targetsInRange[0], Damage, BaseData.BulletSpeed);
             CanonGm.transform.DOLocalMoveZ(CanonGm.transform.localPosition.z - 0.1f, 0.1f).SetLoops(2, LoopType.Yoyo);
+            SpawnManager.Instance.SpawnVfxInPosition(BaseData.FireVisual, SpawnerBullet.transform.position);
         }
     }
 }
