@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Instantiate.Castle
   Health: 10
-  _heatVfx: {fileID: 179044676522555636, guid: 15e76c50189c936458db628227f7d42b, type: 3}
+  _heatVfx: {fileID: 0}
 --- !u!23 &9012919143389881623
 MeshRenderer:
   m_ObjectHideFlags: 0

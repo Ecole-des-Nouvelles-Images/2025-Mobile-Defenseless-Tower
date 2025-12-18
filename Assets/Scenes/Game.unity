@@ -3741,8 +3741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f45ee4e0cbb6d4a9ae29ad695dcbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryHandler
-  StartMoney: 200
-  StartElixir: 50
+  StartMoney: 300
+  StartElixir: 100
   _money: 0
   _elixir: 0
   EquipedSpell:

@@ -29,7 +29,7 @@ namespace Instantiate
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Enemy"))
+            if (other.gameObject == Target)
             {
                 Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusExplosion);
                 
