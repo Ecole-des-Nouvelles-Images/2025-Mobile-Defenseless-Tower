@@ -21,6 +21,20 @@ namespace Managers
                 prefabSound.GetComponent<AudioSource>().pitch = randPitch;
             }
         }
+        
+        public void PlayRandomSoundInTransform(List<AudioClip> audioClip, Transform target, bool randomPitch = false)
+        {
+            AudioClip audio = audioClip[Random.Range(0, audioClip.Count)];
+            GameObject prefabSound = Instantiate(PrefabSound,target.transform.position, Quaternion.identity, target);
+            prefabSound.GetComponent<AudioSource>().clip = audio;
+            prefabSound.GetComponent<AudioSource>().Play();
+
+            if (randomPitch)
+            {
+                float randPitch = Random.Range(1, 1.3f);
+                prefabSound.GetComponent<AudioSource>().pitch = randPitch;
+            }
+        }
 
         public void PlaySound(AudioClip audioClip, GameObject target)
         {

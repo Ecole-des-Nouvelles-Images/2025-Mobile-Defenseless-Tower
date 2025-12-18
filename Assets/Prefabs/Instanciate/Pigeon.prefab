@@ -64,6 +64,8 @@ MonoBehaviour:
   Speed: 5
   LeftSide: 0
   PrefabVFX: {fileID: 1495861624451804494, guid: 4b608fa994bda3f4c88227eca9e8bfb1, type: 3}
+  ScreemSFX:
+  - {fileID: 8300000, guid: bd3cc767331f7204089e9aa54097e7db, type: 3}
 --- !u!23 &1506016442736951804
 MeshRenderer:
   m_ObjectHideFlags: 0

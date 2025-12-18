@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Class;
 using DG.Tweening;
 using Managers;
@@ -14,7 +15,7 @@ namespace Instantiate
         public int Health = 10;
         private Vector3 _baseScale;
         [SerializeField] private GameObject _hitVfx;
-        
+        [SerializeField] private List<GameObject> _trumpet;
         private void OnEnable()
         {
             gameObject.tag = "Castle";
@@ -40,6 +41,10 @@ namespace Instantiate
                 EventBus.OnCastleTakedDamage?.Invoke(currentHealth);
                 if (Health <= 0 && !_isDead)
                 {
+                    foreach (GameObject trumpet in _trumpet)
+                    {
+                        trumpet.SetActive(true);
+                    }
                     _isDead = true;
                     Debug.Log("CHATEUA MORT");
                     EventBus.OnLevelFinished?.Invoke();

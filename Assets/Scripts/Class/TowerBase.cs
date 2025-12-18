@@ -11,6 +11,7 @@ namespace Class
     public abstract class TowerBase : MonoBehaviour, IFreezable
     {
         [SerializeField] private bool _inPause;
+        [SerializeField] private bool _inFreez;
         
         [SerializeField] private List<Renderer> _renderer = new List<Renderer>();
         
@@ -52,7 +53,7 @@ namespace Class
     
         private void Update()
         {
-            if (_inPause) return;
+            if (_inPause || _inFreez) return;
             targetsInRange.RemoveAll( x => !x);
             CoolDown += Time.deltaTime;
             LookFirstEnemy();
@@ -98,7 +99,7 @@ namespace Class
 
         public void Freeze()
         {
-            _inPause = true;
+            _inFreez = true;
             
             foreach (Renderer renderer in _renderer)
             {
@@ -116,7 +117,7 @@ namespace Class
 
         public void Unfreeze()
         {
-            _inPause = false;
+            _inFreez = false;
             
             foreach (Renderer renderer in _renderer)
             {

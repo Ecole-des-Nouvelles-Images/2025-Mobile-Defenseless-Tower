@@ -75865,6 +75865,67 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5398787733489563758, guid: 69f855f1b7aae0b4bafed1cfde321bbe, type: 3}
   m_PrefabInstance: {fileID: 1773929531}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2083274865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2083274867}
+  - component: {fileID: 2083274866}
+  m_Layer: 0
+  m_Name: InventoryHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2083274866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083274865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f45ee4e0cbb6d4a9ae29ad695dcbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.InventoryHandler
+  StartMoney: 0
+  StartElixir: 0
+  _money: 0
+  _elixir: 0
+  EquipedSpell:
+    SpellData: {fileID: 0}
+    Price: 0
+    Time: 0
+    AreaSize: 0
+    Efficiency: 0
+  EnemyClass: []
+  SpellClasses: []
+  PanelInventoryEnemy: {fileID: 0}
+  PanelInventorySpell: {fileID: 0}
+  prefabEnemyButton: {fileID: 0}
+  prefabSpellButton: {fileID: 0}
+  UpgradeTest: {fileID: 0}
+--- !u!4 &2083274867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083274865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2114333399
 GameObject:
   m_ObjectHideFlags: 0
@@ -76067,3 +76128,4 @@ SceneRoots:
   - {fileID: 297250001}
   - {fileID: 1475711606}
   - {fileID: 1956157777}
+  - {fileID: 2083274867}
