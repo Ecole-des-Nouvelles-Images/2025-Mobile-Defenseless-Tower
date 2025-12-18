@@ -53,7 +53,7 @@ MonoBehaviour:
   Damage: 0
   Speed: 0
   RadiusExplosion: 1
-  ParticleExplosion: {fileID: 0}
+  ExplosionVFX: {fileID: 4306149910771858425, guid: 9498e1eb5ece61a40b10173d36ec3c17, type: 3}
 --- !u!33 &863326475143822901
 MeshFilter:
   m_ObjectHideFlags: 0
