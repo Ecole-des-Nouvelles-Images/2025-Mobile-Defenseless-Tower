@@ -2244,7 +2244,7 @@ PrefabInstance:
     - target: {fileID: 1311033066943575317, guid: 0dc605457accff24eaff0bece009442a, type: 3}
       propertyPath: PausePanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1746789708}
     - target: {fileID: 1387661116700037179, guid: 0dc605457accff24eaff0bece009442a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4749,6 +4749,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ec74e7093c2c21499a9283389dc01d2, type: 3}
+--- !u!1 &1746789708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2045616759278293856, guid: 6ec74e7093c2c21499a9283389dc01d2, type: 3}
+  m_PrefabInstance: {fileID: 1746789707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1762044069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5495673069332474701, guid: dbcdea51d7b8ebb4eaa83ae8988bf340, type: 3}
