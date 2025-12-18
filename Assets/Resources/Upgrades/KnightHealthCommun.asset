@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: 
   Srite: {fileID: 21300000, guid: c11e41cd55a414b4c8d7c257f5f33dc1, type: 3}
   Rarity: 0
-  Description: Augmente le chevalier de 2HP
+  Description: "Augmente l\xE9g\xE8rement la vie du chevalier."
   TargetData: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
   PriceToAdd: 0
   HealthToAdd: 2
