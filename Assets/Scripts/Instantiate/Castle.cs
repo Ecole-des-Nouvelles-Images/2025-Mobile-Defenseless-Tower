@@ -41,14 +41,19 @@ namespace Instantiate
                 EventBus.OnCastleTakedDamage?.Invoke(currentHealth);
                 if (Health <= 0 && !_isDead)
                 {
-                    foreach (GameObject trumpet in _trumpet)
-                    {
-                        trumpet.SetActive(true);
-                    }
+                    SpawnConfetti();
                     _isDead = true;
                     Debug.Log("CHATEUA MORT");
                     EventBus.OnLevelFinished?.Invoke();
                 }
+            }
+        }
+
+        private void SpawnConfetti()
+        {
+            foreach (GameObject trumpet in _trumpet)
+            {
+                trumpet.SetActive(true);
             }
         }
     }

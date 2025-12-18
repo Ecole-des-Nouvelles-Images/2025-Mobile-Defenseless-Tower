@@ -126,8 +126,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trumpet
   ParticleSystem: {fileID: 3584019820728050784}
-  AudioClip:
+  TrumpetSfx:
   - {fileID: 8300000, guid: fa039c57d34f9af4b9e67cac4db363b3, type: 3}
+  Confetti:
+  - {fileID: 8300000, guid: bd3cc767331f7204089e9aa54097e7db, type: 3}
+  Time: 0
 --- !u!1001 &1841394169516985819
 PrefabInstance:
   m_ObjectHideFlags: 0
