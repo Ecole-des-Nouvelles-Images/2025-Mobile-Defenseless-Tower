@@ -22,6 +22,9 @@ public class DefenseBaseData : ScriptableObject
     
     [Header("Sound")]
     public List<AudioClip> FireSounds;
+
+    [Header("VFX")] 
+    public GameObject FireVisual;
 }
 
 [Serializable]
