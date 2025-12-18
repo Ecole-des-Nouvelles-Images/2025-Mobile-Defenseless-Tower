@@ -3653,6 +3653,13 @@ MonoBehaviour:
     Speed: 0
     MaxHealth: 0
     Damage: 0
+  - baseData: {fileID: 11400000, guid: f37b3465102f7f04f827a1d7e2059563, type: 2}
+    Name: 
+    price: 0
+    NumberSpawn: 0
+    Speed: 0
+    MaxHealth: 0
+    Damage: 0
   SpellClasses:
   - SpellData: {fileID: 11400000, guid: e8ca02e4ca1c0114e8c0fd4eecfe71f1, type: 2}
     Price: 0
