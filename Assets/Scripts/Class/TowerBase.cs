@@ -83,7 +83,7 @@ namespace Class
 
         public virtual void Fire()
         {
-            SoundManager.Instance.PlayRandomSound(BaseData.FireSounds, gameObject);
+            SoundManager.Instance.PlayRandomSound(BaseData.FireSounds, gameObject, true);
         }
         
         private void OnPause()
