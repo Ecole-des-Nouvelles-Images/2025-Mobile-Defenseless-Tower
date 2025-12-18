@@ -134,7 +134,6 @@ namespace Managers
             }
         }
         
-        
         public void ResetVisual()
         {
             foreach (GameObject gm in _cellGameObjects)

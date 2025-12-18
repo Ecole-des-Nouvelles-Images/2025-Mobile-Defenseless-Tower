@@ -54,7 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 77f236e64bc82fb4c8d1907f2c4d47c4, type: 2}
     - target: {fileID: 919132149155446097, guid: e29e375dbbc40de4cbec01efcd661232, type: 3}
       propertyPath: m_Name
-      value: Souche_Arbre_low
+      value: Souche
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e29e375dbbc40de4cbec01efcd661232, type: 3}
+      propertyPath: m_TagString
+      value: Props
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

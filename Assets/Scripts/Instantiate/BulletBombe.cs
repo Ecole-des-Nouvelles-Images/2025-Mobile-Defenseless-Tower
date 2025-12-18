@@ -1,4 +1,5 @@
 using Class;
+using Managers;
 using UnityEngine;
 
 namespace Instantiate
@@ -7,7 +8,7 @@ namespace Instantiate
     {
         [Header("Bombe")] 
         public float RadiusExplosion;
-        public ParticleSystem ParticleExplosion;
+        public GameObject ExplosionVFX;
     
     
         public override void SetUp(GameObject target, float damage, float speed)
@@ -28,10 +29,10 @@ namespace Instantiate
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Enemy"))
+            if (other.gameObject == Target)
             {
                 Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusExplosion);
-        
+                
                 foreach (var hitCollider in hitColliders)
                 {
                     if (hitCollider.gameObject.CompareTag("Enemy"))
@@ -39,7 +40,7 @@ namespace Instantiate
                         hitCollider.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
                     }
                 }
-            
+                SpawnManager.Instance.SpawnVfxInPosition(ExplosionVFX, Target.transform.position);
                 Destroy(gameObject);
             }
         }

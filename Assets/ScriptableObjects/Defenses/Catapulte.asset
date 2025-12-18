@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DefenseBaseData
   Price: 3
   CoolDown: 5
-  Damage: 14
+  Damage: 7
   Range: 6
   BulletSpeed: 5
   WaveHeCanSpawn: 4
@@ -87,3 +87,4 @@ MonoBehaviour:
   ProjectilPrefab: {fileID: 2095069144231104046, guid: 6916a4d908e3d82468fd33ab41fb6c56, type: 3}
   FireSounds:
   - {fileID: 8300000, guid: af0b4f171a7d29842b60393f0a26c9fb, type: 3}
+  FireVisual: {fileID: 0}
