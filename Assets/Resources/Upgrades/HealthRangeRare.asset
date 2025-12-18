@@ -15,9 +15,11 @@ MonoBehaviour:
   Name: 
   Srite: {fileID: 21300000, guid: 93d8ceb290a4150499bd5b54924b7441, type: 3}
   Rarity: 2
-  Description: La taille du soin est un beaucoup plus grande
+  Description: 'Augmente beaucoup plus la taille du soin.
+
+'
   TargetSpell: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
   CostToAdd: 0
   TimeToAdd: 0
-  SizeToAdd: 0.5
+  SizeToAdd: 1
   Efficiency: 0

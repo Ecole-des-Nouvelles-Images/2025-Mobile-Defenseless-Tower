@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: 
   Srite: {fileID: 21300000, guid: d2f89f6c1b6c8ee479e923a210869805, type: 3}
   Rarity: 1
-  Description: 'Le soin soigne 2 seconded de plus '
+  Description: Le soin dure moyennement plus longtemps.
   TargetSpell: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
   CostToAdd: 0
   TimeToAdd: 2

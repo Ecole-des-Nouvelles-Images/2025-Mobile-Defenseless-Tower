@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: 
   Srite: {fileID: 21300000, guid: 3d5ddc95e58c23442a3722d47a0f1aea, type: 3}
   Rarity: 2
-  Description: "Aumente beaucoup l'\xE9fficacit\xE9 du soin"
+  Description: "Augmente beaucoup plus l'efficacit\xE9 du soin."
   TargetSpell: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
   CostToAdd: 0
   TimeToAdd: 0

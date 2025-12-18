@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: 
   Srite: {fileID: 21300000, guid: 52f32c831e163d942bb708028414ef85, type: 3}
   Rarity: 2
-  Description: Augmente beaucoup plus la vitesse du golem
+  Description: Augmente beaucoup plus la vitesse du golem.
   TargetData: {fileID: 11400000, guid: 7bc1f4e436a3a06438f4dcec631c771f, type: 2}
   PriceToAdd: 0
   HealthToAdd: 0
