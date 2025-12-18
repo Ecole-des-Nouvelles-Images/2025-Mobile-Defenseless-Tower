@@ -19,7 +19,6 @@ namespace Managers
             {
                 float randPitch = Random.Range(1, 1.3f);
                 prefabSound.GetComponent<AudioSource>().pitch = randPitch;
-                Debug.Log(randPitch);
             }
         }
 

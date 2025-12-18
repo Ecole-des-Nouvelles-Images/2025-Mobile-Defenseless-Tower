@@ -26,5 +26,5 @@ MonoBehaviour:
   SpawnSounds:
   - {fileID: 8300000, guid: af0b4f171a7d29842b60393f0a26c9fb, type: 3}
   DeadSounds:
-  - {fileID: 8300000, guid: af0b4f171a7d29842b60393f0a26c9fb, type: 3}
+  - {fileID: 8300000, guid: 7743afe208c5a6446b3ffc0756c42306, type: 3}
   VFXPrefab: {fileID: 7549511183509151425, guid: ff314b00508c30e49bf66e7116d9c15a, type: 3}
