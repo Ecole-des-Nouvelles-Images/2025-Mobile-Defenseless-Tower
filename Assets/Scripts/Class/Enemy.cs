@@ -43,6 +43,7 @@ namespace Class
                 {
                     SoundManager.Instance.PlayRandomSound(enemyBaseData.DeadSounds, gameObject);
                     SpawnManager.Instance.SpawnVfxInPosition(enemyBaseData.VFXPrefab, transform.position);
+                    SoundManager.Instance.PlayRandomSound(enemyBaseData.DeadSounds, gameObject, true);
                     Destroy(gameObject);
                 }
             }

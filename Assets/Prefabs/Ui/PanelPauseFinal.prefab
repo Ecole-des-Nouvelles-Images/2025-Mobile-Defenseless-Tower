@@ -758,10 +758,6 @@ PrefabInstance:
       value: PaperPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2237941568352717941, guid: 3c7996acbe8de194cb2ad2393d535dfd, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2237941568352717941, guid: 3c7996acbe8de194cb2ad2393d535dfd, type: 3}
       propertyPath: m_MaxValue
       value: 0
       objectReference: {fileID: 0}
@@ -895,10 +891,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094222160333717377, guid: 3c7996acbe8de194cb2ad2393d535dfd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6876462308190693499, guid: 3c7996acbe8de194cb2ad2393d535dfd, type: 3}
-      propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6876462308190693499, guid: 3c7996acbe8de194cb2ad2393d535dfd, type: 3}

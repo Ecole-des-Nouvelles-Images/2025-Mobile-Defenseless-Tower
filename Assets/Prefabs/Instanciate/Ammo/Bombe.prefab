@@ -55,6 +55,8 @@ MonoBehaviour:
   Speed: 0
   RadiusExplosion: 1
   ExplosionVFX: {fileID: 4306149910771858425, guid: 9498e1eb5ece61a40b10173d36ec3c17, type: 3}
+  ExplosionsSfx:
+  - {fileID: 8300000, guid: 2544abc57fe5bc942aa95e12df5ce527, type: 3}
 --- !u!33 &863326475143822901
 MeshFilter:
   m_ObjectHideFlags: 0

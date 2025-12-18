@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Managers;
 using Player;
 using ScriptableObjectsScripts.Upgrades;
 using TMPro;
@@ -13,7 +15,7 @@ namespace Class
         private string _name;
         private Sprite _sprite;
         private string _description;
-
+        
         [SerializeField] private InventoryHandler _inventory;
     
         [SerializeField] private TMP_Text _text;
@@ -31,7 +33,9 @@ namespace Class
         [SerializeField] private Sprite _spellType;
         [SerializeField] private Sprite _diversType;
 
-       
+        [Header("Audio")]
+        
+        public List<AudioClip> AudioClip;
 
         private void Start()
         {
@@ -64,6 +68,7 @@ namespace Class
         {
             Debug.Log("UPGRADE");
             Upgrade.Apply(_inventory);
+            SoundManager.Instance.PlayRandomSound(AudioClip, gameObject);
             EventBus.OnPlayerTakedCard?.Invoke();
         }
         

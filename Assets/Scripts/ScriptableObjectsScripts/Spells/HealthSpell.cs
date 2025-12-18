@@ -31,6 +31,10 @@ namespace ScriptableObjectsScripts.Spells
             }
             
             transform.DORotate(transform.up * _spinSpeed, TimeSpell, RotateMode.WorldAxisAdd);
+            if (TimeSpell <= 0.5f)
+            {
+                transform.DOScale(new Vector3(0, 0, 0), 1);
+            }
             if (TimeSpell <= 0) Destroy(gameObject);
         }
 
