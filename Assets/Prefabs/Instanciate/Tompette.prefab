@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8684126552866705326}
+  - component: {fileID: 8447381631456875338}
   - component: {fileID: 8359255319872779951}
   - component: {fileID: 7856081296275283612}
   - component: {fileID: 616232217696857954}
-  - component: {fileID: 8447381631456875338}
   m_Layer: 0
   m_Name: Tompette
   m_TagString: Untagged
@@ -36,6 +36,24 @@ Transform:
   - {fileID: 123598122905456588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8447381631456875338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228652571011176662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65a7da7f2102f145972280cf6ab8075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Trumpet
+  ParticleSystem: {fileID: 3584019820728050784}
+  TrumpetSfx:
+  - {fileID: 8300000, guid: cdd1052d327db9149bd8e7871a602726, type: 3}
+  Confetti:
+  - {fileID: 8300000, guid: c179c81b4905742498b2625bdcf77b85, type: 3}
+  Time: 0
 --- !u!33 &8359255319872779951
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -113,21 +131,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8447381631456875338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228652571011176662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b65a7da7f2102f145972280cf6ab8075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Trumpet
-  ParticleSystem: {fileID: 3584019820728050784}
-  AudioClip:
-  - {fileID: 8300000, guid: fa039c57d34f9af4b9e67cac4db363b3, type: 3}
 --- !u!1001 &1841394169516985819
 PrefabInstance:
   m_ObjectHideFlags: 0

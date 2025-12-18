@@ -22,6 +22,7 @@ namespace Utils
         public static Action<int> OnCastleSpawn;
         
         public static Action OnDifficultyAreSelected;
+        public static Action OnConfettiPlayed;
     
         // Player
     

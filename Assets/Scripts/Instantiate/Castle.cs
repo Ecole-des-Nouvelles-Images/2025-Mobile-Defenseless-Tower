@@ -35,20 +35,29 @@ namespace Instantiate
                 int damage = other.gameObject.GetComponent<Enemy>().enemyBaseData.Damage;
                 int currentHealth = Health -= damage;
                 
-                gameObject.transform.DOScale(_baseScale - Vector3.one * 0.2f, 0.1f).SetLoops(2, LoopType.Yoyo);
+                transform.DOKill();
+                transform.localScale = _baseScale;
+                transform.DOScale(_baseScale - Vector3.one * 0.2f, 0.1f).SetLoops(2, LoopType.Yoyo);
+                
+                
                 Vector3 position = new Vector3(gameObject.transform.position.x + 1.5f, gameObject.transform.position.y + 3, gameObject.transform.position.z);
                 if (_hitVfx) SpawnManager.Instance.SpawnVfxInPosition(_hitVfx, position);
                 EventBus.OnCastleTakedDamage?.Invoke(currentHealth);
                 if (Health <= 0 && !_isDead)
                 {
-                    foreach (GameObject trumpet in _trumpet)
-                    {
-                        trumpet.SetActive(true);
-                    }
+                    SpawnConfetti();
                     _isDead = true;
                     Debug.Log("CHATEUA MORT");
                     EventBus.OnLevelFinished?.Invoke();
                 }
+            }
+        }
+
+        private void SpawnConfetti()
+        {
+            foreach (GameObject trumpet in _trumpet)
+            {
+                trumpet.SetActive(true);
             }
         }
     }

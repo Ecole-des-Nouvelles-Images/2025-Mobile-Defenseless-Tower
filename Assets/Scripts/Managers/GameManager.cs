@@ -13,6 +13,8 @@ namespace Managers
         [Header("Card")] 
         public int NumberCard;
 
+        [SerializeField] private float TimeEndingRound;
+
 
         public SoDifficultySpline DifficultySplineTest;
     
@@ -45,7 +47,7 @@ namespace Managers
 
         public IEnumerator LoadSelectionCardDelay()
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(TimeEndingRound);
             _cardPropositionPanel.SetActive(true);
             _cardPropositionPanel.GetComponent<CardManager>().LoadCardProposition();
         }
