@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817c4a8df3e17184c95885ee741ddc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnProps
-  NumberPropos: 5
+  NumberPropos: 30
   _ressourcePath: Props
   _prefabsProps: []
 --- !u!1 &84979353
