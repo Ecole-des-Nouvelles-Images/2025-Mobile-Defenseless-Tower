@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Managers;
 using Player;
 using UnityEngine;
@@ -15,6 +16,9 @@ public class Bird : MonoBehaviour, IClickable
     public GameObject PrefabVFX;
     private bool _isPause;
     private float _timeBeforDie = 7f;
+
+    [Header("SFX")] 
+    public List<AudioClip> ScreemSFX;
     private void OnEnable()
     {
         EventBus.OnGamePaused += OnPause;
@@ -46,8 +50,8 @@ public class Bird : MonoBehaviour, IClickable
         int rand = Random.Range(MinMoney, MaxMoney + 1);
         InventoryHandler.Instance.Money += rand;
         SpawnManager.Instance.SpawnVfxInPosition(PrefabVFX, transform.position);
+        SoundManager.Instance.PlayRandomSound(ScreemSFX, gameObject, true);
         Destroy(gameObject);
-        Debug.Log("grougrogu");
     }
 
     private void Update()

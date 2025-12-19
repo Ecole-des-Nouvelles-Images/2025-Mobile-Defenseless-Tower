@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Canon
   _inPause: 0
+  _inFreez: 0
   _renderer:
   - {fileID: 5663059706975919710}
   - {fileID: 6247007599274704213}
@@ -307,6 +308,7 @@ MonoBehaviour:
   PivotRotation: {fileID: 4687116080279812015}
   SpawnerBullet: {fileID: 2821173789386020003}
   CanonGm: {fileID: 2116320928907951313}
+  ConfettiVFX: {fileID: 1495861624451804494, guid: c3db1c86f5b43964a8e64b40135f413e, type: 3}
 --- !u!23 &1236808704830012088
 MeshRenderer:
   m_ObjectHideFlags: 0

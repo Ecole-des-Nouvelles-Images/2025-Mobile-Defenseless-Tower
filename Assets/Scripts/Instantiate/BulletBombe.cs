@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Class;
 using Managers;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Instantiate
         [Header("Bombe")] 
         public float RadiusExplosion;
         public GameObject ExplosionVFX;
+        public List<AudioClip> ExplosionsSfx;
     
     
         public override void SetUp(GameObject target, float damage, float speed)
@@ -41,6 +43,7 @@ namespace Instantiate
                     }
                 }
                 SpawnManager.Instance.SpawnVfxInPosition(ExplosionVFX, Target.transform.position);
+                SoundManager.Instance.PlayRandomSound(ExplosionsSfx, gameObject, true);
                 Destroy(gameObject);
             }
         }

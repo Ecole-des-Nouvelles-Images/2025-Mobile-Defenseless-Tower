@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 78111134}
   - component: {fileID: 78111133}
   - component: {fileID: 78111135}
+  - component: {fileID: 78111136}
   m_Layer: 0
   m_Name: TerrainManager
   m_TagString: Untagged
@@ -304,9 +305,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817c4a8df3e17184c95885ee741ddc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnProps
-  NumberPropos: 30
+  NumberPropos: 20
   _ressourcePath: Props
   _prefabsProps: []
+  DoRandomRotation: 1
+--- !u!114 &78111136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78111132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817c4a8df3e17184c95885ee741ddc54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Instantiate.SpawnProps
+  NumberPropos: 7
+  _ressourcePath: KitsProps
+  _prefabsProps: []
+  DoRandomRotation: 0
 --- !u!1 &84979353
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +969,7 @@ MonoBehaviour:
   _splineManager: {fileID: 2122799272}
   _cardPropositionPanel: {fileID: 805499048}
   NumberCard: 3
+  TimeEndingRound: 4.5
   DifficultySplineTest: {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
 --- !u!114 &358535024
 MonoBehaviour:
@@ -2319,7 +2338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387661116700037179, guid: 0dc605457accff24eaff0bece009442a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 24.999939
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1387661116700037179, guid: 0dc605457accff24eaff0bece009442a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3317,7 +3336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Instantiate.Castle
   Health: 10
-  _heatVfx: {fileID: 0}
+  _hitVfx: {fileID: 0}
+  _trumpet: []
 --- !u!65 &1266089805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3741,8 +3761,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f45ee4e0cbb6d4a9ae29ad695dcbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryHandler
-  StartMoney: 300
-  StartElixir: 100
+  StartMoney: 250
+  StartElixir: 80
   _money: 0
   _elixir: 0
   EquipedSpell:
