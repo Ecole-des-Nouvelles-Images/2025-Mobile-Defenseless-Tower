@@ -14,8 +14,7 @@ namespace Instantiate
     
         [SerializeField] private string _ressourcePath;
         [SerializeField] private List<GameObject> _prefabsProps = new List<GameObject>();
-    
-   
+        public bool DoRandomRotation;
 
         private void OnEnable()
         {
@@ -55,9 +54,12 @@ namespace Instantiate
                 Vector2Int vector2Int = positions[Random.Range(0, positions.Count)];
             
                 GameObject props = Instantiate(_prefabsProps[randProps], new Vector3(vector2Int.x,0,vector2Int.y), Quaternion.identity, transform);
-                int randRotationY = Random.Range(0, 360);
-                props.transform.Rotate(props.transform.rotation.x, randRotationY, props.transform.rotation.z);
 
+                if (DoRandomRotation)
+                {
+                    int randRotationY = Random.Range(0, 360);
+                    props.transform.Rotate(props.transform.rotation.x, randRotationY, props.transform.rotation.z);
+                }
                 PathManager.Instance.CellsMatrix[vector2Int.x, vector2Int.y].IsProps = true;
             }
         }
