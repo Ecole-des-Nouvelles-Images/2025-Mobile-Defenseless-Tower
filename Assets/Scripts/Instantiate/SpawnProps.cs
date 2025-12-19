@@ -19,11 +19,13 @@ namespace Instantiate
         private void OnEnable()
         {
             EventBus.OnIaPlaceTower += Spawn;
+            EventBus.OnPlayerTakedCard += DestroyAllProps;
         }
 
         private void OnDisable()
         {
             EventBus.OnIaPlaceTower -= Spawn;
+            EventBus.OnPlayerTakedCard -= DestroyAllProps;
         }
 
         private void Start()
@@ -34,7 +36,6 @@ namespace Instantiate
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            DestroyAllProps();
             Cell[,] cells = PathManager.Instance.CellsMatrix;
             List<Vector2Int> positions = new List<Vector2Int>();
             for (int i = 0; i < cells.GetLength(0); i++)

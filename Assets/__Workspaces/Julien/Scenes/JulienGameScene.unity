@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 78111134}
   - component: {fileID: 78111133}
   - component: {fileID: 78111135}
+  - component: {fileID: 78111136}
   m_Layer: 0
   m_Name: TerrainManager
   m_TagString: Untagged
@@ -304,9 +305,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817c4a8df3e17184c95885ee741ddc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnProps
-  NumberPropos: 40
+  NumberPropos: 20
   _ressourcePath: Props
   _prefabsProps: []
+  DoRandomRotation: 1
+--- !u!114 &78111136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78111132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817c4a8df3e17184c95885ee741ddc54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Instantiate.SpawnProps
+  NumberPropos: 5
+  _ressourcePath: KitsProps
+  _prefabsProps: []
+  DoRandomRotation: 0
 --- !u!1 &84979353
 GameObject:
   m_ObjectHideFlags: 0
