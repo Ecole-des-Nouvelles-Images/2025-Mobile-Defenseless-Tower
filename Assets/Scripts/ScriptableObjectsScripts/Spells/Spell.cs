@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Class;
+using Managers;
 using UnityEngine;
 using Utils;
 
@@ -30,6 +31,7 @@ namespace ScriptableObjectsScripts.Spells
         {
             transform.localScale = new Vector3(SpellClass.AreaSize, SpellClass.AreaSize, SpellClass.AreaSize);
             TimeSpell = SpellClass.Time;
+            if(SpellClass.SpellData.SpawnSounds[0]) SoundManager.Instance.PlayRandomSoundInTransform(SpellClass.SpellData.SpawnSounds, transform);
         }
 
         private void OnPause()

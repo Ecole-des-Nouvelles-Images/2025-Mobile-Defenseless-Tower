@@ -2319,7 +2319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387661116700037179, guid: 0dc605457accff24eaff0bece009442a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 24.999939
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1387661116700037179, guid: 0dc605457accff24eaff0bece009442a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3317,7 +3317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Instantiate.Castle
   Health: 10
-  _heatVfx: {fileID: 0}
+  _hitVfx: {fileID: 0}
 --- !u!65 &1266089805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3741,8 +3741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f45ee4e0cbb6d4a9ae29ad695dcbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryHandler
-  StartMoney: 300
-  StartElixir: 100
+  StartMoney: 250
+  StartElixir: 80
   _money: 0
   _elixir: 0
   EquipedSpell:
