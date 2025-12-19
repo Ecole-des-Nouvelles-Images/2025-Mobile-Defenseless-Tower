@@ -951,6 +951,7 @@ MonoBehaviour:
   _splineManager: {fileID: 2122799272}
   _cardPropositionPanel: {fileID: 805499048}
   NumberCard: 3
+  TimeEndingRound: 4.5
   DifficultySplineTest: {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
 --- !u!114 &358535024
 MonoBehaviour:
@@ -3318,6 +3319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Instantiate.Castle
   Health: 10
   _hitVfx: {fileID: 0}
+  _trumpet: []
 --- !u!65 &1266089805
 BoxCollider:
   m_ObjectHideFlags: 0
