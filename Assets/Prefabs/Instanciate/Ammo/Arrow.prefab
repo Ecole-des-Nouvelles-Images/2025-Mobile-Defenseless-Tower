@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4101224104669880342}
-  - component: {fileID: 3710203307912987924}
+  - component: {fileID: 1962099010992024519}
   - component: {fileID: 863326475143822901}
   - component: {fileID: 1112034586085171963}
   - component: {fileID: 2846602937849053136}
@@ -35,7 +35,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3710203307912987924
+--- !u!114 &1962099010992024519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,12 +44,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2095069144231104046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08b2f308334351d4d93a74287ab689d9, type: 3}
+  m_Script: {fileID: 11500000, guid: ab821abe91f7c1a43b3ab0082df77981, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletCanon
+  m_EditorClassIdentifier: Assembly-CSharp::Arrow
   Target: {fileID: 0}
-  Speed: 5
   Damage: 0
+  Speed: 5
 --- !u!33 &863326475143822901
 MeshFilter:
   m_ObjectHideFlags: 0

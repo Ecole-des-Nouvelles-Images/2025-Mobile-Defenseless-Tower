@@ -52,7 +52,7 @@ MonoBehaviour:
   - Coord: {x: -2, y: 1}
     Heuristic: 3
   Prefab: {fileID: 2486535061774727468, guid: aba6cb8c0ccd00a40a5d44a37cab9934, type: 3}
-  ProjectilPrefab: {fileID: 2095069144231104046, guid: 2504c417662e81547ba76a47d09b4d2f, type: 3}
+  ProjectilPrefab: {fileID: 2095069144231104046, guid: 712ac803be71cf54aab3a7d80a926c00, type: 3}
   FireSounds:
   - {fileID: 8300000, guid: bedf6b8af57266340ae4bf60226d1f29, type: 3}
   FireVisual: {fileID: 0}

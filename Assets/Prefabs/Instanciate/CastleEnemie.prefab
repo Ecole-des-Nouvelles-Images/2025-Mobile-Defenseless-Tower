@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Instantiate.Castle
   Health: 10
-  _hitVfx: {fileID: 0}
+  _hitVfx: {fileID: 179044676522555636, guid: 15e76c50189c936458db628227f7d42b, type: 3}
   _trumpet:
   - {fileID: 3072099411141170261}
   - {fileID: 7600553751581931266}
