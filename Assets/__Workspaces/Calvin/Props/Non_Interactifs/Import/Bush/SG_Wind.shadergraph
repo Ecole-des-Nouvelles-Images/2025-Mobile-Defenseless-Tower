@@ -545,7 +545,7 @@
     },
     "m_PreviewData": {
         "serializedMesh": {
-            "m_SerializedMesh": "{\"mesh\":{\"instanceID\":0}}",
+            "m_SerializedMesh": "{\"mesh\":{\"fileID\":10210,\"guid\":\"0000000000000000e000000000000000\",\"type\":0}}",
             "m_Guid": ""
         },
         "preventRotation": false
@@ -1478,7 +1478,7 @@
     "m_Title": "WIND EFFECT",
     "m_Position": {
         "x": -2975.0,
-        "y": -990.0
+        "y": -990.0000610351563
     }
 }
 
