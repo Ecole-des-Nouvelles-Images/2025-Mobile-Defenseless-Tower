@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nous tenons \xE0 remercier les intervenants de l'ENSI de nous avoir accompagner
+  m_text: "Nous tenons \xE0 remercier les intervenants de l'ENSI de nous avoir accompagn\xE9s
     durant ce projet.\nProject par :\nJulien DURAND (Dev), \nCalvin OVIDE (Lead Art/3D
     artist)\nR\xE9gina LUKOYANOVA (3D artist)\nSasha BILOR\xC9 (UI/2D artist)\n\n"
   m_isRightToLeft: 0
@@ -155,7 +155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &371984942538700365
 RectTransform:
   m_ObjectHideFlags: 0
