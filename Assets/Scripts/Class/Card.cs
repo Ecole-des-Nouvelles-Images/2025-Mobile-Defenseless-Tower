@@ -75,7 +75,5 @@ namespace Class
             SoundManager.Instance.PlayRandomSound(AudioClip, gameObject);
             EventBus.OnPlayerTakedCard?.Invoke();
         }
-        
-        
     }
 }

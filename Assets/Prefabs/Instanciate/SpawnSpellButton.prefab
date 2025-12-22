@@ -69,6 +69,7 @@ MonoBehaviour:
     Efficiency: 0
   _priceText: {fileID: 4170183132440784203}
   _image: {fileID: 0}
+  Color: {r: 1, g: 1, b: 1, a: 0.07058824}
 --- !u!114 &6386964585280967280
 MonoBehaviour:
   m_ObjectHideFlags: 0

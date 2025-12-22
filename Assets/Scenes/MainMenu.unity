@@ -1973,17 +1973,6 @@ Transform:
   - {fileID: 103478927}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &297257941 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4062408832764117890, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-  m_PrefabInstance: {fileID: 431501440}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &322099118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2698,38 +2687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PanelMainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 2416164152711634219, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2720660232967316534, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: _button
-      value: 
-      objectReference: {fileID: 297257941}
     - target: {fileID: 2720660232967316534, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
       propertyPath: PanelToOpen
       value: 
       objectReference: {fileID: 2045334742}
-    - target: {fileID: 2720660232967316534, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: PanelToClose
-      value: 
-      objectReference: {fileID: 508864403}
-    - target: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 431501441}
-    - target: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6311954011959282777, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2762,42 +2723,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7451339410738065269, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: _button
-      value: 
-      objectReference: {fileID: 1204353760}
-    - target: {fileID: 7451339410738065269, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: SceneName
-      value: Game
-      objectReference: {fileID: 0}
-    - target: {fileID: 8635310064675311802, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: _button
-      value: 
-      objectReference: {fileID: 545441880}
     - target: {fileID: 8635310064675311802, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
       propertyPath: PanelToOpen
       value: 
       objectReference: {fileID: 1926601848}
-    - target: {fileID: 8635310064675311802, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-      propertyPath: PanelToClose
-      value: 
-      objectReference: {fileID: 508864403}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
---- !u!114 &431501441 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7451339410738065269, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-  m_PrefabInstance: {fileID: 431501440}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b529cb1211cac5543aa3ec4157401879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Menu.OpenScene
 --- !u!1001 &449975588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3166,17 +3100,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5495673069332474701, guid: 8037cae72461a9745a0986a4368bb02c, type: 3}
   m_PrefabInstance: {fileID: 526231813}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &545441880 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5728413322029527941, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-  m_PrefabInstance: {fileID: 431501440}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &546809859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73232,17 +73155,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5495673069332474701, guid: 8037cae72461a9745a0986a4368bb02c, type: 3}
   m_PrefabInstance: {fileID: 1189302112}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1204353760 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6029087805328113545, guid: 41ed9b35def4c6247a19dadf127fcd3e, type: 3}
-  m_PrefabInstance: {fileID: 431501440}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &1208462744
 PrefabInstance:
   m_ObjectHideFlags: 0
