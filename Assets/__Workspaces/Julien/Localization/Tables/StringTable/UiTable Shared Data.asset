@@ -10,13 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: StringTable Shared Data
+  m_Name: UiTable Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
-  m_TableCollectionName: StringTable
+  m_TableCollectionName: UiTable
   m_TableCollectionNameGuidString: e561cf1567ab83b4ebc26e2916fee51d
   m_Entries:
   - m_Id: 86979493888
-    m_Key: T_Option_Music
+    m_Key: Option_Musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34728327626752
+    m_Key: Option_Sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37965382402048
+    m_Key: Option_Titre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37850940817408
+    m_Key: "Cr\xE9dits_Titre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38376692629504
+    m_Key: "Cr\xE9dits_Text"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39752755691520
+    m_Key: Pause_Titre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40032167641088
+    m_Key: Pause_MainMenu
     m_Metadata:
       m_Items: []
   m_Metadata:

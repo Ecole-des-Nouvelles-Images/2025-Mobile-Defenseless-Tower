@@ -16,7 +16,13 @@ MonoBehaviour:
   m_GUID: 236ccde1386f8c748964383801bcfb85
   m_SerializeEntries:
   - m_GUID: a876f4f5ad7763941bc4c4137cff1e9b
-    m_Address: StringTable_fr-FR
+    m_Address: UiTable_fr-FR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr-FR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c86ffcfd2e6232544a2343d362a67837
+    m_Address: UpgradeTable_fr-FR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fr-FR

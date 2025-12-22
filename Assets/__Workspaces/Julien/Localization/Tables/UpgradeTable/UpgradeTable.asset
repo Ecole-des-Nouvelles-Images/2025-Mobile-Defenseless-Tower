@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: StringTable
+  m_Name: UpgradeTable
   m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
-  m_SharedTableData: {fileID: 11400000, guid: e561cf1567ab83b4ebc26e2916fee51d, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 2724c991b7225f448a45154986c910b1, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: eaa14477943451c4d9478000e210b10d, type: 2}
-  - {fileID: 11400000, guid: a876f4f5ad7763941bc4c4137cff1e9b, type: 2}
-  - {fileID: 11400000, guid: 66d92ab7fc501a6449d6b14f406afaf2, type: 2}
+  - {fileID: 11400000, guid: 7a20e9fc57828984cb5569b890158636, type: 2}
+  - {fileID: 11400000, guid: c86ffcfd2e6232544a2343d362a67837, type: 2}
+  - {fileID: 11400000, guid: 37c3f9ed45143564cba9e7affd63c067, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:
