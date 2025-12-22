@@ -16,4 +16,16 @@ MonoBehaviour:
   Srite: {fileID: 21300000, guid: 648a68b876315fa41a46fcac7e33de56, type: 3}
   Rarity: 0
   Description: + 10 cristaux.
+  LocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:e561cf1567ab83b4ebc26e2916fee51d
+    m_TableEntryReference:
+      m_KeyId: 4717960871936
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   ElexirToAdd: 10
+  references:
+    version: 2
+    RefIds: []

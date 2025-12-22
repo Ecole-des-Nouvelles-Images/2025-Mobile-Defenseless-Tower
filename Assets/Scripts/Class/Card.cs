@@ -4,6 +4,8 @@ using Player;
 using ScriptableObjectsScripts.Upgrades;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 using Utils;
 using Image = UnityEngine.UI.Image;
 
@@ -15,6 +17,7 @@ namespace Class
         private string _name;
         private Sprite _sprite;
         private string _description;
+        public LocalizeStringEvent LocalizeStringEvent;
         
         [SerializeField] private InventoryHandler _inventory;
     
@@ -47,7 +50,8 @@ namespace Class
             Upgrade = upgrade;
             _name = upgrade.name;
             _sprite = upgrade.Srite;
-            _description = upgrade.Description;
+
+            LocalizeStringEvent.StringReference = upgrade.LocalizedString;
 
             _image.sprite = _sprite;
             _text.text = _description;
