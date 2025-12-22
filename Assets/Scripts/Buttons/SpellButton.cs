@@ -37,6 +37,7 @@ namespace Buttons
         
         private void Start()
         {
+            _basePosition = transform.position;
             SetUp();
         }
 
@@ -45,7 +46,6 @@ namespace Buttons
             _image =  GetComponent<Image>();
             _image.sprite = SpellClass.SpellData.Sprite;
             _priceText.text = SpellClass.SpellData.Price.ToString();
-            _basePosition = transform.position;
         }
 
         public void OnClick()
