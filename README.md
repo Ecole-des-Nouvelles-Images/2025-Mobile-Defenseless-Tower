@@ -23,31 +23,25 @@
 ---
 
 ## Introduction
-**[Project Name]** is a [genre of the game] developed by **[Team/Organization Name]** during **[timeframe]**.  
-This project was created as part of **[context, e.g., a school project, game jam, or indie initiative]**.  
-The development process included **[key phases, such as preproduction, production, etc.]**.
+**Castle Rush** est un tower defense sur mobil développé pendant 5 semaines. Ce projet a été fait dans le cadre d'un projet
+étudiant. Ce projet a commencé avec une semaine de pré-production, quatre semaines de production et une semaine de post-production.
 
 ---
 
 ## Team
-This game was brought to life by **[Team Name or "a group of X developers/artists"]**:
-- **[Name 1]**: [Role and contributions]
-- **[Name 2]**: [Role and contributions]
-- **[Name 3]**: [Role and contributions]
-- **[Name 4]**: [Role and contributions]
+
+- **Durand Julien**: Product owner, developpeur
+- **Ovide Calvin**: Lead artiste
+- **Bilore Sasha**: Artiste
+- **Lukoyanova Regina**: Artiste
 
 ![Team](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/team-photo.png)
 
 ---
 
 ## Gameplay
-[Describe the core gameplay loop, mechanics, and objectives of the game. Include details like number of players, perspective, and unique gameplay features.]
-
-### Phase 1: [Phase Name]
-[Describe the first phase of gameplay, objectives, and player actions.]
-
-### Phase 2: [Phase Name]
-[Describe the second phase, any escalating challenges, and goals.]
+**Castle Rush** est un tower defense où le joueur ne contrôle pas les défenses mais les attaquants. Vous devez traverser le plus de défenses possible afin de capturer le maximum de châteaux. 
+Améliorez vos troupes et vos sorts afin de créer une stratégie d’attaque à chaque nouveau terrain. Chaque terrain est indépendant et procédural.
 
 ![Gameplay Screenshot](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/gameplay-screenshot.png)
 
