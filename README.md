@@ -8,7 +8,7 @@ Castle Rush est un jeu de tower defense sur mobile dans lequel vous prenez le co
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/Unity-Template?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template)
 
-![Main Banner](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/main-banner.png)
+<img width="2304" height="1440" alt="SplashScreen" src="https://github.com/user-attachments/assets/3c7ded9a-5ec0-49a1-9833-f36a32f31ed8" />
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -34,7 +34,8 @@ Castle Rush est un jeu de tower defense sur mobile dans lequel vous prenez le co
 - **Bilore Sasha**: Artiste
 - **Lukoyanova Regina**: Artiste
 
-![Team](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/team-photo.png)
+<img width="1834" height="471" alt="LA_TEAAAAAMM" src="https://github.com/user-attachments/assets/0d2b8bac-7902-4aff-8c61-9220631ef288" />
+
 
 ---
 
@@ -42,7 +43,8 @@ Castle Rush est un jeu de tower defense sur mobile dans lequel vous prenez le co
 **Castle Rush** est un tower defense où le joueur ne contrôle pas les défenses mais les attaquants. Vous devez traverser le plus de défenses possible afin de capturer le maximum de châteaux. 
 Améliorez vos troupes et vos sorts afin de créer une stratégie d’attaque à chaque nouveau terrain. Chaque terrain est indépendant et procédural.
 
-![Gameplay Screenshot](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/gameplay-screenshot.png)
+<img width="1289" height="801" alt="Capture d’écran 2025-12-23 182158" src="https://github.com/user-attachments/assets/cdc00894-2bea-4990-9ba4-9b08dd0eaf7e" />
+
 
 ---
 
@@ -53,7 +55,7 @@ Les royaumes s’affrontent pour étendre leurs territoires et conquérir les ch
 ---
 
 ## Release
-Ce jeu peut-être installer sur **android**
+Ce jeu peut être installé sur **android**
 
 ---
 
