@@ -1,7 +1,7 @@
 
 # Castle Rush
 
-<a href="https://exemple.com/fr">
+<a href="[https://exemple.com/fr](https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Defenseless-Tower/blob/main/README.md)">
   <img width="100" height="100" alt="Flag_of_France" src="https://github.com/user-attachments/assets/af2de908-89b5-4538-81ce-5b8204417d2d" />
 </a>
 
