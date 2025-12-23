@@ -1,7 +1,13 @@
 
 # Castle Rush
 
-Castle Rush est un jeu de tower defense sur mobile dans lequel vous prenez le contrôle des attaquants plutôt que des défenses.
+<a href="https://exemple.com/fr">
+  <img width="100" height="100" alt="Flag_of_France" src="https://github.com/user-attachments/assets/af2de908-89b5-4538-81ce-5b8204417d2d" />
+</a>
+
+<a href="https://exemple.com/fr">
+  <img width="100" height="100" alt="Flag_of_the_United_Kingdom_(3-5) svg" src="https://github.com/user-attachments/assets/85c82d41-7e15-4982-a455-b7ecd7d32ed2" />
+</a>
 
 [![Unity Version](https://img.shields.io/badge/Unity-2022.3.47-blue?style=flat&logo=unity)](https://unity.com/)
 [![GitHub Release](https://img.shields.io/github/v/release/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/releases)
