@@ -10,7 +10,7 @@ Castle Rush est un jeu de tower defense sur mobile dans lequel vous prenez le co
 
 <img width="2304" height="1440" alt="SplashScreen" src="https://github.com/user-attachments/assets/3c7ded9a-5ec0-49a1-9833-f36a32f31ed8" />
 
-## Table of Contents
+## Sommaire
 1. [Introduction](#introduction)
 2. [Team](#team)
 3. [Gameplay](#gameplay)
@@ -27,7 +27,7 @@ Castle Rush est un jeu de tower defense sur mobile dans lequel vous prenez le co
 
 ---
 
-## Team
+## Equipe
 
 - **Durand Julien**: Product owner, developpeur
 - **Ovide Calvin**: Lead artiste
@@ -48,7 +48,7 @@ Améliorez vos troupes et vos sorts afin de créer une stratégie d’attaque à
 
 ---
 
-## Universe
+## Univert
 Les royaumes s’affrontent pour étendre leurs territoires et conquérir les châteaux ennemis.
 À la tête de ton armée, tu pars à l’assaut de terres inconnues pour imposer ta domination et agrandir ton royaume.
 
@@ -59,11 +59,11 @@ Ce jeu peut être installé sur **android**
 
 ---
 
-## Development
+## Developpement
 Ce projet est encore en développement afin d’ajouter de nouveaux contenus et corriger des bugs. ⚠️​ 
 
 ---
 
-## Special Thanks
+## Remerciement
 Nous tenons à remercier :
 - **École des nouvelles images** <img src="https://github.com/user-attachments/assets/f91f4643-1a3b-4470-b24d-758ebbec57d4" alt="Image" height="50" width="50">
