@@ -12,7 +12,7 @@
 [![Unity Version](https://img.shields.io/badge/Unity-6000.2.3f1-blue?style=flat&logo=unity)](https://unity.com/)
 [![GitHub Release](https://img.shields.io/github/v/release/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/releases)
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/LICENSE)
-[![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/Unity-Template?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template)
+[![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/2025-Mobile-Defenseless-Tower?color=lightgrey)]()
 
 <img width="2304" height="1440" alt="SplashScreen" src="https://github.com/user-attachments/assets/3c7ded9a-5ec0-49a1-9833-f36a32f31ed8" />
 
