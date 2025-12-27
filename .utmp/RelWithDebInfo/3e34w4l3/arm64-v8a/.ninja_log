@@ -1,0 +1,10 @@
+# ninja log v5
+25	10211	7882164612192449	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fc92faa2eaa0e335
+14	10220	7882164612202476	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	b9dcc4946fd9cd6b
+1	10236	7882164612461458	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	96ad3a515c4ef0cd
+38	10238	7882164612461458	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	8df47fc625db7673
+4	10282	7882164612910536	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	113e7e13fc95eaf1
+18	10472	7882164614794087	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7e844dd2f364b6f2
+9	10595	7882164616040712	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	4d93f9eb8f37a286
+32	10625	7882164616341336	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	e3c383a31db986dc
+10625	10742	7882164617542698	C:/Users/Julie/OneDrive/Images/Bureau/LocaRepository/2025-Mobile-Defenseless-Tower/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3e34w4l3/obj/arm64-v8a/libgame.so	4bce0b31506dc552
