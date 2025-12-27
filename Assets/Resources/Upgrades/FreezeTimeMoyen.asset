@@ -16,8 +16,20 @@ MonoBehaviour:
   Srite: {fileID: 21300000, guid: 9c91e288b5678a3409f6681725574a74, type: 3}
   Rarity: 1
   Description: Le gel dure moyennement plus longtemps.
+  LocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:2724c991b7225f448a45154986c910b1
+    m_TableEntryReference:
+      m_KeyId: 1771172762632192
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   TargetSpell: {fileID: 11400000, guid: e8ca02e4ca1c0114e8c0fd4eecfe71f1, type: 2}
   CostToAdd: 0
   TimeToAdd: 0.6
   SizeToAdd: 0
   Efficiency: 0
+  references:
+    version: 2
+    RefIds: []

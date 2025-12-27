@@ -16,4 +16,16 @@ MonoBehaviour:
   Srite: {fileID: 21300000, guid: b3a3ba0128adff641a631122fcca4170, type: 3}
   Rarity: 1
   Description: + 50 d'or.
+  LocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:2724c991b7225f448a45154986c910b1
+    m_TableEntryReference:
+      m_KeyId: 1778872229707776
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   MoneyToAdd: 50
+  references:
+    version: 2
+    RefIds: []

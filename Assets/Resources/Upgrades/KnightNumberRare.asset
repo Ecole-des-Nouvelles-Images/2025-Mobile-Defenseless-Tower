@@ -23,9 +23,9 @@ MonoBehaviour:
     5 sur le prix du chevalier.'
   LocalizedString:
     m_TableReference:
-      m_TableCollectionName: GUID:e561cf1567ab83b4ebc26e2916fee51d
+      m_TableCollectionName: GUID:2724c991b7225f448a45154986c910b1
     m_TableEntryReference:
-      m_KeyId: 9170470420480
+      m_KeyId: 1776464179118080
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
