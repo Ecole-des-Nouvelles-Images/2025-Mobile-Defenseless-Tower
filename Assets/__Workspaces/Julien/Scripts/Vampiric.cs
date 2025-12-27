@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Class;
+using DG.Tweening;
 using Interface;
+using Managers;
 using ScriptableObjectsScripts.Spells;
 using UnityEngine;
 using EventBus = Utils.EventBus;
@@ -13,6 +15,9 @@ public class Vampiric : Spell
 
     public float CurrentFill;
     public float FillAmountProgressMax;
+
+    [Header("visual")] 
+    public GameObject HealthEnemieVFX;
     public override void OnEnable()
     {
         base.OnEnable();
@@ -74,7 +79,12 @@ public class Vampiric : Spell
 
     private void GiveHealthPoint()
     {
+        GameObject parentEnemie = GameObject.Find("EnemieParent");
         EventBus.OnAllEnemieGetHealth?.Invoke(CurrentFill * 0.10f);
+        for (int i = 0; i < parentEnemie.transform.childCount; i++)
+        {
+            SpawnManager.Instance.SpawnVfxInPosition(HealthEnemieVFX, parentEnemie.transform.GetChild(i).position);
+        }
         Destroy(gameObject);
     }
     

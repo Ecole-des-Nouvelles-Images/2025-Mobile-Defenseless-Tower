@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Buttons;
 using Class;
-using Managers;
 using ScriptableObjectsScripts.Spells;
 using ScriptableObjectsScripts.Upgrades;
 using Structs;
@@ -13,10 +12,21 @@ namespace Player
 {
     public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     {
+        [Header("-------------Money")]
+        [Header("-----StartMoney")]
         public int StartMoney;
         public int StartElixir;
+        
+        [Header("-----MoneyParameters")]
         [SerializeField] private float _money;
+        public float MaxTimeBeforeGetMoney;
+        private float _timeBeforeGetMoney;
+        public float MoneyParHit;
+        
         [SerializeField] private float _elixir;
+        public float MaxTimeBeforeGetElixir;
+        private float _timeBeforeGetElixir;
+        public float ElixirParHit;
         
         public float Money
         {
@@ -67,6 +77,8 @@ namespace Player
 
         private void Start()
         {
+            _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
+            _timeBeforeGetMoney = MaxTimeBeforeGetMoney;
             UpdateInventoryData();
             foreach (EnemyClass c in EnemyClass)
             {
@@ -89,7 +101,24 @@ namespace Player
             }
         }
 
-    
+        private void Update()
+        {
+            _timeBeforeGetElixir -= Time.deltaTime;
+            _timeBeforeGetMoney -= Time.deltaTime;
+
+            if (_timeBeforeGetElixir <= 0)
+            {
+                _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
+                Elixir += ElixirParHit;
+            }
+            
+            if (_timeBeforeGetMoney <= 0)
+            {
+                _timeBeforeGetMoney = MaxTimeBeforeGetMoney;
+                Money += MoneyParHit;
+            }
+        }
+
         // Enemy
         public void AddEnemy(EnemyClass classToAdd)
         {

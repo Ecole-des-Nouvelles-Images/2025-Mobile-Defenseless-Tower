@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjectsScripts.Spells.SoSpell
   Sprite: {fileID: 21300000, guid: 7cfd1d59654d43543a2ebedd6231c22a, type: 3}
   Price: 50
-  Time: 10
-  AreaSize: 5
-  Efficiency: 50
-  Prefab: {fileID: 0}
-  SpawnSounds: []
+  Time: 5
+  AreaSize: 4
+  Efficiency: 150
+  Prefab: {fileID: 7817341195606274728, guid: 868ba46513aaa5340aa15b501d194b55, type: 3}
+  SpawnSounds:
+  - {fileID: 8300000, guid: c179c81b4905742498b2625bdcf77b85, type: 3}

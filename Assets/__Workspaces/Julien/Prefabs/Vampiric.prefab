@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c6206e814860a93408dd40236085cc01, type: 2}
+  - {fileID: 2100000, guid: 6f3374dead6a9e64b85808a6001e552b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -440,6 +440,7 @@ MonoBehaviour:
   _image: {fileID: 5487324612273817791}
   CurrentFill: 0
   FillAmountProgressMax: 0
+  HealthEnemieVFX: {fileID: 1495861624451804494, guid: 4b608fa994bda3f4c88227eca9e8bfb1, type: 3}
 --- !u!33 &357445262960144982
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -565,6 +566,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5019374179607477776, guid: 74b64d50f172dcc44b6fb3dfb2f5cfd8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 10853597b3b13db47af5b801520d2a94, type: 2}
     - target: {fileID: 6821411812736834901, guid: 74b64d50f172dcc44b6fb3dfb2f5cfd8, type: 3}
       propertyPath: m_Name
       value: VFX_Healing
