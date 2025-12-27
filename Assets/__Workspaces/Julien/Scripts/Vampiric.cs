@@ -80,7 +80,7 @@ public class Vampiric : Spell
     private void GiveHealthPoint()
     {
         GameObject parentEnemie = GameObject.Find("EnemieParent");
-        EventBus.OnAllEnemieGetHealth?.Invoke(CurrentFill * 0.10f);
+        EventBus.OnAllEnemieGetHealth?.Invoke(CurrentFill * 0.20f);
         for (int i = 0; i < parentEnemie.transform.childCount; i++)
         {
             SpawnManager.Instance.SpawnVfxInPosition(HealthEnemieVFX, parentEnemie.transform.GetChild(i).position);

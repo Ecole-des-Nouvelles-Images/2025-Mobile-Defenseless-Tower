@@ -20,7 +20,8 @@ namespace Managers
         public int CommunCount;
         public int MoyenCount;
         public int RareCount;
-        
+
+        [SerializeField] private string _path;
         private void OnEnable()
         {
             EventBus.OnPlayerTakedCard += HideCard;
@@ -47,7 +48,7 @@ namespace Managers
         [ContextMenu("LoadProposition")]
         public void LoadListCard()
         {
-            _upgrades = UpgradeUtils.GetRandomUpgradeWithRange(CommunCount, MoyenCount, RareCount);
+            _upgrades = UpgradeUtils.GetRandomUpgradeWithRange(CommunCount, MoyenCount, RareCount, _path);
         }
         
         public void HideCard()
