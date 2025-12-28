@@ -10,7 +10,7 @@
   />
 </a>
 
-<a href="https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Defenseless-Tower/blob/main/README.md">
+<a href="https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Defenseless-Tower/blob/main/README.en.md">
   <img
     width="100"
     height="100"
