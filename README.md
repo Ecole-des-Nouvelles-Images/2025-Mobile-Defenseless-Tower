@@ -2,21 +2,12 @@
 # Castle Rush
 
 <a href="https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Defenseless-Tower/blob/main/README.md">
-  <img
-    width="100"
-    height="100"
-    alt="Flag_of_France"
-    src="https://github.com/user-attachments/assets/af2de908-89b5-4538-81ce-5b8204417d2d"
+  <img width="100"height="100" alt="Flag_of_France" src="https://github.com/user-attachments/assets/af2de908-89b5-4538-81ce-5b8204417d2d"
   />
 </a>
 
 <a href="https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Defenseless-Tower/blob/main/README.en.md">
-  <img
-    width="100"
-    height="100"
-    alt="Flag_of_France"
-    src="https://github.com/user-attachments/assets/af2de908-89b5-4538-81ce-5b8204417d2d"
-  />
+   <img width="100" height="100" alt="Flag_of_the_United_Kingdom_(3-5) svg" src="https://github.com/user-attachments/assets/85c82d41-7e15-4982-a455-b7ecd7d32ed2" />
 </a>
 
 [![Unity Version](https://img.shields.io/badge/Unity-6000.2.3f1-blue?style=flat&logo=unity)](https://unity.com/)
