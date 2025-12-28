@@ -17,7 +17,7 @@
 
 <img width="2304" height="1440" alt="SplashScreen" src="https://github.com/user-attachments/assets/3c7ded9a-5ec0-49a1-9833-f36a32f31ed8" />
 
-## Sommaire
+## Table of Contents
 1. [Introduction](#introduction)
 2. [Team](#team)
 3. [Gameplay](#gameplay)
