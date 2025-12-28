@@ -29,17 +29,17 @@
 ---
 
 ## Introduction
-**Castle Rush** est un tower defense sur mobil développé pendant 5 semaines. Ce projet a été fait dans le cadre d'un projet
-étudiant. Ce projet a commencé avec une semaine de pré-production, quatre semaines de production et une semaine de post-production.
+**Castle Rush** is a mobile tower defense game developed over 5 weeks. This project was carried out as part of a student project.
+It began with one week of pre-production, four weeks of production, and one week of post-production.
 
 ---
 
-## Equipe
+## Team
 
-- **Durand Julien**: Product owner, developpeur
-- **Ovide Calvin**: Lead artiste
-- **Bilore Sasha**: Artiste
-- **Lukoyanova Regina**: Artiste
+-**Durand Julien**: Product owner, developer
+-**Ovide Calvin**: Lead artist
+-**Bilore Sasha**: Artist
+-**Lukoyanova Regina**: Artist
 
 <img width="1834" height="471" alt="LA_TEAAAAAMM" src="https://github.com/user-attachments/assets/0d2b8bac-7902-4aff-8c61-9220631ef288" />
 
@@ -47,31 +47,31 @@
 ---
 
 ## Gameplay
-**Castle Rush** est un tower defense où le joueur ne contrôle pas les défenses mais les attaquants. Vous devez traverser le plus de défenses possible afin de capturer le maximum de châteaux. 
-Améliorez vos troupes et vos sorts afin de créer une stratégie d’attaque à chaque nouveau terrain. Chaque terrain est indépendant et procédural.
+**Castle Rush** is a tower defense game where the player does not control the defenses, but the attackers. You must get past as many defenses as possible in order to capture the maximum number of castles.
+Upgrade your troops and spells to create an attack strategy for each new map. Each map is independent and procedurally generated.
 
 <img width="1289" height="801" alt="Capture d’écran 2025-12-23 182158" src="https://github.com/user-attachments/assets/cdc00894-2bea-4990-9ba4-9b08dd0eaf7e" />
 
 
 ---
 
-## Univert
-Les royaumes s’affrontent pour étendre leurs territoires et conquérir les châteaux ennemis.
-À la tête de ton armée, tu pars à l’assaut de terres inconnues pour imposer ta domination et agrandir ton royaume.
+## Universe
+Kingdoms clash to expand their territories and conquer enemy castles.
+At the head of your army, you set out to assault unknown lands to assert your dominance and grow your kingdom.
 
 ---
 
 ## Release
-Ce jeu peut être installé sur **android**
+This game can be installed on Android.
 
 ---
 
-## Developpement
-Ce projet est encore en développement afin d’ajouter de nouveaux contenus et corriger des bugs. ⚠️​ 
+## Development
+This project is still in development in order to add new content and fix bugs. ⚠️
 
 ---
 
-## Remerciement
-Nous tenons à remercier :
+## Acknowledgements
+We would like to thank:
 - **École des nouvelles images** <img src="https://github.com/user-attachments/assets/f91f4643-1a3b-4470-b24d-758ebbec57d4" alt="Image" height="50" width="50">
 
