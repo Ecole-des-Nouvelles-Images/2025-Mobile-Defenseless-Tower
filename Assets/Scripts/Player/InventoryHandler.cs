@@ -67,16 +67,24 @@ namespace Player
 
         public Upgrade UpgradeTest;
 
+        private bool _inPause;
         private void OnEnable()
         {
             EventBus.OnNextLevel += UpdateInventoryData;
             EventBus.OnPlayerClicked += DropSpell;
+            EventBus.OnGamePaused += OnPause;
+            EventBus.OnGameResume += OnResume;
         }
 
         private void OnDestroy()
         {
             EventBus.OnNextLevel -= UpdateInventoryData;
             EventBus.OnPlayerClicked -= DropSpell;
+        }
+        private void OnDisable()
+        {
+            EventBus.OnGamePaused -= OnPause;
+            EventBus.OnGameResume -= OnResume;
         }
 
         private void Start()
@@ -107,6 +115,7 @@ namespace Player
 
         private void Update()
         {
+            if (_inPause) return;
             _timeBeforeGetElixir -= Time.deltaTime;
             _timeBeforeGetMoney -= Time.deltaTime;
 
@@ -206,5 +215,14 @@ namespace Player
             UpgradeTest.Apply(this);
         }
     
+        private void OnPause()
+        {
+            _inPause = true;
+        }
+
+        private void OnResume()
+        {
+            _inPause = false;
+        }
     }
 }

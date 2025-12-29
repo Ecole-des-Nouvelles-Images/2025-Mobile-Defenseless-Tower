@@ -52,9 +52,7 @@ namespace Class
             _sprite = upgrade.Srite;
 
             LocalizeStringEvent.StringReference = upgrade.LocalizedString;
-
             _image.sprite = _sprite;
-            _text.text = _description;
         
             _inventory = GameObject.Find("InventoryHandler").GetComponent<InventoryHandler>();
             Image image = gameObject.GetComponent<Image>();
