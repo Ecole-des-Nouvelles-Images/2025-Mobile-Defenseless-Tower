@@ -18,9 +18,9 @@ MonoBehaviour:
   Description: + 10 cristaux.
   LocalizedString:
     m_TableReference:
-      m_TableCollectionName: GUID:e561cf1567ab83b4ebc26e2916fee51d
+      m_TableCollectionName: GUID:2724c991b7225f448a45154986c910b1
     m_TableEntryReference:
-      m_KeyId: 4717960871936
+      m_KeyId: 1767298169454592
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
