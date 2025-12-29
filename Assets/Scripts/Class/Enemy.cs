@@ -139,6 +139,7 @@ namespace Class
                 0.1f
             ).SetLoops(2, LoopType.Yoyo);
             
+            SpawnManager.Instance.SpawnTextInWorldPosition(damage.ToString(), Color.red, new Vector3(transform.position.x,transform.position.y + 2,transform.position.z));
             EventBus.EnemieTookDamage?.Invoke(damage, this);
         }
 

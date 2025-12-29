@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Buttons;
 using Class;
+using Managers;
 using ScriptableObjectsScripts.Spells;
 using ScriptableObjectsScripts.Upgrades;
 using Structs;
@@ -27,7 +28,10 @@ namespace Player
         public float MaxTimeBeforeGetElixir;
         private float _timeBeforeGetElixir;
         public float ElixirParHit;
-        
+
+        [Header("Inventory")] 
+        [SerializeField] private Vector3 _elixirSpawnTextPosition;
+        [SerializeField] private Vector3 _moneySpawnTextPosition;
         public float Money
         {
             get => _money;
@@ -110,12 +114,14 @@ namespace Player
             {
                 _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
                 Elixir += ElixirParHit;
+                SpawnManager.Instance.SpawnTextInWorldPosition("+" + ElixirParHit, Color.magenta, _elixirSpawnTextPosition);
             }
             
             if (_timeBeforeGetMoney <= 0)
             {
                 _timeBeforeGetMoney = MaxTimeBeforeGetMoney;
                 Money += MoneyParHit;
+                SpawnManager.Instance.SpawnTextInWorldPosition("+" + MoneyParHit, Color.yellow, _moneySpawnTextPosition);
             }
         }
 

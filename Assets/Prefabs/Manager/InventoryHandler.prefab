@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1749938882226470481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9115047300641651954}
+  - component: {fileID: 2447920574232711826}
+  m_Layer: 0
+  m_Name: InventoryHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9115047300641651954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749938882226470481}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2447920574232711826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749938882226470481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f45ee4e0cbb6d4a9ae29ad695dcbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryHandler
+  StartMoney: 500000
+  StartElixir: 500000
+  _money: 0
+  MaxTimeBeforeGetMoney: 1
+  MoneyParHit: 2
+  _elixir: 0
+  MaxTimeBeforeGetElixir: 2
+  ElixirParHit: 1
+  _elixirSpawnTextPosition: {x: 14.65, y: 0, z: 13.47}
+  _moneySpawnTextPosition: {x: 14.65, y: 0, z: 7.56}
+  EquipedSpell:
+    SpellData: {fileID: 0}
+    Price: 0
+    Time: 0
+    AreaSize: 0
+    Efficiency: 0
+  EnemyClass:
+  - baseData: {fileID: 11400000, guid: 7bc1f4e436a3a06438f4dcec631c771f, type: 2}
+    Name: 
+    price: 0
+    NumberSpawn: 0
+    Speed: 0
+    MaxHealth: 0
+    Damage: 0
+  - baseData: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
+    Name: 
+    price: 0
+    NumberSpawn: 0
+    Speed: 0
+    MaxHealth: 0
+    Damage: 0
+  SpellClasses:
+  - SpellData: {fileID: 11400000, guid: e8ca02e4ca1c0114e8c0fd4eecfe71f1, type: 2}
+    Price: 0
+    Time: 0
+    AreaSize: 0
+    Efficiency: 0
+  - SpellData: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
+    Price: 0
+    Time: 0
+    AreaSize: 0
+    Efficiency: 0
+  PanelInventoryEnemy: {fileID: 0}
+  PanelInventorySpell: {fileID: 0}
+  prefabEnemyButton: {fileID: 3501484325557489509, guid: 37aa8dbc733c6d04abf68daccdb28951, type: 3}
+  prefabSpellButton: {fileID: 3501484325557489509, guid: 3172bc48e90bb344d90e14b706e9a0a1, type: 3}
+  UpgradeTest: {fileID: 0}
