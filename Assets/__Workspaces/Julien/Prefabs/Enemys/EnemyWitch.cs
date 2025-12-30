@@ -49,9 +49,12 @@ public class EnemyWitch : Enemy
 
     private void RefoundMoney(Enemy enemy)
     {
+        if (!_enemies.Contains(enemy)) return;
+        
         float refoundedPrice = enemy.EnemyClass.price * 0.50f;
         refoundedPrice = Mathf.RoundToInt(refoundedPrice);
         _inventory.Money += refoundedPrice;
-        SpawnManager.Instance.SpawnTextInWorldPosition(refoundedPrice.ToString(), Color.yellow, enemy.gameObject.transform.position);
+        Vector3 pos = new Vector3(enemy.gameObject.transform.position.x, enemy.gameObject.transform.position.y + 2, enemy.gameObject.transform.position.z);
+        SpawnManager.Instance.SpawnTextInWorldPosition(refoundedPrice.ToString(), Color.yellow, pos);
     }
 }

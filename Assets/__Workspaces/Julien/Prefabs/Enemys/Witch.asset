@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Witch
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjectsScripts.EnemyBaseData
   Name: Witch
-  Sprite: {fileID: 21300000, guid: 42a0582f294c80c4d895382763ee2bf3, type: 3}
+  Sprite: {fileID: 21300000, guid: ee2178dc609349043a07138cfb1ab980, type: 3}
   price: 20
-  Speed: 4
+  Speed: 10
   Health: 500
   NumberToSpawn: 1
   Damage: 1
@@ -27,4 +27,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bd3cc767331f7204089e9aa54097e7db, type: 3}
   DeadSounds:
   - {fileID: 8300000, guid: c179c81b4905742498b2625bdcf77b85, type: 3}
-  VFXPrefab: {fileID: 0}
+  VFXPrefab: {fileID: 7549511183509151425, guid: ff314b00508c30e49bf66e7116d9c15a, type: 3}

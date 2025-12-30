@@ -18,12 +18,13 @@ namespace Player
         public int StartMoney;
         public int StartElixir;
         
-        [Header("-----MoneyParameters")]
+        [Header("-----Money")]
         [SerializeField] private float _money;
         public float MaxTimeBeforeGetMoney;
         private float _timeBeforeGetMoney;
         public float MoneyParHit;
         
+        [Header("-----Elixir")]
         [SerializeField] private float _elixir;
         public float MaxTimeBeforeGetElixir;
         private float _timeBeforeGetElixir;

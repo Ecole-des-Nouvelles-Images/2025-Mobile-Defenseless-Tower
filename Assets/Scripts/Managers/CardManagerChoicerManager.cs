@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Class;
 using ScriptableObjectsScripts.Upgrades;
 using UnityEngine;
@@ -6,7 +8,7 @@ using Utils;
 
 namespace Managers
 {
-    public class CardManager : MonoBehaviour
+    public class CardManagerChoicer : MonoBehaviour
     {
         [SerializeField] private GameObject _cardPrefab;
 
@@ -16,12 +18,20 @@ namespace Managers
         [SerializeField] private List<Upgrade> _upgrades = new List<Upgrade>();
         [SerializeField] private List<Upgrade> _upgradeToGive = new List<Upgrade>();
 
+        
+        
         [Header("Number card")] 
         public int CommunCount;
         public int MoyenCount;
         public int RareCount;
 
         [SerializeField] private string _path;
+
+        private void Start()
+        {
+            LoadAvaibleUpgrades();
+        }
+
         private void OnEnable()
         {
             EventBus.OnPlayerTakedCard += HideCard;
@@ -32,7 +42,15 @@ namespace Managers
             EventBus.OnPlayerTakedCard -= HideCard;
         }
 
-        
+        public void LoadAvaibleUpgrades()
+        {
+            _avaibleUpgrades = Enumerable.ToList(Resources.LoadAll<Upgrade>(_path));
+        }
+
+        public void AddAvaibleUpgrade()
+        {
+            
+        }
         public void LoadCardProposition()
         {
             if (_upgrades.Count <= 0) LoadListCard();

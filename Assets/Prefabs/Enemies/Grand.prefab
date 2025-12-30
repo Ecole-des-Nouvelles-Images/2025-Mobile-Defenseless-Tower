@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: -7891987643553632340}
   - component: {fileID: 1917850147550564850}
   - component: {fileID: 8945019157341543800}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grand
   m_TagString: Enemy
   m_Icon: {fileID: 0}
