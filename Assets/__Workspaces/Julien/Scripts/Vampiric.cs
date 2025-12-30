@@ -21,13 +21,13 @@ public class Vampiric : Spell
     public override void OnEnable()
     {
         base.OnEnable();
-        EventBus.EnemieTookDamage += FileBard;
+        EventBus.OnEnemyTookDamage += FileBard;
     }
     
     public override void OnDisable()
     {
         base.OnDisable();
-        EventBus.EnemieTookDamage -= FileBard;
+        EventBus.OnEnemyTookDamage -= FileBard;
     }
 
     public override void Start()
