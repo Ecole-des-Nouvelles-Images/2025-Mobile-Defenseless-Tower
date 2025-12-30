@@ -21,7 +21,6 @@ namespace ScriptableObjectsScripts.Upgrades
         public virtual void Apply(InventoryHandler inventary)
         {
             // Cette methode est jouer dans les type "Upgrade"
-            
         }
     }
 }

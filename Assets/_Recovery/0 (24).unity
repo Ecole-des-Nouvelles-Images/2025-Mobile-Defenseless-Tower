@@ -8301,7 +8301,6 @@ Transform:
   - {fileID: 78111134}
   - {fileID: 333019430}
   - {fileID: 413439521}
-  - {fileID: 2048693003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1971213208
@@ -8480,50 +8479,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b71c2dc40813644999cc642b0142e6a, type: 3}
---- !u!1 &2048693002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2048693003}
-  - component: {fileID: 2048693004}
-  m_Layer: 0
-  m_Name: CardManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2048693003
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048693002}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1937995974}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2048693004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048693002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d8422f15e80624794caa8ae26ef22c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CardManager
 --- !u!4 &2086125034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8437303669177610155, guid: 198fb075e5f70414fa517ab4fb5fdb7b, type: 3}
@@ -9457,20 +9412,12 @@ PrefabInstance:
       objectReference: {fileID: 1261444762}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: SpellClasses.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
-      propertyPath: EnemyClass.Array.data[0].baseData
-      value: 
-      objectReference: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
-    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
-      propertyPath: EnemyClass.Array.data[1].baseData
-      value: 
-      objectReference: {fileID: 11400000, guid: f37b3465102f7f04f827a1d7e2059563, type: 2}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.data[2].baseData
       value: 
@@ -9479,14 +9426,6 @@ PrefabInstance:
       propertyPath: EnemyClass.Array.data[3].baseData
       value: 
       objectReference: {fileID: 11400000, guid: f37b3465102f7f04f827a1d7e2059563, type: 2}
-    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
-      propertyPath: SpellClasses.Array.data[0].SpellData
-      value: 
-      objectReference: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
-    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
-      propertyPath: SpellClasses.Array.data[1].SpellData
-      value: 
-      objectReference: {fileID: 11400000, guid: da759237383e9744ea897e46f98c91fc, type: 2}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: SpellClasses.Array.data[2].SpellData
       value: 

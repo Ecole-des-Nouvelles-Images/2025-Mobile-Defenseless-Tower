@@ -8,13 +8,14 @@ using Utils;
 
 namespace Managers
 {
-    public class CardManagerChoicer : MonoBehaviour
+    public class CardManager : MonoBehaviourSingleton<CardManager>
     {
         [SerializeField] private GameObject _cardPrefab;
 
         
         [SerializeField] private GameObject _cardPacker;
-        
+
+        [SerializeField] private List<Upgrade> _avaibleUpgrades = new List<Upgrade>();
         [SerializeField] private List<Upgrade> _upgrades = new List<Upgrade>();
         [SerializeField] private List<Upgrade> _upgradeToGive = new List<Upgrade>();
 
@@ -27,7 +28,7 @@ namespace Managers
 
         [SerializeField] private string _path;
 
-        private void Start()
+        private void Awake()
         {
             LoadAvaibleUpgrades();
         }
@@ -46,11 +47,7 @@ namespace Managers
         {
             _avaibleUpgrades = Enumerable.ToList(Resources.LoadAll<Upgrade>(_path));
         }
-
-        public void AddAvaibleUpgrade()
-        {
-            
-        }
+        
         public void LoadCardProposition()
         {
             if (_upgrades.Count <= 0) LoadListCard();
@@ -66,12 +63,25 @@ namespace Managers
         [ContextMenu("LoadProposition")]
         public void LoadListCard()
         {
-            _upgrades = UpgradeUtils.GetRandomUpgradeWithRange(CommunCount, MoyenCount, RareCount, _path);
+            _upgrades = UpgradeUtils.GetRandomUpgradeWithRange(CommunCount, MoyenCount, RareCount, _avaibleUpgrades);
         }
         
         public void HideCard()
         {
             gameObject.SetActive(false);
+        }
+
+        public void AddUpgrades(List<Upgrade> upgrades)
+        {
+            foreach (Upgrade up in upgrades)
+            {
+                _avaibleUpgrades.Add(up);
+            }
+        }
+
+        public void RemoveUpgrade(Upgrade upgrade)
+        {
+            _avaibleUpgrades.Remove(upgrade);
         }
     }
 }

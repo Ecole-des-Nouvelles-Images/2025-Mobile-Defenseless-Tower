@@ -8524,6 +8524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d8422f15e80624794caa8ae26ef22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardManager
+  AvaibleUpgrades: []
+  _path: TempUpgrade
 --- !u!4 &2086125034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8437303669177610155, guid: 198fb075e5f70414fa517ab4fb5fdb7b, type: 3}
@@ -9457,20 +9459,12 @@ PrefabInstance:
       objectReference: {fileID: 1261444762}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: SpellClasses.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
-      propertyPath: EnemyClass.Array.data[0].baseData
-      value: 
-      objectReference: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
-    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
-      propertyPath: EnemyClass.Array.data[1].baseData
-      value: 
-      objectReference: {fileID: 11400000, guid: f37b3465102f7f04f827a1d7e2059563, type: 2}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.data[2].baseData
       value: 
@@ -9479,14 +9473,6 @@ PrefabInstance:
       propertyPath: EnemyClass.Array.data[3].baseData
       value: 
       objectReference: {fileID: 11400000, guid: f37b3465102f7f04f827a1d7e2059563, type: 2}
-    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
-      propertyPath: SpellClasses.Array.data[0].SpellData
-      value: 
-      objectReference: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
-    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
-      propertyPath: SpellClasses.Array.data[1].SpellData
-      value: 
-      objectReference: {fileID: 11400000, guid: da759237383e9744ea897e46f98c91fc, type: 2}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: SpellClasses.Array.data[2].SpellData
       value: 

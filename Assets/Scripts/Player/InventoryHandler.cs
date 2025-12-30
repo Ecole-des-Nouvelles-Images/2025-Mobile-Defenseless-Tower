@@ -139,6 +139,7 @@ namespace Player
         public void AddEnemy(EnemyClass classToAdd)
         {
             EnemyClass.Add(classToAdd);
+            classToAdd.SetUpData();
             SetVisualEnemy(classToAdd);
         }
         public void SetVisualEnemy(EnemyClass enemyClass)
@@ -180,6 +181,12 @@ namespace Player
             instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
             _spellButtonSpawn.Add(instanciate.GetComponent<SpellButton>());
         }
+        public void AddSpell(SpellClass classToAdd)
+        {
+            SpellClasses.Add(classToAdd);
+            classToAdd.SetData();
+            SetVisuelSpell(classToAdd);
+        }
 
 
         public void UpdateAllPrice()
@@ -192,21 +199,7 @@ namespace Player
         {
             Money = StartMoney;
             Elixir = StartElixir;
-            SetAllVisual();
             EventBus.OnInventoryAreUpdated?.Invoke();
-        }
-
-        public void SetAllVisual()
-        {
-            foreach (EnemyButtonSpawn buttonSpawn in _enemyButtonSpawns)
-            {
-                buttonSpawn.SetUp();
-            }
-
-            foreach (SpellButton spellButton in _spellButtonSpawn)
-            {
-                spellButton.SetUp();
-            }
         }
         
         
