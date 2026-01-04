@@ -8761,6 +8761,22 @@ PrefabInstance:
       propertyPath: PanelInventorySpell
       value: 
       objectReference: {fileID: 1422110345}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: EnemyClass.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: SpellClasses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: EnemyClass.Array.data[0].baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: SpellClasses.Array.data[0].SpellData
+      value: 
+      objectReference: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
     - target: {fileID: 9115047300641651954, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.70819

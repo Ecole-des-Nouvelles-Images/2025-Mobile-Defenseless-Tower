@@ -1,7 +1,5 @@
 using System;
 using Player;
-using UnityEditor;
-using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.Localization;
 
