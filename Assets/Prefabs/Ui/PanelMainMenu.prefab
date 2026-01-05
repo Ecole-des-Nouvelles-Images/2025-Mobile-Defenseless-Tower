@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
-    m_Left: 782
-    m_Right: -36
+    m_Left: 1000
+    m_Right: 90
     m_Top: 0
     m_Bottom: 71
   m_ChildAlignment: 7
@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Menu.OpenPanel
   PanelToOpen: {fileID: 0}
-  PanelToClose: {fileID: 0}
-  _button: {fileID: 0}
+  PanelToClose: {fileID: 2416164152711634219}
+  _button: {fileID: 5728413322029527941}
 --- !u!222 &4154168928285555712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Menu.OpenPanel
   PanelToOpen: {fileID: 0}
-  PanelToClose: {fileID: 0}
-  _button: {fileID: 0}
+  PanelToClose: {fileID: 2416164152711634219}
+  _button: {fileID: 4062408832764117890}
 --- !u!222 &3875548047430044619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -428,8 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b529cb1211cac5543aa3ec4157401879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Menu.OpenScene
-  SceneName: SceneGame
-  _button: {fileID: 0}
+  SceneName: Game
+  _button: {fileID: 6029087805328113545}
 --- !u!222 &3455862019449181925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -511,4 +511,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5550133312005114026}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7451339410738065269}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

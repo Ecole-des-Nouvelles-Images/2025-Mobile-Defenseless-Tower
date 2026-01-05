@@ -16,8 +16,20 @@ MonoBehaviour:
   Srite: {fileID: 21300000, guid: d2f89f6c1b6c8ee479e923a210869805, type: 3}
   Rarity: 1
   Description: Le soin dure moyennement plus longtemps.
+  LocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:2724c991b7225f448a45154986c910b1
+    m_TableEntryReference:
+      m_KeyId: 1775601092018176
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   TargetSpell: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
   CostToAdd: 0
   TimeToAdd: 2
   SizeToAdd: 0
   Efficiency: 0
+  references:
+    version: 2
+    RefIds: []

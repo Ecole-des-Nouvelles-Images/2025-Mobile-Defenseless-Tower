@@ -164,6 +164,14 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 772431526518319278, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 34728327626752
+      objectReference: {fileID: 0}
+    - target: {fileID: 772431526518319278, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:e561cf1567ab83b4ebc26e2916fee51d
+      objectReference: {fileID: 0}
     - target: {fileID: 1418532543246339617, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -266,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3436743533410418134, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
       propertyPath: m_fontSize
-      value: 45.35
+      value: 55.3
       objectReference: {fileID: 0}
     - target: {fileID: 4572113843483403998, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
       propertyPath: m_Name
@@ -356,6 +364,14 @@ PrefabInstance:
     - target: {fileID: 178033127613421915, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 772431526518319278, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 86979493888
+      objectReference: {fileID: 0}
+    - target: {fileID: 772431526518319278, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:e561cf1567ab83b4ebc26e2916fee51d
       objectReference: {fileID: 0}
     - target: {fileID: 1991939270480940705, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
       propertyPath: m_Pivot.x
@@ -451,7 +467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3436743533410418134, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
       propertyPath: m_fontSize
-      value: 45.35
+      value: 55.3
       objectReference: {fileID: 0}
     - target: {fileID: 8563234250619193790, guid: 0161b11882d815643a7b1576650e8c46, type: 3}
       propertyPath: m_Name

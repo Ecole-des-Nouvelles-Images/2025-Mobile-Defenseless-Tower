@@ -61,7 +61,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2368961d5c24c4ba288d7881955ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Card
-  Upgrade: {fileID: 0}
+  Upgrade: {fileID: 11400000, guid: 20cd7b6e6c6a5ef489c832837c459c9d, type: 2}
+  _localizedString:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  LocalizeStringEvent: {fileID: 3197190798035446226}
   _inventory: {fileID: 0}
   _text: {fileID: 1166908326502047264}
   _image: {fileID: 91767213286822104}
@@ -74,6 +84,9 @@ MonoBehaviour:
   _diversType: {fileID: 21300000, guid: e3232daa56abd464fad019194a5f9d35, type: 3}
   AudioClip:
   - {fileID: 8300000, guid: 8115b31d5d529004ba8634d08ddfdad1, type: 3}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &8462447887394196579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766350721912265324}
   - component: {fileID: 1752088967630826385}
+  - component: {fileID: 3197190798035446226}
   - component: {fileID: 1166908326502047264}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -251,6 +265,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6771369538231561716}
   m_CullTransparentMesh: 1
+--- !u!114 &3197190798035446226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771369538231561716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1166908326502047264}
+        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1166908326502047264
 MonoBehaviour:
   m_ObjectHideFlags: 0

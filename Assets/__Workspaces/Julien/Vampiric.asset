@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63d793ce70fd2b4c989e2f4b884c9bd, type: 3}
+  m_Name: Vampiric
+  m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjectsScripts.Spells.SoSpell
+  Sprite: {fileID: 21300000, guid: 7cfd1d59654d43543a2ebedd6231c22a, type: 3}
+  Price: 50
+  Time: 5
+  AreaSize: 4
+  Efficiency: 150
+  Prefab: {fileID: 7817341195606274728, guid: 868ba46513aaa5340aa15b501d194b55, type: 3}
+  SpawnSounds:
+  - {fileID: 8300000, guid: c179c81b4905742498b2625bdcf77b85, type: 3}

@@ -58,12 +58,14 @@ namespace Class
         {
             EventBus.OnGamePaused += OnPause;
             EventBus.OnGameResume += OnResume;
+            EventBus.OnAllEnemieGetHealth += GetHealth;
         }
 
         private void OnDisable()
         {
             EventBus.OnGamePaused -= OnPause;
             EventBus.OnGameResume -= OnResume;
+            EventBus.OnAllEnemieGetHealth -= GetHealth;
         }
         
         public abstract void SetUpSound();
@@ -103,11 +105,12 @@ namespace Class
 
         public void SpawnInEmpty()
         {
+            GameObject parent = GameObject.Find("EnemieParent");
             GameObject emptyParent = new GameObject("Enemy_" + gameObject.name + "_Parent");
             emptyParent.tag = "Enemy";
             emptyParent.transform.position = transform.position;
             emptyParent.transform.rotation = transform.rotation;
-
+            emptyParent.transform.SetParent(parent.transform, worldPositionStays: true);
             transform.SetParent(emptyParent.transform, worldPositionStays: true);
 
             _splineAnimate = emptyParent.AddComponent<SplineAnimate>();
@@ -135,6 +138,9 @@ namespace Class
                 targetValue,
                 0.1f
             ).SetLoops(2, LoopType.Yoyo);
+            
+            SpawnManager.Instance.SpawnTextInWorldPosition(damage.ToString(), Color.red, new Vector3(transform.position.x,transform.position.y + 2,transform.position.z));
+            EventBus.EnemieTookDamage?.Invoke(damage, this);
         }
 
         public void GetHealth(float health)

@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using Class;
 using Managers;
 using UnityEngine;
@@ -13,21 +11,21 @@ namespace ScriptableObjectsScripts.Spells
         public SpellClass SpellClass;
         public float TimeSpell;
 
-        private void OnEnable()
+        public virtual void OnEnable()
         {
             EventBus.OnGamePaused += OnPause;
             EventBus.OnGameResume += OnResume;
             EventBus.OnLevelFinished += Destroy;
         }
 
-        private void OnDisable()
+        public virtual void OnDisable()
         {
             EventBus.OnGamePaused -= OnPause;
             EventBus.OnGameResume -= OnResume;
             EventBus.OnLevelFinished -= Destroy;
         }
     
-        private void Start()
+        public virtual void Start()
         {
             transform.localScale = new Vector3(SpellClass.AreaSize, SpellClass.AreaSize, SpellClass.AreaSize);
             TimeSpell = SpellClass.Time;
