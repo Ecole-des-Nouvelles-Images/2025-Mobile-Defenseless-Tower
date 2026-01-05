@@ -64,6 +64,7 @@ namespace Class
             if(upgrade is UpgradeEnemy) _typeImage.sprite = _enemyType;
             if(upgrade is UpgradeSpell) _typeImage.sprite = _spellType;
             if(upgrade is UpgradeDivert) _typeImage.sprite = _diversType;
+            if(upgrade is UnlockNewTroup) _typeImage.sprite = _diversType;
         }
     
         public void OnClick()

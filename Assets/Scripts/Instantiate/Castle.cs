@@ -47,7 +47,6 @@ namespace Instantiate
                 {
                     SpawnConfetti();
                     _isDead = true;
-                    Debug.Log("CHATEUA MORT");
                     EventBus.OnLevelFinished?.Invoke();
                 }
             }

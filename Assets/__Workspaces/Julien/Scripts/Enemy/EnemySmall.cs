@@ -1,10 +1,6 @@
-using Class;
-using Managers;
-using UnityEngine;
-
-public class EnemySmall : Enemy
+namespace __Workspaces.Julien.Scripts.Enemy
 {
-    public override void SetUpSound()
+    public class EnemySmall : Class.Enemy
     {
     }
 }

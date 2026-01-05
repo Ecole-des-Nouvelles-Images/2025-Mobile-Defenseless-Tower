@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryHandler
   StartMoney: 200
-  StartElixir: 80
+  StartElixir: 100
   _money: 0
   MaxTimeBeforeGetMoney: 1
   MoneyParHit: 2

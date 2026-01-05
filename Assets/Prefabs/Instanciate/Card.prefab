@@ -62,15 +62,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Card
   Upgrade: {fileID: 11400000, guid: 20cd7b6e6c6a5ef489c832837c459c9d, type: 2}
-  _localizedString:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
   LocalizeStringEvent: {fileID: 3197190798035446226}
   _inventory: {fileID: 0}
   _text: {fileID: 1166908326502047264}
@@ -84,9 +75,6 @@ MonoBehaviour:
   _diversType: {fileID: 21300000, guid: e3232daa56abd464fad019194a5f9d35, type: 3}
   AudioClip:
   - {fileID: 8300000, guid: 8115b31d5d529004ba8634d08ddfdad1, type: 3}
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &8462447887394196579
 MonoBehaviour:
   m_ObjectHideFlags: 0

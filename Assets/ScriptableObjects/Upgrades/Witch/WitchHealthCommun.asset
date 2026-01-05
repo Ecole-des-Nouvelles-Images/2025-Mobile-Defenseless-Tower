@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb19b2bc7f18fcb4598194187efeeb14, type: 3}
-  m_Name: VampiricMaxHealthRare
-  m_EditorClassIdentifier: Assembly-CSharp::UpgradeSpell
+  m_Script: {fileID: 11500000, guid: 0327de44edfdfdc459c027d230b93bb2, type: 3}
+  m_Name: WitchHealthCommun
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeEnemy
   Name: 
-  Srite: {fileID: 21300000, guid: 458599deb7957a04c9d5ccfa35b4471b, type: 3}
-  Rarity: 2
+  Srite: {fileID: 0}
+  Rarity: 0
   Description: 
   LocalizedString:
     m_TableReference:
@@ -25,11 +25,11 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  TargetSpell: {fileID: 11400000, guid: da759237383e9744ea897e46f98c91fc, type: 2}
-  CostToAdd: 0
-  TimeToAdd: 0
-  SizeToAdd: 0
-  Efficiency: 100
+  TargetData: {fileID: 11400000, guid: 4dc1daaac9e3bdc4b85103c1d5dd4a1e, type: 2}
+  PriceToAdd: 0
+  HealthToAdd: 10
+  NumberToSpawnToAdd: 0
+  SpeedToAdd: 0
   references:
     version: 2
     RefIds: []
