@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9c12511548c2544b8af5f5ad1ea86e8, type: 3}
-  m_Name: UnlockFreez
+  m_Name: UnlockFreez 1
   m_EditorClassIdentifier: Assembly-CSharp::UnlockNewSpell
   Name: 
   Srite: {fileID: 21300000, guid: 01ecfabc28d648648971b9ad34bff068, type: 3}
