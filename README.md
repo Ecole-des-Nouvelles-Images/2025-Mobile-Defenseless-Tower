@@ -54,7 +54,7 @@ Améliorez vos troupes et vos sorts afin de créer une stratégie d’attaque à
 
 ---
 
-## Univert
+## Univers
 Les royaumes s’affrontent pour étendre leurs territoires et conquérir les châteaux ennemis.
 À la tête de ton armée, tu pars à l’assaut de terres inconnues pour imposer ta domination et agrandir ton royaume.
 
@@ -70,6 +70,17 @@ Ce projet est encore en développement afin d’ajouter de nouveaux contenus et 
 
 ---
 
-## Remerciement
+## Remerciements
 Nous tenons à remercier :
-- **École des nouvelles images** <img src="https://github.com/user-attachments/assets/f91f4643-1a3b-4470-b24d-758ebbec57d4" alt="Image" height="50" width="50">
+
+***Nos professeurs*** :
+- **Frédéric Bast** : Support développeur
+- **Yvan Bladet** : Support développeur / Support à l’intégration
+- **Jérôme Cros** : Support artiste
+- **Frédéric Conil** : Support artiste
+- **Tommy Ha phuoc** : Testeur de jeu / Support en game design
+
+
+***Nos camarades de classe*** :
+- **Huso Isambart** : support développeur
+    
