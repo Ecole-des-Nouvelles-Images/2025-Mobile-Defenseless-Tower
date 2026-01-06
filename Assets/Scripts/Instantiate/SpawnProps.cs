@@ -13,7 +13,7 @@ namespace Instantiate
         public int NumberPropos;
     
         [SerializeField] private string _ressourcePath;
-        [SerializeField] private List<GameObject> _prefabsProps = new List<GameObject>();
+        [SerializeField] public List<GameObject> _prefabsProps = new List<GameObject>();
         public bool DoRandomRotation;
 
         private void OnEnable()

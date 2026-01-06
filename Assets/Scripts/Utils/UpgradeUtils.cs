@@ -58,7 +58,6 @@ namespace Utils
                 if (upgrade.Rarity == Rarity.Moyen)
                 {
                     upgrades.Add(upgrade);
-                    Debug.Log(upgrade.Rarity);
                 }
                 else
                 {
