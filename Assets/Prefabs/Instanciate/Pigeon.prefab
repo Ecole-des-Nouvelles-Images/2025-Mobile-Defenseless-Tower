@@ -61,6 +61,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bird
   MinMoney: 10
   MaxMoney: 50
+  MinElixir: 10
+  MaxElixir: 30
   Speed: 5
   LeftSide: 0
   PrefabVFX: {fileID: 1495861624451804494, guid: 4b608fa994bda3f4c88227eca9e8bfb1, type: 3}

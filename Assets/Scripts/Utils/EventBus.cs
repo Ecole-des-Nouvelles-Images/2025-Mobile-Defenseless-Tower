@@ -42,7 +42,8 @@ namespace Utils
         
         // Enemies
         
-        public static Action<float, Enemy> EnemieTookDamage;
+        public static Action<float, Enemy> OnEnemyTookDamage;
+        public static Action<Enemy> OnEnemyDie;
         public static Action<float> OnAllEnemieGetHealth;
     }
 }

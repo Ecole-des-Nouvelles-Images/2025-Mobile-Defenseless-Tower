@@ -50,7 +50,6 @@ namespace Buttons
 
         public void OnClick()
         {
-            
             if (SpellClass == InventoryHandler.Instance.EquipedSpell)
             {
                 InventoryHandler.Instance.UnEquipSpell();

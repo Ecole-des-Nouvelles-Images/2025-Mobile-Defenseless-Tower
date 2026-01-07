@@ -1,7 +1,5 @@
 using System;
 using Player;
-using UnityEditor;
-using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -21,7 +19,6 @@ namespace ScriptableObjectsScripts.Upgrades
         public virtual void Apply(InventoryHandler inventary)
         {
             // Cette methode est jouer dans les type "Upgrade"
-            
         }
     }
 }

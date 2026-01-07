@@ -52,9 +52,7 @@ namespace Class
             _sprite = upgrade.Srite;
 
             LocalizeStringEvent.StringReference = upgrade.LocalizedString;
-
             _image.sprite = _sprite;
-            _text.text = _description;
         
             _inventory = GameObject.Find("InventoryHandler").GetComponent<InventoryHandler>();
             Image image = gameObject.GetComponent<Image>();
@@ -66,6 +64,7 @@ namespace Class
             if(upgrade is UpgradeEnemy) _typeImage.sprite = _enemyType;
             if(upgrade is UpgradeSpell) _typeImage.sprite = _spellType;
             if(upgrade is UpgradeDivert) _typeImage.sprite = _diversType;
+            if(upgrade is UnlockNewTroup) _typeImage.sprite = _diversType;
         }
     
         public void OnClick()

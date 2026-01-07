@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;

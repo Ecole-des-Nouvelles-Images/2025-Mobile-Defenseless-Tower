@@ -18,12 +18,13 @@ namespace Player
         public int StartMoney;
         public int StartElixir;
         
-        [Header("-----MoneyParameters")]
+        [Header("-----Money")]
         [SerializeField] private float _money;
         public float MaxTimeBeforeGetMoney;
         private float _timeBeforeGetMoney;
         public float MoneyParHit;
         
+        [Header("-----Elixir")]
         [SerializeField] private float _elixir;
         public float MaxTimeBeforeGetElixir;
         private float _timeBeforeGetElixir;
@@ -67,16 +68,24 @@ namespace Player
 
         public Upgrade UpgradeTest;
 
+        private bool _inPause;
         private void OnEnable()
         {
             EventBus.OnNextLevel += UpdateInventoryData;
             EventBus.OnPlayerClicked += DropSpell;
+            EventBus.OnGamePaused += OnPause;
+            EventBus.OnGameResume += OnResume;
         }
 
         private void OnDestroy()
         {
             EventBus.OnNextLevel -= UpdateInventoryData;
             EventBus.OnPlayerClicked -= DropSpell;
+        }
+        private void OnDisable()
+        {
+            EventBus.OnGamePaused -= OnPause;
+            EventBus.OnGameResume -= OnResume;
         }
 
         private void Start()
@@ -107,6 +116,7 @@ namespace Player
 
         private void Update()
         {
+            if (_inPause) return;
             _timeBeforeGetElixir -= Time.deltaTime;
             _timeBeforeGetMoney -= Time.deltaTime;
 
@@ -129,6 +139,7 @@ namespace Player
         public void AddEnemy(EnemyClass classToAdd)
         {
             EnemyClass.Add(classToAdd);
+            classToAdd.SetUpData();
             SetVisualEnemy(classToAdd);
         }
         public void SetVisualEnemy(EnemyClass enemyClass)
@@ -170,6 +181,12 @@ namespace Player
             instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
             _spellButtonSpawn.Add(instanciate.GetComponent<SpellButton>());
         }
+        public void AddSpell(SpellClass classToAdd)
+        {
+            SpellClasses.Add(classToAdd);
+            classToAdd.SetData();
+            SetVisuelSpell(classToAdd);
+        }
 
 
         public void UpdateAllPrice()
@@ -182,21 +199,7 @@ namespace Player
         {
             Money = StartMoney;
             Elixir = StartElixir;
-            SetAllVisual();
             EventBus.OnInventoryAreUpdated?.Invoke();
-        }
-
-        public void SetAllVisual()
-        {
-            foreach (EnemyButtonSpawn buttonSpawn in _enemyButtonSpawns)
-            {
-                buttonSpawn.SetUp();
-            }
-
-            foreach (SpellButton spellButton in _spellButtonSpawn)
-            {
-                spellButton.SetUp();
-            }
         }
         
         
@@ -206,5 +209,14 @@ namespace Player
             UpgradeTest.Apply(this);
         }
     
+        private void OnPause()
+        {
+            _inPause = true;
+        }
+
+        private void OnResume()
+        {
+            _inPause = false;
+        }
     }
 }

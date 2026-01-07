@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fd8f989268b1541b37e58136430594, type: 3}
+  m_Name: Witch
+  m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjectsScripts.EnemyBaseData
+  Name: Witch
+  Sprite: {fileID: 21300000, guid: bcc5990f1e42f1745813897225962523, type: 3}
+  price: 20
+  Speed: 10
+  Health: 500
+  NumberToSpawn: 1
+  Damage: 1
+  OffsetX: {x: 0, y: 0}
+  OffsetZ: {x: 0, y: 0}
+  OffsetUp: 0
+  Prefab: {fileID: 6006436640752362767, guid: 23c7627dcb2b16646a13c79dc7706e67, type: 3}
+  SpawnSounds:
+  - {fileID: 8300000, guid: bd3cc767331f7204089e9aa54097e7db, type: 3}
+  DeadSounds:
+  - {fileID: 8300000, guid: c179c81b4905742498b2625bdcf77b85, type: 3}
+  VFXPrefab: {fileID: 7549511183509151425, guid: ff314b00508c30e49bf66e7116d9c15a, type: 3}
