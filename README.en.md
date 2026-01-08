@@ -81,4 +81,4 @@ We would like to thank:
 - **Tommy Ha phuoc** : Game tester / Game design support
 
 ***Our classmates*** :
-- **Huso Isambart** : Development support
+- **[Hugo Isambart](https://github.com/HIsambart)** : Development support
