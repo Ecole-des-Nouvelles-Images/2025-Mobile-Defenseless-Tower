@@ -82,5 +82,5 @@ Nous tenons à remercier :
 
 
 ***Nos camarades de classe*** :
-- **Hugo Isambart** : support développeur
+- **[Hugo Isambart](https://github.com/HIsambart)** : support développeur
     
