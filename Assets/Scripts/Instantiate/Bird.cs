@@ -10,6 +10,9 @@ public class Bird : MonoBehaviour, IClickable
     public int MinMoney;
     public int MaxMoney;
 
+    public int MinElixir;
+    public int MaxElixir;
+    
     public int Speed;
     public bool LeftSide;
 
@@ -47,8 +50,10 @@ public class Bird : MonoBehaviour, IClickable
 
     public void OnClick()
     {
-        int rand = Random.Range(MinMoney, MaxMoney + 1);
-        InventoryHandler.Instance.Money += rand;
+        int randMoney = Random.Range(MinMoney, MaxMoney + 1);
+        int randElixir = Random.Range(MinElixir, MaxElixir + 1);
+        InventoryHandler.Instance.Money += randMoney;
+        InventoryHandler.Instance.Elixir += randElixir;
         SpawnManager.Instance.SpawnVfxInPosition(PrefabVFX, transform.position);
         SoundManager.Instance.PlayRandomSound(ScreemSFX, gameObject, true);
         Destroy(gameObject);

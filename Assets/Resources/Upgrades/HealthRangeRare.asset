@@ -18,8 +18,20 @@ MonoBehaviour:
   Description: 'Augmente beaucoup plus la taille du soin.
 
 '
+  LocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:2724c991b7225f448a45154986c910b1
+    m_TableEntryReference:
+      m_KeyId: 1774917592432640
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   TargetSpell: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
   CostToAdd: 0
   TimeToAdd: 0
   SizeToAdd: 1
   Efficiency: 0
+  references:
+    version: 2
+    RefIds: []

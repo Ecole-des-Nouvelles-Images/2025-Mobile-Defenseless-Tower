@@ -13,11 +13,26 @@ namespace Player
 {
     public class InventoryHandler : MonoBehaviourSingleton<InventoryHandler>
     {
+        [Header("-------------Money")]
+        [Header("-----StartMoney")]
         public int StartMoney;
         public int StartElixir;
-        [SerializeField] private float _money;
-        [SerializeField] private float _elixir;
         
+        [Header("-----Money")]
+        [SerializeField] private float _money;
+        public float MaxTimeBeforeGetMoney;
+        private float _timeBeforeGetMoney;
+        public float MoneyParHit;
+        
+        [Header("-----Elixir")]
+        [SerializeField] private float _elixir;
+        public float MaxTimeBeforeGetElixir;
+        private float _timeBeforeGetElixir;
+        public float ElixirParHit;
+
+        [Header("Inventory")] 
+        [SerializeField] private Vector3 _elixirSpawnTextPosition;
+        [SerializeField] private Vector3 _moneySpawnTextPosition;
         public float Money
         {
             get => _money;
@@ -53,10 +68,13 @@ namespace Player
 
         public Upgrade UpgradeTest;
 
+        private bool _inPause;
         private void OnEnable()
         {
             EventBus.OnNextLevel += UpdateInventoryData;
             EventBus.OnPlayerClicked += DropSpell;
+            EventBus.OnGamePaused += OnPause;
+            EventBus.OnGameResume += OnResume;
         }
 
         private void OnDestroy()
@@ -64,9 +82,16 @@ namespace Player
             EventBus.OnNextLevel -= UpdateInventoryData;
             EventBus.OnPlayerClicked -= DropSpell;
         }
+        private void OnDisable()
+        {
+            EventBus.OnGamePaused -= OnPause;
+            EventBus.OnGameResume -= OnResume;
+        }
 
         private void Start()
         {
+            _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
+            _timeBeforeGetMoney = MaxTimeBeforeGetMoney;
             UpdateInventoryData();
             foreach (EnemyClass c in EnemyClass)
             {
@@ -89,11 +114,32 @@ namespace Player
             }
         }
 
-    
+        private void Update()
+        {
+            if (_inPause) return;
+            _timeBeforeGetElixir -= Time.deltaTime;
+            _timeBeforeGetMoney -= Time.deltaTime;
+
+            if (_timeBeforeGetElixir <= 0)
+            {
+                _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
+                Elixir += ElixirParHit;
+                SpawnManager.Instance.SpawnTextInWorldPosition("+" + ElixirParHit, Color.magenta, _elixirSpawnTextPosition);
+            }
+            
+            if (_timeBeforeGetMoney <= 0)
+            {
+                _timeBeforeGetMoney = MaxTimeBeforeGetMoney;
+                Money += MoneyParHit;
+                SpawnManager.Instance.SpawnTextInWorldPosition("+" + MoneyParHit, Color.yellow, _moneySpawnTextPosition);
+            }
+        }
+
         // Enemy
         public void AddEnemy(EnemyClass classToAdd)
         {
             EnemyClass.Add(classToAdd);
+            classToAdd.SetUpData();
             SetVisualEnemy(classToAdd);
         }
         public void SetVisualEnemy(EnemyClass enemyClass)
@@ -135,6 +181,12 @@ namespace Player
             instanciate.GetComponent<SpellButton>().SpellClass = spellClass;
             _spellButtonSpawn.Add(instanciate.GetComponent<SpellButton>());
         }
+        public void AddSpell(SpellClass classToAdd)
+        {
+            SpellClasses.Add(classToAdd);
+            classToAdd.SetData();
+            SetVisuelSpell(classToAdd);
+        }
 
 
         public void UpdateAllPrice()
@@ -147,21 +199,7 @@ namespace Player
         {
             Money = StartMoney;
             Elixir = StartElixir;
-            SetAllVisual();
             EventBus.OnInventoryAreUpdated?.Invoke();
-        }
-
-        public void SetAllVisual()
-        {
-            foreach (EnemyButtonSpawn buttonSpawn in _enemyButtonSpawns)
-            {
-                buttonSpawn.SetUp();
-            }
-
-            foreach (SpellButton spellButton in _spellButtonSpawn)
-            {
-                spellButton.SetUp();
-            }
         }
         
         
@@ -171,5 +209,14 @@ namespace Player
             UpgradeTest.Apply(this);
         }
     
+        private void OnPause()
+        {
+            _inPause = true;
+        }
+
+        private void OnResume()
+        {
+            _inPause = false;
+        }
     }
 }

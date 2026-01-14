@@ -4,6 +4,7 @@ using System.Linq;
 using Class;
 using Player;
 using Structs;
+using Unity.Mathematics;
 using UnityEngine;
 using Utils;
 using Random = UnityEngine.Random;
@@ -18,13 +19,14 @@ namespace Managers
         
         [Header("Prefab")]
         public GameObject VfxSpawner;
+        public GameObject TextSpawner;
 
         [Header("Spawning rate")] 
         public Vector2 BirdRandSpawn;
         [SerializeField] private float _birdSpawningTime;
         
         private bool _isPause;
-
+        
         private void OnEnable()
         {
             EventBus.OnGamePaused += OnPause;
@@ -81,10 +83,26 @@ namespace Managers
             bird.GetComponent<Bird>().SetUp(leftSide);
         }
 
+        
+        
         public void SpawnVfxInPosition(GameObject particleSystem, Vector3 position)
         {
             GameObject vfx = Instantiate(VfxSpawner,  position, Quaternion.identity);
             vfx.GetComponent<VfxSpawner>().SetUp(particleSystem);
+        }
+
+        
+        
+        public enum TextSpawnMode
+        {
+            World,
+            UI
+        }
+        
+        public void SpawnTextInWorldPosition(string text, Color color,Vector3 position)
+        {
+            GameObject textGm = Instantiate(TextSpawner, position, quaternion.identity);
+            textGm.GetComponent<TextPrefab>().SetUp(text, color);
         }
 
         private void OnPause()

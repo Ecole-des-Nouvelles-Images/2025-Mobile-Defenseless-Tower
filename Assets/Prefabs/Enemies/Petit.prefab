@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: -2737167334275661929}
   - component: {fileID: 1917850147550564850}
   - component: {fileID: -1509066329748562526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Petit
   m_TagString: Enemy
   m_Icon: {fileID: 0}

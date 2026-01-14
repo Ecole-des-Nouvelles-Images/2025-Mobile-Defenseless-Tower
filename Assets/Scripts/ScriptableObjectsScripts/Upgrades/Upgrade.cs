@@ -1,6 +1,7 @@
 using System;
 using Player;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace ScriptableObjectsScripts.Upgrades
 {
@@ -14,11 +15,10 @@ namespace ScriptableObjectsScripts.Upgrades
         
         
         [TextArea] public string Description;
-        
+        public LocalizedString LocalizedString;
         public virtual void Apply(InventoryHandler inventary)
         {
             // Cette methode est jouer dans les type "Upgrade"
-            
         }
     }
 }

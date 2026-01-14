@@ -221,6 +221,7 @@ MonoBehaviour:
   CommunCount: 15
   MoyenCount: 10
   RareCount: 5
+  _path: Upgrades
 --- !u!114 &6301798157377040611
 MonoBehaviour:
   m_ObjectHideFlags: 0

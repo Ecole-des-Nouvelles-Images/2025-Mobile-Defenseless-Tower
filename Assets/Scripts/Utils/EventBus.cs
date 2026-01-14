@@ -1,4 +1,5 @@
 using System;
+using Class;
 
 namespace Utils
 {
@@ -38,7 +39,11 @@ namespace Utils
         // IA
         public static Action OnTerrainGenerate;
         public static Action OnIaPlaceTower;
-    
-    
+        
+        // Enemies
+        
+        public static Action<float, Enemy> OnEnemyTookDamage;
+        public static Action<Enemy> OnEnemyDie;
+        public static Action<float> OnAllEnemieGetHealth;
     }
 }

@@ -16,8 +16,20 @@ MonoBehaviour:
   Srite: {fileID: 21300000, guid: 93d8ceb290a4150499bd5b54924b7441, type: 3}
   Rarity: 0
   Description: "Augmente l\xE9g\xE8rement la taille du soin."
+  LocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:2724c991b7225f448a45154986c910b1
+    m_TableEntryReference:
+      m_KeyId: 1774569079324672
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   TargetSpell: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
   CostToAdd: 0
   TimeToAdd: 0
   SizeToAdd: 0.3
   Efficiency: 0
+  references:
+    version: 2
+    RefIds: []

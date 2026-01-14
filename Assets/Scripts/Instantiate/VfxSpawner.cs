@@ -10,7 +10,6 @@ public class VfxSpawner : MonoBehaviour
         PrefabParticle = prefabParticle;
         GameObject particle = Instantiate(prefabParticle, transform.position, Quaternion.identity, transform);
         GameObject childParticle = particle.transform.GetChild(0).gameObject;
-        Debug.Log(childParticle.GetComponent<ParticleSystem>().main.duration);
         Destroy(gameObject, childParticle.GetComponent<ParticleSystem>().main.duration);
     }
 }

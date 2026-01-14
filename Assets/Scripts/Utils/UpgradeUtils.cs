@@ -31,11 +31,10 @@ namespace Utils
             return upgrades;
         }
 
-        public static List<Upgrade> GetRandomUpgradeWithRange(int communCardNumber, int moyenCardNumber,
-            int rareCardNumber)
+        public static List<Upgrade> GetRandomUpgradeWithRange(int communCardNumber, int moyenCardNumber, int rareCardNumber, List<Upgrade> avaibleUpgrade)
         {
             List<Upgrade> upgrades = new List<Upgrade>();
-            List<Upgrade> upgradeRessource = Enumerable.ToList(Resources.LoadAll<Upgrade>("Upgrades"));
+            List<Upgrade> upgradeRessource = avaibleUpgrade;
 
             for (int i = 0; i < communCardNumber; i++)
             {

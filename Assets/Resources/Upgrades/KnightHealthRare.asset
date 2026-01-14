@@ -16,8 +16,20 @@ MonoBehaviour:
   Srite: {fileID: 21300000, guid: c11e41cd55a414b4c8d7c257f5f33dc1, type: 3}
   Rarity: 2
   Description: Augmente beaucoup plus la vie du chevalier.
+  LocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:2724c991b7225f448a45154986c910b1
+    m_TableEntryReference:
+      m_KeyId: 1776326228459520
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   TargetData: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
   PriceToAdd: 0
   HealthToAdd: 6
   NumberToSpawnToAdd: 0
   SpeedToAdd: 0
+  references:
+    version: 2
+    RefIds: []
