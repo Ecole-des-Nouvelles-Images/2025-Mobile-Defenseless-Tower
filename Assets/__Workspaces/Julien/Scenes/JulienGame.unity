@@ -4339,6 +4339,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22485076, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22485076, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22485076, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 22488670, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9058,7 +9070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: SpellClasses.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.data[0].baseData
@@ -9072,6 +9084,10 @@ PrefabInstance:
       propertyPath: SpellClasses.Array.data[0].SpellData
       value: 
       objectReference: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: SpellClasses.Array.data[1].SpellData
+      value: 
+      objectReference: {fileID: 11400000, guid: da759237383e9744ea897e46f98c91fc, type: 2}
     - target: {fileID: 9115047300641651954, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.70819

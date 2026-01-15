@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.46848083, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.9636983, b: 0.33490568, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: -1509066329748562526}
   - component: {fileID: 2997628922161516230}
   m_Layer: 7
-  m_Name: Petit
+  m_Name: Witch
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
