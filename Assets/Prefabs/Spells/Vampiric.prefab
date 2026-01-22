@@ -299,7 +299,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.613
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -438,6 +438,7 @@ MonoBehaviour:
   TimeSpell: 0
   _enemies: []
   _image: {fileID: 5487324612273817791}
+  PourcentageHealth: 20
   CurrentFill: 0
   FillAmountProgressMax: 0
   HealthEnemieVFX: {fileID: 1495861624451804494, guid: 4b608fa994bda3f4c88227eca9e8bfb1, type: 3}
