@@ -74,7 +74,7 @@ This project is still in development in order to add new content and fix bugs. �
 We would like to thank:
 
 **Our teachers*** :
-- **Frédéric Bast** : Development support
+- **[Frédéric Bast](https://fr.linkedin.com/in/frederic-bast-6b8b6b9a?trk=people-guest_people_search-card)** : Development support
 - **Yvan Bladet** : Development support / Integration support
 - **Jérôme Cros** : Art support
 - **Frédéric Conil** : Art support
