@@ -78,7 +78,7 @@ We would like to thank:
 - **Yvan Bladet** : Development support / Integration support
 - **Jérôme Cros** : Art support
 - **Frédéric Conil** : Art support
-- **Tommy Ha phuoc** : Game tester / Game design support
+- **[Tommy Ha phuoc](https://fr.linkedin.com/in/tommyhaphuoc)** : Game tester / Game design support
 
 ***Our classmates*** :
 - **[Hugo Isambart](https://github.com/HIsambart)** : Development support
