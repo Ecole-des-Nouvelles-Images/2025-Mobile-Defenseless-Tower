@@ -74,11 +74,11 @@ Ce projet est encore en développement afin d’ajouter de nouveaux contenus et 
 Nous tenons à remercier :
 
 ***Nos professeurs*** :
-- **Frédéric Bast** : Support développeur
+- **[Frédéric Bast](https://fr.linkedin.com/in/frederic-bast-6b8b6b9a?trk=people-guest_people_search-card)** : Support développeur
 - **Yvan Bladet** : Support développeur / Support à l’intégration
 - **Jérôme Cros** : Support artiste
 - **Frédéric Conil** : Support artiste
-- **Tommy Ha phuoc** : Testeur de jeu / Support en game design
+- **[Tommy Ha phuoc](https://fr.linkedin.com/in/tommyhaphuoc)** : Testeur de jeu / Support en game design
 
 
 ***Nos camarades de classe*** :
