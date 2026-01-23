@@ -1042,6 +1042,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PanelParent
       objectReference: {fileID: 0}
+    - target: {fileID: 4228731316082775766, guid: d185736117cb2344e8ff6d70cc1d3cae, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
+    - target: {fileID: 4228731316082775766, guid: d185736117cb2344e8ff6d70cc1d3cae, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3840995769953482548, guid: 4e2c1ecf537003e44ac77de16b5cb7a2, type: 2}
+    - target: {fileID: 4228731316082775766, guid: d185736117cb2344e8ff6d70cc1d3cae, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4719697968656490699, guid: d185736117cb2344e8ff6d70cc1d3cae, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1071,6 +1083,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d185736117cb2344e8ff6d70cc1d3cae, type: 3}
+--- !u!1 &391348173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7363091008855953660, guid: d185736117cb2344e8ff6d70cc1d3cae, type: 3}
+  m_PrefabInstance: {fileID: 391348172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &413439520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278f021f7e6a8674880cc8206ca50b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiManagaer
-  ChoiceAi: {x: 0, y: 0}
+  ChoiceAi: {x: 0, y: 5}
   MoneyToAddParLevel: 2
   MaxMoney: 1
   Money: 0
@@ -1123,7 +1140,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b6120a3ffa329fd47a315998a7228693, type: 2}
   - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
   - {fileID: 11400000, guid: dd14dd7e550df5042a3b9b5a596a0671, type: 2}
-  _defenseCanUse: []
+  _defenseCanUse:
+  - {fileID: 11400000, guid: 6411747e61750154faa540d7de3eac1d, type: 2}
   _defenseBaseDatasToSpawn: []
 --- !u!1001 &418603436
 PrefabInstance:
@@ -4383,7 +4401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47dfa197f02eae47bd139dd0527adec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOver
-  _endPanel: {fileID: 0}
+  _endPanel: {fileID: 391348173}
 --- !u!1 &1798612652
 GameObject:
   m_ObjectHideFlags: 0
@@ -8774,9 +8792,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 525375cc4f56f1349b8632d7d6b28a63, type: 2}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: EnemyClass.Array.data[1].baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4dc1daaac9e3bdc4b85103c1d5dd4a1e, type: 2}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: EnemyClass.Array.data[2].baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bc1f4e436a3a06438f4dcec631c771f, type: 2}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: SpellClasses.Array.data[0].SpellData
       value: 
       objectReference: {fileID: 11400000, guid: a54b1757d37587f43b61e41178acaa96, type: 2}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: SpellClasses.Array.data[1].SpellData
+      value: 
+      objectReference: {fileID: 11400000, guid: da759237383e9744ea897e46f98c91fc, type: 2}
     - target: {fileID: 9115047300641651954, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.70819
@@ -9382,12 +9412,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SplineManager
   SplineContainer: {fileID: 2122799271}
-  Difficulty: {fileID: 11400000, guid: cc4ba1516c2ac1544bc7436d58838e79, type: 2}
-  _knotCount: 9
+  Difficulty: {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
+  _knotCount: 2
   _terrainSize: 21
   _startPosX: {x: 7, y: 11}
   _endPosX: {x: 7, y: 11}
-  _randomPos: {x: -9, y: 9}
+  _randomPos: {x: -1, y: 1}
   _maxWidth: {x: 3, y: 15}
   _maxHeight: {x: 1, y: 19}
 --- !u!4 &2122799273

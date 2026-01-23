@@ -20,6 +20,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 66d92ab7fc501a6449d6b14f406afaf2
     m_Address: UiTable_ru

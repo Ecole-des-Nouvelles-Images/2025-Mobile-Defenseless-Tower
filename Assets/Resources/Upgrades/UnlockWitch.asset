@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UnlockWitch
   m_EditorClassIdentifier: Assembly-CSharp::UnlockNewCard
   Name: 
-  Srite: {fileID: 21300000, guid: 61e06095267e08b45ae2ac032971235e, type: 3}
+  Srite: {fileID: 21300000, guid: 55a50fa7c6b45ec40a52f80d5f40df57, type: 3}
   Rarity: 0
   Description: nouveau sorcier
   LocalizedString:

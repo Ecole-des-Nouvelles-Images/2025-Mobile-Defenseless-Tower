@@ -844,7 +844,7 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
+    Android: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN;ENABLE_DEBUG_CONSOLE
     EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
     GameCoreScarlett: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
     GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
