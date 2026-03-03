@@ -8781,11 +8781,11 @@ PrefabInstance:
       objectReference: {fileID: 1422110345}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: SpellClasses.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.data[0].baseData
@@ -8794,7 +8794,7 @@ PrefabInstance:
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.data[1].baseData
       value: 
-      objectReference: {fileID: 11400000, guid: 4dc1daaac9e3bdc4b85103c1d5dd4a1e, type: 2}
+      objectReference: {fileID: 11400000, guid: 7bc1f4e436a3a06438f4dcec631c771f, type: 2}
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: EnemyClass.Array.data[2].baseData
       value: 
@@ -8806,7 +8806,7 @@ PrefabInstance:
     - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: SpellClasses.Array.data[1].SpellData
       value: 
-      objectReference: {fileID: 11400000, guid: da759237383e9744ea897e46f98c91fc, type: 2}
+      objectReference: {fileID: 11400000, guid: e8ca02e4ca1c0114e8c0fd4eecfe71f1, type: 2}
     - target: {fileID: 9115047300641651954, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.70819
