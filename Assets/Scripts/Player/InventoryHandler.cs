@@ -125,7 +125,7 @@ namespace Player
                 _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
                 Elixir += ElixirParHit;
                 Elixir = math.clamp(Elixir, 0, MaxElixir);
-                SpawnManager.Instance.SpawnTextInWorldPosition("+" + ElixirParHit, Color.magenta, _elixirSpawnTextPosition);
+                SpawnManager.Instance.SpawnTextInWorldPosition("+" + ElixirParHit, Color.rebeccaPurple, _elixirSpawnTextPosition);
             }
             
             if (_timeBeforeGetMoney <= 0 && Money < MaxMoney)
@@ -160,9 +160,8 @@ namespace Player
         {
             if (EquipedSpell.SpellData == null) return;
             float testPrice = Elixir - EquipedSpell.Price;
-            if (testPrice < 0) return;
+            if (testPrice < 0 || ClickManager.Instance.LastPosition.x > 15.3f || ClickManager.Instance.LastPosition.y > 1) return;
             
-            if (ClickManager.Instance.LastPosition.y > 1) return;
             GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
             spell.GetComponent<Spell>().SpellClass = EquipedSpell;
             Elixir -= EquipedSpell.Price;

@@ -72,11 +72,6 @@ namespace Managers
             SpawnTextInWorldPosition("-" + enemyclass.price, Color.yellow, new Vector3(PathManager.Instance.PositionCastleA.x, PathManager.Instance.PositionCastleA.y + 3f, PathManager.Instance.PositionCastleA.z + randZ));
             EventBus.OnplayerPlaceTroup?.Invoke();
         }
-
-        public void SpawnSpell(SpellClass spell)
-        {
-            
-        }
         
         [ContextMenu("SpawnBird")]
         public void SpawnBird()
