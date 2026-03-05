@@ -23,7 +23,7 @@ namespace Buttons
         {
             EventBus.OnLevelFinished += DisableClick;
             EventBus.OnPlayerTakedCard += EnableClick;
-            EventBus.OnPlayerPlaceSpell += UnselectedVisuel;
+            //EventBus.OnPlayerPlaceSpell += UnselectedVisuel;
             EventBus.OnLevelFinished += UnselectedVisuel;
         }
 
@@ -31,7 +31,7 @@ namespace Buttons
         {
             EventBus.OnLevelFinished -= DisableClick;
             EventBus.OnPlayerTakedCard -= EnableClick;
-            EventBus.OnPlayerPlaceSpell -= UnselectedVisuel;
+            //EventBus.OnPlayerPlaceSpell -= UnselectedVisuel;
             EventBus.OnLevelFinished -= UnselectedVisuel;
         }
         

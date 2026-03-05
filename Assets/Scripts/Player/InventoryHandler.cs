@@ -15,8 +15,8 @@ namespace Player
     {
         [Header("-------------Money")]
         [Header("-----StartMoney")]
-        public int StartMoney;
-        public int StartElixir;
+        public int MaxMoney;
+        public int MaxElixir;
         
         [Header("-----Money")]
         [SerializeField] private float _money;
@@ -120,17 +120,19 @@ namespace Player
             _timeBeforeGetElixir -= Time.deltaTime;
             _timeBeforeGetMoney -= Time.deltaTime;
 
-            if (_timeBeforeGetElixir <= 0)
+            if (_timeBeforeGetElixir <= 0 && Elixir < MaxElixir)
             {
                 _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
                 Elixir += ElixirParHit;
+                Elixir = math.clamp(Elixir, 0, MaxElixir);
                 SpawnManager.Instance.SpawnTextInWorldPosition("+" + ElixirParHit, Color.magenta, _elixirSpawnTextPosition);
             }
             
-            if (_timeBeforeGetMoney <= 0)
+            if (_timeBeforeGetMoney <= 0 && Money < MaxMoney)
             {
                 _timeBeforeGetMoney = MaxTimeBeforeGetMoney;
                 Money += MoneyParHit;
+                Money = math.clamp(Money, 0, MaxMoney);
                 SpawnManager.Instance.SpawnTextInWorldPosition("+" + MoneyParHit, Color.yellow, _moneySpawnTextPosition);
             }
         }
@@ -156,17 +158,15 @@ namespace Player
         }
         public void DropSpell()
         {
-            if (EquipedSpell.SpellData == null)
-            {
-                Debug.Log("Pas de spell");
-                return;
-            }
+            if (EquipedSpell.SpellData == null) return;
             float testPrice = Elixir - EquipedSpell.Price;
             if (testPrice < 0) return;
-                
-            Elixir -= EquipedSpell.Price;
+            
+            if (ClickManager.Instance.LastPosition.y > 1) return;
             GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
             spell.GetComponent<Spell>().SpellClass = EquipedSpell;
+            Elixir -= EquipedSpell.Price;
+            SpawnManager.Instance.SpawnTextInWorldPosition("-" + EquipedSpell.Price, Color.rebeccaPurple, new Vector3(spell.transform.position.x, spell.transform.position.y + 1.5f, spell.transform.position.z));
             EventBus.OnPlayerPlaceSpell?.Invoke();
         }
         public void UnEquipSpell()
@@ -197,8 +197,8 @@ namespace Player
         [ContextMenu("Update")]
         public void UpdateInventoryData()
         {
-            Money = StartMoney;
-            Elixir = StartElixir;
+            Money = MaxMoney;
+            Elixir = MaxElixir;
             EventBus.OnInventoryAreUpdated?.Invoke();
         }
         
