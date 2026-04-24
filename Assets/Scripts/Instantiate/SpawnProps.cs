@@ -53,7 +53,7 @@ namespace Instantiate
             {
                 int randProps = Random.Range(0, _prefabsProps.Count);
                 Vector2Int vector2Int = positions[Random.Range(0, positions.Count)];
-            
+                
                 GameObject props = Instantiate(_prefabsProps[randProps], new Vector3(vector2Int.x,0,vector2Int.y), Quaternion.identity, transform);
 
                 if (DoRandomRotation)

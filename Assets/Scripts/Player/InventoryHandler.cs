@@ -112,6 +112,7 @@ namespace Player
             {
                 SetVisuelSpell(c);
             }
+            
         }
 
         private void Update()

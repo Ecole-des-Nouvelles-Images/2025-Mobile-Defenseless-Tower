@@ -13,11 +13,12 @@ namespace Buttons
     {
         public bool AreSelected;
         public SpellClass SpellClass;
-    
+        
         [SerializeField] private TMP_Text _priceText;
         [SerializeField] private Image _image;
 
         private Vector3 _basePosition;
+        [SerializeField] private CursorController _controlleManager;
         
         private void OnEnable()
         {
@@ -37,6 +38,8 @@ namespace Buttons
         
         private void Start()
         {
+            if (GameObject.FindWithTag("Controller"))_controlleManager = GameObject.FindWithTag("Controller").GetComponent<CursorController>();
+            
             _basePosition = transform.position;
             SetUp();
         }
@@ -58,7 +61,9 @@ namespace Buttons
             }
             UnselectedVisuel();
             SelectedVisual();
+            _controlleManager.EnableCursorSpell();
             InventoryHandler.Instance.EquipedSpell = SpellClass;
+            
         }
 
         public void SelectedVisual()
@@ -76,6 +81,7 @@ namespace Buttons
                 parent.transform.GetChild(i).GetComponent<SpellButton>().AreSelected = false;
                 parent.transform.GetChild(i).gameObject.transform.DOLocalMoveY(_basePosition.y, 0.2f);
             }
+            _controlleManager.PlaceSpell();
             InventoryHandler.Instance.EquipedSpell = null;
         }
         
