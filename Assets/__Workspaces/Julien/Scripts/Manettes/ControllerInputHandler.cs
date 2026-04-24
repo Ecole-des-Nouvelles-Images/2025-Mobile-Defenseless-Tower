@@ -20,6 +20,13 @@ public class ControllerInputHandler : MonoBehaviour
             _cursorController = GetComponent<CursorController>();
         }
 
+        private void Update()
+        {
+            var value = _playerInput.actions["Move"].ReadValue<Vector2>();
+            if (value != Vector2.zero)
+                Debug.Log(value);
+        }
+
         private void OnEnable()
         {
             _playerInput.currentActionMap.Enable();
@@ -27,6 +34,12 @@ public class ControllerInputHandler : MonoBehaviour
             
             _playerInput.actions["Move"].performed += OnMoving;
             _playerInput.actions["Move"].canceled += OnMoving;
+            
+            _playerInput.actions["Interact"].started += Interact;
+            
+            _playerInput.actions["CancelSpell"].started += CancelSpell;
+            
+            _playerInput.actions["Pause"].started += OnPauseGame;
         }
         
         private void OnDisable()
@@ -35,6 +48,12 @@ public class ControllerInputHandler : MonoBehaviour
             
             _playerInput.actions["Move"].performed -= OnMoving;
             _playerInput.actions["Move"].canceled -= OnMoving;
+
+            _playerInput.actions["Interact"].started -= Interact;
+            
+            _playerInput.actions["CancelSpell"].started -= CancelSpell;
+
+            _playerInput.actions["Pause"].started -= OnPauseGame;
         }
     
         private void OnDeviceChange(InputDevice device, InputDeviceChange change)
@@ -59,7 +78,20 @@ public class ControllerInputHandler : MonoBehaviour
         {
             _cursorController.Direction = context.ReadValue<Vector2>();
         }
-        
-    
+
+        private void Interact(InputAction.CallbackContext context)
+        {
+            _cursorController.ClickWithSpell();
+        }
+
+        private void CancelSpell(InputAction.CallbackContext context)
+        {
+            _cursorController.Cancel();
+        }
+
+        private void OnPauseGame(InputAction.CallbackContext context)
+        {
+            _cursorController.PauseGame();
+        }
 }
 
