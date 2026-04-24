@@ -7,6 +7,7 @@ using ScriptableObjectsScripts.Upgrades;
 using Structs;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Utils;
 
 namespace Player
@@ -66,6 +67,8 @@ namespace Player
         [SerializeField] private GameObject prefabEnemyButton;
         [SerializeField] private GameObject prefabSpellButton;
 
+        private EventSystem _eventSystem;
+        
         public Upgrade UpgradeTest;
 
         private bool _inPause;
@@ -90,6 +93,7 @@ namespace Player
 
         private void Start()
         {
+            _eventSystem = GameObject.FindWithTag("EventSystem").GetComponent<EventSystem>();
             _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
             _timeBeforeGetMoney = MaxTimeBeforeGetMoney;
             UpdateInventoryData();
@@ -112,7 +116,8 @@ namespace Player
             {
                 SetVisuelSpell(c);
             }
-            
+
+            _eventSystem.firstSelectedGameObject = _enemyButtonSpawns[0].gameObject;
         }
 
         private void Update()
