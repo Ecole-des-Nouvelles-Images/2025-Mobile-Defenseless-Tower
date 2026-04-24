@@ -29,6 +29,7 @@ public class CursorController : MonoBehaviour
     private ControllerInputHandler _inputHandler;
     private InputSystemUIInputModule _uiInputModule;
     private bool _gameInPause;
+    [SerializeField] private GameObject _lastCardSelected;
     
     /// <summary>
     /// Récupère les ref
@@ -74,7 +75,7 @@ public class CursorController : MonoBehaviour
         if (!HaveSpeel || _gameInPause) return;
         HaveSpeel = false;
         //_playerInput.enabled = false;
-        _inputHandler.enabled = false;
+        //_inputHandler.enabled = false;
         _uiInputModule.enabled = true;
         Cursor.SetActive(false);
         
@@ -91,7 +92,7 @@ public class CursorController : MonoBehaviour
     {
         HaveSpeel = false;
        // _playerInput.enabled = false;
-        _inputHandler.enabled = false;
+        //_inputHandler.enabled = false;
         _uiInputModule.enabled = true;
         Cursor.SetActive(false);
         
@@ -113,6 +114,7 @@ public class CursorController : MonoBehaviour
 
     public void PauseGame()
     {
+        _lastCardSelected =  _eventSystem.currentSelectedGameObject;
         _pauseButton.OnPause();
         _gameInPause = true;
     }
@@ -120,5 +122,7 @@ public class CursorController : MonoBehaviour
     public void ResumeGame()
     {
         _gameInPause = false;
+        _eventSystem.SetSelectedGameObject(_lastCardSelected);
+        Debug.Log("On game Resume" + _lastCardSelected.name);
     }
 }

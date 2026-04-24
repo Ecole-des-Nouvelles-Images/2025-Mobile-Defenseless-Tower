@@ -19,13 +19,7 @@ public class ControllerInputHandler : MonoBehaviour
             _playerInput = GetComponent<PlayerInput>();
             _cursorController = GetComponent<CursorController>();
         }
-
-        private void Update()
-        {
-            var value = _playerInput.actions["Move"].ReadValue<Vector2>();
-            if (value != Vector2.zero)
-                Debug.Log(value);
-        }
+    
 
         private void OnEnable()
         {
