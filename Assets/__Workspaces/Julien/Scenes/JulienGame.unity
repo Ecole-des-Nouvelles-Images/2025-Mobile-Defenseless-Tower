@@ -1734,10 +1734,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 6768233035022820802, guid: 4e4bb70140521a4439519761661ddaaf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2209,6 +2205,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 85428a872ba5ff1458ad561cd5afd34a, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 20ff59e6ff7986d488099c1e52f3733c, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f88280f7a04a4b34e8d26d2fe223ccd5, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c8163ed516dcacf4195886925abd44bc, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: dc1c3e30544218447bdab98fd96b5c72, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 39f1b4b605f6134459437feffe0d311a, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fc34241895ac81e4bb5a813bc80b65a3, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: cc4ba1516c2ac1544bc7436d58838e79, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ac2ee54f1c52562429b276ab04307e4e, type: 2}
+    - target: {fileID: 6718603243353186656, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
+      propertyPath: 'DifficultySplines.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: dbbe600035e3dbb42a083596a6036da7, type: 2}
     - target: {fileID: 8206545301747453071, guid: 9f08acc744ddf9749be47fa716bafb3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.70819
