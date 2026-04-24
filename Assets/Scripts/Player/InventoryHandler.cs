@@ -125,7 +125,7 @@ namespace Player
                 _timeBeforeGetElixir = MaxTimeBeforeGetElixir;
                 Elixir += ElixirParHit;
                 Elixir = math.clamp(Elixir, 0, MaxElixir);
-                SpawnManager.Instance.SpawnTextInWorldPosition("+" + ElixirParHit, Color.rebeccaPurple, _elixirSpawnTextPosition);
+                SpawnManager.Instance.SpawnTextInWorldPosition("+" + ElixirParHit, new Color32(233,90,255,255), _elixirSpawnTextPosition);
             }
             
             if (_timeBeforeGetMoney <= 0 && Money < MaxMoney)
@@ -133,7 +133,7 @@ namespace Player
                 _timeBeforeGetMoney = MaxTimeBeforeGetMoney;
                 Money += MoneyParHit;
                 Money = math.clamp(Money, 0, MaxMoney);
-                SpawnManager.Instance.SpawnTextInWorldPosition("+" + MoneyParHit, Color.yellow, _moneySpawnTextPosition);
+                SpawnManager.Instance.SpawnTextInWorldPosition("+" + MoneyParHit, new Color32(255,185,42,255), _moneySpawnTextPosition);
             }
         }
 
@@ -165,14 +165,14 @@ namespace Player
             GameObject spell = Instantiate(EquipedSpell.SpellData.Prefab, ClickManager.Instance.LastPosition, Quaternion.identity);
             spell.GetComponent<Spell>().SpellClass = EquipedSpell;
             Elixir -= EquipedSpell.Price;
-            SpawnManager.Instance.SpawnTextInWorldPosition("-" + EquipedSpell.Price, Color.rebeccaPurple, new Vector3(spell.transform.position.x, spell.transform.position.y + 1.5f, spell.transform.position.z));
+            SpawnManager.Instance.SpawnTextInWorldPosition("-" + EquipedSpell.Price, new Color32(233,90,255,255), new Vector3(spell.transform.position.x, spell.transform.position.y + 1.5f, spell.transform.position.z));
             EventBus.OnPlayerPlaceSpell?.Invoke();
         }
-        public void UnEquipSpell()
-        {
-            EquipedSpell = null;
-            Debug.Log("Unequipped spell");
-        }
+        // public void UnEquipSpell()
+        // {
+        //     EquipedSpell = null;
+        //     Debug.Log("Unequipped spell");
+        // }
         public void SetVisuelSpell(SpellClass spellClass)
         {
             if (spellClass == null) return;

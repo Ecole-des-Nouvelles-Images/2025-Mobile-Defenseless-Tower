@@ -69,7 +69,7 @@ namespace Managers
             InventoryHandler.Instance.Money -= newClass.price;
 
             float randZ = Random.Range(-0.5f, 0.5f);
-            SpawnTextInWorldPosition("-" + enemyclass.price, Color.yellow, new Vector3(PathManager.Instance.PositionCastleA.x, PathManager.Instance.PositionCastleA.y + 3f, PathManager.Instance.PositionCastleA.z + randZ));
+            SpawnTextInWorldPosition("-" + enemyclass.price, new Color32(255,185,42,255), new Vector3(PathManager.Instance.PositionCastleA.x, PathManager.Instance.PositionCastleA.y + 3f, PathManager.Instance.PositionCastleA.z + randZ));
             EventBus.OnplayerPlaceTroup?.Invoke();
         }
         

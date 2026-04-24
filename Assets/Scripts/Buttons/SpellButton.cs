@@ -52,7 +52,7 @@ namespace Buttons
         {
             if (SpellClass == InventoryHandler.Instance.EquipedSpell)
             {
-                InventoryHandler.Instance.UnEquipSpell();
+                //InventoryHandler.Instance.UnEquipSpell();
                 UnselectedVisuel();
                 return;
             }
