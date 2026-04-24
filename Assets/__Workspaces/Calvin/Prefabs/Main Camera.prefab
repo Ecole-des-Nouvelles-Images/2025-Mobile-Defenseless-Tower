@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6254421319865201553}
+  - component: {fileID: 2826776902365698145}
   - component: {fileID: 2823190110632159776}
   - component: {fileID: 3063554792471608672}
   - component: {fileID: 8877044670616329588}
-  - component: {fileID: 2826776902365698145}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -35,6 +35,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45, y: -90, z: 0}
+--- !u!114 &2826776902365698145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768233035022820802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb49c46072d5ec4459ef36ee62144ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraZoom
+  baseOrthographicSize: 9.58
 --- !u!20 &2823190110632159776
 Camera:
   m_ObjectHideFlags: 0
@@ -138,16 +151,3 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0.749
   m_Version: 2
---- !u!114 &2826776902365698145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6768233035022820802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb49c46072d5ec4459ef36ee62144ca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraZoom
-  baseOrthographicSize: 9.58
