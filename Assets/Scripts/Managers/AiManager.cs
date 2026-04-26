@@ -106,8 +106,12 @@ namespace Managers
                     continue;
                 }
                 Money -= finalResult.DefenseBaseData.Price;
+                
+                
             }
+            Debug.Log("AVANT IA placed tower");
             EventBus.OnIaPlaceTower?.Invoke();
+            Debug.Log("APRES IA placed tower");
         }
         
         
