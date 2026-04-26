@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuPc.unity
     guid: 3ba82fe9e7dd27a46987d62bfd957c16
   - enabled: 1
-    path: Assets/Scenes/GamePc.unity
+    path: Assets/Scenes/GamePC.unity
     guid: e47937c6455ba154ab008d7fa2ff82da
   - enabled: 0
     path: Assets/__Workspaces/Julien/Scenes/MainMenuJulien.unity
