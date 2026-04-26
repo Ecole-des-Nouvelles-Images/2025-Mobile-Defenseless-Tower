@@ -85,7 +85,7 @@ public class ControllerInputHandler : MonoBehaviour
 
         private void OnPauseGame(InputAction.CallbackContext context)
         {
-            _cursorController.PauseGame();
+            if(!_cursorController.GameInPause) _cursorController.PauseGame();
         }
 }
 

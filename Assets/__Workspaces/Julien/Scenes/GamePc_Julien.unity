@@ -9630,6 +9630,14 @@ PrefabInstance:
       propertyPath: PanelInventorySpell
       value: 
       objectReference: {fileID: 1422110345}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: EnemyClass.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447920574232711826, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
+      propertyPath: EnemyClass.Array.data[2].baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: f37b3465102f7f04f827a1d7e2059563, type: 2}
     - target: {fileID: 9115047300641651954, guid: 33054986722d91f4fa097966b25ff4b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.70819
@@ -10271,9 +10279,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1612591763895207075, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095000536081151038, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 2174106754531963561, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
       propertyPath: m_Name
       value: ControllerManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594589362805821540, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594589362805821540, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594589362805821540, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4822218574297887637, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
       propertyPath: m_Enabled
@@ -10291,6 +10319,22 @@ PrefabInstance:
       propertyPath: _pauseButton
       value: 
       objectReference: {fileID: 1108809607}
+    - target: {fileID: 6937322699588160801, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d9fa0aa188f52f43af7291b23bf2838, type: 2}
+    - target: {fileID: 8357197296233114236, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357197296233114236, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357197296233114236, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8357197296233114236, guid: ea92d8b0eb2f0a84aaf4f883be01ff18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.04

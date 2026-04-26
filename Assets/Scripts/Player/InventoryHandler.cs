@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Buttons;
 using Class;
@@ -59,7 +60,7 @@ namespace Player
         public List<EnemyClass> EnemyClass = new List<EnemyClass>();
         public List<SpellClass> SpellClasses = new List<SpellClass>();
 
-        private List<EnemyButtonSpawn> _enemyButtonSpawns = new List<EnemyButtonSpawn>();
+        public List<EnemyButtonSpawn> EnemyButtonSpawns = new List<EnemyButtonSpawn>();
         private List<SpellButton> _spellButtonSpawn = new List<SpellButton>();
         
         [SerializeField] private GameObject PanelInventoryEnemy;
@@ -71,14 +72,24 @@ namespace Player
         
         public Upgrade UpgradeTest;
 
-        private bool _inPause;
-        private void OnEnable()
+        private void Awake()
         {
             EventBus.OnNextLevel += UpdateInventoryData;
             EventBus.OnPlayerClicked += DropSpell;
             EventBus.OnGamePaused += OnPause;
             EventBus.OnGameResume += OnResume;
         }
+
+        private bool _inPause;
+        private void OnEnable()
+        {
+            //EventBus.OnNextLevel += UpdateInventoryData;
+            //EventBus.OnPlayerClicked += DropSpell;
+            //EventBus.OnGamePaused += OnPause;
+            //EventBus.OnGameResume += OnResume;
+            //EventBus.OnLevelStart += SelectCard;
+        }
+        
 
         private void OnDestroy()
         {
@@ -116,8 +127,8 @@ namespace Player
             {
                 SetVisuelSpell(c);
             }
-
-            _eventSystem.firstSelectedGameObject = _enemyButtonSpawns[0].gameObject;
+            
+            _eventSystem.SetSelectedGameObject(EnemyButtonSpawns[0].gameObject);
         }
 
         private void Update()
@@ -154,7 +165,7 @@ namespace Player
         {
             GameObject instanciate = Instantiate(prefabEnemyButton, transform.position, quaternion.identity, PanelInventoryEnemy.transform);
             instanciate.GetComponent<EnemyButtonSpawn>().EnemyClass = enemyClass;
-            _enemyButtonSpawns.Add(instanciate.GetComponent<EnemyButtonSpawn>());
+            EnemyButtonSpawns.Add(instanciate.GetComponent<EnemyButtonSpawn>());
         }
     
         // Sort
@@ -212,6 +223,7 @@ namespace Player
         public void Upgrade()
         {
             UpgradeTest.Apply(this);
+            EventBus.OnInventoryAreUpdated?.Invoke();
         }
     
         private void OnPause()

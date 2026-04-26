@@ -9,5 +9,6 @@ public class PanelWithController : MonoBehaviour
     {
         EventSystem eventSystem = GameObject.FindWithTag("EventSystem").GetComponent<EventSystem>();
         eventSystem.SetSelectedGameObject(_firstSelected);
+        Debug.Log("Set le bouton");
     }
 }

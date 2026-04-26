@@ -20,16 +20,18 @@ public class CursorController : MonoBehaviour
     public float Speed;
 
     [SerializeField] private GameObject _selectedCard;
-    [SerializeField] SpellClass SpellClass;
+    //[SerializeField] SpellClass SpellClass;
     [SerializeField] private EventSystem _eventSystem;
     [SerializeField] private PauseButton _pauseButton;
+
+    [SerializeField] private Vector4 LimitZones;
     
     private Rigidbody _rigidbody;
     private PlayerInput _playerInput;
     private ControllerInputHandler _inputHandler;
     private InputSystemUIInputModule _uiInputModule;
-    private bool _gameInPause;
-    [SerializeField] private GameObject _lastCardSelected;
+    [NonSerialized] public bool GameInPause;
+    private GameObject _lastCardSelected;
     
     /// <summary>
     /// Récupère les ref
@@ -42,6 +44,16 @@ public class CursorController : MonoBehaviour
         
         EventBus.OnPlayerSelectSpell += ActiveCursor;
         EventBus.OnGameResume += ResumeGame;
+        EventBus.OnLevelFinished += Cancel;
+        EventBus.OnInventoryAreUpdated += SelectCard;
+    }
+
+    private void OnDisable()
+    {
+        EventBus.OnPlayerSelectSpell -= ActiveCursor;
+        EventBus.OnGameResume -= ResumeGame;
+        EventBus.OnLevelFinished -= Cancel;
+        EventBus.OnInventoryAreUpdated -= SelectCard;
     }
 
     /// <summary>
@@ -50,6 +62,9 @@ public class CursorController : MonoBehaviour
     private void Start()
     {
         _uiInputModule = _eventSystem.gameObject.GetComponent<InputSystemUIInputModule>();
+        
+        _playerInput.enabled = true;
+        _inputHandler.enabled = true;
     }
 
     /// <summary>
@@ -64,6 +79,10 @@ public class CursorController : MonoBehaviour
         _playerInput.enabled = true;
         _inputHandler.enabled = true;
         _uiInputModule.enabled = false;
+        
+        // Set size of spell
+        float size = InventoryHandler.Instance.EquipedSpell.AreaSize;
+        Cursor.transform.localScale = new Vector3(size, size, size);
     }
 
     /// <summary>
@@ -72,7 +91,7 @@ public class CursorController : MonoBehaviour
     /// </summary>
     public void ClickWithSpell()
     {
-        if (!HaveSpeel || _gameInPause) return;
+        if (!HaveSpeel || GameInPause) return;
         HaveSpeel = false;
         //_playerInput.enabled = false;
         //_inputHandler.enabled = false;
@@ -90,24 +109,27 @@ public class CursorController : MonoBehaviour
     /// </summary>
     public void Cancel()
     {
+        Direction = new Vector2(0, 0);
+        _rigidbody.linearVelocity = Vector3.zero;
         HaveSpeel = false;
        // _playerInput.enabled = false;
         //_inputHandler.enabled = false;
         _uiInputModule.enabled = true;
         Cursor.SetActive(false);
         
-        SlectedCard.GetComponent<SpellButton>().UnselectedVisuel();
+        if (SlectedCard.GetComponent<SpellButton>()) SlectedCard.GetComponent<SpellButton>().UnselectedVisuel();
     }
 
     private void Update()
     {
         Moving();
+        LimiteZone();
         SlectedCard = _eventSystem.currentSelectedGameObject;
     }
 
     private void Moving()
     {
-        if (!HaveSpeel || _gameInPause) return;
+        if (!HaveSpeel || GameInPause) return;
         Vector3 moveDirection = new Vector3(- Direction.y, 0, Direction.x);
         _rigidbody.linearVelocity = moveDirection * Speed;
     }
@@ -116,13 +138,32 @@ public class CursorController : MonoBehaviour
     {
         _lastCardSelected =  _eventSystem.currentSelectedGameObject;
         _pauseButton.OnPause();
-        _gameInPause = true;
+        GameInPause = true;
+        Cancel();
     }
 
     public void ResumeGame()
     {
-        _gameInPause = false;
+        GameInPause = false;
         _eventSystem.SetSelectedGameObject(_lastCardSelected);
         Debug.Log("On game Resume" + _lastCardSelected.name);
+    }
+
+    public void SelectCard()
+    {
+        if (InventoryHandler.Instance.EnemyButtonSpawns.Count == 0) return;
+        
+        _eventSystem.SetSelectedGameObject(InventoryHandler.Instance.EnemyButtonSpawns[0].gameObject);
+        Debug.Log("Equipe card");
+    }
+
+    private void LimiteZone()
+    {
+        Vector3 position = transform.position;
+
+        position.x = Mathf.Clamp(position.x, LimitZones.x, LimitZones.y);
+        position.z = Mathf.Clamp(position.z, LimitZones.z, LimitZones.w);
+
+        transform.position = position;
     }
 }

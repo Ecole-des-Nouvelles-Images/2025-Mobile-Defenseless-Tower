@@ -36,6 +36,7 @@ namespace Utils
         public static Action OnPlayerUseMoney;
         public static Action OnPlayerUseElixir;
         public static Action OnPlayerTakedCard;
+        public static Action OnInventoryUpdate;
     
         // IA
         public static Action OnTerrainGenerate;

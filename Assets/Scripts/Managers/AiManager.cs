@@ -100,8 +100,12 @@ namespace Managers
                 PathManager.Instance.CellsMatrix[Mathf.FloorToInt(finalResult.position.x), Mathf.FloorToInt(finalResult.position.y)].IsTower = true;
                 Instantiate(finalResult.DefenseBaseData.Prefab, new Vector3(finalResult.position.x, 0, finalResult.position.y), Quaternion.identity, transform);
                 Money -= finalResult.DefenseBaseData.Price;
+                
+                
             }
+            Debug.Log("AVANT IA placed tower");
             EventBus.OnIaPlaceTower?.Invoke();
+            Debug.Log("APRES IA placed tower");
         }
         
         
